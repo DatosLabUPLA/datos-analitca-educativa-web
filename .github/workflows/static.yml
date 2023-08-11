@@ -19,7 +19,7 @@ jobs:
           npm run build
         
       - name: Copy mapas folder to dist 📦
-        run: cp -r mapas/* dist/
+        run: cp -r maps/* dist/
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
