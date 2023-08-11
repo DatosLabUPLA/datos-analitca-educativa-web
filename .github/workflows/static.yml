@@ -14,6 +14,9 @@ jobs:
         run: |
           npm ci
           npm run build
+        
+      - name: Copy mapas folder to dist 📦
+        run: cp -r mapas/* dist/
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
