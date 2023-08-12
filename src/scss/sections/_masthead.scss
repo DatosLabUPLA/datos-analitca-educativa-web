@@ -46,8 +46,8 @@ header.masthead {
 }
 
 header.masthead-alt{
-    padding-top: 10rem;
-    padding-bottom: calc(10rem - #{$navbar-height});
+    padding-top: 5rem;
+    padding-bottom: calc(5rem - #{$navbar-height});
 
     // replace the masthead.jpg image in the /assets/img directory to change the image
     // if the image name change, make sure to update the url path below!

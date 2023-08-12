@@ -1,0 +1,13 @@
+.project-name{
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.project-description{
+    padding-inline: 1.5rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+            line-clamp: 4; 
+    -webkit-box-orient: vertical;
+}

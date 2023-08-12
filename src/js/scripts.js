@@ -70,11 +70,14 @@ window.addEventListener('DOMContentLoaded', event => {
         return str;
     }
 
-    // URL de la API que deseas utilizar
-    const apiUrl = 'https://datos-analitca-educativa-84942f17b419.herokuapp.com/dae/projects';
+    // URL API
+    const baseUrl = 'https://api.datoseducativos.cl';
+    const projectsUrl = baseUrl + '/projects';
 
-    // Realiza la llamada a la API
-    fetch(apiUrl)
+    // Si la url es la url base
+    if (window.location.pathname == '/') {
+        // Procesa Proyectos
+        fetch(projectsUrl)
         .then(response => {
             if (response.ok) {
                 return response.json();
@@ -85,9 +88,7 @@ window.addEventListener('DOMContentLoaded', event => {
         .then(data => {
             // Procesa los datos y genera el HTML
             const projects = document.getElementById('projects');
-            const projects_modals = document.getElementById('projects-modals');
             let html_project = '';
-            let html_project_modal = '';
 
             data.forEach(item => {
 
@@ -95,37 +96,87 @@ window.addEventListener('DOMContentLoaded', event => {
                 const random = Math.floor(Math.random() * 6) + 1;
 
                 // Aquí, crea el HTML según los datos recibidos de la API
-                
                 html_project += `
                     <!-- Project ${item.proyecto} -->
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="/proyecto.html?id=${random}" target="_blank" title="${item.proyecto}">
+                        <a class="portfolio-box" href="/proyecto.html?id=${item.id}" target="_self" title="${item.proyecto}">
                             <img class="img-fluid" src="assets/img/portfolio/thumbnails/${random}.jpg" alt="${item.proyecto}">
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">
                                     ${item.tipo}
                                 </div>
                                 <div class="project-name">
-                                    ${item.proyecto}
+                                    ${item.proyecto} - (${item.anio})
                                 </div>
+                                <p class="project-description">
+                                    ${item.descripcion}
+                                </p>
                             </div>
                         </a>
                     </div>
-
-                `;
-
-                html_project_modal += `
-                    <!-- Modal Project ${item.proyecto} -->
-                    
                 `;
             });
 
             // Inserta el HTML generado en el elemento 'projects'
             projects.innerHTML = html_project;
-            projects_modals.innerHTML = html_project_modal;
         })
         .catch(error => {
             console.error('Error al procesar la API:', error);
         });
+    }
 
+    if (window.location.pathname == '/proyecto.html') {
+        // Get the url parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+
+        const projectsUrlId = baseUrl + '/projects/' + id;
+
+        // Procesa Proyectos
+        fetch(projectsUrlId)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Error al obtener datos de la API');
+            }
+        })
+        .then(data => {
+            // Procesa los datos y genera el HTML
+            document.getElementById('proyecto_titulo').innerHTML = `${data.proyecto} - (${data.anio})`;
+            document.getElementById('proyecto_descripcion').innerHTML = data.descripcion;
+            document.getElementById('proyecto_equipo').innerHTML = data.equipo;
+
+            if (data.ID_proyecto != '') {
+                id_proyetco = data.ID_proyecto;
+                urlProyecto = baseUrl + `/project/${id_proyetco}/html`;
+
+                // Obtiene el HTML del proyecto
+                fetch(urlProyecto)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('Error al obtener datos de la API');
+                    }
+                })
+                .then(data => {
+                    // Procesa los datos y genera el HTML
+                    document.getElementById('proyecto_html_raw').innerHTML = data.html;
+                })
+                .catch(error => {
+                    console.error('Error al procesar la API:', error);
+                });
+
+            }else{
+                document.getElementById('proyecto_html_raw').innerHTML = '';
+            }
+
+        })
+        .catch(error => {
+            console.error('Error al procesar la API:', error);
+        });
+        
+    }
+    
 });
