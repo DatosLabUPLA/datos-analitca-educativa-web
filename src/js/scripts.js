@@ -144,6 +144,11 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
     if (window.location.pathname == '/proyecto.html') {
+        // Muestra el spinner
+        document.getElementById('loader-titulo').style.display = 'block';
+        document.getElementById('loader-html').style.display = 'block';
+
+
         // Get the url parameters
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
@@ -184,6 +189,11 @@ window.addEventListener('DOMContentLoaded', event => {
                 })
                 .catch(error => {
                     console.error('Error al procesar la API:', error);
+                })
+                .finally(() => {
+                    // Oculta el spinner
+                    document.getElementById('loader-titulo').style.display = 'none';
+                    document.getElementById('loader-html').style.display = 'none';
                 });
 
             }else{
@@ -193,6 +203,10 @@ window.addEventListener('DOMContentLoaded', event => {
         })
         .catch(error => {
             console.error('Error al procesar la API:', error);
+        })
+        .finally(() => {
+            // Oculta el spinner
+            document.getElementById('loader-titulo').style.display = 'none';
         });
         
     }
