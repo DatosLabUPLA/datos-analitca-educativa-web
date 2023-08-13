@@ -18,8 +18,8 @@ jobs:
           npm ci
           npm run build
         
-      - name: Copy custom_html folder to dist 📦
-        run: cp -r custom_html/* dist/
+      - name: Copy custom_files folder to dist 📦
+        run: cp -r custom_files/* dist/
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
