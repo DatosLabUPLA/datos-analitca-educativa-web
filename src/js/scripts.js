@@ -71,8 +71,8 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
     // URL API
-    const baseUrl = 'https://api.datoseducativos.cl';
-    const projectsUrl = baseUrl + '/projects';
+    const base_url = 'https://api.datoseducativos.cl';
+    const projectsUrl = base_url + '/projects';
 
     // Si la url es la url base
     if (window.location.pathname == '/') {
@@ -112,7 +112,7 @@ window.addEventListener('DOMContentLoaded', event => {
                                     <i>${item.persona_a_cargo}</i>
                                 </p>
                             </div>
-                            
+
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">
                                     ${item.tipo}
@@ -148,7 +148,7 @@ window.addEventListener('DOMContentLoaded', event => {
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
 
-        const projectsUrlId = baseUrl + '/projects/' + id;
+        const projectsUrlId = base_url + '/projects/' + id;
 
         // Procesa Proyectos
         fetch(projectsUrlId)
@@ -167,7 +167,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
             if (data.ID_proyecto != '') {
                 id_proyetco = data.ID_proyecto;
-                urlProyecto = baseUrl + `/project/${id_proyetco}/html`;
+                urlProyecto = base_url + `/project/${id_proyetco}/html`;
 
                 // Obtiene el HTML del proyecto
                 fetch(urlProyecto)
