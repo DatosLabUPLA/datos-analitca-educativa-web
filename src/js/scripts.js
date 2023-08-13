@@ -100,16 +100,34 @@ window.addEventListener('DOMContentLoaded', event => {
                     <!-- Project ${item.proyecto} -->
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box" href="/proyecto.html?id=${item.id}" target="_self" title="${item.proyecto}">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/${random}.jpg" alt="${item.proyecto}">
+                            <img class="img-fluid" src="assets/img/portfolio/placeholder.jpg" alt="${item.proyecto}">
+                            <div class="portfolio-box-caption-alt">
+                                <div class="project-name">
+                                    ${item.proyecto}
+                                </div>
+                                <div class="project-name">
+                                    ${item.anio}
+                                </div>
+                                <p class="project-persona_a_cargo">
+                                    <i>${item.persona_a_cargo}</i>
+                                </p>
+                            </div>
+                            
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">
                                     ${item.tipo}
                                 </div>
                                 <div class="project-name">
-                                    ${item.proyecto} - (${item.anio})
+                                    ${item.proyecto} 
+                                </div>
+                                <div class="project-name">
+                                    ${item.anio}
                                 </div>
                                 <p class="project-description">
                                     ${item.descripcion}
+                                </p>
+                                <p class="project-persona_a_cargo">
+                                    <i>${item.persona_a_cargo}</i>
                                 </p>
                             </div>
                         </a>
