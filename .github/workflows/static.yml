@@ -18,10 +18,12 @@ jobs:
           npm ci
           npm run build
         
-      - name: Copy mapas folder to dist 📦
-        run: cp -r maps/* dist/
+      - name: Copy custom_html folder to dist 📦
+        run: cp -r custom_html/* dist/
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist # The folder the action should deploy.
+
+# https://github.com/JamesIves/github-pages-deploy-action
