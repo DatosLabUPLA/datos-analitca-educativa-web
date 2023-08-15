@@ -81,6 +81,9 @@ window.addEventListener('DOMContentLoaded', event => {
 
     // Si la url es la url base
     if (window.location.pathname == '/') {
+        // Muestra el spinner
+        document.getElementById('loader-projects').style.display = 'block';
+
         // Procesa Proyectos
         fetch(projectsUrl)
         .then(response => {
@@ -145,6 +148,10 @@ window.addEventListener('DOMContentLoaded', event => {
         })
         .catch(error => {
             console.error('Error al procesar la API:', error);
+        })
+        .finally(() => {
+            // Oculta el spinner
+            document.getElementById('loader-projects').style.display = 'none';
         });
     }
 
