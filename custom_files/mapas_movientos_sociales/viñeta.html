@@ -3,11 +3,70 @@
 <html>
 <head>
     <title>Contribuyeron con información para el mapa:</title>
+    <style>
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .arrow {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 4px;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-left: 4px solid black;
+            vertical-align: middle;
+        }
+
+        .open .arrow {
+            border-left: 4px solid transparent;
+            border-right: 4px solid black;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+        }
+    </style>
 </head>
 <body>
     <h2>Contribuyeron con información para el mapa:</h2>
-    <div>
-        André Ferreira de Lima, Universidade Estadual Júlio de Mesquita Filho - Unesp<br>CRISTIAN IVAN RAMOS ARREPOL, Universidad Tecnológica de Chile, Instituto Profesional y Centro de Formación Técnica INACAP<br>Daysi García, Pontificia Universidad Católica del Perú<br>JG, UPLA<br>Jaime Huincahue Arcos, Universidad Católica del Maule<br>Jhony Alexander Villa-Ochoa, Universidad de Antioquia <br>Jorge Gaona, Universidad de Playa Ancha<br>Mariví Martinez, Universidad de O´higgins<br>María del Carmen Bonilla Tumialán, Universidad Nacional de Educación Enrique Guzmán y Valle<br>Nathaly Arias Bacarreza, UNIVERSIDAD ARTURO PRAT<br>Rosa Elvira Páez Murillo, Universidad Autónoma de la Ciudad de México<br>
+    <div class="dropdown">
+        <span class="arrow"></span>
+        <div class="dropdown-content">
+            
+        </div>
     </div>
+
+    <script>
+        // Obtener los nombres e instituciones del DataFrame
+        var nombres = ['André Ferreira de Lima', 'Jhony Alexander Villa-Ochoa', 'Daysi García', 'Jorge Gaona', 'María del Carmen Bonilla Tumialán', 'Jaime Huincahue Arcos', 'Mariví Martinez', 'CRISTIAN IVAN RAMOS ARREPOL', 'JG', 'Rosa Elvira Páez Murillo', 'Nathaly Arias Bacarreza'];
+        var instituciones = ['Universidade Estadual Júlio de Mesquita Filho - Unesp', 'Universidad de Antioquia ', 'Pontificia Universidad Católica del Perú', 'Universidad de Playa Ancha', 'Universidad Nacional de Educación Enrique Guzmán y Valle', 'Universidad Católica del Maule', 'Universidad de O´higgins', 'Universidad Tecnológica de Chile, Instituto Profesional y Centro de Formación Técnica INACAP', 'UPLA', 'Universidad Autónoma de la Ciudad de México', 'UNIVERSIDAD ARTURO PRAT', 'Upla'];
+
+        // Generar la viñeta
+        var vignette = '';
+        for (var i = 0; i < nombres.length; i++) {
+            vignette += nombres[i] + ', ' + instituciones[i] + '<br>';
+        }
+
+        // Mostrar y ocultar la viñeta al hacer clic en la flecha
+        var dropdownContent = document.getElementsByClassName('dropdown-content')[0];
+        var arrow = document.getElementsByClassName('arrow')[0];
+        arrow.onclick = function() {
+            dropdownContent.classList.toggle('open');
+            arrow.classList.toggle('open');
+        };
+
+        // Mostrar la viñeta en el menú desplegable
+        dropdownContent.innerHTML = vignette;
+    </script>
 </body>
 </html>
