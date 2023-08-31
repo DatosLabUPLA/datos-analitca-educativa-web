@@ -102,9 +102,9 @@ window.addEventListener('DOMContentLoaded', event => {
 
                 // Imagen de proyecto
                 if (item.url_imagen != '') {
-                    let img = item.url_imagen;
+                    var img = item.url_imagen;
                 } else {
-                    let img = `assets/img/portfolio/placeholder.jpg`;
+                    var img = `assets/img/portfolio/placeholder.jpg`;
                 }
 
 
