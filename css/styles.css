@@ -11058,6 +11058,13 @@ header.masthead-alt h1, header.masthead-alt .h1 {
   margin-bottom: 0.5rem;
 }
 
+.project-img {
+  /* Opacidad en la imagen de fondo */
+  opacity: 0.5;
+  /* Filtro para la imagen de fondo */
+  filter: brightness(0.5);
+}
+
 .project-description {
   padding-inline: 1.5rem;
   overflow: hidden;
