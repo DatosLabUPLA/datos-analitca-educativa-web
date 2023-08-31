@@ -153,6 +153,9 @@ window.addEventListener('DOMContentLoaded', event => {
                                 <div class="project-category text-white-50">
                                     ${item.tipo}
                                 </div>
+                                <div class="project-name">
+                                    ${item.proyecto} - (${item.anio})
+                                </div>
                                 <p class="project-description">
                                     ${item.descripcion}
                                 </p>
