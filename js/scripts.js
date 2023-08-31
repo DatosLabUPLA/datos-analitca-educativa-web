@@ -100,15 +100,20 @@ window.addEventListener('DOMContentLoaded', event => {
 
             data.forEach(item => {
 
-                // Random number between 1 and 3
-                const random = Math.floor(Math.random() * 6) + 1;
+                // Imagen de proyecto
+                if (item.url_imagen != '') {
+                    const img = item.url_imagen;
+                } else {
+                    const img = `assets/img/portfolio/placeholder.jpg`;
+                }
+
 
                 // Aquí, crea el HTML según los datos recibidos de la API
                 html_project += `
                     <!-- Project ${item.proyecto} -->
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box" href="/proyecto.html?id=${item.id}" target="_self" title="${item.proyecto}">
-                            <img class="img-fluid" src="assets/img/portfolio/placeholder.jpg" alt="${item.proyecto}">
+                            <img class="img-fluid" src="${img}" alt="${item.proyecto}">
                             <div class="portfolio-box-caption-alt">
                                 <div class="project-name">
                                     ${item.proyecto}
