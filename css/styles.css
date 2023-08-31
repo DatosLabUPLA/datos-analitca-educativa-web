@@ -11060,7 +11060,7 @@ header.masthead-alt h1, header.masthead-alt .h1 {
 
 .project-img {
   /* Opacidad en la imagen de fondo */
-  opacity: 0.5;
+  opacity: 0.7;
   /* Filtro para la imagen de fondo */
   filter: brightness(0.5);
 }
@@ -11069,7 +11069,7 @@ header.masthead-alt h1, header.masthead-alt .h1 {
   padding-inline: 1.5rem;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 4; /* number of lines to show */
-  line-clamp: 4;
+  -webkit-line-clamp: 7; /* number of lines to show */
+  line-clamp: 7;
   -webkit-box-orient: vertical;
 }

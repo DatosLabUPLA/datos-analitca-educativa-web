@@ -78,11 +78,34 @@ window.addEventListener('DOMContentLoaded', event => {
     // URL API
     const baseUrl = 'https://api.datoseducativos.cl';
     const projectsUrl = baseUrl + '/projects';
+    const homeUrl = baseUrl + '/home';
 
     // Si la url es la url base
     if (window.location.pathname == '/') {
         // Muestra el spinner
         document.getElementById('loader-projects').style.display = 'block';
+
+        // Procesa Datos Home
+        fetch(homeUrl)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Error al obtener datos de la API');
+            }
+        })
+        .then(data => {
+            // Procesa los datos y genera el HTML
+            document.getElementById('titulo_principal').innerHTML = data.TITULO_PRINCIPAL;
+            document.getElementById('sub_titulo_principal').innerHTML = data.SUB_TITULO_PRINCIPAL;
+            document.getElementById('titulo_secundario').innerHTML = data.TITULO_SECUNDARIO;
+            document.getElementById('sub_titulo_secundario').innerHTML = data.SUB_TITULO_SECUNDARIO;
+            document.getElementById('titulo_contacto').innerHTML = data.TITULO_CONTACTO;
+            document.getElementById('sub_titulo_contacto').innerHTML = data.SUB_TITULO_CONTACTO;
+        })
+        .catch(error => {
+            console.error('Error al procesar la API:', error);
+        })
 
         // Procesa Proyectos
         fetch(projectsUrl)
