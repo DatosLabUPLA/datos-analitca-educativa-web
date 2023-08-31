@@ -130,17 +130,8 @@ window.addEventListener('DOMContentLoaded', event => {
                                 <div class="project-category text-white-50">
                                     ${item.tipo}
                                 </div>
-                                <div class="project-name">
-                                    ${item.proyecto} 
-                                </div>
-                                <div class="project-name">
-                                    ${item.anio}
-                                </div>
                                 <p class="project-description">
                                     ${item.descripcion}
-                                </p>
-                                <p class="project-persona_a_cargo">
-                                    <i>${item.persona_a_cargo}</i>
                                 </p>
                             </div>
                         </a>
