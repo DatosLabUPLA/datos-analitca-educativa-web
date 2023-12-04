@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 600px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "lightgray", "id": " competencias", "label": " competencias (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " c\u00f3mo", "label": " c\u00f3mo (5)", "shape": "dot", "value": 5}, {"color": "lightgray", "id": " propuesta", "label": " propuesta (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " secundaria", "label": " secundaria (5)", "shape": "dot", "value": 5}, {"color": "lightgray", "id": " avances", "label": " avances (2)", "shape": "dot", "value": 2}, {"color": "purple", "id": " trabajo", "label": " trabajo (9)", "shape": "dot", "value": 9}, {"color": "lightgray", "id": " investigaci\u00f3n", "label": " investigaci\u00f3n (4)", "shape": "dot", "value": 4}, {"color": "lightgray", "id": " geom\u00e9trico", "label": " geom\u00e9trico (2)", "shape": "dot", "value": 2}, {"color": "purple", "id": " profesores", "label": " profesores (14)", "shape": "dot", "value": 14}, {"color": "lightgray", "id": " habilidades", "label": " habilidades (2)", "shape": "dot", "value": 2}, {"color": "purple", "id": " ense\u00f1anza", "label": " ense\u00f1anza (16)", "shape": "dot", "value": 16}, {"color": "purple", "id": " formaci\u00f3n", "label": " formaci\u00f3n (14)", "shape": "dot", "value": 14}, {"color": "purple", "id": "an\u00e1lisis", "label": "an\u00e1lisis (8)", "shape": "dot", "value": 8}, {"color": "purple", "id": " docente", "label": " docente (12)", "shape": "dot", "value": 12}, {"color": "lightgray", "id": " recursos", "label": " recursos (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " pedagog\u00eda", "label": " pedagog\u00eda (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": "construcci\u00f3n", "label": "construcci\u00f3n (4)", "shape": "dot", "value": 4}, {"color": "purple", "id": " estudiantes", "label": " estudiantes (23)", "shape": "dot", "value": 23}, {"color": "lightgray", "id": " caracterizaci\u00f3n", "label": " caracterizaci\u00f3n (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": "espectro", "label": "espectro (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " autista", "label": " autista (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " regi\u00f3n", "label": " regi\u00f3n (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " efectos", "label": " efectos (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " programaci\u00f3n", "label": " programaci\u00f3n (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " artificial", "label": " artificial (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " desaf\u00edos", "label": " desaf\u00edos (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " inteligencia", "label": " inteligencia (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " oportunidades", "label": " oportunidades (2)", "shape": "dot", "value": 2}, {"color": "purple", "id": " b\u00e1sica", "label": " b\u00e1sica (11)", "shape": "dot", "value": 11}, {"color": "purple", "id": " matem\u00e1tico", "label": " matem\u00e1tico (12)", "shape": "dot", "value": 12}, {"color": "purple", "id": " conocimiento", "label": " conocimiento (7)", "shape": "dot", "value": 7}, {"color": "purple", "id": " contexto", "label": " contexto (7)", "shape": "dot", "value": 7}, {"color": "lightgray", "id": " sordos", "label": " sordos (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " ciudadana", "label": " ciudadana (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " clase", "label": " clase (5)", "shape": "dot", "value": 5}, {"color": "lightgray", "id": " algebraico", "label": " algebraico (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " ni\u00f1os", "label": " ni\u00f1os (4)", "shape": "dot", "value": 4}, {"color": "purple", "id": " estudio", "label": " estudio (12)", "shape": "dot", "value": 12}, {"color": "lightgray", "id": " atender", "label": " atender (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " video", "label": " video (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " primaria", "label": " primaria (6)", "shape": "dot", "value": 6}, {"color": "lightgray", "id": " pensamiento", "label": " pensamiento (6)", "shape": "dot", "value": 6}, {"color": "lightgray", "id": " experiencias", "label": " experiencias (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " did\u00e1cticas", "label": " did\u00e1cticas (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " situaciones", "label": " situaciones (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " proceso", "label": " proceso (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " teor\u00eda", "label": " teor\u00eda (4)", "shape": "dot", "value": 4}, {"color": "purple", "id": " modelaci\u00f3n", "label": " modelaci\u00f3n (8)", "shape": "dot", "value": 8}, {"color": "lightgray", "id": " promover", "label": " promover (2)", "shape": "dot", "value": 2}, {"color": "purple", "id": " aula", "label": " aula (9)", "shape": "dot", "value": 9}, {"color": "purple", "id": " tareas", "label": " tareas (7)", "shape": "dot", "value": 7}, {"color": "lightgray", "id": " propuestas", "label": " propuestas (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " libro", "label": " libro (3)", "shape": "dot", "value": 3}, {"color": "purple", "id": " texto", "label": " texto (7)", "shape": "dot", "value": 7}, {"color": "lightgray", "id": " actitud", "label": " actitud (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " tercero", "label": " tercero (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " b\u00e1sico", "label": " b\u00e1sico (6)", "shape": "dot", "value": 6}, {"color": "lightgray", "id": "juego", "label": "juego (6)", "shape": "dot", "value": 6}, {"color": "lightgray", "id": " situaci\u00f3n", "label": " situaci\u00f3n (5)", "shape": "dot", "value": 5}, {"color": "lightgray", "id": " did\u00e1ctica", "label": " did\u00e1ctica (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " an\u00e1lisis", "label": " an\u00e1lisis (5)", "shape": "dot", "value": 5}, {"color": "lightgray", "id": " aplicaci\u00f3n", "label": " aplicaci\u00f3n (2)", "shape": "dot", "value": 2}, {"color": "purple", "id": " experiencia", "label": " experiencia (8)", "shape": "dot", "value": 8}, {"color": "lightgray", "id": "tercer", "label": "tercer (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " espacio", "label": " espacio (4)", "shape": "dot", "value": 4}, {"color": "lightgray", "id": " resoluci\u00f3n", "label": " resoluci\u00f3n (5)", "shape": "dot", "value": 5}, {"color": "lightgray", "id": " aulas", "label": " aulas (3)", "shape": "dot", "value": 3}, {"color": "purple", "id": " problemas", "label": " problemas (9)", "shape": "dot", "value": 9}, {"color": "lightgray", "id": " chilenas", "label": " chilenas (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " habilidad", "label": " habilidad (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " medio", "label": " medio (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " representaci\u00f3n", "label": " representaci\u00f3n (4)", "shape": "dot", "value": 4}, {"color": "lightgray", "id": " b\u00e1sicas", "label": " b\u00e1sicas (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " nociones", "label": " nociones (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " comprensi\u00f3n", "label": " comprensi\u00f3n (4)", "shape": "dot", "value": 4}, {"color": "lightgray", "id": " funci\u00f3n", "label": " funci\u00f3n (5)", "shape": "dot", "value": 5}, {"color": "lightgray", "id": "revisi\u00f3n", "label": "revisi\u00f3n (5)", "shape": "dot", "value": 5}, {"color": "lightgray", "id": " sistem\u00e1tica", "label": " sistem\u00e1tica (5)", "shape": "dot", "value": 5}, {"color": "lightgray", "id": " programa", "label": " programa (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": "gr\u00e1ficos", "label": "gr\u00e1ficos (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " trav\u00e9s", "label": " trav\u00e9s (5)", "shape": "dot", "value": 5}, {"color": "lightgray", "id": " 4", "label": " 4 (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " elementos", "label": " elementos (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " 5", "label": " 5 (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " a\u00f1os", "label": " a\u00f1os (4)", "shape": "dot", "value": 4}, {"color": "lightgray", "id": "modelaci\u00f3n", "label": "modelaci\u00f3n (2)", "shape": "dot", "value": 2}, {"color": "purple", "id": " estad\u00edstica", "label": " estad\u00edstica (8)", "shape": "dot", "value": 8}, {"color": "lightgray", "id": " relaci\u00f3n", "label": " relaci\u00f3n (4)", "shape": "dot", "value": 4}, {"color": "lightgray", "id": " niveles", "label": " niveles (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " actividades", "label": " actividades (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": "ejercicio", "label": "ejercicio (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " caso", "label": " caso (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " funciones", "label": " funciones (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " chile", "label": " chile (5)", "shape": "dot", "value": 5}, {"color": "lightgray", "id": " validaci\u00f3n", "label": " validaci\u00f3n (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " teorema", "label": " teorema (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": "lineal", "label": "lineal (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " \u00e1lgebra", "label": " \u00e1lgebra (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " interacci\u00f3n", "label": " interacci\u00f3n (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": "evaluaci\u00f3n", "label": "evaluaci\u00f3n (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " inicial", "label": " inicial (6)", "shape": "dot", "value": 6}, {"color": "lightgray", "id": " colisi\u00f3n", "label": " colisi\u00f3n (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " inel\u00e1stica", "label": " inel\u00e1stica (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " tecnolog\u00edas", "label": " tecnolog\u00edas (2)", "shape": "dot", "value": 2}, {"color": "purple", "id": " aprendizaje", "label": " aprendizaje (10)", "shape": "dot", "value": 10}, {"color": "lightgray", "id": " informal", "label": " informal (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " se\u00f1as", "label": " se\u00f1as (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": "estudiantes", "label": "estudiantes (5)", "shape": "dot", "value": 5}, {"color": "lightgray", "id": " lengua", "label": " lengua (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": "hacia", "label": "hacia (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " futuros", "label": " futuros (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " chilenos", "label": " chilenos (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " profesional", "label": " profesional (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " modelo", "label": " modelo (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " desarrollo", "label": " desarrollo (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " profesor", "label": " profesor (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " desviaci\u00f3n", "label": " desviaci\u00f3n (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " parvularia", "label": " parvularia (4)", "shape": "dot", "value": 4}, {"color": "lightgray", "id": " af\u00edn", "label": " af\u00edn (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " mirada", "label": " mirada (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " bajo", "label": " bajo (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " libros", "label": " libros (6)", "shape": "dot", "value": 6}, {"color": "lightgray", "id": " concepciones", "label": " concepciones (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " clases", "label": " clases (6)", "shape": "dot", "value": 6}, {"color": "purple", "id": " medium", "label": " medium (7)", "shape": "dot", "value": 7}, {"color": "lightgray", "id": " evaluaci\u00f3n", "label": " evaluaci\u00f3n (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " geogebra", "label": " geogebra (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " lenguaje", "label": " lenguaje (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " comunidad", "label": " comunidad (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " equipos", "label": " equipos (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " competencia", "label": " competencia (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " modelamiento", "label": " modelamiento (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " educadoras", "label": " educadoras (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " p\u00e1rvulos", "label": " p\u00e1rvulos (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " tr\u00e1nsito", "label": " tr\u00e1nsito (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " geometr\u00eda", "label": " geometr\u00eda (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " dise\u00f1o", "label": " dise\u00f1o (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " percepci\u00f3n", "label": " percepci\u00f3n (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " aporte", "label": " aporte (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " formativo", "label": " formativo (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " nivel", "label": " nivel (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " material", "label": " material (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " datos", "label": " datos (4)", "shape": "dot", "value": 4}, {"color": "lightgray", "id": " inclusi\u00f3n", "label": " inclusi\u00f3n (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " realidad", "label": " realidad (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " construcci\u00f3n", "label": " construcci\u00f3n (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " derivada", "label": " derivada (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": "medio", "label": "medio (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " escolares", "label": " escolares (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " textos", "label": " textos (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " escolar", "label": " escolar (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": "impacto", "label": "impacto (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " introducci\u00f3n", "label": " introducci\u00f3n (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " integrando", "label": " integrando (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " segundo", "label": " segundo (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " instrumento", "label": " instrumento (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": "estrategias", "label": "estrategias (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " tarea", "label": " tarea (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " infantil", "label": " infantil (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " funcional", "label": " funcional (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " dado", "label": " dado (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " cargados", "label": " cargados (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " argumentaciones", "label": " argumentaciones (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": "docentes", "label": "docentes (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " taller", "label": " taller (4)", "shape": "dot", "value": 4}, {"color": "lightgray", "id": " perspectiva", "label": " perspectiva (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " estad\u00edsticos", "label": " estad\u00edsticos (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": "dise\u00f1o", "label": "dise\u00f1o (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " concepto", "label": " concepto (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " ortogonales", "label": " ortogonales (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " adultos", "label": " adultos (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " secuencia", "label": " secuencia (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " financiera", "label": " financiera (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " matem\u00e1ticos", "label": " matem\u00e1ticos (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " enfoque", "label": " enfoque (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " probabilidad", "label": " probabilidad (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " lineales", "label": " lineales (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " diversidad", "label": " diversidad (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": "experimentaci\u00f3n", "label": "experimentaci\u00f3n (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " mediante", "label": " mediante (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " razonamiento", "label": " razonamiento (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " curriculares", "label": " curriculares (2)", "shape": "dot", "value": 2}, {"color": "lightgray", "id": " argumentaci\u00f3n", "label": " argumentaci\u00f3n (4)", "shape": "dot", "value": 4}, {"color": "lightgray", "id": " ense\u00f1ar", "label": " ense\u00f1ar (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " ", "label": "  (3)", "shape": "dot", "value": 3}, {"color": "lightgray", "id": " g\u00e9nero", "label": " g\u00e9nero (2)", "shape": "dot", "value": 2}]);
+                  edges = new vis.DataSet([{"color": "lightgray", "from": " secundaria", "label": "2", "to": " funci\u00f3n", "width": 2}, {"color": "purple", "from": " trabajo", "label": "5", "to": " matem\u00e1tico", "width": 5}, {"color": "lightgray", "from": " trabajo", "label": "3", "to": " espacio", "width": 3}, {"color": "lightgray", "from": " trabajo", "label": "2", "to": " estudiantes", "width": 2}, {"color": "lightgray", "from": " trabajo", "label": "2", "to": " aprendizaje", "width": 2}, {"color": "lightgray", "from": " trabajo", "label": "2", "to": "an\u00e1lisis", "width": 2}, {"color": "lightgray", "from": " profesores", "label": "3", "to": " estudio", "width": 3}, {"color": "lightgray", "from": " profesores", "label": "2", "to": " primaria", "width": 2}, {"color": "purple", "from": " profesores", "label": "5", "to": " formaci\u00f3n", "width": 5}, {"color": "lightgray", "from": " profesores", "label": "3", "to": " modelaci\u00f3n", "width": 3}, {"color": "lightgray", "from": " profesores", "label": "2", "to": " tareas", "width": 2}, {"color": "lightgray", "from": " profesores", "label": "2", "to": "ejercicio", "width": 2}, {"color": "lightgray", "from": " ense\u00f1anza", "label": "4", "to": " estudiantes", "width": 4}, {"color": "lightgray", "from": " ense\u00f1anza", "label": "3", "to": " contexto", "width": 3}, {"color": "lightgray", "from": " ense\u00f1anza", "label": "2", "to": " sordos", "width": 2}, {"color": "lightgray", "from": " ense\u00f1anza", "label": "2", "to": " tareas", "width": 2}, {"color": "lightgray", "from": " ense\u00f1anza", "label": "2", "to": " funciones", "width": 2}, {"color": "lightgray", "from": " ense\u00f1anza", "label": "3", "to": " medium", "width": 3}, {"color": "lightgray", "from": " ense\u00f1anza", "label": "2", "to": "juego", "width": 2}, {"color": "lightgray", "from": " ense\u00f1anza", "label": "3", "to": " aprendizaje", "width": 3}, {"color": "lightgray", "from": " ense\u00f1anza", "label": "2", "to": " inicial", "width": 2}, {"color": "lightgray", "from": " ense\u00f1anza", "label": "2", "to": " ortogonales", "width": 2}, {"color": "purple", "from": " formaci\u00f3n", "label": "7", "to": " docente", "width": 7}, {"color": "lightgray", "from": " formaci\u00f3n", "label": "3", "to": " modelaci\u00f3n", "width": 3}, {"color": "lightgray", "from": " formaci\u00f3n", "label": "4", "to": " inicial", "width": 4}, {"color": "lightgray", "from": " formaci\u00f3n", "label": "2", "to": " colisi\u00f3n", "width": 2}, {"color": "lightgray", "from": " formaci\u00f3n", "label": "2", "to": " inel\u00e1stica", "width": 2}, {"color": "lightgray", "from": " formaci\u00f3n", "label": "2", "to": " experiencia", "width": 2}, {"color": "lightgray", "from": "an\u00e1lisis", "label": "2", "to": " libros", "width": 2}, {"color": "lightgray", "from": "an\u00e1lisis", "label": "2", "to": " texto", "width": 2}, {"color": "lightgray", "from": "an\u00e1lisis", "label": "2", "to": " b\u00e1sico", "width": 2}, {"color": "lightgray", "from": "an\u00e1lisis", "label": "2", "to": " matem\u00e1tico", "width": 2}, {"color": "lightgray", "from": "an\u00e1lisis", "label": "2", "to": " primaria", "width": 2}, {"color": "lightgray", "from": " docente", "label": "3", "to": " modelaci\u00f3n", "width": 3}, {"color": "lightgray", "from": " docente", "label": "2", "to": "evaluaci\u00f3n", "width": 2}, {"color": "lightgray", "from": " docente", "label": "3", "to": " inicial", "width": 3}, {"color": "lightgray", "from": " docente", "label": "2", "to": " colisi\u00f3n", "width": 2}, {"color": "lightgray", "from": " docente", "label": "2", "to": " inel\u00e1stica", "width": 2}, {"color": "lightgray", "from": " docente", "label": "2", "to": " experiencia", "width": 2}, {"color": "lightgray", "from": " docente", "label": "3", "to": " profesional", "width": 3}, {"color": "lightgray", "from": " docente", "label": "2", "to": " chile", "width": 2}, {"color": "lightgray", "from": " docente", "label": "2", "to": " desarrollo", "width": 2}, {"color": "lightgray", "from": " docente", "label": "2", "to": " programa", "width": 2}, {"color": "lightgray", "from": " docente", "label": "2", "to": " aprendizaje", "width": 2}, {"color": "lightgray", "from": " docente", "label": "2", "to": " estudiantes", "width": 2}, {"color": "lightgray", "from": "construcci\u00f3n", "label": "2", "to": " medium", "width": 2}, {"color": "lightgray", "from": " estudiantes", "label": "3", "to": " matem\u00e1tico", "width": 3}, {"color": "lightgray", "from": " estudiantes", "label": "4", "to": " contexto", "width": 4}, {"color": "lightgray", "from": " estudiantes", "label": "2", "to": " sordos", "width": 2}, {"color": "lightgray", "from": " estudiantes", "label": "2", "to": " actitud", "width": 2}, {"color": "lightgray", "from": " estudiantes", "label": "2", "to": " tercero", "width": 2}, {"color": "lightgray", "from": " estudiantes", "label": "2", "to": " b\u00e1sico", "width": 2}, {"color": "lightgray", "from": " estudiantes", "label": "2", "to": " resoluci\u00f3n", "width": 2}, {"color": "lightgray", "from": " estudiantes", "label": "2", "to": " problemas", "width": 2}, {"color": "lightgray", "from": " estudiantes", "label": "2", "to": " aprendizaje", "width": 2}, {"color": "lightgray", "from": " estudiantes", "label": "2", "to": " adultos", "width": 2}, {"color": "lightgray", "from": " estudiantes", "label": "2", "to": " enfoque", "width": 2}, {"color": "lightgray", "from": "espectro", "label": "2", "to": " autista", "width": 2}, {"color": "lightgray", "from": " artificial", "label": "2", "to": " inteligencia", "width": 2}, {"color": "lightgray", "from": " desaf\u00edos", "label": "2", "to": " oportunidades", "width": 2}, {"color": "lightgray", "from": " b\u00e1sica", "label": "2", "to": " parvularia", "width": 2}, {"color": "lightgray", "from": " b\u00e1sica", "label": "2", "to": " libros", "width": 2}, {"color": "lightgray", "from": " b\u00e1sica", "label": "2", "to": " texto", "width": 2}, {"color": "lightgray", "from": " b\u00e1sica", "label": "2", "to": " problemas", "width": 2}, {"color": "lightgray", "from": " b\u00e1sica", "label": "2", "to": " clases", "width": 2}, {"color": "lightgray", "from": " matem\u00e1tico", "label": "2", "to": " conocimiento", "width": 2}, {"color": "lightgray", "from": " matem\u00e1tico", "label": "2", "to": " contexto", "width": 2}, {"color": "lightgray", "from": " matem\u00e1tico", "label": "2", "to": " sordos", "width": 2}, {"color": "lightgray", "from": " matem\u00e1tico", "label": "4", "to": " espacio", "width": 4}, {"color": "lightgray", "from": " matem\u00e1tico", "label": "2", "to": " estudio", "width": 2}, {"color": "lightgray", "from": " matem\u00e1tico", "label": "2", "to": " modelamiento", "width": 2}, {"color": "lightgray", "from": " matem\u00e1tico", "label": "2", "to": " aprendizaje", "width": 2}, {"color": "lightgray", "from": " conocimiento", "label": "2", "to": " profesor", "width": 2}, {"color": "lightgray", "from": " contexto", "label": "2", "to": " escolar", "width": 2}, {"color": "lightgray", "from": " sordos", "label": "2", "to": " se\u00f1as", "width": 2}, {"color": "lightgray", "from": " sordos", "label": "2", "to": " lengua", "width": 2}, {"color": "lightgray", "from": " algebraico", "label": "2", "to": " pensamiento", "width": 2}, {"color": "lightgray", "from": " ni\u00f1os", "label": "3", "to": " a\u00f1os", "width": 3}, {"color": "lightgray", "from": " estudio", "label": "2", "to": " pensamiento", "width": 2}, {"color": "lightgray", "from": " estudio", "label": "2", "to": "lineal", "width": 2}, {"color": "lightgray", "from": " estudio", "label": "2", "to": " chile", "width": 2}, {"color": "lightgray", "from": " estudio", "label": "2", "to": " caso", "width": 2}, {"color": "lightgray", "from": " estudio", "label": "2", "to": " mirada", "width": 2}, {"color": "lightgray", "from": " estudio", "label": "2", "to": " b\u00e1sico", "width": 2}, {"color": "lightgray", "from": " estudio", "label": "2", "to": " clases", "width": 2}, {"color": "lightgray", "from": " video", "label": "2", "to": " aula", "width": 2}, {"color": "lightgray", "from": " did\u00e1cticas", "label": "3", "to": " situaciones", "width": 3}, {"color": "lightgray", "from": " did\u00e1cticas", "label": "3", "to": " teor\u00eda", "width": 3}, {"color": "lightgray", "from": " situaciones", "label": "3", "to": " teor\u00eda", "width": 3}, {"color": "lightgray", "from": " teor\u00eda", "label": "2", "to": " an\u00e1lisis", "width": 2}, {"color": "lightgray", "from": " teor\u00eda", "label": "2", "to": " bajo", "width": 2}, {"color": "lightgray", "from": " modelaci\u00f3n", "label": "2", "to": " inicial", "width": 2}, {"color": "lightgray", "from": " modelaci\u00f3n", "label": "3", "to": " colisi\u00f3n", "width": 3}, {"color": "lightgray", "from": " modelaci\u00f3n", "label": "3", "to": " inel\u00e1stica", "width": 3}, {"color": "lightgray", "from": " modelaci\u00f3n", "label": "2", "to": " experiencia", "width": 2}, {"color": "lightgray", "from": " modelaci\u00f3n", "label": "2", "to": " tecnolog\u00edas", "width": 2}, {"color": "lightgray", "from": " modelaci\u00f3n", "label": "2", "to": " problemas", "width": 2}, {"color": "lightgray", "from": " modelaci\u00f3n", "label": "2", "to": "experimentaci\u00f3n", "width": 2}, {"color": "lightgray", "from": " modelaci\u00f3n", "label": "2", "to": " taller", "width": 2}, {"color": "lightgray", "from": " aula", "label": "2", "to": " experiencia", "width": 2}, {"color": "lightgray", "from": " tareas", "label": "2", "to": " propuestas", "width": 2}, {"color": "lightgray", "from": " tareas", "label": "2", "to": " texto", "width": 2}, {"color": "lightgray", "from": " tareas", "label": "2", "to": "dise\u00f1o", "width": 2}, {"color": "lightgray", "from": " tareas", "label": "2", "to": " concepto", "width": 2}, {"color": "lightgray", "from": " tareas", "label": "2", "to": " medium", "width": 2}, {"color": "lightgray", "from": " libro", "label": "2", "to": " habilidad", "width": 2}, {"color": "lightgray", "from": " texto", "label": "2", "to": "lineal", "width": 2}, {"color": "lightgray", "from": " texto", "label": "2", "to": " funci\u00f3n", "width": 2}, {"color": "lightgray", "from": " texto", "label": "2", "to": " af\u00edn", "width": 2}, {"color": "lightgray", "from": " texto", "label": "2", "to": " b\u00e1sico", "width": 2}, {"color": "purple", "from": " texto", "label": "5", "to": " libros", "width": 5}, {"color": "lightgray", "from": " tercero", "label": "2", "to": " b\u00e1sico", "width": 2}, {"color": "lightgray", "from": " b\u00e1sico", "label": "2", "to": " libros", "width": 2}, {"color": "lightgray", "from": "juego", "label": "2", "to": " dado", "width": 2}, {"color": "lightgray", "from": "juego", "label": "2", "to": " cargados", "width": 2}, {"color": "lightgray", "from": "juego", "label": "2", "to": " argumentaciones", "width": 2}, {"color": "lightgray", "from": " situaci\u00f3n", "label": "2", "to": " did\u00e1ctica", "width": 2}, {"color": "lightgray", "from": " experiencia", "label": "2", "to": " inicial", "width": 2}, {"color": "lightgray", "from": " experiencia", "label": "2", "to": " colisi\u00f3n", "width": 2}, {"color": "lightgray", "from": " experiencia", "label": "2", "to": " inel\u00e1stica", "width": 2}, {"color": "lightgray", "from": " resoluci\u00f3n", "label": "4", "to": " problemas", "width": 4}, {"color": "lightgray", "from": " medio", "label": "2", "to": " segundo", "width": 2}, {"color": "lightgray", "from": " b\u00e1sicas", "label": "2", "to": " nociones", "width": 2}, {"color": "lightgray", "from": " comprensi\u00f3n", "label": "2", "to": "dise\u00f1o", "width": 2}, {"color": "lightgray", "from": " funci\u00f3n", "label": "2", "to": "lineal", "width": 2}, {"color": "lightgray", "from": " funci\u00f3n", "label": "2", "to": " af\u00edn", "width": 2}, {"color": "lightgray", "from": "revisi\u00f3n", "label": "4", "to": " sistem\u00e1tica", "width": 4}, {"color": "lightgray", "from": " 5", "label": "2", "to": " a\u00f1os", "width": 2}, {"color": "lightgray", "from": " estad\u00edstica", "label": "2", "to": " aprendizaje", "width": 2}, {"color": "lightgray", "from": " estad\u00edstica", "label": "2", "to": " informal", "width": 2}, {"color": "lightgray", "from": " caso", "label": "2", "to": " funciones", "width": 2}, {"color": "lightgray", "from": " chile", "label": "2", "to": " libros", "width": 2}, {"color": "lightgray", "from": "lineal", "label": "2", "to": " af\u00edn", "width": 2}, {"color": "lightgray", "from": " inicial", "label": "2", "to": " colisi\u00f3n", "width": 2}, {"color": "lightgray", "from": " inicial", "label": "2", "to": " inel\u00e1stica", "width": 2}, {"color": "lightgray", "from": " colisi\u00f3n", "label": "3", "to": " inel\u00e1stica", "width": 3}, {"color": "lightgray", "from": " colisi\u00f3n", "label": "2", "to": " tecnolog\u00edas", "width": 2}, {"color": "lightgray", "from": " colisi\u00f3n", "label": "2", "to": "experimentaci\u00f3n", "width": 2}, {"color": "lightgray", "from": " inel\u00e1stica", "label": "2", "to": " tecnolog\u00edas", "width": 2}, {"color": "lightgray", "from": " inel\u00e1stica", "label": "2", "to": "experimentaci\u00f3n", "width": 2}, {"color": "lightgray", "from": " aprendizaje", "label": "2", "to": " bajo", "width": 2}, {"color": "lightgray", "from": " aprendizaje", "label": "2", "to": " curriculares", "width": 2}, {"color": "lightgray", "from": " se\u00f1as", "label": "2", "to": " lengua", "width": 2}, {"color": "lightgray", "from": " profesional", "label": "2", "to": " desarrollo", "width": 2}, {"color": "lightgray", "from": " clases", "label": "2", "to": " secuencia", "width": 2}, {"color": "lightgray", "from": " educadoras", "label": "2", "to": " p\u00e1rvulos", "width": 2}, {"color": "lightgray", "from": " construcci\u00f3n", "label": "2", "to": " instrumento", "width": 2}, {"color": "lightgray", "from": " escolares", "label": "3", "to": " textos", "width": 3}, {"color": "lightgray", "from": "estrategias", "label": "2", "to": " tarea", "width": 2}, {"color": "lightgray", "from": "estrategias", "label": "2", "to": " funcional", "width": 2}, {"color": "lightgray", "from": " tarea", "label": "2", "to": " funcional", "width": 2}, {"color": "lightgray", "from": " dado", "label": "2", "to": " cargados", "width": 2}, {"color": "lightgray", "from": " dado", "label": "2", "to": " argumentaciones", "width": 2}, {"color": "lightgray", "from": " cargados", "label": "2", "to": " argumentaciones", "width": 2}, {"color": "lightgray", "from": " argumentaciones", "label": "2", "to": " probabilidad", "width": 2}, {"color": "lightgray", "from": " perspectiva", "label": "2", "to": " estad\u00edsticos", "width": 2}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
