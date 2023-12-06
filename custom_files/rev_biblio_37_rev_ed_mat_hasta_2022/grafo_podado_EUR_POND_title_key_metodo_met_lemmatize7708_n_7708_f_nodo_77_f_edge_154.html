@@ -1,0 +1,258 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 600px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#93bf85", "id": "secondary", "label": "secondary (4.3%)", "shape": "dot", "size": 10, "value": 4.3}, {"color": "#93bf85", "id": "school", "label": "school (8.8%)", "shape": "dot", "size": 10, "value": 8.8}, {"color": "purple", "id": "solving", "label": "solving (3.9%)", "shape": "dot", "size": 10, "value": 3.9}, {"color": "purple", "id": "problem", "label": "problem (7.2%)", "shape": "dot", "size": 10, "value": 7.2}, {"color": "green", "id": "teaching", "label": "teaching (12.1%)", "shape": "dot", "size": 10, "value": 12.1}, {"color": "green", "id": "teacher", "label": "teacher (14.1%)", "shape": "dot", "size": 10, "value": 14.1}, {"color": "green", "id": "learning", "label": "learning (12.2%)", "shape": "dot", "size": 10, "value": 12.2}, {"color": "green", "id": "student", "label": "student (15.4%)", "shape": "dot", "size": 10, "value": 15.4}, {"color": "#93bf85", "id": "primary", "label": "primary (4.2%)", "shape": "dot", "size": 10, "value": 4.2}, {"color": "green", "id": "development", "label": "development (5.6%)", "shape": "dot", "size": 10, "value": 5.6}, {"color": "green", "id": "professional", "label": "professional (3.1%)", "shape": "dot", "size": 10, "value": 3.1}, {"color": "purple", "id": "knowledge", "label": "knowledge (6.0%)", "shape": "dot", "size": 10, "value": 6.0}, {"color": "green", "id": "preservice", "label": "preservice (2.0%)", "shape": "dot", "size": 10, "value": 2.0}, {"color": "#eaf2fe", "id": "new", "label": "new (1.2%)", "shape": "dot", "size": 10, "value": 1.2}, {"color": "orange", "id": "equation", "label": "equation (2.2%)", "shape": "dot", "size": 10, "value": 2.2}, {"color": "#eaf2fe", "id": "analysis", "label": "analysis (5.9%)", "shape": "dot", "size": 10, "value": 5.9}, {"color": "purple", "id": "curriculum", "label": "curriculum (2.5%)", "shape": "dot", "size": 10, "value": 2.5}, {"color": "#eaf2fe", "id": "effect", "label": "effect (1.6%)", "shape": "dot", "size": 10, "value": 1.6}, {"color": "#eaf2fe", "id": "role", "label": "role (2.4%)", "shape": "dot", "size": 10, "value": 2.4}, {"color": "orange", "id": "number", "label": "number (3.4%)", "shape": "dot", "size": 10, "value": 3.4}, {"color": "#eaf2fe", "id": "working", "label": "working (1.2%)", "shape": "dot", "size": 10, "value": 1.2}, {"color": "purple", "id": "technology", "label": "technology (2.6%)", "shape": "dot", "size": 10, "value": 2.6}, {"color": "#eaf2fe", "id": "year", "label": "year (1.3%)", "shape": "dot", "size": 10, "value": 1.3}, {"color": "purple", "id": "proof", "label": "proof (2.5%)", "shape": "dot", "size": 10, "value": 2.5}, {"color": "purple", "id": "conception", "label": "conception (1.5%)", "shape": "dot", "size": 10, "value": 1.5}, {"color": "green", "id": "understanding", "label": "understanding (3.5%)", "shape": "dot", "size": 10, "value": 3.5}, {"color": "purple", "id": "task", "label": "task (3.3%)", "shape": "dot", "size": 10, "value": 3.3}, {"color": "#eaf2fe", "id": "application", "label": "application (1.4%)", "shape": "dot", "size": 10, "value": 1.4}, {"color": "#eaf2fe", "id": "framework", "label": "framework (1.3%)", "shape": "dot", "size": 10, "value": 1.3}, {"color": "purple", "id": "meaning", "label": "meaning (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "purple", "id": "concept", "label": "concept (3.1%)", "shape": "dot", "size": 10, "value": 3.1}, {"color": "#eaf2fe", "id": "comparison", "label": "comparison (1.1%)", "shape": "dot", "size": 10, "value": 1.1}, {"color": "green", "id": "reasoning", "label": "reasoning (3.6%)", "shape": "dot", "size": 10, "value": 3.6}, {"color": "purple", "id": "perception", "label": "perception (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "#eaf2fe", "id": "work", "label": "work (1.5%)", "shape": "dot", "size": 10, "value": 1.5}, {"color": "#eaf2fe", "id": "level", "label": "level (2.0%)", "shape": "dot", "size": 10, "value": 2.0}, {"color": "orange", "id": "statistic", "label": "statistic (1.4%)", "shape": "dot", "size": 10, "value": 1.4}, {"color": "orange", "id": "algebra", "label": "algebra (2.5%)", "shape": "dot", "size": 10, "value": 2.5}, {"color": "#eaf2fe", "id": "zur", "label": "zur (1.4%)", "shape": "dot", "size": 10, "value": 1.4}, {"color": "#eaf2fe", "id": "difficulty", "label": "difficulty (1.1%)", "shape": "dot", "size": 10, "value": 1.1}, {"color": "orange", "id": "theorem", "label": "theorem (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "#eaf2fe", "id": "process", "label": "process (3.0%)", "shape": "dot", "size": 10, "value": 3.0}, {"color": "#eaf2fe", "id": "comparative", "label": "comparative (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "purple", "id": "digital", "label": "digital (1.4%)", "shape": "dot", "size": 10, "value": 1.4}, {"color": "#eaf2fe", "id": "data", "label": "data (1.1%)", "shape": "dot", "size": 10, "value": 1.1}, {"color": "orange", "id": "arithmetic", "label": "arithmetic (1.5%)", "shape": "dot", "size": 10, "value": 1.5}, {"color": "#eaf2fe", "id": "model", "label": "model (4.0%)", "shape": "dot", "size": 10, "value": 4.0}, {"color": "orange", "id": "geometry", "label": "geometry (3.0%)", "shape": "dot", "size": 10, "value": 3.0}, {"color": "purple", "id": "history", "label": "history (1.2%)", "shape": "dot", "size": 10, "value": 1.2}, {"color": "#eaf2fe", "id": "child", "label": "child (1.8%)", "shape": "dot", "size": 10, "value": 1.8}, {"color": "#eaf2fe", "id": "using", "label": "using (3.6%)", "shape": "dot", "size": 10, "value": 3.6}, {"color": "#eaf2fe", "id": "educational", "label": "educational (1.7%)", "shape": "dot", "size": 10, "value": 1.7}, {"color": "#eaf2fe", "id": "word", "label": "word (1.2%)", "shape": "dot", "size": 10, "value": 1.2}, {"color": "#eaf2fe", "id": "exploring", "label": "exploring (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "#eaf2fe", "id": "investigation", "label": "investigation (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "purple", "id": "modelling", "label": "modelling (3.9%)", "shape": "dot", "size": 10, "value": 3.9}, {"color": "#eaf2fe", "id": "und", "label": "und (2.4%)", "shape": "dot", "size": 10, "value": 2.4}, {"color": "purple", "id": "attitude", "label": "attitude (1.5%)", "shape": "dot", "size": 10, "value": 1.5}, {"color": "#eaf2fe", "id": "der", "label": "der (2.6%)", "shape": "dot", "size": 10, "value": 2.6}, {"color": "#eaf2fe", "id": "developing", "label": "developing (1.1%)", "shape": "dot", "size": 10, "value": 1.1}, {"color": "#eaf2fe", "id": "course", "label": "course (1.9%)", "shape": "dot", "size": 10, "value": 1.9}, {"color": "#eaf2fe", "id": "design", "label": "design (3.2%)", "shape": "dot", "size": 10, "value": 3.2}, {"color": "purple", "id": "computer", "label": "computer (2.5%)", "shape": "dot", "size": 10, "value": 2.5}, {"color": "#eaf2fe", "id": "theory", "label": "theory (4.4%)", "shape": "dot", "size": 10, "value": 4.4}, {"color": "purple", "id": "modeling", "label": "modeling (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "#eaf2fe", "id": "test", "label": "test (1.3%)", "shape": "dot", "size": 10, "value": 1.3}, {"color": "#eaf2fe", "id": "project", "label": "project (1.1%)", "shape": "dot", "size": 10, "value": 1.1}, {"color": "#00cdff", "id": "competency", "label": "competency (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "green", "id": "prospective", "label": "prospective (1.3%)", "shape": "dot", "size": 10, "value": 1.3}, {"color": "#eaf2fe", "id": "context", "label": "context (2.2%)", "shape": "dot", "size": 10, "value": 2.2}, {"color": "purple", "id": "discourse", "label": "discourse (1.2%)", "shape": "dot", "size": 10, "value": 1.2}, {"color": "purple", "id": "evaluation", "label": "evaluation (1.1%)", "shape": "dot", "size": 10, "value": 1.1}, {"color": "green", "id": "thinking", "label": "thinking (2.8%)", "shape": "dot", "size": 10, "value": 2.8}, {"color": "purple", "id": "skill", "label": "skill (1.8%)", "shape": "dot", "size": 10, "value": 1.8}, {"color": "#eaf2fe", "id": "system", "label": "system (2.3%)", "shape": "dot", "size": 10, "value": 2.3}, {"color": "green", "id": "instruction", "label": "instruction (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "#eaf2fe", "id": "group", "label": "group (1.4%)", "shape": "dot", "size": 10, "value": 1.4}, {"color": "#eaf2fe", "id": "interaction", "label": "interaction (1.6%)", "shape": "dot", "size": 10, "value": 1.6}, {"color": "orange", "id": "geometric", "label": "geometric (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "#eaf2fe", "id": "environment", "label": "environment (1.6%)", "shape": "dot", "size": 10, "value": 1.6}, {"color": "purple", "id": "resource", "label": "resource (1.1%)", "shape": "dot", "size": 10, "value": 1.1}, {"color": "purple", "id": "strategy", "label": "strategy (2.2%)", "shape": "dot", "size": 10, "value": 2.2}, {"color": "#93bf85", "id": "class", "label": "class (1.1%)", "shape": "dot", "size": 10, "value": 1.1}, {"color": "purple", "id": "assessment", "label": "assessment (3.2%)", "shape": "dot", "size": 10, "value": 3.2}, {"color": "#eaf2fe", "id": "grade", "label": "grade (1.3%)", "shape": "dot", "size": 10, "value": 1.3}, {"color": "#93bf85", "id": "undergraduate", "label": "undergraduate (1.9%)", "shape": "dot", "size": 10, "value": 1.9}, {"color": "green", "id": "practice", "label": "practice (3.8%)", "shape": "dot", "size": 10, "value": 3.8}, {"color": "orange", "id": "function", "label": "function (2.8%)", "shape": "dot", "size": 10, "value": 2.8}, {"color": "orange", "id": "differential", "label": "differential (1.2%)", "shape": "dot", "size": 10, "value": 1.2}, {"color": "purple", "id": "cognitive", "label": "cognitive (1.8%)", "shape": "dot", "size": 10, "value": 1.8}, {"color": "#93bf85", "id": "elementary", "label": "elementary (2.4%)", "shape": "dot", "size": 10, "value": 2.4}, {"color": "#eaf2fe", "id": "solution", "label": "solution (1.5%)", "shape": "dot", "size": 10, "value": 1.5}, {"color": "green", "id": "reflection", "label": "reflection (1.2%)", "shape": "dot", "size": 10, "value": 1.2}, {"color": "#eaf2fe", "id": "approach", "label": "approach (4.5%)", "shape": "dot", "size": 10, "value": 4.5}, {"color": "orange", "id": "statistical", "label": "statistical (1.1%)", "shape": "dot", "size": 10, "value": 1.1}, {"color": "purple", "id": "dynamic", "label": "dynamic (1.6%)", "shape": "dot", "size": 10, "value": 1.6}, {"color": "orange", "id": "space", "label": "space (1.2%)", "shape": "dot", "size": 10, "value": 1.2}, {"color": "purple", "id": "inquiry", "label": "inquiry (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "orange", "id": "linear", "label": "linear (1.5%)", "shape": "dot", "size": 10, "value": 1.5}, {"color": "#eaf2fe", "id": "towards", "label": "towards (1.5%)", "shape": "dot", "size": 10, "value": 1.5}, {"color": "orange", "id": "engineering", "label": "engineering (1.6%)", "shape": "dot", "size": 10, "value": 1.6}, {"color": "#93bf85", "id": "high", "label": "high (1.1%)", "shape": "dot", "size": 10, "value": 1.1}, {"color": "#eaf2fe", "id": "performance", "label": "performance (1.2%)", "shape": "dot", "size": 10, "value": 1.2}, {"color": "orange", "id": "algebraic", "label": "algebraic (1.3%)", "shape": "dot", "size": 10, "value": 1.3}, {"color": "#eaf2fe", "id": "case", "label": "case (3.8%)", "shape": "dot", "size": 10, "value": 3.8}, {"color": "purple", "id": "competence", "label": "competence (1.7%)", "shape": "dot", "size": 10, "value": 1.7}, {"color": "#eaf2fe", "id": "relationship", "label": "relationship (1.2%)", "shape": "dot", "size": 10, "value": 1.2}, {"color": "#eaf2fe", "id": "achievement", "label": "achievement (1.1%)", "shape": "dot", "size": 10, "value": 1.1}, {"color": "#93bf85", "id": "lesson", "label": "lesson (1.3%)", "shape": "dot", "size": 10, "value": 1.3}, {"color": "#eaf2fe", "id": "perspective", "label": "perspective (2.3%)", "shape": "dot", "size": 10, "value": 2.3}, {"color": "green", "id": "training", "label": "training (1.8%)", "shape": "dot", "size": 10, "value": 1.8}, {"color": "purple", "id": "tool", "label": "tool (1.6%)", "shape": "dot", "size": 10, "value": 1.6}, {"color": "purple", "id": "textbook", "label": "textbook (1.5%)", "shape": "dot", "size": 10, "value": 1.5}, {"color": "purple", "id": "belief", "label": "belief (1.9%)", "shape": "dot", "size": 10, "value": 1.9}, {"color": "#eaf2fe", "id": "relation", "label": "relation (1.3%)", "shape": "dot", "size": 10, "value": 1.3}, {"color": "orange", "id": "probability", "label": "probability (1.1%)", "shape": "dot", "size": 10, "value": 1.1}, {"color": "#eaf2fe", "id": "construction", "label": "construction (1.2%)", "shape": "dot", "size": 10, "value": 1.2}, {"color": "#93bf85", "id": "classroom", "label": "classroom (4.4%)", "shape": "dot", "size": 10, "value": 4.4}, {"color": "#eaf2fe", "id": "structure", "label": "structure (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "purple", "id": "didactic", "label": "didactic (1.5%)", "shape": "dot", "size": 10, "value": 1.5}, {"color": "#eaf2fe", "id": "impact", "label": "impact (1.2%)", "shape": "dot", "size": 10, "value": 1.2}, {"color": "orange", "id": "scientific", "label": "scientific (1.1%)", "shape": "dot", "size": 10, "value": 1.1}, {"color": "purple", "id": "conceptual", "label": "conceptual (1.9%)", "shape": "dot", "size": 10, "value": 1.9}, {"color": "#00cdff", "id": "social", "label": "social (1.3%)", "shape": "dot", "size": 10, "value": 1.3}, {"color": "#eaf2fe", "id": "view", "label": "view (1.6%)", "shape": "dot", "size": 10, "value": 1.6}, {"color": "#eaf2fe", "id": "von", "label": "von (1.6%)", "shape": "dot", "size": 10, "value": 1.6}, {"color": "orange", "id": "physic", "label": "physic (1.4%)", "shape": "dot", "size": 10, "value": 1.4}, {"color": "#eaf2fe", "id": "example", "label": "example (1.5%)", "shape": "dot", "size": 10, "value": 1.5}, {"color": "#93bf85", "id": "university", "label": "university (2.6%)", "shape": "dot", "size": 10, "value": 2.6}, {"color": "orange", "id": "change", "label": "change (1.6%)", "shape": "dot", "size": 10, "value": 1.6}, {"color": "#eaf2fe", "id": "situation", "label": "situation (1.1%)", "shape": "dot", "size": 10, "value": 1.1}, {"color": "#eaf2fe", "id": "experience", "label": "experience (1.5%)", "shape": "dot", "size": 10, "value": 1.5}, {"color": "#eaf2fe", "id": "empirical", "label": "empirical (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "#eaf2fe", "id": "method", "label": "method (2.6%)", "shape": "dot", "size": 10, "value": 2.6}, {"color": "#eaf2fe", "id": "activity", "label": "activity (2.4%)", "shape": "dot", "size": 10, "value": 2.4}, {"color": "orange", "id": "sequence", "label": "sequence (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "purple", "id": "representation", "label": "representation (2.6%)", "shape": "dot", "size": 10, "value": 2.6}, {"color": "purple", "id": "content", "label": "content (1.8%)", "shape": "dot", "size": 10, "value": 1.8}, {"color": "orange", "id": "math", "label": "math (1.2%)", "shape": "dot", "size": 10, "value": 1.2}, {"color": "purple", "id": "early", "label": "early (2.0%)", "shape": "dot", "size": 10, "value": 2.0}, {"color": "#eaf2fe", "id": "im", "label": "im (1.5%)", "shape": "dot", "size": 10, "value": 1.5}, {"color": "#eaf2fe", "id": "different", "label": "different (1.3%)", "shape": "dot", "size": 10, "value": 1.3}, {"color": "#eaf2fe", "id": "support", "label": "support (1.3%)", "shape": "dot", "size": 10, "value": 1.3}, {"color": "#eaf2fe", "id": "language", "label": "language (1.9%)", "shape": "dot", "size": 10, "value": 1.9}, {"color": "orange", "id": "fraction", "label": "fraction (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "orange", "id": "science", "label": "science (4.9%)", "shape": "dot", "size": 10, "value": 4.9}, {"color": "#eaf2fe", "id": "transition", "label": "transition (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "green", "id": "pedagogical", "label": "pedagogical (1.4%)", "shape": "dot", "size": 10, "value": 1.4}, {"color": "purple", "id": "problemsolving", "label": "problemsolving (1.2%)", "shape": "dot", "size": 10, "value": 1.2}, {"color": "orange", "id": "calculus", "label": "calculus (1.4%)", "shape": "dot", "size": 10, "value": 1.4}]);
+                  edges = new vis.DataSet([{"color": "#97c2fc", "from": "secondary", "label": "2.2%", "to": "school", "value": 2.2, "width": 1}, {"color": "#97c2fc", "from": "solving", "label": "3.4%", "to": "problem", "value": 3.4, "width": 1}, {"color": "#97c2fc", "from": "teaching", "label": "3.8%", "to": "teacher", "value": 3.8, "width": 1}, {"color": "#97c2fc", "from": "teaching", "label": "3.2%", "to": "learning", "value": 3.2, "width": 1}, {"color": "#97c2fc", "from": "school", "label": "2.6%", "to": "student", "value": 2.6, "width": 1}, {"color": "#97c2fc", "from": "school", "label": "2.2%", "to": "primary", "value": 2.2, "width": 1}, {"color": "#97c2fc", "from": "school", "label": "2.0%", "to": "teacher", "value": 2.0, "width": 1}, {"color": "#97c2fc", "from": "teacher", "label": "2.5%", "to": "student", "value": 2.5, "width": 1}, {"color": "#97c2fc", "from": "teacher", "label": "2.1%", "to": "development", "value": 2.1, "width": 1}, {"color": "#97c2fc", "from": "teacher", "label": "2.5%", "to": "learning", "value": 2.5, "width": 1}, {"color": "#97c2fc", "from": "teacher", "label": "2.4%", "to": "professional", "value": 2.4, "width": 1}, {"color": "#97c2fc", "from": "teacher", "label": "3.3%", "to": "knowledge", "value": 3.3, "width": 1}, {"color": "#97c2fc", "from": "teacher", "label": "2.0%", "to": "preservice", "value": 2.0, "width": 1}, {"color": "#97c2fc", "from": "student", "label": "3.2%", "to": "learning", "value": 3.2, "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "repulsion": {
+            "centralGravity": 0.2,
+            "damping": 0.09,
+            "nodeDistance": 100,
+            "springConstant": 0.05,
+            "springLength": 200
+        },
+        "solver": "repulsion",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
