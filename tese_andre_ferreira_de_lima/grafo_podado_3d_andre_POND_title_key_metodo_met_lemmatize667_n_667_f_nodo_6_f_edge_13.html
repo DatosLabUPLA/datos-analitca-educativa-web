@@ -1,0 +1,258 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 600px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "green", "id": "student", "label": "student (16.8%)", "shape": "dot", "size": 10, "value": 16.8}, {"color": "#97c2fc", "id": "3d", "label": "3d", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ability", "label": "ability", "shape": "dot", "size": 10}, {"color": "orange", "id": "spatial", "label": "spatial (29.4%)", "shape": "dot", "size": 10, "value": 29.4}, {"color": "purple", "id": "skill", "label": "skill (6.9%)", "shape": "dot", "size": 10, "value": 6.9}, {"color": "#97c2fc", "id": "augmented", "label": "augmented", "shape": "dot", "size": 10}, {"color": "orange", "id": "geometry", "label": "geometry (34.0%)", "shape": "dot", "size": 10, "value": 34.0}, {"color": "green", "id": "learning", "label": "learning (22.6%)", "shape": "dot", "size": 10, "value": 22.6}, {"color": "#97c2fc", "id": "reality", "label": "reality", "shape": "dot", "size": 10}, {"color": "#93bf85", "id": "school", "label": "school (10.6%)", "shape": "dot", "size": 10, "value": 10.6}, {"color": "green", "id": "teaching", "label": "teaching (10.8%)", "shape": "dot", "size": 10, "value": 10.8}, {"color": "green", "id": "thinking", "label": "thinking (7.0%)", "shape": "dot", "size": 10, "value": 7.0}, {"color": "orange", "id": "mathematics", "label": "mathematics (15.3%)", "shape": "dot", "size": 10, "value": 15.3}, {"color": "purple", "id": "visualization", "label": "visualization (7.3%)", "shape": "dot", "size": 10, "value": 7.3}, {"color": "green", "id": "teacher", "label": "teacher (6.6%)", "shape": "dot", "size": 10, "value": 6.6}, {"color": "green", "id": "reasoning", "label": "reasoning (8.4%)", "shape": "dot", "size": 10, "value": 8.4}, {"color": "#93bf85", "id": "secondary", "label": "secondary (3.7%)", "shape": "dot", "size": 10, "value": 3.7}, {"color": "#97c2fc", "id": "study", "label": "study", "shape": "dot", "size": 10}, {"color": "orange", "id": "geometric", "label": "geometric (11.5%)", "shape": "dot", "size": 10, "value": 11.5}, {"color": "#93bf85", "id": "elementary", "label": "elementary (3.3%)", "shape": "dot", "size": 10, "value": 3.3}, {"color": "#97c2fc", "id": "undergraduategeneral", "label": "undergraduategeneral", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "firstyear", "label": "firstyear", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "effect", "label": "effect", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "descriptive", "label": "descriptive", "shape": "dot", "size": 10}, {"color": "purple", "id": "technology", "label": "technology (6.0%)", "shape": "dot", "size": 10, "value": 6.0}, {"color": "green", "id": "training", "label": "training (3.9%)", "shape": "dot", "size": 10, "value": 3.9}, {"color": "#97c2fc", "id": "design", "label": "design", "shape": "dot", "size": 10}, {"color": "purple", "id": "representation", "label": "representation (4.9%)", "shape": "dot", "size": 10, "value": 4.9}, {"color": "orange", "id": "chemistry", "label": "chemistry (4.8%)", "shape": "dot", "size": 10, "value": 4.8}, {"color": "#97c2fc", "id": "molecular", "label": "molecular", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "handson", "label": "handson", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "learningmanipulatives", "label": "learningmanipulatives", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "virtual", "label": "virtual", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "analysis", "label": "analysis", "shape": "dot", "size": 10}, {"color": "green", "id": "development", "label": "development (6.7%)", "shape": "dot", "size": 10, "value": 6.7}, {"color": "purple", "id": "task", "label": "task (3.3%)", "shape": "dot", "size": 10, "value": 3.3}, {"color": "#97c2fc", "id": "using", "label": "using", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "child", "label": "child", "shape": "dot", "size": 10}, {"color": "purple", "id": "problem", "label": "problem (5.1%)", "shape": "dot", "size": 10, "value": 5.1}, {"color": "green", "id": "preservice", "label": "preservice (2.1%)", "shape": "dot", "size": 10, "value": 2.1}, {"color": "#97c2fc", "id": "interactive", "label": "interactive", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "printing", "label": "printing", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "threedimensional", "label": "threedimensional", "shape": "dot", "size": 10}, {"color": "purple", "id": "solving", "label": "solving (3.3%)", "shape": "dot", "size": 10, "value": 3.3}, {"color": "#97c2fc", "id": "environment", "label": "environment", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "model", "label": "model", "shape": "dot", "size": 10}, {"color": "orange", "id": "mathematical", "label": "mathematical (6.4%)", "shape": "dot", "size": 10, "value": 6.4}, {"color": "purple", "id": "dynamic", "label": "dynamic (5.2%)", "shape": "dot", "size": 10, "value": 5.2}, {"color": "green", "id": "instruction", "label": "instruction (3.6%)", "shape": "dot", "size": 10, "value": 3.6}, {"color": "#93bf85", "id": "middle", "label": "middle (2.7%)", "shape": "dot", "size": 10, "value": 2.7}, {"color": "purple", "id": "perception", "label": "perception (2.2%)", "shape": "dot", "size": 10, "value": 2.2}, {"color": "purple", "id": "tool", "label": "tool (4.0%)", "shape": "dot", "size": 10, "value": 4.0}, {"color": "purple", "id": "communication", "label": "communication (0.9%)", "shape": "dot", "size": 10, "value": 0.9}, {"color": "purple", "id": "assessing", "label": "assessing (0.9%)", "shape": "dot", "size": 10, "value": 0.9}, {"color": "purple", "id": "computer", "label": "computer (3.1%)", "shape": "dot", "size": 10, "value": 3.1}, {"color": "#93bf85", "id": "high", "label": "high (2.7%)", "shape": "dot", "size": 10, "value": 2.7}, {"color": "purple", "id": "problemsolving", "label": "problemsolving (1.3%)", "shape": "dot", "size": 10, "value": 1.3}, {"color": "orange", "id": "science", "label": "science (1.6%)", "shape": "dot", "size": 10, "value": 1.6}, {"color": "green", "id": "professional", "label": "professional (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "purple", "id": "conception", "label": "conception (0.9%)", "shape": "dot", "size": 10, "value": 0.9}, {"color": "green", "id": "instructional", "label": "instructional (1.3%)", "shape": "dot", "size": 10, "value": 1.3}, {"color": "orange", "id": "engineering", "label": "engineering (6.1%)", "shape": "dot", "size": 10, "value": 6.1}, {"color": "purple", "id": "modeling", "label": "modeling (4.8%)", "shape": "dot", "size": 10, "value": 4.8}, {"color": "orange", "id": "function", "label": "function (1.3%)", "shape": "dot", "size": 10, "value": 1.3}, {"color": "purple", "id": "geogebra", "label": "geogebra (1.8%)", "shape": "dot", "size": 10, "value": 1.8}, {"color": "orange", "id": "space", "label": "space (4.6%)", "shape": "dot", "size": 10, "value": 4.6}, {"color": "#00cdff", "id": "gender", "label": "gender (1.5%)", "shape": "dot", "size": 10, "value": 1.5}, {"color": "purple", "id": "game", "label": "game (2.2%)", "shape": "dot", "size": 10, "value": 2.2}, {"color": "purple", "id": "modelling", "label": "modelling (1.6%)", "shape": "dot", "size": 10, "value": 1.6}, {"color": "orange", "id": "physical", "label": "physical (2.5%)", "shape": "dot", "size": 10, "value": 2.5}, {"color": "#93bf85", "id": "class", "label": "class (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "#00cdff", "id": "integration", "label": "integration (0.9%)", "shape": "dot", "size": 10, "value": 0.9}, {"color": "purple", "id": "curriculum", "label": "curriculum (2.2%)", "shape": "dot", "size": 10, "value": 2.2}, {"color": "purple", "id": "cognitive", "label": "cognitive (3.0%)", "shape": "dot", "size": 10, "value": 3.0}, {"color": "purple", "id": "competence", "label": "competence (0.9%)", "shape": "dot", "size": 10, "value": 0.9}, {"color": "purple", "id": "conceptual", "label": "conceptual (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "#93bf85", "id": "lesson", "label": "lesson (0.9%)", "shape": "dot", "size": 10, "value": 0.9}, {"color": "#00cdff", "id": "collaborative", "label": "collaborative (1.0%)", "shape": "dot", "size": 10, "value": 1.0}, {"color": "orange", "id": "linear", "label": "linear (0.9%)", "shape": "dot", "size": 10, "value": 0.9}, {"color": "green", "id": "learner", "label": "learner (0.9%)", "shape": "dot", "size": 10, "value": 0.9}, {"color": "orange", "id": "simulation", "label": "simulation (2.1%)", "shape": "dot", "size": 10, "value": 2.1}, {"color": "purple", "id": "visual", "label": "visual (3.3%)", "shape": "dot", "size": 10, "value": 3.3}, {"color": "#93bf85", "id": "classroom", "label": "classroom (3.6%)", "shape": "dot", "size": 10, "value": 3.6}, {"color": "purple", "id": "concept", "label": "concept (2.8%)", "shape": "dot", "size": 10, "value": 2.8}, {"color": "purple", "id": "software", "label": "software (3.7%)", "shape": "dot", "size": 10, "value": 3.7}, {"color": "orange", "id": "numerical", "label": "numerical (0.9%)", "shape": "dot", "size": 10, "value": 0.9}, {"color": "#93bf85", "id": "primary", "label": "primary (3.6%)", "shape": "dot", "size": 10, "value": 3.6}, {"color": "purple", "id": "motivation", "label": "motivation (1.2%)", "shape": "dot", "size": 10, "value": 1.2}, {"color": "orange", "id": "line", "label": "line (0.9%)", "shape": "dot", "size": 10, "value": 0.9}, {"color": "orange", "id": "measurement", "label": "measurement (2.1%)", "shape": "dot", "size": 10, "value": 2.1}, {"color": "orange", "id": "pattern", "label": "pattern (2.2%)", "shape": "dot", "size": 10, "value": 2.2}, {"color": "orange", "id": "math", "label": "math (1.8%)", "shape": "dot", "size": 10, "value": 1.8}, {"color": "purple", "id": "stem", "label": "stem (1.2%)", "shape": "dot", "size": 10, "value": 1.2}, {"color": "purple", "id": "evaluation", "label": "evaluation (1.6%)", "shape": "dot", "size": 10, "value": 1.6}, {"color": "#93bf85", "id": "university", "label": "university (0.9%)", "shape": "dot", "size": 10, "value": 0.9}, {"color": "purple", "id": "digital", "label": "digital (2.4%)", "shape": "dot", "size": 10, "value": 2.4}, {"color": "orange", "id": "programming", "label": "programming (0.9%)", "shape": "dot", "size": 10, "value": 0.9}, {"color": "purple", "id": "video", "label": "video (0.9%)", "shape": "dot", "size": 10, "value": 0.9}, {"color": "purple", "id": "assessment", "label": "assessment (2.8%)", "shape": "dot", "size": 10, "value": 2.8}, {"color": "purple", "id": "computational", "label": "computational (1.8%)", "shape": "dot", "size": 10, "value": 1.8}, {"color": "green", "id": "practice", "label": "practice (1.3%)", "shape": "dot", "size": 10, "value": 1.3}, {"color": "#93bf85", "id": "undergraduate", "label": "undergraduate (3.3%)", "shape": "dot", "size": 10, "value": 3.3}, {"color": "orange", "id": "algebra", "label": "algebra (1.2%)", "shape": "dot", "size": 10, "value": 1.2}, {"color": "green", "id": "understanding", "label": "understanding (3.7%)", "shape": "dot", "size": 10, "value": 3.7}, {"color": "purple", "id": "knowledge", "label": "knowledge (2.5%)", "shape": "dot", "size": 10, "value": 2.5}, {"color": "purple", "id": "strategy", "label": "strategy (3.6%)", "shape": "dot", "size": 10, "value": 3.6}, {"color": "purple", "id": "early", "label": "early (3.0%)", "shape": "dot", "size": 10, "value": 3.0}]);
+                  edges = new vis.DataSet([{"color": "#97c2fc", "from": "student", "label": "3.6%", "to": "3d", "value": 3.6, "width": 1}, {"color": "#97c2fc", "from": "student", "label": "2.5%", "to": "ability", "value": 2.5, "width": 1}, {"color": "#97c2fc", "from": "student", "label": "5.4%", "to": "spatial", "value": 5.4, "width": 1}, {"color": "#97c2fc", "from": "student", "label": "2.2%", "to": "skill", "value": 2.2, "width": 1}, {"color": "#97c2fc", "from": "student", "label": "1.9%", "to": "augmented", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "student", "label": "6.9%", "to": "geometry", "value": 6.9, "width": 1}, {"color": "#97c2fc", "from": "student", "label": "5.8%", "to": "learning", "value": 5.8, "width": 1}, {"color": "#97c2fc", "from": "student", "label": "2.1%", "to": "reality", "value": 2.1, "width": 1}, {"color": "#97c2fc", "from": "student", "label": "3.9%", "to": "school", "value": 3.9, "width": 1}, {"color": "#97c2fc", "from": "student", "label": "2.2%", "to": "teaching", "value": 2.2, "width": 1}, {"color": "#97c2fc", "from": "student", "label": "2.5%", "to": "thinking", "value": 2.5, "width": 1}, {"color": "#97c2fc", "from": "student", "label": "3.6%", "to": "mathematics", "value": 3.6, "width": 1}, {"color": "#97c2fc", "from": "student", "label": "2.1%", "to": "visualization", "value": 2.1, "width": 1}, {"color": "#97c2fc", "from": "student", "label": "1.9%", "to": "teacher", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "student", "label": "1.9%", "to": "reasoning", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "secondary", "label": "2.1%", "to": "geometry", "value": 2.1, "width": 1}, {"color": "#97c2fc", "from": "secondary", "label": "2.7%", "to": "school", "value": 2.7, "width": 1}, {"color": "#97c2fc", "from": "study", "label": "2.4%", "to": "spatial", "value": 2.4, "width": 1}, {"color": "#97c2fc", "from": "geometric", "label": "2.4%", "to": "learning", "value": 2.4, "width": 1}, {"color": "#97c2fc", "from": "geometric", "label": "3.0%", "to": "geometry", "value": 3.0, "width": 1}, {"color": "#97c2fc", "from": "geometric", "label": "4.9%", "to": "spatial", "value": 4.9, "width": 1}, {"color": "#97c2fc", "from": "geometric", "label": "1.9%", "to": "thinking", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "mathematics", "label": "7.6%", "to": "geometry", "value": 7.6, "width": 1}, {"color": "#97c2fc", "from": "mathematics", "label": "1.9%", "to": "reality", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "mathematics", "label": "2.1%", "to": "teaching", "value": 2.1, "width": 1}, {"color": "#97c2fc", "from": "mathematics", "label": "2.8%", "to": "3d", "value": 2.8, "width": 1}, {"color": "#97c2fc", "from": "mathematics", "label": "3.6%", "to": "learning", "value": 3.6, "width": 1}, {"color": "#97c2fc", "from": "mathematics", "label": "2.4%", "to": "reasoning", "value": 2.4, "width": 1}, {"color": "#97c2fc", "from": "mathematics", "label": "3.9%", "to": "school", "value": 3.9, "width": 1}, {"color": "#97c2fc", "from": "mathematics", "label": "6.7%", "to": "spatial", "value": 6.7, "width": 1}, {"color": "#97c2fc", "from": "mathematics", "label": "2.2%", "to": "ability", "value": 2.2, "width": 1}, {"color": "#97c2fc", "from": "mathematics", "label": "3.3%", "to": "teacher", "value": 3.3, "width": 1}, {"color": "#97c2fc", "from": "mathematics", "label": "2.1%", "to": "elementary", "value": 2.1, "width": 1}, {"color": "#97c2fc", "from": "undergraduategeneral", "label": "1.9%", "to": "firstyear", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "ability", "label": "6.6%", "to": "spatial", "value": 6.6, "width": 1}, {"color": "#97c2fc", "from": "ability", "label": "4.3%", "to": "geometry", "value": 4.3, "width": 1}, {"color": "#97c2fc", "from": "ability", "label": "2.8%", "to": "learning", "value": 2.8, "width": 1}, {"color": "#97c2fc", "from": "ability", "label": "2.1%", "to": "effect", "value": 2.1, "width": 1}, {"color": "#97c2fc", "from": "descriptive", "label": "1.9%", "to": "geometry", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "technology", "label": "2.4%", "to": "geometry", "value": 2.4, "width": 1}, {"color": "#97c2fc", "from": "augmented", "label": "2.8%", "to": "learning", "value": 2.8, "width": 1}, {"color": "#97c2fc", "from": "augmented", "label": "5.1%", "to": "reality", "value": 5.1, "width": 1}, {"color": "#97c2fc", "from": "augmented", "label": "2.4%", "to": "geometry", "value": 2.4, "width": 1}, {"color": "#97c2fc", "from": "reasoning", "label": "5.5%", "to": "spatial", "value": 5.5, "width": 1}, {"color": "#97c2fc", "from": "reasoning", "label": "5.1%", "to": "geometry", "value": 5.1, "width": 1}, {"color": "#97c2fc", "from": "training", "label": "2.1%", "to": "spatial", "value": 2.1, "width": 1}, {"color": "#97c2fc", "from": "design", "label": "1.9%", "to": "geometry", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "teaching", "label": "2.4%", "to": "3d", "value": 2.4, "width": 1}, {"color": "#97c2fc", "from": "teaching", "label": "5.4%", "to": "geometry", "value": 5.4, "width": 1}, {"color": "#97c2fc", "from": "teaching", "label": "4.3%", "to": "learning", "value": 4.3, "width": 1}, {"color": "#97c2fc", "from": "teaching", "label": "1.9%", "to": "reality", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "teaching", "label": "3.0%", "to": "spatial", "value": 3.0, "width": 1}, {"color": "#97c2fc", "from": "representation", "label": "2.2%", "to": "geometry", "value": 2.2, "width": 1}, {"color": "#97c2fc", "from": "representation", "label": "2.2%", "to": "spatial", "value": 2.2, "width": 1}, {"color": "#97c2fc", "from": "chemistry", "label": "2.8%", "to": "molecular", "value": 2.8, "width": 1}, {"color": "#97c2fc", "from": "chemistry", "label": "2.8%", "to": "learning", "value": 2.8, "width": 1}, {"color": "#97c2fc", "from": "chemistry", "label": "2.4%", "to": "handson", "value": 2.4, "width": 1}, {"color": "#97c2fc", "from": "chemistry", "label": "2.1%", "to": "learningmanipulatives", "value": 2.1, "width": 1}, {"color": "#97c2fc", "from": "spatial", "label": "3.1%", "to": "3d", "value": 3.1, "width": 1}, {"color": "#97c2fc", "from": "spatial", "label": "4.3%", "to": "skill", "value": 4.3, "width": 1}, {"color": "#97c2fc", "from": "spatial", "label": "2.1%", "to": "virtual", "value": 2.1, "width": 1}, {"color": "#97c2fc", "from": "spatial", "label": "1.9%", "to": "analysis", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "spatial", "label": "7.0%", "to": "learning", "value": 7.0, "width": 1}, {"color": "#97c2fc", "from": "spatial", "label": "3.6%", "to": "development", "value": 3.6, "width": 1}, {"color": "#97c2fc", "from": "spatial", "label": "14.4%", "to": "geometry", "value": 14.4, "width": 1}, {"color": "#97c2fc", "from": "spatial", "label": "4.2%", "to": "thinking", "value": 4.2, "width": 1}, {"color": "#97c2fc", "from": "spatial", "label": "4.3%", "to": "school", "value": 4.3, "width": 1}, {"color": "#97c2fc", "from": "spatial", "label": "1.9%", "to": "task", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "spatial", "label": "3.0%", "to": "effect", "value": 3.0, "width": 1}, {"color": "#97c2fc", "from": "spatial", "label": "2.5%", "to": "reality", "value": 2.5, "width": 1}, {"color": "#97c2fc", "from": "spatial", "label": "2.8%", "to": "using", "value": 2.8, "width": 1}, {"color": "#97c2fc", "from": "spatial", "label": "3.1%", "to": "child", "value": 3.1, "width": 1}, {"color": "#97c2fc", "from": "spatial", "label": "1.9%", "to": "problem", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "spatial", "label": "3.0%", "to": "teacher", "value": 3.0, "width": 1}, {"color": "#97c2fc", "from": "spatial", "label": "4.6%", "to": "visualization", "value": 4.6, "width": 1}, {"color": "#97c2fc", "from": "preservice", "label": "2.1%", "to": "teacher", "value": 2.1, "width": 1}, {"color": "#97c2fc", "from": "interactive", "label": "1.9%", "to": "learning", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "teacher", "label": "3.6%", "to": "geometry", "value": 3.6, "width": 1}, {"color": "#97c2fc", "from": "learningmanipulatives", "label": "2.4%", "to": "handson", "value": 2.4, "width": 1}, {"color": "#97c2fc", "from": "3d", "label": "6.6%", "to": "geometry", "value": 6.6, "width": 1}, {"color": "#97c2fc", "from": "3d", "label": "3.7%", "to": "learning", "value": 3.7, "width": 1}, {"color": "#97c2fc", "from": "3d", "label": "2.1%", "to": "reality", "value": 2.1, "width": 1}, {"color": "#97c2fc", "from": "3d", "label": "1.9%", "to": "skill", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "3d", "label": "2.4%", "to": "printing", "value": 2.4, "width": 1}, {"color": "#97c2fc", "from": "threedimensional", "label": "1.9%", "to": "learning", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "threedimensional", "label": "1.9%", "to": "geometry", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "skill", "label": "3.0%", "to": "geometry", "value": 3.0, "width": 1}, {"color": "#97c2fc", "from": "problem", "label": "3.0%", "to": "solving", "value": 3.0, "width": 1}, {"color": "#97c2fc", "from": "problem", "label": "2.5%", "to": "geometry", "value": 2.5, "width": 1}, {"color": "#97c2fc", "from": "analysis", "label": "2.5%", "to": "geometry", "value": 2.5, "width": 1}, {"color": "#97c2fc", "from": "thinking", "label": "2.2%", "to": "learning", "value": 2.2, "width": 1}, {"color": "#97c2fc", "from": "thinking", "label": "3.3%", "to": "geometry", "value": 3.3, "width": 1}, {"color": "#97c2fc", "from": "using", "label": "2.8%", "to": "geometry", "value": 2.8, "width": 1}, {"color": "#97c2fc", "from": "using", "label": "3.0%", "to": "learning", "value": 3.0, "width": 1}, {"color": "#97c2fc", "from": "learning", "label": "2.7%", "to": "environment", "value": 2.7, "width": 1}, {"color": "#97c2fc", "from": "learning", "label": "2.1%", "to": "model", "value": 2.1, "width": 1}, {"color": "#97c2fc", "from": "learning", "label": "3.7%", "to": "reality", "value": 3.7, "width": 1}, {"color": "#97c2fc", "from": "learning", "label": "2.4%", "to": "virtual", "value": 2.4, "width": 1}, {"color": "#97c2fc", "from": "learning", "label": "2.1%", "to": "effect", "value": 2.1, "width": 1}, {"color": "#97c2fc", "from": "learning", "label": "10.0%", "to": "geometry", "value": 10.0, "width": 1}, {"color": "#97c2fc", "from": "learning", "label": "2.7%", "to": "school", "value": 2.7, "width": 1}, {"color": "#97c2fc", "from": "learning", "label": "1.9%", "to": "molecular", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "model", "label": "2.5%", "to": "geometry", "value": 2.5, "width": 1}, {"color": "#97c2fc", "from": "effect", "label": "3.0%", "to": "geometry", "value": 3.0, "width": 1}, {"color": "#97c2fc", "from": "mathematical", "label": "2.4%", "to": "geometry", "value": 2.4, "width": 1}, {"color": "#97c2fc", "from": "dynamic", "label": "3.6%", "to": "geometry", "value": 3.6, "width": 1}, {"color": "#97c2fc", "from": "instruction", "label": "2.2%", "to": "geometry", "value": 2.2, "width": 1}, {"color": "#97c2fc", "from": "geometry", "label": "3.4%", "to": "reality", "value": 3.4, "width": 1}, {"color": "#97c2fc", "from": "geometry", "label": "5.4%", "to": "school", "value": 5.4, "width": 1}, {"color": "#97c2fc", "from": "geometry", "label": "2.4%", "to": "development", "value": 2.4, "width": 1}, {"color": "#97c2fc", "from": "geometry", "label": "2.4%", "to": "visualization", "value": 2.4, "width": 1}, {"color": "#97c2fc", "from": "geometry", "label": "2.4%", "to": "child", "value": 2.4, "width": 1}, {"color": "#97c2fc", "from": "middle", "label": "2.1%", "to": "school", "value": 2.1, "width": 1}, {"color": "#97c2fc", "from": "elementary", "label": "1.9%", "to": "school", "value": 1.9, "width": 1}, {"color": "#97c2fc", "from": "virtual", "label": "3.4%", "to": "reality", "value": 3.4, "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "repulsion": {
+            "centralGravity": 0.2,
+            "damping": 0.09,
+            "nodeDistance": 100,
+            "springConstant": 0.05,
+            "springLength": 200
+        },
+        "solver": "repulsion",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
