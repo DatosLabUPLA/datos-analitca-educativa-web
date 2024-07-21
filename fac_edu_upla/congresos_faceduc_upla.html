@@ -12,12 +12,12 @@
     <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
     <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_64a8730e4ac31e568f0044895dc78316 {
+                #map_b2db72fdd384b5c7784d32ca969e6b82 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -42,14 +42,14 @@
 <body>
     
     
-            <div class="folium-map" id="map_64a8730e4ac31e568f0044895dc78316" ></div>
+            <div class="folium-map" id="map_b2db72fdd384b5c7784d32ca969e6b82" ></div>
         
 </body>
 <script>
     
     
-            var map_64a8730e4ac31e568f0044895dc78316 = L.map(
-                "map_64a8730e4ac31e568f0044895dc78316",
+            var map_b2db72fdd384b5c7784d32ca969e6b82 = L.map(
+                "map_b2db72fdd384b5c7784d32ca969e6b82",
                 {
                     center: [-7.710823179688297, -58.239967015630924],
                     crs: L.CRS.EPSG3857,
@@ -63,1647 +63,1664 @@
 
         
     
-            var tile_layer_1e3b13284d6e6abc5e11ac57497be322 = L.tileLayer(
-                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_64a8730e4ac31e568f0044895dc78316);
+            var tile_layer_043d26ac78869ad788a0facbae08f394 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
         
     
-            var marker_cluster_8fa6993660c81a0e796ea36dcc364a46 = L.markerClusterGroup(
+            tile_layer_043d26ac78869ad788a0facbae08f394.addTo(map_b2db72fdd384b5c7784d32ca969e6b82);
+        
+    
+            var marker_cluster_755dce488e187695c73b0c683312da25 = L.markerClusterGroup(
                 {}
             );
-            map_64a8730e4ac31e568f0044895dc78316.addLayer(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
         
     
-            var marker_766893f017160d0e35109717750fb2c9 = L.marker(
+            var marker_7e19a1b9a11596a109230af3eb74e227 = L.marker(
                 [48.90400910835502, 2.2134420397878176],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_0862df3c068c8cef08cc704ec3d8634f = L.AwesomeMarkers.icon(
+            var icon_43ca8d769312ed33823ab00065e314d3 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_766893f017160d0e35109717750fb2c9.setIcon(icon_0862df3c068c8cef08cc704ec3d8634f);
+            marker_7e19a1b9a11596a109230af3eb74e227.setIcon(icon_43ca8d769312ed33823ab00065e314d3);
         
     
-        var popup_bfcfda755c67979dd7a024cdc816f7af = L.popup({"maxWidth": 300});
+        var popup_4b5533e0f1afa643bad02762e3288dbe = L.popup({"maxWidth": 300});
 
         
             
-                var html_6730802bfb7db5b43906f9b1a9864c8e = $(`<div id="html_6730802bfb7db5b43906f9b1a9864c8e" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Ahumada Tapia Silza</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Proyecto en RED UPA 21995 </span><br><b>En:</b> <br><span style='color: gray;'>Universidad Nanterre en París-Francia.<br>22 y 29 de junio <br>Paris, Francia</span></div>`)[0];
-                popup_bfcfda755c67979dd7a024cdc816f7af.setContent(html_6730802bfb7db5b43906f9b1a9864c8e);
+                var html_6cd319850254dced3038e3ea98150260 = $(`<div id="html_6cd319850254dced3038e3ea98150260" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Ahumada Tapia Silza</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Proyecto en RED UPA 21995 </span><br><b>En:</b> <br><span style='color: gray;'>Universidad Nanterre en París-Francia.<br>22 y 29 de junio <br>Paris, Francia</span></div>`)[0];
+                popup_4b5533e0f1afa643bad02762e3288dbe.setContent(html_6cd319850254dced3038e3ea98150260);
             
         
 
-        marker_766893f017160d0e35109717750fb2c9.bindPopup(popup_bfcfda755c67979dd7a024cdc816f7af)
+        marker_7e19a1b9a11596a109230af3eb74e227.bindPopup(popup_4b5533e0f1afa643bad02762e3288dbe)
         ;
 
         
     
     
-            var marker_31c7903d2f92f28d7af671892d6b9198 = L.marker(
+            var marker_cd4667a159dfeb38cda9784117747e78 = L.marker(
                 [-33.44094375009957, -70.63543510538246],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_8acf23ad04f83e9865e7405238688f22 = L.AwesomeMarkers.icon(
+            var icon_e29692efc36be3eab3edda01e3dbc21d = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_31c7903d2f92f28d7af671892d6b9198.setIcon(icon_8acf23ad04f83e9865e7405238688f22);
+            marker_cd4667a159dfeb38cda9784117747e78.setIcon(icon_e29692efc36be3eab3edda01e3dbc21d);
         
     
-        var popup_bb9f2ebd2ef8fe4c49d1258d975692f8 = L.popup({"maxWidth": 300});
+        var popup_28cd51aef362769200b36e87fbb43553 = L.popup({"maxWidth": 300});
 
         
             
-                var html_93d40b10fdacf670d4a1bbd36c59e8e4 = $(`<div id="html_93d40b10fdacf670d4a1bbd36c59e8e4" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Gaona Paredes Jorge</span></b><br><b>Conferencia invitada:</b><br><span style='color: gray;'>Tareas abiertas en un sistema de evaluación en línea para enriquecer el trabajo matemático de los estudiantes</span><br><b>En:</b> Webinar "transformando la enseñanza de las matemáticas: prácticas pedagógicas innovadoras con tic"<br><span style='color: gray;'>CIAE, Universidad de Chile<br>24/04/2024<br>Santiago, Chile</span></div>`)[0];
-                popup_bb9f2ebd2ef8fe4c49d1258d975692f8.setContent(html_93d40b10fdacf670d4a1bbd36c59e8e4);
+                var html_19b532c31e59e481473e274914571267 = $(`<div id="html_19b532c31e59e481473e274914571267" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Gaona Paredes Jorge</span></b><br><b>Conferencia invitada:</b><br><span style='color: gray;'>Tareas abiertas en un sistema de evaluación en línea para enriquecer el trabajo matemático de los estudiantes</span><br><b>En:</b> Webinar "transformando la enseñanza de las matemáticas: prácticas pedagógicas innovadoras con tic"<br><span style='color: gray;'>CIAE, Universidad de Chile<br>24/04/2024<br>Santiago, Chile</span></div>`)[0];
+                popup_28cd51aef362769200b36e87fbb43553.setContent(html_19b532c31e59e481473e274914571267);
             
         
 
-        marker_31c7903d2f92f28d7af671892d6b9198.bindPopup(popup_bb9f2ebd2ef8fe4c49d1258d975692f8)
+        marker_cd4667a159dfeb38cda9784117747e78.bindPopup(popup_28cd51aef362769200b36e87fbb43553)
         ;
 
         
     
     
-            var marker_63ea6b95cd06a66cbde26ea06f0529c5 = L.marker(
+            var marker_15f1fe2a9cc972ce839802657ceb7ccc = L.marker(
                 [-34.16362698904729, -70.74149369629633],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_b9f1be9de9bd293141e57428bbad5b09 = L.AwesomeMarkers.icon(
+            var icon_1f5cb3ab143404577013a2d2861c4449 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_63ea6b95cd06a66cbde26ea06f0529c5.setIcon(icon_b9f1be9de9bd293141e57428bbad5b09);
+            marker_15f1fe2a9cc972ce839802657ceb7ccc.setIcon(icon_1f5cb3ab143404577013a2d2861c4449);
         
     
-        var popup_d35db6aeaec86341b6ac1db5071f551a = L.popup({"maxWidth": 300});
+        var popup_f7cb7048cfbc094bba22a5a5d2e06c8b = L.popup({"maxWidth": 300});
 
         
             
-                var html_a25ff3132e283a764d0900e9256aa623 = $(`<div id="html_a25ff3132e283a764d0900e9256aa623" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Gaona Paredes Jorge</span></b><br><b>Jornada de trabajo:</b><br><span style='color: gray;'>Relación entre el feedback y el trabajo matemático de estudiantes en el contexto de evaluaciones en línea en matemáticas</span><br><b>En:</b> "Lectura y escritura académica en educación matemática" Magíster en Enseñanza y Aprendizaje de la Matemática de la Universidad de O'Higgins<br><span style='color: gray;'>Universidad de O'Higgins<br>10/05/2024<br>Rancagua, Chile</span></div>`)[0];
-                popup_d35db6aeaec86341b6ac1db5071f551a.setContent(html_a25ff3132e283a764d0900e9256aa623);
+                var html_20bbd4b6d6d90bbb9ce30cb7f11c63d9 = $(`<div id="html_20bbd4b6d6d90bbb9ce30cb7f11c63d9" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Gaona Paredes Jorge</span></b><br><b>Jornada de trabajo:</b><br><span style='color: gray;'>Relación entre el feedback y el trabajo matemático de estudiantes en el contexto de evaluaciones en línea en matemáticas</span><br><b>En:</b> "Lectura y escritura académica en educación matemática" Magíster en Enseñanza y Aprendizaje de la Matemática de la Universidad de O'Higgins<br><span style='color: gray;'>Universidad de O'Higgins<br>10/05/2024<br>Rancagua, Chile</span></div>`)[0];
+                popup_f7cb7048cfbc094bba22a5a5d2e06c8b.setContent(html_20bbd4b6d6d90bbb9ce30cb7f11c63d9);
             
         
 
-        marker_63ea6b95cd06a66cbde26ea06f0529c5.bindPopup(popup_d35db6aeaec86341b6ac1db5071f551a)
+        marker_15f1fe2a9cc972ce839802657ceb7ccc.bindPopup(popup_f7cb7048cfbc094bba22a5a5d2e06c8b)
         ;
 
         
     
     
-            var marker_9d95b5af894acaadb1784229f93dcec1 = L.marker(
+            var marker_c6b91ed46b137f6e559113e8f0618833 = L.marker(
                 [-22.39610340358784, -47.54624511164023],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_c4c064e67a5675ac6ec2daa821c409b5 = L.AwesomeMarkers.icon(
+            var icon_49e6d7f3ac525b038a8fef7ad7b991a1 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_9d95b5af894acaadb1784229f93dcec1.setIcon(icon_c4c064e67a5675ac6ec2daa821c409b5);
+            marker_c6b91ed46b137f6e559113e8f0618833.setIcon(icon_49e6d7f3ac525b038a8fef7ad7b991a1);
         
     
-        var popup_3bd5fc7664925225212129f2540b5013 = L.popup({"maxWidth": 300});
+        var popup_e0c4eddd5cc67526f2c54f9e7c02fe4b = L.popup({"maxWidth": 300});
 
         
             
-                var html_0470654c98da2e3b2483f064136c307b = $(`<div id="html_0470654c98da2e3b2483f064136c307b" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Tarefas abertas para enriquecer o trabalho matemático dos estudantes</span><br><b>En:</b> Seminario Grupo de Pesquisa Interlocuções entre geometria e Educação Matemática (teorEMa)<br><span style='color: gray;'>Universidade Estadual Paulista “Júlio de Mesquita Filho”<br>16/04/2024<br>Rio Claro, Brasil</span></div>`)[0];
-                popup_3bd5fc7664925225212129f2540b5013.setContent(html_0470654c98da2e3b2483f064136c307b);
+                var html_ce32c706a419454f232136613269bf35 = $(`<div id="html_ce32c706a419454f232136613269bf35" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Tarefas abertas para enriquecer o trabalho matemático dos estudantes</span><br><b>En:</b> Seminario Grupo de Pesquisa Interlocuções entre geometria e Educação Matemática (teorEMa)<br><span style='color: gray;'>Universidade Estadual Paulista “Júlio de Mesquita Filho”<br>16/04/2024<br>Rio Claro, Brasil</span></div>`)[0];
+                popup_e0c4eddd5cc67526f2c54f9e7c02fe4b.setContent(html_ce32c706a419454f232136613269bf35);
             
         
 
-        marker_9d95b5af894acaadb1784229f93dcec1.bindPopup(popup_3bd5fc7664925225212129f2540b5013)
+        marker_c6b91ed46b137f6e559113e8f0618833.bindPopup(popup_e0c4eddd5cc67526f2c54f9e7c02fe4b)
         ;
 
         
     
     
-            var marker_ee4d759c42eec5b155f41f49d739f462 = L.marker(
+            var marker_4b43080ee2612e3fff7488e1695d032c = L.marker(
                 [4.699395843062073, -74.09056198067806],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_526060a3635c37912dc1829b7f22c576 = L.AwesomeMarkers.icon(
+            var icon_83d40b81ed499e2f901890a6f680ac45 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_ee4d759c42eec5b155f41f49d739f462.setIcon(icon_526060a3635c37912dc1829b7f22c576);
+            marker_4b43080ee2612e3fff7488e1695d032c.setIcon(icon_83d40b81ed499e2f901890a6f680ac45);
         
     
-        var popup_7db2ef1554b317c08b1ecf8fa70077ba = L.popup({"maxWidth": 300});
+        var popup_ce4b9ff94161e8395350d4fc346089db = L.popup({"maxWidth": 300});
 
         
             
-                var html_d66d24ed35d9c33dfa83809018e7b08c = $(`<div id="html_d66d24ed35d9c33dfa83809018e7b08c" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Norambuena Sandoval Ivette</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Enfoque ecológico funcional para la atención educativa de estudiantes con grandes necesidades de apoyo: análisis del estado del arte chileno e  internacional.</span><br><b>En:</b>  III Jornada Internacional de Educación Inclusiva e Intercultural<br><span style='color: gray;'>Corporación Universitaria Minuto de Dios<br>24/06/2024<br>bogotá, Colombia</span></div>`)[0];
-                popup_7db2ef1554b317c08b1ecf8fa70077ba.setContent(html_d66d24ed35d9c33dfa83809018e7b08c);
+                var html_af9c706289aedc4e273d6d4053f427f7 = $(`<div id="html_af9c706289aedc4e273d6d4053f427f7" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Norambuena Sandoval Ivette</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Enfoque ecológico funcional para la atención educativa de estudiantes con grandes necesidades de apoyo: análisis del estado del arte chileno e  internacional.</span><br><b>En:</b>  III Jornada Internacional de Educación Inclusiva e Intercultural<br><span style='color: gray;'>Corporación Universitaria Minuto de Dios<br>24/06/2024<br>bogotá, Colombia</span></div>`)[0];
+                popup_ce4b9ff94161e8395350d4fc346089db.setContent(html_af9c706289aedc4e273d6d4053f427f7);
             
         
 
-        marker_ee4d759c42eec5b155f41f49d739f462.bindPopup(popup_7db2ef1554b317c08b1ecf8fa70077ba)
+        marker_4b43080ee2612e3fff7488e1695d032c.bindPopup(popup_ce4b9ff94161e8395350d4fc346089db)
         ;
 
         
     
     
-            var marker_33bc2c6d75ba5e1a1f4df24bc5f3e845 = L.marker(
+            var marker_49495d8f40e2cff8015ac5a694acce56 = L.marker(
                 [-33.42215843662841, -70.6120555261749],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_76e7c0eb8f9e7452a16fb3674bd51a37 = L.AwesomeMarkers.icon(
+            var icon_22042abfeef0019b8a5e3fb06cd48f03 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_33bc2c6d75ba5e1a1f4df24bc5f3e845.setIcon(icon_76e7c0eb8f9e7452a16fb3674bd51a37);
+            marker_49495d8f40e2cff8015ac5a694acce56.setIcon(icon_22042abfeef0019b8a5e3fb06cd48f03);
         
     
-        var popup_e86f84fe3e686c6e0060724ca4b99d77 = L.popup({"maxWidth": 300});
+        var popup_56f7ca82de2d5277acfabee0b59ce2cc = L.popup({"maxWidth": 300});
 
         
             
-                var html_c29f5fb711160ec61253b3c52d4aac74 = $(`<div id="html_c29f5fb711160ec61253b3c52d4aac74" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Jil Galvez Andrés</span></b><br><b>Exposición:</b><br><span style='color: gray;'>“Experiencia emocional de ansiedad en la respuesta académica de estudiantes con Trastornos del Espectro Autista en educación superior”</span><br><b>En:</b> Primer Congreso Internacional Inclusión y Neurodiversidad: Avances y Desafíos<br><span style='color: gray;'>Universidad de Concepción<br>4 al 7 de marzo <br>Concepción, Chile</span></div>`)[0];
-                popup_e86f84fe3e686c6e0060724ca4b99d77.setContent(html_c29f5fb711160ec61253b3c52d4aac74);
+                var html_2e677311c2b0f2f2bed8a56a30f18e6c = $(`<div id="html_2e677311c2b0f2f2bed8a56a30f18e6c" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Jil Galvez Andrés</span></b><br><b>Exposición:</b><br><span style='color: gray;'>“Experiencia emocional de ansiedad en la respuesta académica de estudiantes con Trastornos del Espectro Autista en educación superior”</span><br><b>En:</b> Primer Congreso Internacional Inclusión y Neurodiversidad: Avances y Desafíos<br><span style='color: gray;'>Universidad de Concepción<br>4 al 7 de marzo <br>Concepción, Chile</span></div>`)[0];
+                popup_56f7ca82de2d5277acfabee0b59ce2cc.setContent(html_2e677311c2b0f2f2bed8a56a30f18e6c);
             
         
 
-        marker_33bc2c6d75ba5e1a1f4df24bc5f3e845.bindPopup(popup_e86f84fe3e686c6e0060724ca4b99d77)
+        marker_49495d8f40e2cff8015ac5a694acce56.bindPopup(popup_56f7ca82de2d5277acfabee0b59ce2cc)
         ;
 
         
     
     
-            var marker_078572e6961cf339bf899b7a14423078 = L.marker(
+            var marker_111f5a2f5e31a9db56ba48934498030a = L.marker(
                 [-34.457344736091926, -59.1051480596421],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_8a9cdd361834126068dbcf95e48b1a4f = L.AwesomeMarkers.icon(
+            var icon_ef339ba3274d2ddace8455ad01574a1d = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_078572e6961cf339bf899b7a14423078.setIcon(icon_8a9cdd361834126068dbcf95e48b1a4f);
+            marker_111f5a2f5e31a9db56ba48934498030a.setIcon(icon_ef339ba3274d2ddace8455ad01574a1d);
         
     
-        var popup_c35b3a27e07c092e5067033ff80005cd = L.popup({"maxWidth": 300});
+        var popup_c870b9bef28c8a69f24663f77e4a2fe2 = L.popup({"maxWidth": 300});
 
         
             
-                var html_bcf55d6c6db47b068145eaba3d516c47 = $(`<div id="html_bcf55d6c6db47b068145eaba3d516c47" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Cabaluz Ducasse Fabián</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Historia y Teoría de la Educación Popular</span><br><b>En:</b> actividades académicas en el marco del Convenio de Financiamiento de la Subvención a la Instalación en la Academia 2021 Proyecto denominado "Grupo de Investigación de Pedagogías Latinoamericanas: educación, política y ciudadanía<br><span style='color: gray;'>Universidad Nacional de Luján, Argentina<br>18 y 23 de marzo <br>Buenos Aires, Argentina</span></div>`)[0];
-                popup_c35b3a27e07c092e5067033ff80005cd.setContent(html_bcf55d6c6db47b068145eaba3d516c47);
+                var html_0d50a8bd0d67548a6bbaa46dba4ed35e = $(`<div id="html_0d50a8bd0d67548a6bbaa46dba4ed35e" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Cabaluz Ducasse Fabián</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Historia y Teoría de la Educación Popular</span><br><b>En:</b> actividades académicas en el marco del Convenio de Financiamiento de la Subvención a la Instalación en la Academia 2021 Proyecto denominado "Grupo de Investigación de Pedagogías Latinoamericanas: educación, política y ciudadanía<br><span style='color: gray;'>Universidad Nacional de Luján, Argentina<br>18 y 23 de marzo <br>Buenos Aires, Argentina</span></div>`)[0];
+                popup_c870b9bef28c8a69f24663f77e4a2fe2.setContent(html_0d50a8bd0d67548a6bbaa46dba4ed35e);
             
         
 
-        marker_078572e6961cf339bf899b7a14423078.bindPopup(popup_c35b3a27e07c092e5067033ff80005cd)
+        marker_111f5a2f5e31a9db56ba48934498030a.bindPopup(popup_c870b9bef28c8a69f24663f77e4a2fe2)
         ;
 
         
     
     
-            var marker_eda93a77b753e103b49310aabfb0437e = L.marker(
+            var marker_8c61fe90b15e83275f3c71111922e613 = L.marker(
                 [43.07674870664916, -89.4124016720928],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_b669bf1679f35a8b8d5e8226af653e03 = L.AwesomeMarkers.icon(
+            var icon_41e7aab5c2ad34cb2b4aeeeb6b844a5f = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_eda93a77b753e103b49310aabfb0437e.setIcon(icon_b669bf1679f35a8b8d5e8226af653e03);
+            marker_8c61fe90b15e83275f3c71111922e613.setIcon(icon_41e7aab5c2ad34cb2b4aeeeb6b844a5f);
         
     
-        var popup_9c88ba8717bc4839e77868c6c62aac53 = L.popup({"maxWidth": 300});
+        var popup_1c07784e5b23489abdd553bce2609c03 = L.popup({"maxWidth": 300});
 
         
             
-                var html_1d493ace2a9633486a03e34003137235 = $(`<div id="html_1d493ace2a9633486a03e34003137235" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Cavieres Fernández Eduardo</span></b><br><b>Exposición:</b><br><span style='color: gray;'> Postdoctorado</span><br><b>En:</b> <br><span style='color: gray;'>Universidad de Wisconsin <br>01 de julio al 31 de diciembre de 2024<br>Madison, Estados Unidos</span></div>`)[0];
-                popup_9c88ba8717bc4839e77868c6c62aac53.setContent(html_1d493ace2a9633486a03e34003137235);
+                var html_f4c566d2736b01d661500f20e50e7964 = $(`<div id="html_f4c566d2736b01d661500f20e50e7964" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Cavieres Fernández Eduardo</span></b><br><b>Exposición:</b><br><span style='color: gray;'> Postdoctorado</span><br><b>En:</b> <br><span style='color: gray;'>Universidad de Wisconsin <br>01 de julio al 31 de diciembre de 2024<br>Madison, Estados Unidos</span></div>`)[0];
+                popup_1c07784e5b23489abdd553bce2609c03.setContent(html_f4c566d2736b01d661500f20e50e7964);
             
         
 
-        marker_eda93a77b753e103b49310aabfb0437e.bindPopup(popup_9c88ba8717bc4839e77868c6c62aac53)
+        marker_8c61fe90b15e83275f3c71111922e613.bindPopup(popup_1c07784e5b23489abdd553bce2609c03)
         ;
 
         
     
     
-            var marker_f718c201313984269a181232296fbb06 = L.marker(
+            var marker_130d6e93f70b1c8bf5fa520b6abc7c0c = L.marker(
                 [-23.537779038794085, -46.67106930131924],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_edb46e924922ecc8aee18c51ca3c3d6c = L.AwesomeMarkers.icon(
+            var icon_9c669b4d2aaf8d9508ed2e1b24916d22 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_f718c201313984269a181232296fbb06.setIcon(icon_edb46e924922ecc8aee18c51ca3c3d6c);
+            marker_130d6e93f70b1c8bf5fa520b6abc7c0c.setIcon(icon_9c669b4d2aaf8d9508ed2e1b24916d22);
         
     
-        var popup_180b18ef91f8f3bcbb7460487ff92774 = L.popup({"maxWidth": 300});
+        var popup_dd86a6fbfbce03edd5a40d921320c9e7 = L.popup({"maxWidth": 300});
 
         
             
-                var html_a6661d3263ca11a1d5499e6e33cbe26b = $(`<div id="html_a6661d3263ca11a1d5499e6e33cbe26b" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Cabaluz Ducasse Fabián</span></b><br><b>Exposición:</b><br><span style='color: gray;'>"Grupo de Investigación de Pedagogías Latinoamericanas: educación, política y ciudadanía"</span><br><b>En:</b> Conferencia “Lutas sociais e disputas com a ascensão da extrema direita na América Latina: a experiência Chilena”<br><span style='color: gray;'>Pontificia Universidad Católica de Sao Paulo, PUC-SP, Brasil<br>14 y 18 de abril <br>Sao Paulo, Brasil</span></div>`)[0];
-                popup_180b18ef91f8f3bcbb7460487ff92774.setContent(html_a6661d3263ca11a1d5499e6e33cbe26b);
+                var html_35da857721c52da6961acfe972c38eac = $(`<div id="html_35da857721c52da6961acfe972c38eac" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Cabaluz Ducasse Fabián</span></b><br><b>Exposición:</b><br><span style='color: gray;'>"Grupo de Investigación de Pedagogías Latinoamericanas: educación, política y ciudadanía"</span><br><b>En:</b> Conferencia “Lutas sociais e disputas com a ascensão da extrema direita na América Latina: a experiência Chilena”<br><span style='color: gray;'>Pontificia Universidad Católica de Sao Paulo, PUC-SP, Brasil<br>14 y 18 de abril <br>Sao Paulo, Brasil</span></div>`)[0];
+                popup_dd86a6fbfbce03edd5a40d921320c9e7.setContent(html_35da857721c52da6961acfe972c38eac);
             
         
 
-        marker_f718c201313984269a181232296fbb06.bindPopup(popup_180b18ef91f8f3bcbb7460487ff92774)
+        marker_130d6e93f70b1c8bf5fa520b6abc7c0c.bindPopup(popup_dd86a6fbfbce03edd5a40d921320c9e7)
         ;
 
         
     
     
-            var marker_088c2ba3a1a2134b818664e5292d6eb3 = L.marker(
+            var marker_b16bbd537a8aa8ec418e08d791fd6cc7 = L.marker(
                 [-33.44488260158499, -70.66265420982711],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_ef8bb021df4c15ac54f789a970278395 = L.AwesomeMarkers.icon(
+            var icon_dcf058b6d832d3d7feb6a71a8f3fef60 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_088c2ba3a1a2134b818664e5292d6eb3.setIcon(icon_ef8bb021df4c15ac54f789a970278395);
+            marker_b16bbd537a8aa8ec418e08d791fd6cc7.setIcon(icon_dcf058b6d832d3d7feb6a71a8f3fef60);
         
     
-        var popup_940894cb55aec774b37647d03e41ceed = L.popup({"maxWidth": 300});
+        var popup_6446494e45cdc9f0d8ba5c5d4d94c746 = L.popup({"maxWidth": 300});
 
         
             
-                var html_95fcea07c2b01058d6eff02bb17b66a7 = $(`<div id="html_95fcea07c2b01058d6eff02bb17b66a7" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  G. Miranda David</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Artivismo feminista. Acuerpar las calles</span><br><b>En:</b> Congreso chileno de Sociología<br><span style='color: gray;'>Escuela de Sociología UDP, Departamento de Sociología UAH.<br>2/05/2024<br>Santiago, Chile</span></div>`)[0];
-                popup_940894cb55aec774b37647d03e41ceed.setContent(html_95fcea07c2b01058d6eff02bb17b66a7);
+                var html_4be48d9f6b0b5117e46fa1baa4735d9d = $(`<div id="html_4be48d9f6b0b5117e46fa1baa4735d9d" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  G. Miranda David</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Artivismo feminista. Acuerpar las calles</span><br><b>En:</b> Congreso chileno de Sociología<br><span style='color: gray;'>Escuela de Sociología UDP, Departamento de Sociología UAH.<br>2/05/2024<br>Santiago, Chile</span></div>`)[0];
+                popup_6446494e45cdc9f0d8ba5c5d4d94c746.setContent(html_4be48d9f6b0b5117e46fa1baa4735d9d);
             
         
 
-        marker_088c2ba3a1a2134b818664e5292d6eb3.bindPopup(popup_940894cb55aec774b37647d03e41ceed)
+        marker_b16bbd537a8aa8ec418e08d791fd6cc7.bindPopup(popup_6446494e45cdc9f0d8ba5c5d4d94c746)
         ;
 
         
     
     
-            var marker_6fe4569ab0ea5ddb5ab97aab1cd033bc = L.marker(
+            var marker_baa59516bb3da5a13d30dfd3a68f4665 = L.marker(
                 [48.80565936119562, 2.146304722051153],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_22e5b41218897702c9026b3a028e9b08 = L.AwesomeMarkers.icon(
+            var icon_4a6b4ab9ce1274c4bd49aff69ddcf7f0 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_6fe4569ab0ea5ddb5ab97aab1cd033bc.setIcon(icon_22e5b41218897702c9026b3a028e9b08);
+            marker_baa59516bb3da5a13d30dfd3a68f4665.setIcon(icon_4a6b4ab9ce1274c4bd49aff69ddcf7f0);
         
     
-        var popup_f10803648feb8bb99ed36a28d91513f9 = L.popup({"maxWidth": 300});
+        var popup_1be991cca63aeff25d9667ca9010b0fc = L.popup({"maxWidth": 300});
 
         
             
-                var html_e98486de162527f5a1b199d2ec9a6037 = $(`<div id="html_e98486de162527f5a1b199d2ec9a6037" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Gaona Paredes Jorge</span></b><br><b>Estancia Investigativa:</b><br><span style='color: gray;'>Año 2 proyecto ECOS-ANID 220035.</span><br><b>En:</b> <br><span style='color: gray;'>l’Académie de Versailles y Université de Paris, Francia<br>3 y 24 de junio <br>Paris, Francia</span></div>`)[0];
-                popup_f10803648feb8bb99ed36a28d91513f9.setContent(html_e98486de162527f5a1b199d2ec9a6037);
+                var html_008d379df6dfbbe8ea63aa91144839d9 = $(`<div id="html_008d379df6dfbbe8ea63aa91144839d9" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Gaona Paredes Jorge</span></b><br><b>Estancia Investigativa:</b><br><span style='color: gray;'>Año 2 proyecto ECOS-ANID 220035.</span><br><b>En:</b> <br><span style='color: gray;'>l’Académie de Versailles y Université de Paris, Francia<br>3 y 24 de junio <br>Paris, Francia</span></div>`)[0];
+                popup_1be991cca63aeff25d9667ca9010b0fc.setContent(html_008d379df6dfbbe8ea63aa91144839d9);
             
         
 
-        marker_6fe4569ab0ea5ddb5ab97aab1cd033bc.bindPopup(popup_f10803648feb8bb99ed36a28d91513f9)
+        marker_baa59516bb3da5a13d30dfd3a68f4665.bindPopup(popup_1be991cca63aeff25d9667ca9010b0fc)
         ;
 
         
     
     
-            var marker_5e12c7d95e7ae1c96867dcc4c64fd671 = L.marker(
+            var marker_ceecc3b4b651b2a92da1e484ae927a3d = L.marker(
                 [4.682312646905862, -74.07382591164365],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_75d720c09f54c688d4b3da25f0a314ac = L.AwesomeMarkers.icon(
+            var icon_70e42dd94e31cb916acfd740f7c1aba7 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_5e12c7d95e7ae1c96867dcc4c64fd671.setIcon(icon_75d720c09f54c688d4b3da25f0a314ac);
+            marker_ceecc3b4b651b2a92da1e484ae927a3d.setIcon(icon_70e42dd94e31cb916acfd740f7c1aba7);
         
     
-        var popup_985837f61c1da084508e0e4c7d29d0fc = L.popup({"maxWidth": 300});
+        var popup_2743045bc5a3b296a2f48bd4da96bb33 = L.popup({"maxWidth": 300});
 
         
             
-                var html_5f5a720def929d1d47c12e6c3024ebff = $(`<div id="html_5f5a720def929d1d47c12e6c3024ebff" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  </span></b><br><b>:</b><br><span style='color: gray;'>Implementación de políticas públicas chilenas en contextos educativos de personas en situación de discapacidad</span><br><b>En:</b> <br><span style='color: gray;'>Universidad de La Salle, Bogotá – Colombia<br>10 y 15 de junio <br>Bogota, Colombia</span></div>`)[0];
-                popup_985837f61c1da084508e0e4c7d29d0fc.setContent(html_5f5a720def929d1d47c12e6c3024ebff);
+                var html_962de4f9c10199a2873803945da3ec36 = $(`<div id="html_962de4f9c10199a2873803945da3ec36" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  </span></b><br><b>:</b><br><span style='color: gray;'>Implementación de políticas públicas chilenas en contextos educativos de personas en situación de discapacidad</span><br><b>En:</b> <br><span style='color: gray;'>Universidad de La Salle, Bogotá – Colombia<br>10 y 15 de junio <br>Bogota, Colombia</span></div>`)[0];
+                popup_2743045bc5a3b296a2f48bd4da96bb33.setContent(html_962de4f9c10199a2873803945da3ec36);
             
         
 
-        marker_5e12c7d95e7ae1c96867dcc4c64fd671.bindPopup(popup_985837f61c1da084508e0e4c7d29d0fc)
+        marker_ceecc3b4b651b2a92da1e484ae927a3d.bindPopup(popup_2743045bc5a3b296a2f48bd4da96bb33)
         ;
 
         
     
     
-            var marker_edc1f79dc4173d0394b634d8f5cfedba = L.marker(
+            var marker_fd29dd7f76e31cf4a54679058b7dfdb2 = L.marker(
                 [-33.847441350807465, -68.20985349991511],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_ee15b3af6fd85f0af9b78924243d3644 = L.AwesomeMarkers.icon(
+            var icon_120d3ae4120582cd941036abe1ab63ec = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_edc1f79dc4173d0394b634d8f5cfedba.setIcon(icon_ee15b3af6fd85f0af9b78924243d3644);
+            marker_fd29dd7f76e31cf4a54679058b7dfdb2.setIcon(icon_120d3ae4120582cd941036abe1ab63ec);
         
     
-        var popup_c1315db8682b7ba2ebaee5cda138bbdc = L.popup({"maxWidth": 300});
+        var popup_d3d0e0e0d047cb412d29bd992ae0c462 = L.popup({"maxWidth": 300});
 
         
             
-                var html_2b0e3843aa3f2c14f1c38b449dccc5c4 = $(`<div id="html_2b0e3843aa3f2c14f1c38b449dccc5c4" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Pérez Lisboa Sandra</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Resignificaciones geométricas a través de observaciones patrimoniales bioculturales en el Valle de Aconcagua</span><br><b>En:</b> Presentación libro <br><span style='color: gray;'>Facultad de Educación de la Universidad de Cuyo<br>30 de mayo y 1 de junio<br>Cuyo, Argentina</span></div>`)[0];
-                popup_c1315db8682b7ba2ebaee5cda138bbdc.setContent(html_2b0e3843aa3f2c14f1c38b449dccc5c4);
+                var html_f22a37baa4416412347c47a010854e44 = $(`<div id="html_f22a37baa4416412347c47a010854e44" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Pérez Lisboa Sandra</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Resignificaciones geométricas a través de observaciones patrimoniales bioculturales en el Valle de Aconcagua</span><br><b>En:</b> Presentación libro <br><span style='color: gray;'>Facultad de Educación de la Universidad de Cuyo<br>30 de mayo y 1 de junio<br>Cuyo, Argentina</span></div>`)[0];
+                popup_d3d0e0e0d047cb412d29bd992ae0c462.setContent(html_f22a37baa4416412347c47a010854e44);
             
         
 
-        marker_edc1f79dc4173d0394b634d8f5cfedba.bindPopup(popup_c1315db8682b7ba2ebaee5cda138bbdc)
+        marker_fd29dd7f76e31cf4a54679058b7dfdb2.bindPopup(popup_d3d0e0e0d047cb412d29bd992ae0c462)
         ;
 
         
     
     
-            var marker_c7e6815b20cfbd7aa8b6d70683482ed8 = L.marker(
+            var marker_f0b90e56675e94dc16ba2f4ce434914d = L.marker(
                 [36.107591320000886, -115.14349301652008],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_a8cb21f9633b1617a0043807cc982469 = L.AwesomeMarkers.icon(
+            var icon_f3cea2cff7229441e26fd5a86888bfd1 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_c7e6815b20cfbd7aa8b6d70683482ed8.setIcon(icon_a8cb21f9633b1617a0043807cc982469);
+            marker_f0b90e56675e94dc16ba2f4ce434914d.setIcon(icon_f3cea2cff7229441e26fd5a86888bfd1);
         
     
-        var popup_8508adf7305841981e6a4a8821b2a1eb = L.popup({"maxWidth": 300});
+        var popup_92bfbee0098f34552c8e260044de3ce6 = L.popup({"maxWidth": 300});
 
         
             
-                var html_36610e852c8dd41515b8e0633427d52a = $(`<div id="html_36610e852c8dd41515b8e0633427d52a" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Rojas Ríos María Jacqueline</span></b><br><b>Exposición:</b><br><span style='color: gray;'>“Experiencias sobre aseguramiento de la calidad en Chile y Quebec</span><br><b>En:</b> 8a Edición de la Conferencia
+                var html_f91fa08d8541b5ee2d84bce246d2ec87 = $(`<div id="html_f91fa08d8541b5ee2d84bce246d2ec87" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Rojas Ríos María Jacqueline</span></b><br><b>Exposición:</b><br><span style='color: gray;'>“Experiencias sobre aseguramiento de la calidad en Chile y Quebec</span><br><b>En:</b> 8a Edición de la Conferencia
  de las Américas sobre Educación Internacional (CAEI 2023)<br><span style='color: gray;'>Universidad de Nevada<br>4 al 12 de noviembre<br>las Vega, Estados Unidos</span></div>`)[0];
-                popup_8508adf7305841981e6a4a8821b2a1eb.setContent(html_36610e852c8dd41515b8e0633427d52a);
+                popup_92bfbee0098f34552c8e260044de3ce6.setContent(html_f91fa08d8541b5ee2d84bce246d2ec87);
             
         
 
-        marker_c7e6815b20cfbd7aa8b6d70683482ed8.bindPopup(popup_8508adf7305841981e6a4a8821b2a1eb)
+        marker_f0b90e56675e94dc16ba2f4ce434914d.bindPopup(popup_92bfbee0098f34552c8e260044de3ce6)
         ;
 
         
     
     
-            var marker_8008ff1cb8f2bb249c73494ec92c5f39 = L.marker(
+            var marker_481e206b64d9371e7de79cc7eeb0ac2a = L.marker(
                 [-23.53646753029888, -46.671320043984586],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_de721ebe0ff008c38651773e28cac4dc = L.AwesomeMarkers.icon(
+            var icon_2be328238276e545d660984c04db8ed9 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_8008ff1cb8f2bb249c73494ec92c5f39.setIcon(icon_de721ebe0ff008c38651773e28cac4dc);
+            marker_481e206b64d9371e7de79cc7eeb0ac2a.setIcon(icon_2be328238276e545d660984c04db8ed9);
         
     
-        var popup_8e87008ffaa047a6da5d52771eb68e10 = L.popup({"maxWidth": 300});
+        var popup_d3f6034a8125a96eb7eaa4011139aee7 = L.popup({"maxWidth": 300});
 
         
             
-                var html_944aef8e8f52513d3b7d86ce344558c4 = $(`<div id="html_944aef8e8f52513d3b7d86ce344558c4" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Cabaluz Ducasse Fabián</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Governos populares do Brasil e do Chile: Perspectivas e desafios sociais e educativos</span><br><b>En:</b> Intercambio entre investigadores del Grupo These y los aspectos teóricos y metodológicos del Grupo de Pedagogías Latinoamericanas: educación, política y ciudadanía de la UPLA<br><span style='color: gray;'>Pontificia Universidad Católica de Sao Paulo<br>24 y 28 de abril<br>Sao Paulo, Brasil</span></div>`)[0];
-                popup_8e87008ffaa047a6da5d52771eb68e10.setContent(html_944aef8e8f52513d3b7d86ce344558c4);
+                var html_5f67778e933bf5848984f97b6f0ae23b = $(`<div id="html_5f67778e933bf5848984f97b6f0ae23b" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Cabaluz Ducasse Fabián</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Governos populares do Brasil e do Chile: Perspectivas e desafios sociais e educativos</span><br><b>En:</b> Intercambio entre investigadores del Grupo These y los aspectos teóricos y metodológicos del Grupo de Pedagogías Latinoamericanas: educación, política y ciudadanía de la UPLA<br><span style='color: gray;'>Pontificia Universidad Católica de Sao Paulo<br>24 y 28 de abril<br>Sao Paulo, Brasil</span></div>`)[0];
+                popup_d3f6034a8125a96eb7eaa4011139aee7.setContent(html_5f67778e933bf5848984f97b6f0ae23b);
             
         
 
-        marker_8008ff1cb8f2bb249c73494ec92c5f39.bindPopup(popup_8e87008ffaa047a6da5d52771eb68e10)
+        marker_481e206b64d9371e7de79cc7eeb0ac2a.bindPopup(popup_d3f6034a8125a96eb7eaa4011139aee7)
         ;
 
         
     
     
-            var marker_af0d06aaa357d6e21e1ddf59043340f7 = L.marker(
+            var marker_af918dddb80014254656bae6dd2b5dc5 = L.marker(
                 [48.85570587219904, 2.3318548974573408],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_c8608dc9eaa134c9a932246b9e285c73 = L.AwesomeMarkers.icon(
+            var icon_233326773bf51927949127f7076e17a1 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_af0d06aaa357d6e21e1ddf59043340f7.setIcon(icon_c8608dc9eaa134c9a932246b9e285c73);
+            marker_af918dddb80014254656bae6dd2b5dc5.setIcon(icon_233326773bf51927949127f7076e17a1);
         
     
-        var popup_d0c4b41a92b4c4558a6831a7c7aa8bcc = L.popup({"maxWidth": 300});
+        var popup_b1b25aea3eb789314abd8e2bb73445e5 = L.popup({"maxWidth": 300});
 
         
             
-                var html_4bf4662b681edd5b1c5dc181bf0c8ab6 = $(`<div id="html_4bf4662b681edd5b1c5dc181bf0c8ab6" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Rodríguez Jara Miguel</span></b><br><b>Exposición:</b><br><span style='color: gray;'>“Perfeccionamiento de Competencias a través de Estadías Cortas 2023”</span><br><b>En:</b> Mathématiques, Paris, Francia<br><span style='color: gray;'>Université Paris Cité<br>9 al 23 de octubre<br>París, Francia</span></div>`)[0];
-                popup_d0c4b41a92b4c4558a6831a7c7aa8bcc.setContent(html_4bf4662b681edd5b1c5dc181bf0c8ab6);
+                var html_32d5e697f5efb47c0c45c2dc91586496 = $(`<div id="html_32d5e697f5efb47c0c45c2dc91586496" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Rodríguez Jara Miguel</span></b><br><b>Exposición:</b><br><span style='color: gray;'>“Perfeccionamiento de Competencias a través de Estadías Cortas 2023”</span><br><b>En:</b> Mathématiques, Paris, Francia<br><span style='color: gray;'>Université Paris Cité<br>9 al 23 de octubre<br>París, Francia</span></div>`)[0];
+                popup_b1b25aea3eb789314abd8e2bb73445e5.setContent(html_32d5e697f5efb47c0c45c2dc91586496);
             
         
 
-        marker_af0d06aaa357d6e21e1ddf59043340f7.bindPopup(popup_d0c4b41a92b4c4558a6831a7c7aa8bcc)
+        marker_af918dddb80014254656bae6dd2b5dc5.bindPopup(popup_b1b25aea3eb789314abd8e2bb73445e5)
         ;
 
         
     
     
-            var marker_a14eda2686da90f7d2d4af5f80cd8aee = L.marker(
+            var marker_01f2c753e00e1029273bbf9a4c001a96 = L.marker(
                 [-15.795877570217469, -47.90234233029089],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_c221b2151f7f92c07fa21aede9680af2 = L.AwesomeMarkers.icon(
+            var icon_27b3c05680e357c355e52e536036a9d3 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_a14eda2686da90f7d2d4af5f80cd8aee.setIcon(icon_c221b2151f7f92c07fa21aede9680af2);
+            marker_01f2c753e00e1029273bbf9a4c001a96.setIcon(icon_27b3c05680e357c355e52e536036a9d3);
         
     
-        var popup_3db46c3d0e8b361866b716498d24caad = L.popup({"maxWidth": 300});
+        var popup_b4c6bb50b3a58eaea75a65eac57a295e = L.popup({"maxWidth": 300});
 
         
             
-                var html_b4d209a77b6f5913ef8f9eb25f22b796 = $(`<div id="html_b4d209a77b6f5913ef8f9eb25f22b796" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Reyes Cayul Ignacio</span></b><br><b>Exposición:</b><br><span style='color: gray;'>“LA ENSEÑANZA DEL FRANCÉS EN CHILE: UNA REVISIÓN HISTÓRICA NECESARIA PARA COMPRENDER SU LUGAR ACTUAL EN EL SISTEMA EDUCATIVO CHILENO, dentro del simposio: POLÍTICAS LINGÜÍSTICAS ENTRE LA DISCURSO Y LA PRÁCTICA: ALGUNOS ENFOQUES”</span><br><b>En:</b> XVIII SEDIFRALE / Congreso Panamericano de Profesores de Francés<br><span style='color: gray;'><br>20 y 24 de noviembre<br>Brasilia, Brasil</span></div>`)[0];
-                popup_3db46c3d0e8b361866b716498d24caad.setContent(html_b4d209a77b6f5913ef8f9eb25f22b796);
+                var html_e3882eaffc63b21578463c2ff2d49d27 = $(`<div id="html_e3882eaffc63b21578463c2ff2d49d27" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Reyes Cayul Ignacio</span></b><br><b>Exposición:</b><br><span style='color: gray;'>“LA ENSEÑANZA DEL FRANCÉS EN CHILE: UNA REVISIÓN HISTÓRICA NECESARIA PARA COMPRENDER SU LUGAR ACTUAL EN EL SISTEMA EDUCATIVO CHILENO, dentro del simposio: POLÍTICAS LINGÜÍSTICAS ENTRE LA DISCURSO Y LA PRÁCTICA: ALGUNOS ENFOQUES”</span><br><b>En:</b> XVIII SEDIFRALE / Congreso Panamericano de Profesores de Francés<br><span style='color: gray;'><br>20 y 24 de noviembre<br>Brasilia, Brasil</span></div>`)[0];
+                popup_b4c6bb50b3a58eaea75a65eac57a295e.setContent(html_e3882eaffc63b21578463c2ff2d49d27);
             
         
 
-        marker_a14eda2686da90f7d2d4af5f80cd8aee.bindPopup(popup_3db46c3d0e8b361866b716498d24caad)
+        marker_01f2c753e00e1029273bbf9a4c001a96.bindPopup(popup_b4c6bb50b3a58eaea75a65eac57a295e)
         ;
 
         
     
     
-            var marker_d8f255a303452a22c2effc13a38c7bf1 = L.marker(
+            var marker_9d8b2ba0331b2b422d6287946206b6c2 = L.marker(
                 [-19.74469400245413, -47.93683083246802],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_cf54a1e477e6a5e814d9caae518706f6 = L.AwesomeMarkers.icon(
+            var icon_045dd23738f0f38c8e473ee4240ba80a = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_d8f255a303452a22c2effc13a38c7bf1.setIcon(icon_cf54a1e477e6a5e814d9caae518706f6);
+            marker_9d8b2ba0331b2b422d6287946206b6c2.setIcon(icon_045dd23738f0f38c8e473ee4240ba80a);
         
     
-        var popup_f9541906895e3565f9c1dcd52dbde776 = L.popup({"maxWidth": 300});
+        var popup_b3107d684ca7fffb29cedb4606deee46 = L.popup({"maxWidth": 300});
 
         
             
-                var html_5bb885ae79deaa55db91d6f1ae68e1d3 = $(`<div id="html_5bb885ae79deaa55db91d6f1ae68e1d3" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Cabaluz Ducasse Fabián</span></b><br><b>Exposición:</b><br><span style='color: gray;'>"Grupo de Investigación de Pedagogías Latinoamericanas:
+                var html_39cb5d891d8c44e964a598edcf700684 = $(`<div id="html_39cb5d891d8c44e964a598edcf700684" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Cabaluz Ducasse Fabián</span></b><br><b>Exposición:</b><br><span style='color: gray;'>"Grupo de Investigación de Pedagogías Latinoamericanas:
  educación, política y ciudadanía"</span><br><b>En:</b> “XII Encontro de Pesquisa em Educação
  e do VI Congresso Internacional de Trabalho Docente e Processos Educativos”<br><span style='color: gray;'>Universidad de UBERABA, Brasil<br>5 y 6 de octubre<br>Uberara, Brasil</span></div>`)[0];
-                popup_f9541906895e3565f9c1dcd52dbde776.setContent(html_5bb885ae79deaa55db91d6f1ae68e1d3);
+                popup_b3107d684ca7fffb29cedb4606deee46.setContent(html_39cb5d891d8c44e964a598edcf700684);
             
         
 
-        marker_d8f255a303452a22c2effc13a38c7bf1.bindPopup(popup_f9541906895e3565f9c1dcd52dbde776)
+        marker_9d8b2ba0331b2b422d6287946206b6c2.bindPopup(popup_b3107d684ca7fffb29cedb4606deee46)
         ;
 
         
     
     
-            var marker_1abc279935a0e69056a10e62e469c59e = L.marker(
+            var marker_e6a648dd49338145c7ab9473a0e2aaeb = L.marker(
                 [-34.59749479771148, -58.37091028900387],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_7dc150d90bf6836a92dc3f2ec10cb29a = L.AwesomeMarkers.icon(
+            var icon_f36af5b1d8cd81d46c55beaa7178e358 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_1abc279935a0e69056a10e62e469c59e.setIcon(icon_7dc150d90bf6836a92dc3f2ec10cb29a);
+            marker_e6a648dd49338145c7ab9473a0e2aaeb.setIcon(icon_f36af5b1d8cd81d46c55beaa7178e358);
         
     
-        var popup_492e1deaa67581fc70c762629f0644e7 = L.popup({"maxWidth": 300});
+        var popup_cc1af05e8d5763d29c1d3999c1ff4768 = L.popup({"maxWidth": 300});
 
         
             
-                var html_cdf136e2fd16ec5d945cd76c9e659e3f = $(`<div id="html_cdf136e2fd16ec5d945cd76c9e659e3f" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Ilabaca Turri Tomas</span></b><br><b>Exposición:</b><br><span style='color: gray;'></span><br><b>En:</b> XV Jornadas de la Carrera de Sociología<br><span style='color: gray;'>Universidad de Buenos Aires, Argentina.<br>7 y 10 de noviembre<br>Buenos Aires, Argentina</span></div>`)[0];
-                popup_492e1deaa67581fc70c762629f0644e7.setContent(html_cdf136e2fd16ec5d945cd76c9e659e3f);
+                var html_6bd39227e1109f38d2cdc368800baa66 = $(`<div id="html_6bd39227e1109f38d2cdc368800baa66" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Ilabaca Turri Tomas</span></b><br><b>Exposición:</b><br><span style='color: gray;'></span><br><b>En:</b> XV Jornadas de la Carrera de Sociología<br><span style='color: gray;'>Universidad de Buenos Aires, Argentina.<br>7 y 10 de noviembre<br>Buenos Aires, Argentina</span></div>`)[0];
+                popup_cc1af05e8d5763d29c1d3999c1ff4768.setContent(html_6bd39227e1109f38d2cdc368800baa66);
             
         
 
-        marker_1abc279935a0e69056a10e62e469c59e.bindPopup(popup_492e1deaa67581fc70c762629f0644e7)
+        marker_e6a648dd49338145c7ab9473a0e2aaeb.bindPopup(popup_cc1af05e8d5763d29c1d3999c1ff4768)
         ;
 
         
     
     
-            var marker_3a924fe516ce287a78ab8b93a4d48722 = L.marker(
+            var marker_117c2c0435d315c4cc53420e6e3ab829 = L.marker(
                 [-34.61894270364067, -58.376231853367095],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_6a88033e0de4a829ae9c3abcdb58168b = L.AwesomeMarkers.icon(
+            var icon_4cac5395993cad685d28c14092cffb02 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_3a924fe516ce287a78ab8b93a4d48722.setIcon(icon_6a88033e0de4a829ae9c3abcdb58168b);
+            marker_117c2c0435d315c4cc53420e6e3ab829.setIcon(icon_4cac5395993cad685d28c14092cffb02);
         
     
-        var popup_52f767783e7d77151aecae2071770dc3 = L.popup({"maxWidth": 300});
+        var popup_14663ee83d46bc7311ad4f1dedbc6dbc = L.popup({"maxWidth": 300});
 
         
             
-                var html_8befee8382708026979449f910ff020b = $(`<div id="html_8befee8382708026979449f910ff020b" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Cabaluz Ducasse Fabián</span></b><br><b>Exposición:</b><br><span style='color: gray;'>“Socialización avances Proyecto
+                var html_d4fc6726216f6eb333801c08cf8c1e4c = $(`<div id="html_d4fc6726216f6eb333801c08cf8c1e4c" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Cabaluz Ducasse Fabián</span></b><br><b>Exposición:</b><br><span style='color: gray;'>“Socialización avances Proyecto
  ‘Procedencias y resonancias de la educación popular y las pedagogías críticas’</span><br><b>En:</b> <br><span style='color: gray;'>Universidad Pedagógica Nacional de Bogotá, Colombia<br>16 y 20 de octubre<br>Bogota, Colombia</span></div>`)[0];
-                popup_52f767783e7d77151aecae2071770dc3.setContent(html_8befee8382708026979449f910ff020b);
+                popup_14663ee83d46bc7311ad4f1dedbc6dbc.setContent(html_d4fc6726216f6eb333801c08cf8c1e4c);
             
         
 
-        marker_3a924fe516ce287a78ab8b93a4d48722.bindPopup(popup_52f767783e7d77151aecae2071770dc3)
+        marker_117c2c0435d315c4cc53420e6e3ab829.bindPopup(popup_14663ee83d46bc7311ad4f1dedbc6dbc)
         ;
 
         
     
     
-            var marker_1c95582a35f22c6cf1eed7930a02be16 = L.marker(
+            var marker_2f5fd4243d468c1c0e0941ade0a6438a = L.marker(
                 [-8.050565145475865, -34.95074172862369],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_b145b42c321a661ba8329650e0fe0795 = L.AwesomeMarkers.icon(
+            var icon_2fe805fa0e4b665af147edd39de4832e = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_1c95582a35f22c6cf1eed7930a02be16.setIcon(icon_b145b42c321a661ba8329650e0fe0795);
+            marker_2f5fd4243d468c1c0e0941ade0a6438a.setIcon(icon_2fe805fa0e4b665af147edd39de4832e);
         
     
-        var popup_80f28fca5c7f53d772b8a6f5fa80e960 = L.popup({"maxWidth": 300});
+        var popup_798119f57b5720fb6506ac0e6211dd7c = L.popup({"maxWidth": 300});
 
         
             
-                var html_e3305fa07467ad9b7a3e7423c9c3e34c = $(`<div id="html_e3305fa07467ad9b7a3e7423c9c3e34c" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Hormazabal Soto Auristela</span></b><br><b>Exposición:</b><br><span style='color: gray;'>“ESPELHOS EPISTEMOLÓGICOS DAS
+                var html_099da343ed7d422fb181c4890a893f2a = $(`<div id="html_099da343ed7d422fb181c4890a893f2a" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Hormazabal Soto Auristela</span></b><br><b>Exposición:</b><br><span style='color: gray;'>“ESPELHOS EPISTEMOLÓGICOS DAS
  PRÁTICAS PEDAGÓGICAS DE ATIVISTAS E MILITANTES EDUCADORES(AS) DOS MOVIMENTOS
  SOCIAIS DE PERNAMBUCO”</span><br><b>En:</b> <br><span style='color: gray;'>Universidade Federal de Pernambuco<br>29 de noviembre al 10 de diciembre<br>Pernanbuco, Brasil</span></div>`)[0];
-                popup_80f28fca5c7f53d772b8a6f5fa80e960.setContent(html_e3305fa07467ad9b7a3e7423c9c3e34c);
+                popup_798119f57b5720fb6506ac0e6211dd7c.setContent(html_099da343ed7d422fb181c4890a893f2a);
             
         
 
-        marker_1c95582a35f22c6cf1eed7930a02be16.bindPopup(popup_80f28fca5c7f53d772b8a6f5fa80e960)
+        marker_2f5fd4243d468c1c0e0941ade0a6438a.bindPopup(popup_798119f57b5720fb6506ac0e6211dd7c)
         ;
 
         
     
     
-            var marker_10bdfcc8d01266e6448cf86d569bbd6e = L.marker(
+            var marker_08c77e14bd89146b77f875fe07ccd09a = L.marker(
                 [-35.409338730964066, -72.02099638241808],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_a5ff13ef417d653ea55b75296ba749f9 = L.AwesomeMarkers.icon(
+            var icon_445fa9a7336395e3dbfb7d46caaa0869 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_10bdfcc8d01266e6448cf86d569bbd6e.setIcon(icon_a5ff13ef417d653ea55b75296ba749f9);
+            marker_08c77e14bd89146b77f875fe07ccd09a.setIcon(icon_445fa9a7336395e3dbfb7d46caaa0869);
         
     
-        var popup_d2755658f5247b261b861da9a0a92b8e = L.popup({"maxWidth": 300});
+        var popup_2efeb3fa0ae123f0632745e33e26a5b4 = L.popup({"maxWidth": 300});
 
         
             
-                var html_0b600e18cc78ede3cc745b0bfd83cc96 = $(`<div id="html_0b600e18cc78ede3cc745b0bfd83cc96" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Jornada de trabajo avances de los proyectos
+                var html_9799e23e73816e66c357a49a7e2684e0 = $(`<div id="html_9799e23e73816e66c357a49a7e2684e0" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Jornada de trabajo avances de los proyectos
  Fondecyt de Iniciación Nº 11230953, 11231088 y 11230240.</span><br><b>En:</b> <br><span style='color: gray;'> Universidad de Talca<br>15 y 16 de noviembre<br>Talca, Chile</span></div>`)[0];
-                popup_d2755658f5247b261b861da9a0a92b8e.setContent(html_0b600e18cc78ede3cc745b0bfd83cc96);
+                popup_2efeb3fa0ae123f0632745e33e26a5b4.setContent(html_9799e23e73816e66c357a49a7e2684e0);
             
         
 
-        marker_10bdfcc8d01266e6448cf86d569bbd6e.bindPopup(popup_d2755658f5247b261b861da9a0a92b8e)
+        marker_08c77e14bd89146b77f875fe07ccd09a.bindPopup(popup_2efeb3fa0ae123f0632745e33e26a5b4)
         ;
 
         
     
     
-            var marker_3a49fb7bcc82baa6f31cc37be0d61812 = L.marker(
+            var marker_31cd9e84c07de57477b979f31d034bd6 = L.marker(
                 [-27.599719369633423, -48.51943666071906],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_2f4767822b671767c7b4a888002086b7 = L.AwesomeMarkers.icon(
+            var icon_7a106505a2f75a8b6721280ad67ee9a4 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_3a49fb7bcc82baa6f31cc37be0d61812.setIcon(icon_2f4767822b671767c7b4a888002086b7);
+            marker_31cd9e84c07de57477b979f31d034bd6.setIcon(icon_7a106505a2f75a8b6721280ad67ee9a4);
         
     
-        var popup_934a7080067fdd3150038c9cae57dca0 = L.popup({"maxWidth": 300});
+        var popup_b4fa6b2b1712bee4b885131aea207f42 = L.popup({"maxWidth": 300});
 
         
             
-                var html_f310aafae169c2b6d27c17d49dca88e4 = $(`<div id="html_f310aafae169c2b6d27c17d49dca88e4" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Hidalgo Neira María Teresa</span></b><br><b>Visita Técnica:</b><br><span style='color: gray;'>Visita Técnica</span><br><b>En:</b> <br><span style='color: gray;'>Departamento de Postgrado de la Universidad Federal de Santa Catarina, en su Campus Central de Florianópolis en Brasil<br>6 y 11 de noviembre<br>Florianapolis, Brasil</span></div>`)[0];
-                popup_934a7080067fdd3150038c9cae57dca0.setContent(html_f310aafae169c2b6d27c17d49dca88e4);
+                var html_02453ab9d3e3efaa21e21143f9d0ba2a = $(`<div id="html_02453ab9d3e3efaa21e21143f9d0ba2a" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Hidalgo Neira María Teresa</span></b><br><b>Visita Técnica:</b><br><span style='color: gray;'>Visita Técnica</span><br><b>En:</b> <br><span style='color: gray;'>Departamento de Postgrado de la Universidad Federal de Santa Catarina, en su Campus Central de Florianópolis en Brasil<br>6 y 11 de noviembre<br>Florianapolis, Brasil</span></div>`)[0];
+                popup_b4fa6b2b1712bee4b885131aea207f42.setContent(html_02453ab9d3e3efaa21e21143f9d0ba2a);
             
         
 
-        marker_3a49fb7bcc82baa6f31cc37be0d61812.bindPopup(popup_934a7080067fdd3150038c9cae57dca0)
+        marker_31cd9e84c07de57477b979f31d034bd6.bindPopup(popup_b4fa6b2b1712bee4b885131aea207f42)
         ;
 
         
     
     
-            var marker_17c55b684e589f348a8757ec9cee6fda = L.marker(
+            var marker_722629e87c55599ad9d532a580e29e62 = L.marker(
                 [18.473683502166384, -69.91159694578168],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_07aef841d98446320541f9491e9672d4 = L.AwesomeMarkers.icon(
+            var icon_b6439d1dbc03129361a5cb6ffc3f327c = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_17c55b684e589f348a8757ec9cee6fda.setIcon(icon_07aef841d98446320541f9491e9672d4);
+            marker_722629e87c55599ad9d532a580e29e62.setIcon(icon_b6439d1dbc03129361a5cb6ffc3f327c);
         
     
-        var popup_7963e2ac8df9668048c2d5963a4aff82 = L.popup({"maxWidth": 300});
+        var popup_b61d7530105d93ef2079d8551d4a96ad = L.popup({"maxWidth": 300});
 
         
             
-                var html_bab29926edb191dbf69222a8e3b0c998 = $(`<div id="html_bab29926edb191dbf69222a8e3b0c998" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Rojas Ríos María Jacqueline</span></b><br><b>Exposición:</b><br><span style='color: gray;'>“Experiencia, compromiso estudiantil y
+                var html_ff23eed20fd5b0bfaa72ae464184534b = $(`<div id="html_ff23eed20fd5b0bfaa72ae464184534b" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Rojas Ríos María Jacqueline</span></b><br><b>Exposición:</b><br><span style='color: gray;'>“Experiencia, compromiso estudiantil y
  calidad en estudiantes de pedagogía”</span><br><b>En:</b> Congreso
  Internacional Ideice 2023<br><span style='color: gray;'>Instituto Dominicano de Evaluación e Investigación de la Calidad Educativa (Ideice)<br>5 al 9 de diciembre <br>Santo Domingo, República Dominicana</span></div>`)[0];
-                popup_7963e2ac8df9668048c2d5963a4aff82.setContent(html_bab29926edb191dbf69222a8e3b0c998);
+                popup_b61d7530105d93ef2079d8551d4a96ad.setContent(html_ff23eed20fd5b0bfaa72ae464184534b);
             
         
 
-        marker_17c55b684e589f348a8757ec9cee6fda.bindPopup(popup_7963e2ac8df9668048c2d5963a4aff82)
+        marker_722629e87c55599ad9d532a580e29e62.bindPopup(popup_b61d7530105d93ef2079d8551d4a96ad)
         ;
 
         
     
     
-            var marker_ed3a1e06f7e098855605ca5953186dd6 = L.marker(
+            var marker_50f1b5a7955e376d29eeacc40de9ab8b = L.marker(
                 [-33.444048109971895, -70.63149550639174],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_27c09de1d7d32ae5ac38ce200e9eda0b = L.AwesomeMarkers.icon(
+            var icon_da12714b151bc2a314cf63684d39cc1c = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_ed3a1e06f7e098855605ca5953186dd6.setIcon(icon_27c09de1d7d32ae5ac38ce200e9eda0b);
+            marker_50f1b5a7955e376d29eeacc40de9ab8b.setIcon(icon_da12714b151bc2a314cf63684d39cc1c);
         
     
-        var popup_782c3a81246a1d9f62cac1f8bba021b5 = L.popup({"maxWidth": 300});
+        var popup_d753673c5e1edd5d0de0812e4d932480 = L.popup({"maxWidth": 300});
 
         
             
-                var html_2e9a3f806e453df5fba28e3fcd581c63 = $(`<div id="html_2e9a3f806e453df5fba28e3fcd581c63" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>“BÚSQUEDAS BIBLIOGRÁFICAS SISTEMÁTICAS EN EDUCACIÓN MATEMÁTICA EN LA ERA DE LA IA”. </span><br><b>En:</b> <br><span style='color: gray;'>Universidad Metropolitana de Ciencias de la Educación (UMCE)<br>5 y 7 de diciembre <br>Santiago, Chile</span></div>`)[0];
-                popup_782c3a81246a1d9f62cac1f8bba021b5.setContent(html_2e9a3f806e453df5fba28e3fcd581c63);
+                var html_bc9b3439da94f3aabe2cea7bd6b13d81 = $(`<div id="html_bc9b3439da94f3aabe2cea7bd6b13d81" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>“BÚSQUEDAS BIBLIOGRÁFICAS SISTEMÁTICAS EN EDUCACIÓN MATEMÁTICA EN LA ERA DE LA IA”. </span><br><b>En:</b> <br><span style='color: gray;'>Universidad Metropolitana de Ciencias de la Educación (UMCE)<br>5 y 7 de diciembre <br>Santiago, Chile</span></div>`)[0];
+                popup_d753673c5e1edd5d0de0812e4d932480.setContent(html_bc9b3439da94f3aabe2cea7bd6b13d81);
             
         
 
-        marker_ed3a1e06f7e098855605ca5953186dd6.bindPopup(popup_782c3a81246a1d9f62cac1f8bba021b5)
+        marker_50f1b5a7955e376d29eeacc40de9ab8b.bindPopup(popup_d753673c5e1edd5d0de0812e4d932480)
         ;
 
         
     
     
-            var marker_6fa2b1e71374ebc9d7d61f4e20a49a2c = L.marker(
+            var marker_7f6722885d06f1e4b71ece5c9c6b2d06 = L.marker(
                 [-34.91305652624001, -57.950893351208514],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_4b0cb584c96cfa5edffb5d041ff37cfb = L.AwesomeMarkers.icon(
+            var icon_c455d9060300d2368faeb346f2c40c93 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_6fa2b1e71374ebc9d7d61f4e20a49a2c.setIcon(icon_4b0cb584c96cfa5edffb5d041ff37cfb);
+            marker_7f6722885d06f1e4b71ece5c9c6b2d06.setIcon(icon_c455d9060300d2368faeb346f2c40c93);
         
     
-        var popup_76a9c71946886598348b2c62a40f3f2e = L.popup({"maxWidth": 300});
+        var popup_629b8182310a3e11a4e406a094d83793 = L.popup({"maxWidth": 300});
 
         
             
-                var html_a06cb92b44da3e54ba2fcb952710ac33 = $(`<div id="html_a06cb92b44da3e54ba2fcb952710ac33" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Ibáñez León Patricio</span></b><br><b>Exposición:</b><br><span style='color: gray;'></span><br><b>En:</b> 1° Coloquio Internacional de la Red de Investigación en Perspectivas Educativas Latinoamericanas<br><span style='color: gray;'>Universidad Nacional de la Plata (UNLP)<br>05 y 07 de diciembre<br>Buenos Aires, Argentina</span></div>`)[0];
-                popup_76a9c71946886598348b2c62a40f3f2e.setContent(html_a06cb92b44da3e54ba2fcb952710ac33);
+                var html_752032a7e6b4277363a9b7000a22c51b = $(`<div id="html_752032a7e6b4277363a9b7000a22c51b" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Ibáñez León Patricio</span></b><br><b>Exposición:</b><br><span style='color: gray;'></span><br><b>En:</b> 1° Coloquio Internacional de la Red de Investigación en Perspectivas Educativas Latinoamericanas<br><span style='color: gray;'>Universidad Nacional de la Plata (UNLP)<br>05 y 07 de diciembre<br>Buenos Aires, Argentina</span></div>`)[0];
+                popup_629b8182310a3e11a4e406a094d83793.setContent(html_752032a7e6b4277363a9b7000a22c51b);
             
         
 
-        marker_6fa2b1e71374ebc9d7d61f4e20a49a2c.bindPopup(popup_76a9c71946886598348b2c62a40f3f2e)
+        marker_7f6722885d06f1e4b71ece5c9c6b2d06.bindPopup(popup_629b8182310a3e11a4e406a094d83793)
         ;
 
         
     
     
-            var marker_5cdc88605f031f84490d9204a009e4bd = L.marker(
+            var marker_0066d4033625685993cd16d88805f442 = L.marker(
                 [-40.58614858956912, -73.08948387301369],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_f238dfd6feb14976bb6d0025b747c8f4 = L.AwesomeMarkers.icon(
+            var icon_120f91db1797040f4e50a0caa6dfb416 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_5cdc88605f031f84490d9204a009e4bd.setIcon(icon_f238dfd6feb14976bb6d0025b747c8f4);
+            marker_0066d4033625685993cd16d88805f442.setIcon(icon_120f91db1797040f4e50a0caa6dfb416);
         
     
-        var popup_3096d99af3763e4656e6715cf810a519 = L.popup({"maxWidth": 300});
+        var popup_f0c7854c467e08b7b3910566f7729af2 = L.popup({"maxWidth": 300});
 
         
             
-                var html_2ab4bbebfc3d6a29e0a6bc574b666edb = $(`<div id="html_2ab4bbebfc3d6a29e0a6bc574b666edb" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  G. Miranda David</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Indagación Artística desde el Sur de Chile</span><br><b>En:</b> XI Congreso de Antropología "DEVENIRES"<br><span style='color: gray;'>Universidad de Los Lagos<br>18 y 20 de enero<br>Osorno, Chile</span></div>`)[0];
-                popup_3096d99af3763e4656e6715cf810a519.setContent(html_2ab4bbebfc3d6a29e0a6bc574b666edb);
+                var html_1419ec97b5828449cba0d2ee92d82194 = $(`<div id="html_1419ec97b5828449cba0d2ee92d82194" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  G. Miranda David</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Indagación Artística desde el Sur de Chile</span><br><b>En:</b> XI Congreso de Antropología "DEVENIRES"<br><span style='color: gray;'>Universidad de Los Lagos<br>18 y 20 de enero<br>Osorno, Chile</span></div>`)[0];
+                popup_f0c7854c467e08b7b3910566f7729af2.setContent(html_1419ec97b5828449cba0d2ee92d82194);
             
         
 
-        marker_5cdc88605f031f84490d9204a009e4bd.bindPopup(popup_3096d99af3763e4656e6715cf810a519)
+        marker_0066d4033625685993cd16d88805f442.bindPopup(popup_f0c7854c467e08b7b3910566f7729af2)
         ;
 
         
     
     
-            var marker_abd9cf27d0d3bb5a688237a435dee92c = L.marker(
+            var marker_4b3ba91bb959f743daefb2330e8d0f3a = L.marker(
                 [-22.8672653523448, -43.21522359030124],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_a8f6138ad3d0e67c01947ab050b2c505 = L.AwesomeMarkers.icon(
+            var icon_ae9d9b73c4739fd8577e79f6ed5dfac7 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_abd9cf27d0d3bb5a688237a435dee92c.setIcon(icon_a8f6138ad3d0e67c01947ab050b2c505);
+            marker_4b3ba91bb959f743daefb2330e8d0f3a.setIcon(icon_ae9d9b73c4739fd8577e79f6ed5dfac7);
         
     
-        var popup_16f5765d14d8dee51d8a5f48e6f63cb6 = L.popup({"maxWidth": 300});
+        var popup_e1feef1f6221c51750f9208e98337ebe = L.popup({"maxWidth": 300});
 
         
             
-                var html_bb759acaadd4b217b879fe3dc4baa58c = $(`<div id="html_bb759acaadd4b217b879fe3dc4baa58c" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Díaz Suazo Pamela</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Las representaciones sociales de los profesores respecto de la educación en y para la diversidad con sus procesos de inclusión</span><br><b>En:</b> X Encuentro Internacional De Investigadores De Políticas Educativas<br><span style='color: gray;'>Universidad Federal de Rio de Janeiro<br>20 al 22 de septiembre<br>Río de Janeiro, Brasil</span></div>`)[0];
-                popup_16f5765d14d8dee51d8a5f48e6f63cb6.setContent(html_bb759acaadd4b217b879fe3dc4baa58c);
+                var html_676648902d0f4aab9f1b6df6cffa2674 = $(`<div id="html_676648902d0f4aab9f1b6df6cffa2674" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Díaz Suazo Pamela</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Las representaciones sociales de los profesores respecto de la educación en y para la diversidad con sus procesos de inclusión</span><br><b>En:</b> X Encuentro Internacional De Investigadores De Políticas Educativas<br><span style='color: gray;'>Universidad Federal de Rio de Janeiro<br>20 al 22 de septiembre<br>Río de Janeiro, Brasil</span></div>`)[0];
+                popup_e1feef1f6221c51750f9208e98337ebe.setContent(html_676648902d0f4aab9f1b6df6cffa2674);
             
         
 
-        marker_abd9cf27d0d3bb5a688237a435dee92c.bindPopup(popup_16f5765d14d8dee51d8a5f48e6f63cb6)
+        marker_4b3ba91bb959f743daefb2330e8d0f3a.bindPopup(popup_e1feef1f6221c51750f9208e98337ebe)
         ;
 
         
     
     
-            var marker_104dc39dca6cf423af55ae8d4a38740f = L.marker(
+            var marker_804ec0dc76d9c8456b63a2c226d7296f = L.marker(
                 [48.11072045972344, 4.370123208876365],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_9258c7b422ac87ef503c64634bd13447 = L.AwesomeMarkers.icon(
+            var icon_00e77f08538048117a76f603ddeddd70 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_104dc39dca6cf423af55ae8d4a38740f.setIcon(icon_9258c7b422ac87ef503c64634bd13447);
+            marker_804ec0dc76d9c8456b63a2c226d7296f.setIcon(icon_00e77f08538048117a76f603ddeddd70);
         
     
-        var popup_f1fb066c66033eac2afb97a8d91aa146 = L.popup({"maxWidth": 300});
+        var popup_abf297e7e0bca6a2bf61c2fbe2fd5ace = L.popup({"maxWidth": 300});
 
         
             
-                var html_f823f7df2633770efae71d0f61a0ea08 = $(`<div id="html_f823f7df2633770efae71d0f61a0ea08" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Travail mathématique en géométrie 3D et trigonométrie dans une tâche d'un système d'évaluation en ligne avec feedback automatique</span><br><b>En:</b> XXIIeme École d'Été de Didactique des Mathématiques<br><span style='color: gray;'>Association pour la Recherche en Didactique des Mathématiques (ARDM)<br>16 de octubre al 23 de octubre <br>Bar Sur Seine, Francia</span></div>`)[0];
-                popup_f1fb066c66033eac2afb97a8d91aa146.setContent(html_f823f7df2633770efae71d0f61a0ea08);
+                var html_b517eb9901d64644e8fa338d2f521cc6 = $(`<div id="html_b517eb9901d64644e8fa338d2f521cc6" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Travail mathématique en géométrie 3D et trigonométrie dans une tâche d'un système d'évaluation en ligne avec feedback automatique</span><br><b>En:</b> XXIIeme École d'Été de Didactique des Mathématiques<br><span style='color: gray;'>Association pour la Recherche en Didactique des Mathématiques (ARDM)<br>16 de octubre al 23 de octubre <br>Bar Sur Seine, Francia</span></div>`)[0];
+                popup_abf297e7e0bca6a2bf61c2fbe2fd5ace.setContent(html_b517eb9901d64644e8fa338d2f521cc6);
             
         
 
-        marker_104dc39dca6cf423af55ae8d4a38740f.bindPopup(popup_f1fb066c66033eac2afb97a8d91aa146)
+        marker_804ec0dc76d9c8456b63a2c226d7296f.bindPopup(popup_abf297e7e0bca6a2bf61c2fbe2fd5ace)
         ;
 
         
     
     
-            var marker_cf822059624ad620527787d5fd9b75e4 = L.marker(
+            var marker_58490cf085b00a6b4e319fd2640f8aca = L.marker(
                 [-32.879289963955024, -68.8777927960989],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_75a76d425779b1a44469f37a36f9723b = L.AwesomeMarkers.icon(
+            var icon_75e4055b7808e6c1ddf699af3b3aead6 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_cf822059624ad620527787d5fd9b75e4.setIcon(icon_75a76d425779b1a44469f37a36f9723b);
+            marker_58490cf085b00a6b4e319fd2640f8aca.setIcon(icon_75e4055b7808e6c1ddf699af3b3aead6);
         
     
-        var popup_74cf55843517670f11f1fed6309e433b = L.popup({"maxWidth": 300});
+        var popup_d21e674ec1ae0aedda7cdd842f793c75 = L.popup({"maxWidth": 300});
 
         
             
-                var html_2db3046fdc8ff97d48816137236de69d = $(`<div id="html_2db3046fdc8ff97d48816137236de69d" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Sepúlveda Riveros Marcela</span></b><br><b>Exposición:</b><br><span style='color: gray;'>La reflexión sobre la práctica estrategia formativa y competencias a egreso: Estudio dela FID en la UPLA</span><br><b>En:</b> IV: Residencia Pedagógica del Profesorado
+                var html_ae84c6663bf0e3208ef054167c35044c = $(`<div id="html_ae84c6663bf0e3208ef054167c35044c" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Sepúlveda Riveros Marcela</span></b><br><b>Exposición:</b><br><span style='color: gray;'>La reflexión sobre la práctica estrategia formativa y competencias a egreso: Estudio dela FID en la UPLA</span><br><b>En:</b> IV: Residencia Pedagógica del Profesorado
  Universitario de Educación Primaria.<br><span style='color: gray;'>Universidad Nacional de Cuyo<br>25 al 29 septiembre<br>Cuyo, Argentina</span></div>`)[0];
-                popup_74cf55843517670f11f1fed6309e433b.setContent(html_2db3046fdc8ff97d48816137236de69d);
+                popup_d21e674ec1ae0aedda7cdd842f793c75.setContent(html_ae84c6663bf0e3208ef054167c35044c);
             
         
 
-        marker_cf822059624ad620527787d5fd9b75e4.bindPopup(popup_74cf55843517670f11f1fed6309e433b)
+        marker_58490cf085b00a6b4e319fd2640f8aca.bindPopup(popup_d21e674ec1ae0aedda7cdd842f793c75)
         ;
 
         
     
     
-            var marker_e84c75db6360144481d58972e728618c = L.marker(
+            var marker_d62e254fcc3a2a3b0c10a3dd50774983 = L.marker(
                 [-34.52293382289162, -58.70045614573237],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_a97dfefba3e6d0e683ea930538fc4b0f = L.AwesomeMarkers.icon(
+            var icon_6e111589dda6420fb88d8f24011d59ed = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_e84c75db6360144481d58972e728618c.setIcon(icon_a97dfefba3e6d0e683ea930538fc4b0f);
+            marker_d62e254fcc3a2a3b0c10a3dd50774983.setIcon(icon_6e111589dda6420fb88d8f24011d59ed);
         
     
-        var popup_543b485e743d616542abc738f91ba0e4 = L.popup({"maxWidth": 300});
+        var popup_100f191fd119edf6f79b6366eb2b8ff6 = L.popup({"maxWidth": 300});
 
         
             
-                var html_a16a28c5f1a4a49a573c2b7a3caa2388 = $(`<div id="html_a16a28c5f1a4a49a573c2b7a3caa2388" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Castañeda Meneses Marta</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Formación Docente y Estándares Pedagógicos para la Enseñanza de Historia y Geografía en el Nivel de Educación Básica</span><br><b>En:</b> XIX Jornadas Internacionales y Nacionales de Enseñanza de la Historia – APEHUN<br><span style='color: gray;'>Universidad Nacional de General Sarmiento<br>13 al 16 de septiembre<br>Buenos Aires, Argentina</span></div>`)[0];
-                popup_543b485e743d616542abc738f91ba0e4.setContent(html_a16a28c5f1a4a49a573c2b7a3caa2388);
+                var html_8ff20ec42cf2579be1be56b9501c9077 = $(`<div id="html_8ff20ec42cf2579be1be56b9501c9077" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Castañeda Meneses Marta</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Formación Docente y Estándares Pedagógicos para la Enseñanza de Historia y Geografía en el Nivel de Educación Básica</span><br><b>En:</b> XIX Jornadas Internacionales y Nacionales de Enseñanza de la Historia – APEHUN<br><span style='color: gray;'>Universidad Nacional de General Sarmiento<br>13 al 16 de septiembre<br>Buenos Aires, Argentina</span></div>`)[0];
+                popup_100f191fd119edf6f79b6366eb2b8ff6.setContent(html_8ff20ec42cf2579be1be56b9501c9077);
             
         
 
-        marker_e84c75db6360144481d58972e728618c.bindPopup(popup_543b485e743d616542abc738f91ba0e4)
+        marker_d62e254fcc3a2a3b0c10a3dd50774983.bindPopup(popup_100f191fd119edf6f79b6366eb2b8ff6)
         ;
 
         
     
     
-            var marker_c2e3366887642e17a947a8997b8b20a2 = L.marker(
+            var marker_211d87c87d69119bb89cc26f9f0fbe5f = L.marker(
                 [-16.50726798542983, -68.15782797695758],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_96076ab48ed76165b9ab4a3b72f6a2b7 = L.AwesomeMarkers.icon(
+            var icon_eff4c667f14ee438c5b5d0e93d226421 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_c2e3366887642e17a947a8997b8b20a2.setIcon(icon_96076ab48ed76165b9ab4a3b72f6a2b7);
+            marker_211d87c87d69119bb89cc26f9f0fbe5f.setIcon(icon_eff4c667f14ee438c5b5d0e93d226421);
         
     
-        var popup_66ff73289f99adebb20711c45c4d012e = L.popup({"maxWidth": 300});
+        var popup_0d1b8badc5829b9d526452a77566f3b0 = L.popup({"maxWidth": 300});
 
         
             
-                var html_f8ae2dcfac8a088736d84ed7d40dba7f = $(`<div id="html_f8ae2dcfac8a088736d84ed7d40dba7f" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Cabaluz Ducasse Fabián</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Salvador Allende, el revolucionario. Socialismo, poder popular y siberanía</span><br><b>En:</b> Editorial del Estado Plurinacional de Bolivia<br><span style='color: gray;'>Editorial del Estado Plurinacional de Bolivia<br>12 al 14 de septiembre<br>La Paz, Bolivia</span></div>`)[0];
-                popup_66ff73289f99adebb20711c45c4d012e.setContent(html_f8ae2dcfac8a088736d84ed7d40dba7f);
+                var html_9a4bbab24a1c954e89e6c4f96d15a603 = $(`<div id="html_9a4bbab24a1c954e89e6c4f96d15a603" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Cabaluz Ducasse Fabián</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Salvador Allende, el revolucionario. Socialismo, poder popular y siberanía</span><br><b>En:</b> Editorial del Estado Plurinacional de Bolivia<br><span style='color: gray;'>Editorial del Estado Plurinacional de Bolivia<br>12 al 14 de septiembre<br>La Paz, Bolivia</span></div>`)[0];
+                popup_0d1b8badc5829b9d526452a77566f3b0.setContent(html_9a4bbab24a1c954e89e6c4f96d15a603);
             
         
 
-        marker_c2e3366887642e17a947a8997b8b20a2.bindPopup(popup_66ff73289f99adebb20711c45c4d012e)
+        marker_211d87c87d69119bb89cc26f9f0fbe5f.bindPopup(popup_0d1b8badc5829b9d526452a77566f3b0)
         ;
 
         
     
     
-            var marker_2a73ec40d1756c6a9929e5320872b08c = L.marker(
+            var marker_8d5d573f861a0b7d014f3067ded4bf31 = L.marker(
                 [-36.77966001522488, -73.07617453399656],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_9d78a54c66b1629ad59ca3a0c44e2a2f = L.AwesomeMarkers.icon(
+            var icon_821eb5ccd50abead371ea18527bb547e = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_2a73ec40d1756c6a9929e5320872b08c.setIcon(icon_9d78a54c66b1629ad59ca3a0c44e2a2f);
+            marker_8d5d573f861a0b7d014f3067ded4bf31.setIcon(icon_821eb5ccd50abead371ea18527bb547e);
         
     
-        var popup_1fef86e06fcb5067791a40a955f9770c = L.popup({"maxWidth": 300});
+        var popup_5f86b41f68aeca15503ab5a20ce799fd = L.popup({"maxWidth": 300});
 
         
             
-                var html_369e2b26c3c7401c4c4338bdfad0275e = $(`<div id="html_369e2b26c3c7401c4c4338bdfad0275e" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gallardo Jaque Alejandro</span></b><br><b>Exposición:</b><br><span style='color: gray;'>La importancia de la educación emocional</span><br><b>En:</b> I Congreso Internacional de Educación Emocional: Desafíos y Oportunidades<br><span style='color: gray;'>Universidad Andrés Bello<br>20 y 21 de noviembre<br>Concepción, Chile</span></div>`)[0];
-                popup_1fef86e06fcb5067791a40a955f9770c.setContent(html_369e2b26c3c7401c4c4338bdfad0275e);
+                var html_0cee162f69d774d1dbe047ffae3ad3c0 = $(`<div id="html_0cee162f69d774d1dbe047ffae3ad3c0" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gallardo Jaque Alejandro</span></b><br><b>Exposición:</b><br><span style='color: gray;'>La importancia de la educación emocional</span><br><b>En:</b> I Congreso Internacional de Educación Emocional: Desafíos y Oportunidades<br><span style='color: gray;'>Universidad Andrés Bello<br>20 y 21 de noviembre<br>Concepción, Chile</span></div>`)[0];
+                popup_5f86b41f68aeca15503ab5a20ce799fd.setContent(html_0cee162f69d774d1dbe047ffae3ad3c0);
             
         
 
-        marker_2a73ec40d1756c6a9929e5320872b08c.bindPopup(popup_1fef86e06fcb5067791a40a955f9770c)
+        marker_8d5d573f861a0b7d014f3067ded4bf31.bindPopup(popup_5f86b41f68aeca15503ab5a20ce799fd)
         ;
 
         
     
     
-            var marker_296c97ffd910370377524303f010ddcc = L.marker(
+            var marker_d2d73d75fd9692fa8828749502f76a02 = L.marker(
                 [-36.60854143186948, -72.11722294795403],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_77941fefb7b3ab445f671a8315283cb7 = L.AwesomeMarkers.icon(
+            var icon_9a03193599b2c30441167dde14d2a602 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_296c97ffd910370377524303f010ddcc.setIcon(icon_77941fefb7b3ab445f671a8315283cb7);
+            marker_d2d73d75fd9692fa8828749502f76a02.setIcon(icon_9a03193599b2c30441167dde14d2a602);
         
     
-        var popup_931f48526b5feab6a51681531ac228e0 = L.popup({"maxWidth": 300});
+        var popup_28e1aded18357545461e87a4017a0eb2 = L.popup({"maxWidth": 300});
 
         
             
-                var html_eca5f5dcba0c578876dacbecad1250aa = $(`<div id="html_eca5f5dcba0c578876dacbecad1250aa" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Jil Galvez Andrés</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Pedagogía Hospitalaria: construyendo un modelo pedagógico para Chile</span><br><b>En:</b> III Seminario Internacional de Pedagogía Hospitalaria: construyendo un   modelo pedagógico para Chile<br><span style='color: gray;'>Universidad de Bío-Bío<br>30 de agosto y 1 de septiembre<br>Chillán, Chile</span></div>`)[0];
-                popup_931f48526b5feab6a51681531ac228e0.setContent(html_eca5f5dcba0c578876dacbecad1250aa);
+                var html_2c2454cd2062964b165fc97c028b9c0f = $(`<div id="html_2c2454cd2062964b165fc97c028b9c0f" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Jil Galvez Andrés</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Pedagogía Hospitalaria: construyendo un modelo pedagógico para Chile</span><br><b>En:</b> III Seminario Internacional de Pedagogía Hospitalaria: construyendo un   modelo pedagógico para Chile<br><span style='color: gray;'>Universidad de Bío-Bío<br>30 de agosto y 1 de septiembre<br>Chillán, Chile</span></div>`)[0];
+                popup_28e1aded18357545461e87a4017a0eb2.setContent(html_2c2454cd2062964b165fc97c028b9c0f);
             
         
 
-        marker_296c97ffd910370377524303f010ddcc.bindPopup(popup_931f48526b5feab6a51681531ac228e0)
+        marker_d2d73d75fd9692fa8828749502f76a02.bindPopup(popup_28e1aded18357545461e87a4017a0eb2)
         ;
 
         
     
     
-            var marker_1d640ee9bc74f6b683e8ccd13e65c1cc = L.marker(
+            var marker_550993af47960ea390e3b39802b7c371 = L.marker(
                 [-12.659037794465764, -39.09195970096072],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_8560408020b9e9a479d5ce1bc9ad5c47 = L.AwesomeMarkers.icon(
+            var icon_ebabd44103f930d3052956f874ce3657 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_1d640ee9bc74f6b683e8ccd13e65c1cc.setIcon(icon_8560408020b9e9a479d5ce1bc9ad5c47);
+            marker_550993af47960ea390e3b39802b7c371.setIcon(icon_ebabd44103f930d3052956f874ce3657);
         
     
-        var popup_04436d3c3904268080838152525c092e = L.popup({"maxWidth": 300});
+        var popup_a5092dd1465b96d5c8507e1f5a66628a = L.popup({"maxWidth": 300});
 
         
             
-                var html_1a24c2e1ee4363c6a25c21e888e4531e = $(`<div id="html_1a24c2e1ee4363c6a25c21e888e4531e" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Cabaluz Ducasse Fabián</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Movimentos sociais, resistência e emancipação</span><br><b>En:</b> IV Congresso  Internacional / VI Congresso Nacional Movimentos Sociais e Educação / do Seminário 10 Anos do Mestrado Profissional em Educação do Campo da UFRB<br><span style='color: gray;'>Universidade Federal do Recôncavo da Bahia<br>27 de noviembre y 1 de diciembre<br>Cruz das Almas, Brasil</span></div>`)[0];
-                popup_04436d3c3904268080838152525c092e.setContent(html_1a24c2e1ee4363c6a25c21e888e4531e);
+                var html_eb4caf329cb7720f9490063599240a54 = $(`<div id="html_eb4caf329cb7720f9490063599240a54" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Cabaluz Ducasse Fabián</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Movimentos sociais, resistência e emancipação</span><br><b>En:</b> IV Congresso  Internacional / VI Congresso Nacional Movimentos Sociais e Educação / do Seminário 10 Anos do Mestrado Profissional em Educação do Campo da UFRB<br><span style='color: gray;'>Universidade Federal do Recôncavo da Bahia<br>27 de noviembre y 1 de diciembre<br>Cruz das Almas, Brasil</span></div>`)[0];
+                popup_a5092dd1465b96d5c8507e1f5a66628a.setContent(html_eb4caf329cb7720f9490063599240a54);
             
         
 
-        marker_1d640ee9bc74f6b683e8ccd13e65c1cc.bindPopup(popup_04436d3c3904268080838152525c092e)
+        marker_550993af47960ea390e3b39802b7c371.bindPopup(popup_a5092dd1465b96d5c8507e1f5a66628a)
         ;
 
         
     
     
-            var marker_88e13fd7217fcb13c5e18c498f92dae5 = L.marker(
+            var marker_2fcbf3b78b47945f1cf4e585e28f6b9f = L.marker(
                 [5.076884243065848, -75.51968674642215],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_cbebdb429e056b52bfde261c62de8678 = L.AwesomeMarkers.icon(
+            var icon_15fc7c0b9f96e566c9405d74ce0d678f = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_88e13fd7217fcb13c5e18c498f92dae5.setIcon(icon_cbebdb429e056b52bfde261c62de8678);
+            marker_2fcbf3b78b47945f1cf4e585e28f6b9f.setIcon(icon_15fc7c0b9f96e566c9405d74ce0d678f);
         
     
-        var popup_33acff8b8116b3b8d33d96e54a68c7cc = L.popup({"maxWidth": 300});
+        var popup_426095f4e1f41896c9a2b205d9790b27 = L.popup({"maxWidth": 300});
 
         
             
-                var html_30fb7bba8001e45964ae9ab599484da7 = $(`<div id="html_30fb7bba8001e45964ae9ab599484da7" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Verdugo Peñaloza Alejandro</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Competencias socioemocional y reflexión: componentes claves en el modelo de prácticas pedagógicas” y “Reflexión del saber pedagógico a través de prácticas en contextos no tradicionales y ruralidad”</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>15 al 23 de julio<br>Manizales, Colombia</span></div>`)[0];
-                popup_33acff8b8116b3b8d33d96e54a68c7cc.setContent(html_30fb7bba8001e45964ae9ab599484da7);
+                var html_e502e23c0d3fb43159189c9c167b8e8a = $(`<div id="html_e502e23c0d3fb43159189c9c167b8e8a" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Verdugo Peñaloza Alejandro</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Competencias socioemocional y reflexión: componentes claves en el modelo de prácticas pedagógicas” y “Reflexión del saber pedagógico a través de prácticas en contextos no tradicionales y ruralidad”</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>15 al 23 de julio<br>Manizales, Colombia</span></div>`)[0];
+                popup_426095f4e1f41896c9a2b205d9790b27.setContent(html_e502e23c0d3fb43159189c9c167b8e8a);
             
         
 
-        marker_88e13fd7217fcb13c5e18c498f92dae5.bindPopup(popup_33acff8b8116b3b8d33d96e54a68c7cc)
+        marker_2fcbf3b78b47945f1cf4e585e28f6b9f.bindPopup(popup_426095f4e1f41896c9a2b205d9790b27)
         ;
 
         
     
     
-            var marker_c8c0438535ecd0267e65ef7b0ead3c8d = L.marker(
+            var marker_086df2e7dc8789e328908b60854c640f = L.marker(
                 [5.076884243065848, -75.51968674642215],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_5e15a5bb0f44c67ff891a235d43c5ce3 = L.AwesomeMarkers.icon(
+            var icon_0fd0884a587c5c7d8187aaab484375ea = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_c8c0438535ecd0267e65ef7b0ead3c8d.setIcon(icon_5e15a5bb0f44c67ff891a235d43c5ce3);
+            marker_086df2e7dc8789e328908b60854c640f.setIcon(icon_0fd0884a587c5c7d8187aaab484375ea);
         
     
-        var popup_57347f595681636670f264a1a84d68ea = L.popup({"maxWidth": 300});
+        var popup_d2593e6d0fe78a8087af1f3cc5db90a2 = L.popup({"maxWidth": 300});
 
         
             
-                var html_3e2c43c4ab7c53a2b24d8dcd4ebcecad = $(`<div id="html_3e2c43c4ab7c53a2b24d8dcd4ebcecad" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Sepúlveda Riveros Marcela</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Competencias socioemocional y reflexión: componentes claves en el modelo de prácticas pedagógicas” y “Reflexión del saber pedagógico a través de prácticas en contextos no tradicionales y ruralidad”</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>15 al 23 de julio<br>Manizales, Colombia</span></div>`)[0];
-                popup_57347f595681636670f264a1a84d68ea.setContent(html_3e2c43c4ab7c53a2b24d8dcd4ebcecad);
+                var html_a063ce536fc40d129a51664b7cc45c01 = $(`<div id="html_a063ce536fc40d129a51664b7cc45c01" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Sepúlveda Riveros Marcela</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Competencias socioemocional y reflexión: componentes claves en el modelo de prácticas pedagógicas” y “Reflexión del saber pedagógico a través de prácticas en contextos no tradicionales y ruralidad”</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>15 al 23 de julio<br>Manizales, Colombia</span></div>`)[0];
+                popup_d2593e6d0fe78a8087af1f3cc5db90a2.setContent(html_a063ce536fc40d129a51664b7cc45c01);
             
         
 
-        marker_c8c0438535ecd0267e65ef7b0ead3c8d.bindPopup(popup_57347f595681636670f264a1a84d68ea)
+        marker_086df2e7dc8789e328908b60854c640f.bindPopup(popup_d2593e6d0fe78a8087af1f3cc5db90a2)
         ;
 
         
     
     
-            var marker_627d75e1ac26e2240c731b4f3052ae18 = L.marker(
+            var marker_7d4491d66bab12e1aafb3578735691d5 = L.marker(
                 [-35.04060175094781, -71.71887715416189],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_1f0e307137ec40c7cfca1cfd8e2f7a3d = L.AwesomeMarkers.icon(
+            var icon_a8a5751e784dfb4f9bf8ef8978a83c96 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_627d75e1ac26e2240c731b4f3052ae18.setIcon(icon_1f0e307137ec40c7cfca1cfd8e2f7a3d);
+            marker_7d4491d66bab12e1aafb3578735691d5.setIcon(icon_a8a5751e784dfb4f9bf8ef8978a83c96);
         
     
-        var popup_d67d66a8b68164e23329f80c29479260 = L.popup({"maxWidth": 300});
+        var popup_6e682b58f78ac4841d72f0e15640419e = L.popup({"maxWidth": 300});
 
         
             
-                var html_cba82f7a8964b0110d970162bf35eae8 = $(`<div id="html_cba82f7a8964b0110d970162bf35eae8" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Relación entre el feedback y el trabajo matemático de estudiantes en el contexto de evaluaciones en línea en matemáticas</span><br><b>En:</b> Jornada de trabajo en el Doctorado en Didáctica de las Matemáticas<br><span style='color: gray;'>Universidad Católica del Maule<br>14 de julio<br>Talca, Chile</span></div>`)[0];
-                popup_d67d66a8b68164e23329f80c29479260.setContent(html_cba82f7a8964b0110d970162bf35eae8);
+                var html_493eaa4c75451eb6434b452f18f645e1 = $(`<div id="html_493eaa4c75451eb6434b452f18f645e1" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Relación entre el feedback y el trabajo matemático de estudiantes en el contexto de evaluaciones en línea en matemáticas</span><br><b>En:</b> Jornada de trabajo en el Doctorado en Didáctica de las Matemáticas<br><span style='color: gray;'>Universidad Católica del Maule<br>14 de julio<br>Talca, Chile</span></div>`)[0];
+                popup_6e682b58f78ac4841d72f0e15640419e.setContent(html_493eaa4c75451eb6434b452f18f645e1);
             
         
 
-        marker_627d75e1ac26e2240c731b4f3052ae18.bindPopup(popup_d67d66a8b68164e23329f80c29479260)
+        marker_7d4491d66bab12e1aafb3578735691d5.bindPopup(popup_6e682b58f78ac4841d72f0e15640419e)
         ;
 
         
     
     
-            var marker_5a46e8c19c79f83c4ce6e8f1e3e8d498 = L.marker(
+            var marker_d88c211530928055ba57bded421550ec = L.marker(
                 [-25.287383567710805, -57.63902989023197],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_473331fe62c9b3266f6c7d09cc37707a = L.AwesomeMarkers.icon(
+            var icon_34003f6cb5ea7f2acba04074bc6ce2b9 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_5a46e8c19c79f83c4ce6e8f1e3e8d498.setIcon(icon_473331fe62c9b3266f6c7d09cc37707a);
+            marker_d88c211530928055ba57bded421550ec.setIcon(icon_34003f6cb5ea7f2acba04074bc6ce2b9);
         
     
-        var popup_1a9d973a14f57853231f0720af169b21 = L.popup({"maxWidth": 300});
+        var popup_cb1c270167ad9415ccf7b1c8ad073302 = L.popup({"maxWidth": 300});
 
         
             
-                var html_15baef58a09c71912b23291a094789f1 = $(`<div id="html_15baef58a09c71912b23291a094789f1" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Bernal Ruiz Francisca</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Modelo de ecuaciones estructurales de funciones ejecutivas respecto de las competencias matemáticas tempranas</span><br><b>En:</b> XXXIX Congreso Interamericano de Psicología<br><span style='color: gray;'>Sociedad Interamericana de Psicología (SIP)<br>26 al 30 de junio<br>Asunción, Paraguay</span></div>`)[0];
-                popup_1a9d973a14f57853231f0720af169b21.setContent(html_15baef58a09c71912b23291a094789f1);
+                var html_d391f0bb948b96db99728d73a58e9674 = $(`<div id="html_d391f0bb948b96db99728d73a58e9674" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Bernal Ruiz Francisca</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Modelo de ecuaciones estructurales de funciones ejecutivas respecto de las competencias matemáticas tempranas</span><br><b>En:</b> XXXIX Congreso Interamericano de Psicología<br><span style='color: gray;'>Sociedad Interamericana de Psicología (SIP)<br>26 al 30 de junio<br>Asunción, Paraguay</span></div>`)[0];
+                popup_cb1c270167ad9415ccf7b1c8ad073302.setContent(html_d391f0bb948b96db99728d73a58e9674);
             
         
 
-        marker_5a46e8c19c79f83c4ce6e8f1e3e8d498.bindPopup(popup_1a9d973a14f57853231f0720af169b21)
+        marker_d88c211530928055ba57bded421550ec.bindPopup(popup_cb1c270167ad9415ccf7b1c8ad073302)
         ;
 
         
     
     
-            var marker_7f821e05ebf99980d4e709ee726509a0 = L.marker(
+            var marker_b0f447c2f523f4e08515de7d1becf461 = L.marker(
                 [5.076884243065848, -75.51968674642215],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_c95893f98acfe3381d11c18a0fcae977 = L.AwesomeMarkers.icon(
+            var icon_9fbb44e0c0c0b846675c0e5759540b20 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_7f821e05ebf99980d4e709ee726509a0.setIcon(icon_c95893f98acfe3381d11c18a0fcae977);
+            marker_b0f447c2f523f4e08515de7d1becf461.setIcon(icon_9fbb44e0c0c0b846675c0e5759540b20);
         
     
-        var popup_adbf04a51e50e62fda6161c70b25d2ae = L.popup({"maxWidth": 300});
+        var popup_3b7acf162ea4160794ca807b4f731c5f = L.popup({"maxWidth": 300});
 
         
             
-                var html_06e6e622065cc32fb2169c603d43461f = $(`<div id="html_06e6e622065cc32fb2169c603d43461f" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gallardo Jaque Alejandro</span></b><br><b>Exposición:</b><br><span style='color: gray;'>La dimensión emocional para la mejora de aprendizajes en contextos educativos post pandemia</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>20 al 21 de julio<br>Manizales, Colombia</span></div>`)[0];
-                popup_adbf04a51e50e62fda6161c70b25d2ae.setContent(html_06e6e622065cc32fb2169c603d43461f);
+                var html_6d6aef7c0bd722b9a2666e3777c14fe4 = $(`<div id="html_6d6aef7c0bd722b9a2666e3777c14fe4" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gallardo Jaque Alejandro</span></b><br><b>Exposición:</b><br><span style='color: gray;'>La dimensión emocional para la mejora de aprendizajes en contextos educativos post pandemia</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>20 al 21 de julio<br>Manizales, Colombia</span></div>`)[0];
+                popup_3b7acf162ea4160794ca807b4f731c5f.setContent(html_6d6aef7c0bd722b9a2666e3777c14fe4);
             
         
 
-        marker_7f821e05ebf99980d4e709ee726509a0.bindPopup(popup_adbf04a51e50e62fda6161c70b25d2ae)
+        marker_b0f447c2f523f4e08515de7d1becf461.bindPopup(popup_3b7acf162ea4160794ca807b4f731c5f)
         ;
 
         
     
     
-            var marker_c9069cba5de95c5c82163ddab5124e91 = L.marker(
+            var marker_2e79fc291434c1243eb7d5cb82ee18e1 = L.marker(
                 [5.076884243065848, -75.51968674642215],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_21ca4e4e803e16d0d72e00397ce9db17 = L.AwesomeMarkers.icon(
+            var icon_810ecd623239b9a5be52b58a7426c998 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_c9069cba5de95c5c82163ddab5124e91.setIcon(icon_21ca4e4e803e16d0d72e00397ce9db17);
+            marker_2e79fc291434c1243eb7d5cb82ee18e1.setIcon(icon_810ecd623239b9a5be52b58a7426c998);
         
     
-        var popup_cb343cc6e1a70d3ae467d66b572f3b14 = L.popup({"maxWidth": 300});
+        var popup_ef873e67a4ea96ffce2256979a75cd88 = L.popup({"maxWidth": 300});
 
         
             
-                var html_db4d6b6e1b83c80c8c27db6e86f40d10 = $(`<div id="html_db4d6b6e1b83c80c8c27db6e86f40d10" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Reinoso Salinas Daysi</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Educación en y para la diversidad en educación superior: representaciones sociales en formadores de profesores de la primera infancia</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>18 al 21 de julio<br>Manizales, Colombia</span></div>`)[0];
-                popup_cb343cc6e1a70d3ae467d66b572f3b14.setContent(html_db4d6b6e1b83c80c8c27db6e86f40d10);
+                var html_a4570b596cbc149dd774e6d0478e5526 = $(`<div id="html_a4570b596cbc149dd774e6d0478e5526" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Reinoso Salinas Daysi</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Educación en y para la diversidad en educación superior: representaciones sociales en formadores de profesores de la primera infancia</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>18 al 21 de julio<br>Manizales, Colombia</span></div>`)[0];
+                popup_ef873e67a4ea96ffce2256979a75cd88.setContent(html_a4570b596cbc149dd774e6d0478e5526);
             
         
 
-        marker_c9069cba5de95c5c82163ddab5124e91.bindPopup(popup_cb343cc6e1a70d3ae467d66b572f3b14)
+        marker_2e79fc291434c1243eb7d5cb82ee18e1.bindPopup(popup_ef873e67a4ea96ffce2256979a75cd88)
         ;
 
         
     
     
-            var marker_b17d6b21b5ba98ed16d978842af45762 = L.marker(
+            var marker_516d5c9919da3703acaef29d7deeb2f1 = L.marker(
                 [5.076884243065848, -75.51968674642215],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_a29d5ffd36b35b18660cd8a81f454564 = L.AwesomeMarkers.icon(
+            var icon_3f53a9904501f3f628565bb0198bc433 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_b17d6b21b5ba98ed16d978842af45762.setIcon(icon_a29d5ffd36b35b18660cd8a81f454564);
+            marker_516d5c9919da3703acaef29d7deeb2f1.setIcon(icon_3f53a9904501f3f628565bb0198bc433);
         
     
-        var popup_70f1a0bc09da36aef4522c41ca346dbe = L.popup({"maxWidth": 300});
+        var popup_0cfb0fcad3929e7a11376b1b54fa0c8e = L.popup({"maxWidth": 300});
 
         
             
-                var html_513c24394eddce77530d72818d25d159 = $(`<div id="html_513c24394eddce77530d72818d25d159" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Díaz Suazo Pamela</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Educación en y para la diversidad en educación superior: representaciones sociales en formadores de profesores de la primera infancia</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>17 al 21 de julio<br>Manizales, Colombia</span></div>`)[0];
-                popup_70f1a0bc09da36aef4522c41ca346dbe.setContent(html_513c24394eddce77530d72818d25d159);
+                var html_b7dffbbaa769c0761942ef929d75cf17 = $(`<div id="html_b7dffbbaa769c0761942ef929d75cf17" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Díaz Suazo Pamela</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Educación en y para la diversidad en educación superior: representaciones sociales en formadores de profesores de la primera infancia</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>17 al 21 de julio<br>Manizales, Colombia</span></div>`)[0];
+                popup_0cfb0fcad3929e7a11376b1b54fa0c8e.setContent(html_b7dffbbaa769c0761942ef929d75cf17);
             
         
 
-        marker_b17d6b21b5ba98ed16d978842af45762.bindPopup(popup_70f1a0bc09da36aef4522c41ca346dbe)
+        marker_516d5c9919da3703acaef29d7deeb2f1.bindPopup(popup_0cfb0fcad3929e7a11376b1b54fa0c8e)
         ;
 
         
     
     
-            var marker_1bbe9b6caff3f547ee767cd54e24e979 = L.marker(
+            var marker_770e1f23b38fc8902182babcc5afbd8f = L.marker(
                 [-36.77959102187895, -73.07603989564049],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_b0e3aa4bf5856ed7dedfbd6c4172fb79 = L.AwesomeMarkers.icon(
+            var icon_abed3dd00b45e568941cba33ef737039 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_1bbe9b6caff3f547ee767cd54e24e979.setIcon(icon_b0e3aa4bf5856ed7dedfbd6c4172fb79);
+            marker_770e1f23b38fc8902182babcc5afbd8f.setIcon(icon_abed3dd00b45e568941cba33ef737039);
         
     
-        var popup_f4b643e85a7272a8a255d614331357fa = L.popup({"maxWidth": 300});
+        var popup_bc661bef8f84aa7bd751dd565789f326 = L.popup({"maxWidth": 300});
 
         
             
-                var html_80e289925517d5ba1e4f0b6aaa366751 = $(`<div id="html_80e289925517d5ba1e4f0b6aaa366751" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Hidalgo Neira María Teresa</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Repensar el futuro de la Educación
+                var html_7048d25165f78a8f0f410bc533a0f8b4 = $(`<div id="html_7048d25165f78a8f0f410bc533a0f8b4" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Hidalgo Neira María Teresa</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Repensar el futuro de la Educación
  Superior desde la Inclusión</span><br><b>En:</b> Primer Encuentro Nacional de la Red de Educación Superior Inclusiva<br><span style='color: gray;'>Universidad de Andrés Bello<br>12 al 14 de junio<br>Talcahuano, Chile</span></div>`)[0];
-                popup_f4b643e85a7272a8a255d614331357fa.setContent(html_80e289925517d5ba1e4f0b6aaa366751);
+                popup_bc661bef8f84aa7bd751dd565789f326.setContent(html_7048d25165f78a8f0f410bc533a0f8b4);
             
         
 
-        marker_1bbe9b6caff3f547ee767cd54e24e979.bindPopup(popup_f4b643e85a7272a8a255d614331357fa)
+        marker_770e1f23b38fc8902182babcc5afbd8f.bindPopup(popup_bc661bef8f84aa7bd751dd565789f326)
         ;
 
         
     
     
-            var marker_2046f992bfbeed5756f95cae3be01b10 = L.marker(
+            var marker_96c619ed03196c57a2c545c6ce31d4f1 = L.marker(
                 [5.076884243065848, -75.51968674642215],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_5a66126218ca90e99a2b4e9622936f43 = L.AwesomeMarkers.icon(
+            var icon_a81bf01f16e5ff3d4d8ddf9aabbfd6a3 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_2046f992bfbeed5756f95cae3be01b10.setIcon(icon_5a66126218ca90e99a2b4e9622936f43);
+            marker_96c619ed03196c57a2c545c6ce31d4f1.setIcon(icon_a81bf01f16e5ff3d4d8ddf9aabbfd6a3);
         
     
-        var popup_9e80f560c8d01c71daf67d56fcf872b5 = L.popup({"maxWidth": 300});
+        var popup_8fe88d129fd4f6ab45f05dae7eaabf72 = L.popup({"maxWidth": 300});
 
         
             
-                var html_c96fb6d8f5c2f4c708dc04d123249731 = $(`<div id="html_c96fb6d8f5c2f4c708dc04d123249731" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Olivares Villrroel José Manuel</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Educación Alternativa (EA): Nuevos enfoques metodológicos de la formación inicial docente para la escuela latinoamericana</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>17 al 21 de julio<br>Manizales, Colombia</span></div>`)[0];
-                popup_9e80f560c8d01c71daf67d56fcf872b5.setContent(html_c96fb6d8f5c2f4c708dc04d123249731);
+                var html_095994535f5abcb7f9314b298f8c70d7 = $(`<div id="html_095994535f5abcb7f9314b298f8c70d7" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Olivares Villrroel José Manuel</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Educación Alternativa (EA): Nuevos enfoques metodológicos de la formación inicial docente para la escuela latinoamericana</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>17 al 21 de julio<br>Manizales, Colombia</span></div>`)[0];
+                popup_8fe88d129fd4f6ab45f05dae7eaabf72.setContent(html_095994535f5abcb7f9314b298f8c70d7);
             
         
 
-        marker_2046f992bfbeed5756f95cae3be01b10.bindPopup(popup_9e80f560c8d01c71daf67d56fcf872b5)
+        marker_96c619ed03196c57a2c545c6ce31d4f1.bindPopup(popup_8fe88d129fd4f6ab45f05dae7eaabf72)
         ;
 
         
     
     
-            var marker_b8c31f1dce128ec5f97bb1d56bc8a7a2 = L.marker(
+            var marker_505c4c536f936cf0a9962283bc537eef = L.marker(
                 [5.076884243065848, -75.51968674642215],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_168f161c45f9a077a8d1c7c35a170e60 = L.AwesomeMarkers.icon(
+            var icon_3de3ef6ee2266fe9a4acdfa7bd646568 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_b8c31f1dce128ec5f97bb1d56bc8a7a2.setIcon(icon_168f161c45f9a077a8d1c7c35a170e60);
+            marker_505c4c536f936cf0a9962283bc537eef.setIcon(icon_3de3ef6ee2266fe9a4acdfa7bd646568);
         
     
-        var popup_472ff77a4ba8de0fa8d6035d5d9fa6d4 = L.popup({"maxWidth": 300});
+        var popup_167dc7c81d4e0a28225b92e9b5a7aa09 = L.popup({"maxWidth": 300});
 
         
             
-                var html_8f59b9f5dacc03e2b71af3a13bc246f7 = $(`<div id="html_8f59b9f5dacc03e2b71af3a13bc246f7" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Reyes Cayul Ignacio</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Educación Alternativa (EA): Nuevos enfoques metodológicos de la formación inicial docente para la escuela latinoamericana</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>17 al 21 de julio<br>Manizales, Colombia</span></div>`)[0];
-                popup_472ff77a4ba8de0fa8d6035d5d9fa6d4.setContent(html_8f59b9f5dacc03e2b71af3a13bc246f7);
+                var html_808717c73e0bef013e0210f3da8b5449 = $(`<div id="html_808717c73e0bef013e0210f3da8b5449" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Reyes Cayul Ignacio</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Educación Alternativa (EA): Nuevos enfoques metodológicos de la formación inicial docente para la escuela latinoamericana</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>17 al 21 de julio<br>Manizales, Colombia</span></div>`)[0];
+                popup_167dc7c81d4e0a28225b92e9b5a7aa09.setContent(html_808717c73e0bef013e0210f3da8b5449);
             
         
 
-        marker_b8c31f1dce128ec5f97bb1d56bc8a7a2.bindPopup(popup_472ff77a4ba8de0fa8d6035d5d9fa6d4)
+        marker_505c4c536f936cf0a9962283bc537eef.bindPopup(popup_167dc7c81d4e0a28225b92e9b5a7aa09)
         ;
 
         
     
     
-            var marker_6480e8e91b26757cb44fc7fb806d42e5 = L.marker(
+            var marker_558ac6202bb1dabddd9e55865688f8f2 = L.marker(
                 [-12.104086326420006, -77.03887567216148],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_e6d2839f3204c14adbde4135908ecd12 = L.AwesomeMarkers.icon(
+            var icon_6d8b6cd10f829475cbe532f76fb689dd = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_6480e8e91b26757cb44fc7fb806d42e5.setIcon(icon_e6d2839f3204c14adbde4135908ecd12);
+            marker_558ac6202bb1dabddd9e55865688f8f2.setIcon(icon_6d8b6cd10f829475cbe532f76fb689dd);
         
     
-        var popup_aa9c3581fee70421af94394bdb0cc944 = L.popup({"maxWidth": 300});
+        var popup_676e423ce0e6a7d3071e75a694f447a5 = L.popup({"maxWidth": 300});
 
         
             
-                var html_99514c984c80596bd880a9fcf0b19923 = $(`<div id="html_99514c984c80596bd880a9fcf0b19923" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>¿Cuál es el trabajo matemático a partir de modificaciones en las variables didácticos de las tareas propuestas?</span><br><b>En:</b> XVI Conferencia Interamericana de Educación Matemática<br><span style='color: gray;'>Universidad de Lima<br>30 de julio al 04 de agosto<br>Lima, Perú</span></div>`)[0];
-                popup_aa9c3581fee70421af94394bdb0cc944.setContent(html_99514c984c80596bd880a9fcf0b19923);
+                var html_a4684acbdddeca4d517abbe40d954f34 = $(`<div id="html_a4684acbdddeca4d517abbe40d954f34" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>¿Cuál es el trabajo matemático a partir de modificaciones en las variables didácticos de las tareas propuestas?</span><br><b>En:</b> XVI Conferencia Interamericana de Educación Matemática<br><span style='color: gray;'>Universidad de Lima<br>30 de julio al 04 de agosto<br>Lima, Perú</span></div>`)[0];
+                popup_676e423ce0e6a7d3071e75a694f447a5.setContent(html_a4684acbdddeca4d517abbe40d954f34);
             
         
 
-        marker_6480e8e91b26757cb44fc7fb806d42e5.bindPopup(popup_aa9c3581fee70421af94394bdb0cc944)
+        marker_558ac6202bb1dabddd9e55865688f8f2.bindPopup(popup_676e423ce0e6a7d3071e75a694f447a5)
         ;
 
         
     
     
-            var marker_58a3a7b878df9b4cc392e7aeac2235ad = L.marker(
+            var marker_5e504b0b2a2b9a397e1268ba115b9f9e = L.marker(
                 [-18.48774897770224, -70.29497692276207],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_1a6e4f29218f74f3ca914b6fc0657e9c = L.AwesomeMarkers.icon(
+            var icon_e2037d77ee07b64d3f42dd3e29d735b2 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_58a3a7b878df9b4cc392e7aeac2235ad.setIcon(icon_1a6e4f29218f74f3ca914b6fc0657e9c);
+            marker_5e504b0b2a2b9a397e1268ba115b9f9e.setIcon(icon_e2037d77ee07b64d3f42dd3e29d735b2);
         
     
-        var popup_cd93ab8247e38a8fd841ed5e3115b566 = L.popup({"maxWidth": 300});
+        var popup_6b6fb702181659f3e29e2c7a07a3155e = L.popup({"maxWidth": 300});
 
         
             
-                var html_0d8091bb24a24e010cec9499b2a2ecf8 = $(`<div id="html_0d8091bb24a24e010cec9499b2a2ecf8" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Jil Galvez Andrés</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Seminario Internacional “Pedagogía Hospitalaria Innovadora, abriendo caminos para la inclusión”</span><br><b>En:</b> Seminario Internacional: Pedagogía Hospitalaria Innovadora, abriendo caminos para la inclusión<br><span style='color: gray;'>Universidad de Tarapacá<br>28 y 30 de junio<br>Arica, Chile</span></div>`)[0];
-                popup_cd93ab8247e38a8fd841ed5e3115b566.setContent(html_0d8091bb24a24e010cec9499b2a2ecf8);
+                var html_2c277ecb10a12d1c94829fdd6fd9b423 = $(`<div id="html_2c277ecb10a12d1c94829fdd6fd9b423" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Jil Galvez Andrés</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Seminario Internacional “Pedagogía Hospitalaria Innovadora, abriendo caminos para la inclusión”</span><br><b>En:</b> Seminario Internacional: Pedagogía Hospitalaria Innovadora, abriendo caminos para la inclusión<br><span style='color: gray;'>Universidad de Tarapacá<br>28 y 30 de junio<br>Arica, Chile</span></div>`)[0];
+                popup_6b6fb702181659f3e29e2c7a07a3155e.setContent(html_2c277ecb10a12d1c94829fdd6fd9b423);
             
         
 
-        marker_58a3a7b878df9b4cc392e7aeac2235ad.bindPopup(popup_cd93ab8247e38a8fd841ed5e3115b566)
+        marker_5e504b0b2a2b9a397e1268ba115b9f9e.bindPopup(popup_6b6fb702181659f3e29e2c7a07a3155e)
         ;
 
         
     
     
-            var marker_29409b2a8ad3ca993d49b3afb7d5558e = L.marker(
+            var marker_e73615282405dc5ed3641efef96812c4 = L.marker(
                 [5.076884243065848, -75.51968674642215],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_d69955560021f3d9133000c53a400095 = L.AwesomeMarkers.icon(
+            var icon_9577e9897e3958816ad91e755a9f5234 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_29409b2a8ad3ca993d49b3afb7d5558e.setIcon(icon_d69955560021f3d9133000c53a400095);
+            marker_e73615282405dc5ed3641efef96812c4.setIcon(icon_9577e9897e3958816ad91e755a9f5234);
         
     
-        var popup_1d7f5d8eb1ea9a1f57f205342aa0a772 = L.popup({"maxWidth": 300});
+        var popup_7fa971e672cd7ba18c0a67f4a067da18 = L.popup({"maxWidth": 300});
 
         
             
-                var html_aa393817160cab722c19e78afe5c612b = $(`<div id="html_aa393817160cab722c19e78afe5c612b" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Pérez Lisboa Sandra</span></b><br><b>Exposición:</b><br><span style='color: gray;'>El patrimonio biocultural para el aprendizaje de la geometría: una propuesta de dos escuelas rurales de la Comuna de San Felipe</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>17 y 21 de julio<br>Manizales, Colombia</span></div>`)[0];
-                popup_1d7f5d8eb1ea9a1f57f205342aa0a772.setContent(html_aa393817160cab722c19e78afe5c612b);
+                var html_429fa7c4c43dd3969ec5089196aa5f6b = $(`<div id="html_429fa7c4c43dd3969ec5089196aa5f6b" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Pérez Lisboa Sandra</span></b><br><b>Exposición:</b><br><span style='color: gray;'>El patrimonio biocultural para el aprendizaje de la geometría: una propuesta de dos escuelas rurales de la Comuna de San Felipe</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>17 y 21 de julio<br>Manizales, Colombia</span></div>`)[0];
+                popup_7fa971e672cd7ba18c0a67f4a067da18.setContent(html_429fa7c4c43dd3969ec5089196aa5f6b);
             
         
 
-        marker_29409b2a8ad3ca993d49b3afb7d5558e.bindPopup(popup_1d7f5d8eb1ea9a1f57f205342aa0a772)
+        marker_e73615282405dc5ed3641efef96812c4.bindPopup(popup_7fa971e672cd7ba18c0a67f4a067da18)
         ;
 
         
     
     
-            var marker_32dd3e2d9570e896711001751bc88a69 = L.marker(
+            var marker_80d1e655ae2b9d176f2b45ddd4563f7a = L.marker(
                 [5.076884243065848, -75.51968674642215],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_0d014be0962a8540e6a8211ba2466acb = L.AwesomeMarkers.icon(
+            var icon_4d6f9b64cdf243f0a12ad7430723f073 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_32dd3e2d9570e896711001751bc88a69.setIcon(icon_0d014be0962a8540e6a8211ba2466acb);
+            marker_80d1e655ae2b9d176f2b45ddd4563f7a.setIcon(icon_4d6f9b64cdf243f0a12ad7430723f073);
         
     
-        var popup_98df06e2a3bafdd0067f7e8bb432ab60 = L.popup({"maxWidth": 300});
+        var popup_375c510834cbd6cfdd3feb14bb0e699d = L.popup({"maxWidth": 300});
 
         
             
-                var html_a3a3bda10e8c587fb769b36f9b767a67 = $(`<div id="html_a3a3bda10e8c587fb769b36f9b767a67" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Ibáñez León Patricio</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Los efectos de la pandemia en chile: resultados de aprendizaje y su relación con la formación de profesores</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>17 y 21 de julio<br>Manizales, Colombia</span></div>`)[0];
-                popup_98df06e2a3bafdd0067f7e8bb432ab60.setContent(html_a3a3bda10e8c587fb769b36f9b767a67);
+                var html_bcc1d62cf687817df9a72a4f7e7ec6c3 = $(`<div id="html_bcc1d62cf687817df9a72a4f7e7ec6c3" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Ibáñez León Patricio</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Los efectos de la pandemia en chile: resultados de aprendizaje y su relación con la formación de profesores</span><br><b>En:</b> V Bienal Latinoamericana y Caribeña en Primeras Infancias, Niñeces y Juventudes<br><span style='color: gray;'>Universidad de Manizales<br>17 y 21 de julio<br>Manizales, Colombia</span></div>`)[0];
+                popup_375c510834cbd6cfdd3feb14bb0e699d.setContent(html_bcc1d62cf687817df9a72a4f7e7ec6c3);
             
         
 
-        marker_32dd3e2d9570e896711001751bc88a69.bindPopup(popup_98df06e2a3bafdd0067f7e8bb432ab60)
+        marker_80d1e655ae2b9d176f2b45ddd4563f7a.bindPopup(popup_375c510834cbd6cfdd3feb14bb0e699d)
         ;
 
         
     
     
-            var marker_a3640734de499a402ad9c121481a47fc = L.marker(
+            var marker_c5396d9e42c98752f9b5b1743a031151 = L.marker(
                 [-38.745913052629135, -72.6170187455563],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_65adb3c8c5562f6faf1e505943503f6f = L.AwesomeMarkers.icon(
+            var icon_2b98aa16d89d84d679b20795879b540c = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_a3640734de499a402ad9c121481a47fc.setIcon(icon_65adb3c8c5562f6faf1e505943503f6f);
+            marker_c5396d9e42c98752f9b5b1743a031151.setIcon(icon_2b98aa16d89d84d679b20795879b540c);
         
     
-        var popup_0fb810058e8ad7c7a63a0fe0bbd1d174 = L.popup({"maxWidth": 300});
+        var popup_3f75e0738296073f9f0330c49cee24a8 = L.popup({"maxWidth": 300});
 
         
             
-                var html_5adb3084f915dff0ff5163823a86c55a = $(`<div id="html_5adb3084f915dff0ff5163823a86c55a" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gallardo Jaque Alejandro</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Construir convivencia, no violencia y bienestar socioemocional</span><br><b>En:</b> Coloquio de COENIN<br><span style='color: gray;'>Universidad de la Frontera<br>27 de abril<br>Temuco, Chile</span></div>`)[0];
-                popup_0fb810058e8ad7c7a63a0fe0bbd1d174.setContent(html_5adb3084f915dff0ff5163823a86c55a);
+                var html_798421c810b206131c1a811b9057ad75 = $(`<div id="html_798421c810b206131c1a811b9057ad75" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gallardo Jaque Alejandro</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Construir convivencia, no violencia y bienestar socioemocional</span><br><b>En:</b> Coloquio de COENIN<br><span style='color: gray;'>Universidad de la Frontera<br>27 de abril<br>Temuco, Chile</span></div>`)[0];
+                popup_3f75e0738296073f9f0330c49cee24a8.setContent(html_798421c810b206131c1a811b9057ad75);
             
         
 
-        marker_a3640734de499a402ad9c121481a47fc.bindPopup(popup_0fb810058e8ad7c7a63a0fe0bbd1d174)
+        marker_c5396d9e42c98752f9b5b1743a031151.bindPopup(popup_3f75e0738296073f9f0330c49cee24a8)
         ;
 
         
     
     
-            var marker_3de3e58ab6f27b884081a4d08931369b = L.marker(
+            var marker_3641572c11ed7c9a9ec5c4de3c051335 = L.marker(
                 [45.50624720844985, -73.61360899630141],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_4a6e941907458599c3657358c623d299 = L.AwesomeMarkers.icon(
+            var icon_3f079ea8793b0af2d95e12a469b83556 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_3de3e58ab6f27b884081a4d08931369b.setIcon(icon_4a6e941907458599c3657358c623d299);
+            marker_3641572c11ed7c9a9ec5c4de3c051335.setIcon(icon_3f079ea8793b0af2d95e12a469b83556);
         
     
-        var popup_5c6d5679f3803bc358f2ea13610c959b = L.popup({"maxWidth": 300});
+        var popup_bd012c4b6de4cea68300ac7f451f4e5c = L.popup({"maxWidth": 300});
 
         
             
-                var html_cbac317b305ac958a5415cf1f7068b7d = $(`<div id="html_cbac317b305ac958a5415cf1f7068b7d" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Rojas Ríos María Jacqueline</span></b><br><b>Mesa redonda:</b><br><span style='color: gray;'>Processus d'assurance qualité dans l'enseignement supérieur au Québec et au Chili: Une perspective sociale</span><br><b>En:</b> Coloque Politiques d’assurance qualité dans l’enseignement supérieur : le rôle des agences d’évaluation<br><span style='color: gray;'>Universidad de Montreal<br>5 y 26 de mayo<br>Montreal, Canadá</span></div>`)[0];
-                popup_5c6d5679f3803bc358f2ea13610c959b.setContent(html_cbac317b305ac958a5415cf1f7068b7d);
+                var html_87ed7025f376cc2ad2866204e3e23c61 = $(`<div id="html_87ed7025f376cc2ad2866204e3e23c61" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Rojas Ríos María Jacqueline</span></b><br><b>Mesa redonda:</b><br><span style='color: gray;'>Processus d'assurance qualité dans l'enseignement supérieur au Québec et au Chili: Une perspective sociale</span><br><b>En:</b> Coloque Politiques d’assurance qualité dans l’enseignement supérieur : le rôle des agences d’évaluation<br><span style='color: gray;'>Universidad de Montreal<br>5 y 26 de mayo<br>Montreal, Canadá</span></div>`)[0];
+                popup_bd012c4b6de4cea68300ac7f451f4e5c.setContent(html_87ed7025f376cc2ad2866204e3e23c61);
             
         
 
-        marker_3de3e58ab6f27b884081a4d08931369b.bindPopup(popup_5c6d5679f3803bc358f2ea13610c959b)
+        marker_3641572c11ed7c9a9ec5c4de3c051335.bindPopup(popup_bd012c4b6de4cea68300ac7f451f4e5c)
         ;
 
         
     
     
-            var marker_4b77687ab44c4330722d404245a9e1d9 = L.marker(
+            var marker_89073a150a3d1c15835031ee3019acef = L.marker(
                 [-34.58605842883391, -58.36900205946899],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_6c5af7570978f5e344e8819770c062b5 = L.AwesomeMarkers.icon(
+            var icon_e63c2ab4246bcf839cf2366d7fa7dacc = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_4b77687ab44c4330722d404245a9e1d9.setIcon(icon_6c5af7570978f5e344e8819770c062b5);
+            marker_89073a150a3d1c15835031ee3019acef.setIcon(icon_e63c2ab4246bcf839cf2366d7fa7dacc);
         
     
-        var popup_e4bf4ed4252048f96a5f6d16ccf7bc05 = L.popup({"maxWidth": 300});
+        var popup_0496167d56495452cd0cc35315f2656f = L.popup({"maxWidth": 300});
 
         
             
-                var html_babe762c7e706c4cb2fdbb460a26920d = $(`<div id="html_babe762c7e706c4cb2fdbb460a26920d" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  G. Miranda David</span></b><br><b>Exposición:</b><br><span style='color: gray;'>The struggle for education in Chile: Crystallization of social demands and educational policy. From school to the dispute in the political constitution</span><br><b>En:</b> Congreso Mundial de Ciencia Política<br><span style='color: gray;'>Universidad Católica Argentina<br>15 y 19 de julio<br>Buenos Aires, Argentina</span></div>`)[0];
-                popup_e4bf4ed4252048f96a5f6d16ccf7bc05.setContent(html_babe762c7e706c4cb2fdbb460a26920d);
+                var html_0325b8c239af43305ad8e5469afa2830 = $(`<div id="html_0325b8c239af43305ad8e5469afa2830" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  G. Miranda David</span></b><br><b>Exposición:</b><br><span style='color: gray;'>The struggle for education in Chile: Crystallization of social demands and educational policy. From school to the dispute in the political constitution</span><br><b>En:</b> Congreso Mundial de Ciencia Política<br><span style='color: gray;'>Universidad Católica Argentina<br>15 y 19 de julio<br>Buenos Aires, Argentina</span></div>`)[0];
+                popup_0496167d56495452cd0cc35315f2656f.setContent(html_0325b8c239af43305ad8e5469afa2830);
             
         
 
-        marker_4b77687ab44c4330722d404245a9e1d9.bindPopup(popup_e4bf4ed4252048f96a5f6d16ccf7bc05)
+        marker_89073a150a3d1c15835031ee3019acef.bindPopup(popup_0496167d56495452cd0cc35315f2656f)
         ;
 
         
     
     
-            var marker_9f59e1775f72cd25f057198ffae28a04 = L.marker(
+            var marker_a0c44265d229c32a188ba20886b166e8 = L.marker(
                 [48.82767836437274, 2.382166816709801],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_c277d0e0c8ca60c1cc2a529158dd36c6 = L.AwesomeMarkers.icon(
+            var icon_e2929fe00539b89b938cd82c345d28e3 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_9f59e1775f72cd25f057198ffae28a04.setIcon(icon_c277d0e0c8ca60c1cc2a529158dd36c6);
+            marker_a0c44265d229c32a188ba20886b166e8.setIcon(icon_e2929fe00539b89b938cd82c345d28e3);
         
     
-        var popup_e80308eecf8f9deb045c3d0d03aab6e5 = L.popup({"maxWidth": 300});
+        var popup_ec6ffef4ab9ec9ecbc1e93f5247070f9 = L.popup({"maxWidth": 300});
 
         
             
-                var html_dd4de591d56b2e82c46f0de05c69951d = $(`<div id="html_dd4de591d56b2e82c46f0de05c69951d" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Estancia de investigación proyecto:</b><br><span style='color: gray;'>Trabajo matemático de profesores en formación inicial apoyado por artefactos digitales en el dominio del álgebra lineal</span><br><b>En:</b> ECOS-ANID ID 220035 <br><span style='color: gray;'>Université Paris Cité<br>26 septiembre al 15 octubre<br>París, Francia</span></div>`)[0];
-                popup_e80308eecf8f9deb045c3d0d03aab6e5.setContent(html_dd4de591d56b2e82c46f0de05c69951d);
+                var html_afde0d68acc54c159e5c99a311fa03ba = $(`<div id="html_afde0d68acc54c159e5c99a311fa03ba" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Estancia de investigación proyecto:</b><br><span style='color: gray;'>Trabajo matemático de profesores en formación inicial apoyado por artefactos digitales en el dominio del álgebra lineal</span><br><b>En:</b> ECOS-ANID ID 220035 <br><span style='color: gray;'>Université Paris Cité<br>26 septiembre al 15 octubre<br>París, Francia</span></div>`)[0];
+                popup_ec6ffef4ab9ec9ecbc1e93f5247070f9.setContent(html_afde0d68acc54c159e5c99a311fa03ba);
             
         
 
-        marker_9f59e1775f72cd25f057198ffae28a04.bindPopup(popup_e80308eecf8f9deb045c3d0d03aab6e5)
+        marker_a0c44265d229c32a188ba20886b166e8.bindPopup(popup_ec6ffef4ab9ec9ecbc1e93f5247070f9)
         ;
 
         
     
     
-            var marker_e0a69c2308797f9887fb1ecd1959fe5b = L.marker(
+            var marker_af2d0fa1e07239c1dc32e2580404d83d = L.marker(
                 [39.9562007685248, -3.882552496329962],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_59e37b742c5b13aaa24c881eb74ab1dc = L.AwesomeMarkers.icon(
+            var icon_0beb21543940de61610a1f81a196a4f0 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_e0a69c2308797f9887fb1ecd1959fe5b.setIcon(icon_59e37b742c5b13aaa24c881eb74ab1dc);
+            marker_af2d0fa1e07239c1dc32e2580404d83d.setIcon(icon_0beb21543940de61610a1f81a196a4f0);
         
     
-        var popup_f02678421f3891f7036afbe94a0a15a4 = L.popup({"maxWidth": 300});
+        var popup_4b8925a48ac7b03b42d4b67819b98693 = L.popup({"maxWidth": 300});
 
         
             
-                var html_38c944546d6ec6c5d685fb1306fff64e = $(`<div id="html_38c944546d6ec6c5d685fb1306fff64e" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2022)  Norambuena Sandoval Ivette</span></b><br><b>Reporte de Investigación:</b><br><span style='color: gray;'>Procedimientos evaluativos implementados con estudiantes con retos múltiples y sordoceguera en escuelas especiales de Chile</span><br><b>En:</b> 10th International Congress of educational sciences and development<br><span style='color: gray;'>ICESD<br>19/10/2022<br>virtual, España</span></div>`)[0];
-                popup_f02678421f3891f7036afbe94a0a15a4.setContent(html_38c944546d6ec6c5d685fb1306fff64e);
+                var html_da4010ba6043306902830a24c97bfd8a = $(`<div id="html_da4010ba6043306902830a24c97bfd8a" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2022)  Norambuena Sandoval Ivette</span></b><br><b>Reporte de Investigación:</b><br><span style='color: gray;'>Procedimientos evaluativos implementados con estudiantes con retos múltiples y sordoceguera en escuelas especiales de Chile</span><br><b>En:</b> 10th International Congress of educational sciences and development<br><span style='color: gray;'>ICESD<br>19/10/2022<br>virtual, España</span></div>`)[0];
+                popup_4b8925a48ac7b03b42d4b67819b98693.setContent(html_da4010ba6043306902830a24c97bfd8a);
             
         
 
-        marker_e0a69c2308797f9887fb1ecd1959fe5b.bindPopup(popup_f02678421f3891f7036afbe94a0a15a4)
+        marker_af2d0fa1e07239c1dc32e2580404d83d.bindPopup(popup_4b8925a48ac7b03b42d4b67819b98693)
         ;
 
         
     
     
-            var marker_c391b0280b28f3f36e99c7cb346aee4c = L.marker(
+            var marker_37aeb36f49c4778bd3b51102cc326b35 = L.marker(
                 [-35.42647655547629, -71.59592632020892],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_d6ca1c1daa152b679c334c9713fa0cf1 = L.AwesomeMarkers.icon(
+            var icon_1f0feb1f6cbc279c06decbac181d81ba = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_c391b0280b28f3f36e99c7cb346aee4c.setIcon(icon_d6ca1c1daa152b679c334c9713fa0cf1);
+            marker_37aeb36f49c4778bd3b51102cc326b35.setIcon(icon_1f0feb1f6cbc279c06decbac181d81ba);
         
     
-        var popup_1f88af49480f0aa8c3d7946f55726f2a = L.popup({"maxWidth": 300});
+        var popup_2e090d980c590afccbf2813cb734a9de = L.popup({"maxWidth": 300});
 
         
             
-                var html_a46b4e3a10bedbee274844fe3f04fd9b = $(`<div id="html_a46b4e3a10bedbee274844fe3f04fd9b" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2022)  Norambuena Sandoval Ivette</span></b><br><b>Reporte de Investigación:</b><br><span style='color: gray;'>Oportunidades y barreras de los procesos evaluativos y valorativos diagnósticos implementados con estudiantes en situación de retos múltiples y sordoceguera en escuelas especiales de Chile</span><br><b>En:</b> XI Encuentro Internacional de Educación Especial y Psicopedagogía “Desde la Evidencia Científica a la Práctica en Educación Especial”.<br><span style='color: gray;'>Universidad Católica del Maule<br>26/10/2022<br>Talca, Chile</span></div>`)[0];
-                popup_1f88af49480f0aa8c3d7946f55726f2a.setContent(html_a46b4e3a10bedbee274844fe3f04fd9b);
+                var html_4ae442552d7250e9b76d5f5afad75c93 = $(`<div id="html_4ae442552d7250e9b76d5f5afad75c93" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2022)  Norambuena Sandoval Ivette</span></b><br><b>Reporte de Investigación:</b><br><span style='color: gray;'>Oportunidades y barreras de los procesos evaluativos y valorativos diagnósticos implementados con estudiantes en situación de retos múltiples y sordoceguera en escuelas especiales de Chile</span><br><b>En:</b> XI Encuentro Internacional de Educación Especial y Psicopedagogía “Desde la Evidencia Científica a la Práctica en Educación Especial”.<br><span style='color: gray;'>Universidad Católica del Maule<br>26/10/2022<br>Talca, Chile</span></div>`)[0];
+                popup_2e090d980c590afccbf2813cb734a9de.setContent(html_4ae442552d7250e9b76d5f5afad75c93);
             
         
 
-        marker_c391b0280b28f3f36e99c7cb346aee4c.bindPopup(popup_1f88af49480f0aa8c3d7946f55726f2a)
+        marker_37aeb36f49c4778bd3b51102cc326b35.bindPopup(popup_2e090d980c590afccbf2813cb734a9de)
         ;
 
         
     
     
-            var marker_b1278c05c8457e3a20c8649042ed150f = L.marker(
+            var marker_25b19d8fe98defeecf5c85281df9c60d = L.marker(
                 [-33.02837, -71.55858],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_5b9d2256bc4911108c6ab88e1c4cbad8 = L.AwesomeMarkers.icon(
+            var icon_3468f3045c74e95f97dd0c25e4db4b19 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_b1278c05c8457e3a20c8649042ed150f.setIcon(icon_5b9d2256bc4911108c6ab88e1c4cbad8);
+            marker_25b19d8fe98defeecf5c85281df9c60d.setIcon(icon_3468f3045c74e95f97dd0c25e4db4b19);
         
     
-        var popup_27a1877495891f751473b9286b28d476 = L.popup({"maxWidth": 300});
+        var popup_7543d60aac9399a81275a1e0b8891caa = L.popup({"maxWidth": 300});
 
         
             
-                var html_2d6a4d387347870ba48ae50eb1a155cc = $(`<div id="html_2d6a4d387347870ba48ae50eb1a155cc" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2022)  Olivares Villrroel José Manuel</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Glotopolítica Lusa: La epopeya camoniana como ideología lingüística y verbal de la lengua portuguesa: Hacia una política lingüística impulsada por el núcleo PELSE de la Asociación de Universidades del Grupo Montevideo (AUGM).</span><br><b>En:</b> 450 años  primera edición de "Os Lusíadas" (1572 - 2022)<br><span style='color: gray;'>AUGM y Universidad de Playa Ancha<br>6/07/2022<br>Viña del Mar, Chile</span></div>`)[0];
-                popup_27a1877495891f751473b9286b28d476.setContent(html_2d6a4d387347870ba48ae50eb1a155cc);
+                var html_f875fc49e51d6a6a12a7edd54180c54e = $(`<div id="html_f875fc49e51d6a6a12a7edd54180c54e" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2022)  Olivares Villrroel José Manuel</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Glotopolítica Lusa: La epopeya camoniana como ideología lingüística y verbal de la lengua portuguesa: Hacia una política lingüística impulsada por el núcleo PELSE de la Asociación de Universidades del Grupo Montevideo (AUGM).</span><br><b>En:</b> 450 años  primera edición de "Os Lusíadas" (1572 - 2022)<br><span style='color: gray;'>AUGM y Universidad de Playa Ancha<br>6/07/2022<br>Viña del Mar, Chile</span></div>`)[0];
+                popup_7543d60aac9399a81275a1e0b8891caa.setContent(html_f875fc49e51d6a6a12a7edd54180c54e);
             
         
 
-        marker_b1278c05c8457e3a20c8649042ed150f.bindPopup(popup_27a1877495891f751473b9286b28d476)
+        marker_25b19d8fe98defeecf5c85281df9c60d.bindPopup(popup_7543d60aac9399a81275a1e0b8891caa)
         ;
 
         
     
     
-            var marker_84270d2fcb39724a2adfce164216f279 = L.marker(
+            var marker_2cff3e27fbbcf843c70bcbf5448a2074 = L.marker(
                 [40.416578283285325, -3.6191660260117584],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_502352c414d8959f9e07b5952202a5db = L.AwesomeMarkers.icon(
+            var icon_5ba655eb4006ec6d3dd20ea6f6b7479f = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_84270d2fcb39724a2adfce164216f279.setIcon(icon_502352c414d8959f9e07b5952202a5db);
+            marker_2cff3e27fbbcf843c70bcbf5448a2074.setIcon(icon_5ba655eb4006ec6d3dd20ea6f6b7479f);
         
     
-        var popup_1a04d51de3d07e11037812319b51dbfb = L.popup({"maxWidth": 300});
+        var popup_f5086abf6e51ca1f46e5ecdec7017a3a = L.popup({"maxWidth": 300});
 
         
             
-                var html_efa4dceeb436958ddbceab8365e2aa15 = $(`<div id="html_efa4dceeb436958ddbceab8365e2aa15" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2021)  Pérez Lisboa Sandra</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Rescatando el patrimonio natural de la Localidad El Asiento</span><br><b>En:</b> 55 Encuentro de Centros Innovadores<br><span style='color: gray;'>RED SOCIAL DIM EDU<br>10/03/2021<br>Madrid, España</span></div>`)[0];
-                popup_1a04d51de3d07e11037812319b51dbfb.setContent(html_efa4dceeb436958ddbceab8365e2aa15);
+                var html_64f3da0d5d6d8a1401889acc16482cce = $(`<div id="html_64f3da0d5d6d8a1401889acc16482cce" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2021)  Pérez Lisboa Sandra</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Rescatando el patrimonio natural de la Localidad El Asiento</span><br><b>En:</b> 55 Encuentro de Centros Innovadores<br><span style='color: gray;'>RED SOCIAL DIM EDU<br>10/03/2021<br>Madrid, España</span></div>`)[0];
+                popup_f5086abf6e51ca1f46e5ecdec7017a3a.setContent(html_64f3da0d5d6d8a1401889acc16482cce);
             
         
 
-        marker_84270d2fcb39724a2adfce164216f279.bindPopup(popup_1a04d51de3d07e11037812319b51dbfb)
+        marker_2cff3e27fbbcf843c70bcbf5448a2074.bindPopup(popup_f5086abf6e51ca1f46e5ecdec7017a3a)
         ;
 
         
     
     
-            var marker_9a10463ec902c5be03e4a5e92fbf5e4e = L.marker(
+            var marker_2cff504c1752f111fa807f40705d2e1a = L.marker(
                 [37.26961360966592, -6.920034264289401],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_02567c2a13b82d25cb284edd20607fb6 = L.AwesomeMarkers.icon(
+            var icon_1a1f7f8d688e7a3b1b03a8d390e86ac2 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_9a10463ec902c5be03e4a5e92fbf5e4e.setIcon(icon_02567c2a13b82d25cb284edd20607fb6);
+            marker_2cff504c1752f111fa807f40705d2e1a.setIcon(icon_1a1f7f8d688e7a3b1b03a8d390e86ac2);
         
     
-        var popup_26b2bc17ac6863bb2deb324b30b949d2 = L.popup({"maxWidth": 300});
+        var popup_a321879a8ac4546552a523221fc916b0 = L.popup({"maxWidth": 300});
 
         
             
-                var html_c0674e2b21fc40ab45ac1b7f4e0b71ac = $(`<div id="html_c0674e2b21fc40ab45ac1b7f4e0b71ac" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2021)  Pérez Lisboa Sandra</span></b><br><b>Reporte de Investigación:</b><br><span style='color: gray;'>Redes sociales como herramientas favorables en el aprendizaje de los párvulos: experiencia desarrollada en la carrera de educación parvularia</span><br><b>En:</b> VI Congreso Internacional Comunicación y Pensamiento. La revolución de los prosumers: youtubers e instagramers, celebrado de manera virtual en la plataforma comunicacionypensamiento.org y organizado desde Sevilla y Huelva (España)<br><span style='color: gray;'>Grupo Comunicar, Ladecom y Egresus congresos y eventos<br>28/04/2021<br>Huelva, España</span></div>`)[0];
-                popup_26b2bc17ac6863bb2deb324b30b949d2.setContent(html_c0674e2b21fc40ab45ac1b7f4e0b71ac);
+                var html_a677cd5a55cff700b93867ea454d6b85 = $(`<div id="html_a677cd5a55cff700b93867ea454d6b85" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2021)  Pérez Lisboa Sandra</span></b><br><b>Reporte de Investigación:</b><br><span style='color: gray;'>Redes sociales como herramientas favorables en el aprendizaje de los párvulos: experiencia desarrollada en la carrera de educación parvularia</span><br><b>En:</b> VI Congreso Internacional Comunicación y Pensamiento. La revolución de los prosumers: youtubers e instagramers, celebrado de manera virtual en la plataforma comunicacionypensamiento.org y organizado desde Sevilla y Huelva (España)<br><span style='color: gray;'>Grupo Comunicar, Ladecom y Egresus congresos y eventos<br>28/04/2021<br>Huelva, España</span></div>`)[0];
+                popup_a321879a8ac4546552a523221fc916b0.setContent(html_a677cd5a55cff700b93867ea454d6b85);
             
         
 
-        marker_9a10463ec902c5be03e4a5e92fbf5e4e.bindPopup(popup_26b2bc17ac6863bb2deb324b30b949d2)
+        marker_2cff504c1752f111fa807f40705d2e1a.bindPopup(popup_a321879a8ac4546552a523221fc916b0)
         ;
 
         
     
     
-            var marker_f1455094904c10240f8a0a646abd17f4 = L.marker(
+            var marker_2faecca7428ff7d550e7e2ba25be311b = L.marker(
                 [10.443704401649136, -75.52392057908192],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_45bc63aa84ce5facfbf625d0f78583ca = L.AwesomeMarkers.icon(
+            var icon_3d61fe68141fb7187dd42e7bef4fa4d2 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_f1455094904c10240f8a0a646abd17f4.setIcon(icon_45bc63aa84ce5facfbf625d0f78583ca);
+            marker_2faecca7428ff7d550e7e2ba25be311b.setIcon(icon_3d61fe68141fb7187dd42e7bef4fa4d2);
         
     
-        var popup_3b2dbae0f0833903d1c9c1c5f52e818d = L.popup({"maxWidth": 300});
+        var popup_372d6df0edd01d0daa5a155a0bc82b29 = L.popup({"maxWidth": 300});
 
         
             
-                var html_e6a26695c7b05c30ec1e3c8c56d523ef = $(`<div id="html_e6a26695c7b05c30ec1e3c8c56d523ef" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2020)  Pérez Lisboa Sandra</span></b><br><b>Reporte de Investigación:</b><br><span style='color: gray;'>Análisis de las dimensiones de tecnología y de ideología y valores en las estudiantes de último año de educación parvularia: el caso de San Felipe</span><br><b>En:</b> X Congreso Internacional sobre Formación en Ciencia, Tecnología y Competencias, CIFCOM<br><span style='color: gray;'>Centro internacional SEiD y CIMTED corporación<br>21/10/2020<br>Cartagena de indias, Colombia</span></div>`)[0];
-                popup_3b2dbae0f0833903d1c9c1c5f52e818d.setContent(html_e6a26695c7b05c30ec1e3c8c56d523ef);
+                var html_78a1474b6c8ac9bb28d794f563303350 = $(`<div id="html_78a1474b6c8ac9bb28d794f563303350" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2020)  Pérez Lisboa Sandra</span></b><br><b>Reporte de Investigación:</b><br><span style='color: gray;'>Análisis de las dimensiones de tecnología y de ideología y valores en las estudiantes de último año de educación parvularia: el caso de San Felipe</span><br><b>En:</b> X Congreso Internacional sobre Formación en Ciencia, Tecnología y Competencias, CIFCOM<br><span style='color: gray;'>Centro internacional SEiD y CIMTED corporación<br>21/10/2020<br>Cartagena de indias, Colombia</span></div>`)[0];
+                popup_372d6df0edd01d0daa5a155a0bc82b29.setContent(html_78a1474b6c8ac9bb28d794f563303350);
             
         
 
-        marker_f1455094904c10240f8a0a646abd17f4.bindPopup(popup_3b2dbae0f0833903d1c9c1c5f52e818d)
+        marker_2faecca7428ff7d550e7e2ba25be311b.bindPopup(popup_372d6df0edd01d0daa5a155a0bc82b29)
         ;
 
         
     
     
-            var marker_11e6509d2be15170504d8923e57efe3f = L.marker(
+            var marker_cc65d2e6506ff0d5d8da2076c6d5475b = L.marker(
                 [-13.160338994496533, -74.22394830232751],
                 {}
-            ).addTo(marker_cluster_8fa6993660c81a0e796ea36dcc364a46);
+            ).addTo(marker_cluster_755dce488e187695c73b0c683312da25);
         
     
-            var icon_f38a392e29ff7d9f655de0dd69388d18 = L.AwesomeMarkers.icon(
+            var icon_73eddb83fad7fc970fcd1cbd788b08f5 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
             );
-            marker_11e6509d2be15170504d8923e57efe3f.setIcon(icon_f38a392e29ff7d9f655de0dd69388d18);
+            marker_cc65d2e6506ff0d5d8da2076c6d5475b.setIcon(icon_73eddb83fad7fc970fcd1cbd788b08f5);
         
     
-        var popup_421278be7c20efcdd6da598260dcaa9f = L.popup({"maxWidth": 300});
+        var popup_434ee8933aebe8f0eae6c72e58927f2d = L.popup({"maxWidth": 300});
 
         
             
-                var html_eb2fae9db391fbdc77e5147b1f001d1c = $(`<div id="html_eb2fae9db391fbdc77e5147b1f001d1c" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2019)  Pérez Lisboa Sandra</span></b><br><b>Reporte de Investigación:</b><br><span style='color: gray;'>Práctica profesional: contribuyendo al cambio climático</span><br><b>En:</b> VIII Congreso Internacional del Foro Global de Coeducación y Cultura de Paz<br><span style='color: gray;'>Universidad Nacional de San Cristóbal de Huamanga <br>26/06/2019<br>Ayacucho, Perú</span></div>`)[0];
-                popup_421278be7c20efcdd6da598260dcaa9f.setContent(html_eb2fae9db391fbdc77e5147b1f001d1c);
+                var html_c7e6620362323d3b09384dce6560c792 = $(`<div id="html_c7e6620362323d3b09384dce6560c792" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2019)  Pérez Lisboa Sandra</span></b><br><b>Reporte de Investigación:</b><br><span style='color: gray;'>Práctica profesional: contribuyendo al cambio climático</span><br><b>En:</b> VIII Congreso Internacional del Foro Global de Coeducación y Cultura de Paz<br><span style='color: gray;'>Universidad Nacional de San Cristóbal de Huamanga <br>26/06/2019<br>Ayacucho, Perú</span></div>`)[0];
+                popup_434ee8933aebe8f0eae6c72e58927f2d.setContent(html_c7e6620362323d3b09384dce6560c792);
             
         
 
-        marker_11e6509d2be15170504d8923e57efe3f.bindPopup(popup_421278be7c20efcdd6da598260dcaa9f)
+        marker_cc65d2e6506ff0d5d8da2076c6d5475b.bindPopup(popup_434ee8933aebe8f0eae6c72e58927f2d)
         ;
 
         
     
+    
+            marker_cluster_755dce488e187695c73b0c683312da25.addTo(map_b2db72fdd384b5c7784d32ca969e6b82);
+        
+    
+            tile_layer_043d26ac78869ad788a0facbae08f394.addTo(map_b2db72fdd384b5c7784d32ca969e6b82);
+        
+    
+            marker_cluster_755dce488e187695c73b0c683312da25.addTo(map_b2db72fdd384b5c7784d32ca969e6b82);
+        
+    
+            tile_layer_043d26ac78869ad788a0facbae08f394.addTo(map_b2db72fdd384b5c7784d32ca969e6b82);
+        
+    
+            marker_cluster_755dce488e187695c73b0c683312da25.addTo(map_b2db72fdd384b5c7784d32ca969e6b82);
+        
 </script>
 </html>
