@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"group": "Asia", "id": "Indonesia", "label": "Indonesia (9)", "shape": "dot", "size": 9, "title": "Indonesia (9)", "value": 9}, {"group": "Asia", "id": "Taiwan", "label": "Taiwan (10)", "shape": "dot", "size": 10, "title": "Taiwan (10)", "value": 10}, {"group": "Latinoam\u00e9rica", "id": "Mexico", "label": "Mexico (6)", "shape": "dot", "size": 6, "title": "Mexico (6)", "value": 6}, {"group": "Latinoam\u00e9rica", "id": "Colombia", "label": "Colombia (2)", "shape": "dot", "size": 2, "title": "Colombia (2)", "value": 2}, {"group": "Asia", "id": "Malaysia", "label": "Malaysia (3)", "shape": "dot", "size": 3, "title": "Malaysia (3)", "value": 3}, {"group": "Ocean\u00eda", "id": "Australia", "label": "Australia (4)", "shape": "dot", "size": 4, "title": "Australia (4)", "value": 4}, {"group": "Asia", "id": "Turkey", "label": "Turkey (15)", "shape": "dot", "size": 15, "title": "Turkey (15)", "value": 15}, {"group": "Ocean\u00eda", "id": "New Zealand", "label": "New Zealand (2)", "shape": "dot", "size": 2, "title": "New Zealand (2)", "value": 2}, {"group": "Africa", "id": "Mozambique", "label": "Mozambique (1)", "shape": "dot", "size": 1, "title": "Mozambique (1)", "value": 1}, {"group": "Europa", "id": "Portugal", "label": "Portugal (2)", "shape": "dot", "size": 2, "title": "Portugal (2)", "value": 2}, {"group": "Europa", "id": "Spain", "label": "Spain (14)", "shape": "dot", "size": 14, "title": "Spain (14)", "value": 14}, {"group": "Europa", "id": "United Kingdom", "label": "United Kingdom (9)", "shape": "dot", "size": 9, "title": "United Kingdom (9)", "value": 9}, {"group": "EE.UU y Canad\u00e1", "id": "United States", "label": "United States (25)", "shape": "dot", "size": 25, "title": "United States (25)", "value": 25}, {"group": "Latinoam\u00e9rica", "id": "Peru", "label": "Peru (3)", "shape": "dot", "size": 3, "title": "Peru (3)", "value": 3}, {"group": null, "id": "Uzbekistan", "label": "Uzbekistan (1)", "shape": "dot", "size": 1, "title": "Uzbekistan (1)", "value": 1}, {"group": "Europa", "id": "Russian Federation", "label": "Russian Federation (1)", "shape": "dot", "size": 1, "title": "Russian Federation (1)", "value": 1}, {"group": null, "id": "Egypt", "label": "Egypt (1)", "shape": "dot", "size": 1, "title": "Egypt (1)", "value": 1}, {"group": "Asia", "id": "Saudi Arabia", "label": "Saudi Arabia (1)", "shape": "dot", "size": 1, "title": "Saudi Arabia (1)", "value": 1}, {"group": "Latinoam\u00e9rica", "id": "Puerto Rico", "label": "Puerto Rico (2)", "shape": "dot", "size": 2, "title": "Puerto Rico (2)", "value": 2}, {"group": "Asia", "id": "Palestine", "label": "Palestine (2)", "shape": "dot", "size": 2, "title": "Palestine (2)", "value": 2}, {"group": "Asia", "id": "China", "label": "China (4)", "shape": "dot", "size": 4, "title": "China (4)", "value": 4}, {"group": "Asia", "id": "Japan", "label": "Japan (2)", "shape": "dot", "size": 2, "title": "Japan (2)", "value": 2}, {"group": "Asia", "id": "India", "label": "India (5)", "shape": "dot", "size": 5, "title": "India (5)", "value": 5}, {"group": "Europa", "id": "Finland", "label": "Finland (2)", "shape": "dot", "size": 2, "title": "Finland (2)", "value": 2}, {"group": "Europa", "id": "Greece", "label": "Greece (3)", "shape": "dot", "size": 3, "title": "Greece (3)", "value": 3}, {"group": "Europa", "id": "Netherlands", "label": "Netherlands (1)", "shape": "dot", "size": 1, "title": "Netherlands (1)", "value": 1}, {"group": "Africa", "id": "Rwanda", "label": "Rwanda (5)", "shape": "dot", "size": 5, "title": "Rwanda (5)", "value": 5}, {"group": null, "id": "Kenya", "label": "Kenya (2)", "shape": "dot", "size": 2, "title": "Kenya (2)", "value": 2}, {"group": "Africa", "id": "South Africa", "label": "South Africa (1)", "shape": "dot", "size": 1, "title": "South Africa (1)", "value": 1}, {"group": null, "id": "Kyrgyzstan", "label": "Kyrgyzstan (1)", "shape": "dot", "size": 1, "title": "Kyrgyzstan (1)", "value": 1}, {"group": "Asia", "id": "Hong Kong", "label": "Hong Kong (2)", "shape": "dot", "size": 2, "title": "Hong Kong (2)", "value": 2}, {"group": "Asia", "id": "Thailand", "label": "Thailand (1)", "shape": "dot", "size": 1, "title": "Thailand (1)", "value": 1}, {"group": "Europa", "id": "Norway", "label": "Norway (1)", "shape": "dot", "size": 1, "title": "Norway (1)", "value": 1}, {"group": "Europa", "id": "Ireland", "label": "Ireland (1)", "shape": "dot", "size": 1, "title": "Ireland (1)", "value": 1}, {"group": "Asia", "id": "Viet Nam", "label": "Viet Nam (1)", "shape": "dot", "size": 1, "title": "Viet Nam (1)", "value": 1}, {"group": "Europa", "id": "Germany", "label": "Germany (5)", "shape": "dot", "size": 5, "title": "Germany (5)", "value": 5}, {"group": "EE.UU y Canad\u00e1", "id": "Canada", "label": "Canada (8)", "shape": "dot", "size": 8, "title": "Canada (8)", "value": 8}, {"group": "Latinoam\u00e9rica", "id": "Chile", "label": "Chile (1)", "shape": "dot", "size": 1, "title": "Chile (1)", "value": 1}, {"group": "Europa", "id": "Slovakia", "label": "Slovakia (3)", "shape": "dot", "size": 3, "title": "Slovakia (3)", "value": 3}, {"group": "Latinoam\u00e9rica", "id": "Brazil", "label": "Brazil (2)", "shape": "dot", "size": 2, "title": "Brazil (2)", "value": 2}, {"group": null, "id": "Iraq", "label": "Iraq (2)", "shape": "dot", "size": 2, "title": "Iraq (2)", "value": 2}, {"group": "Latinoam\u00e9rica", "id": "Uruguay", "label": "Uruguay (1)", "shape": "dot", "size": 1, "title": "Uruguay (1)", "value": 1}, {"group": "Europa", "id": "Italy", "label": "Italy (6)", "shape": "dot", "size": 6, "title": "Italy (6)", "value": 6}, {"group": null, "id": "University of Limerick", "label": "University of Limerick (1)", "shape": "dot", "size": 1, "title": "University of Limerick (1)", "value": 1}, {"group": "Europa", "id": "Serbia", "label": "Serbia (1)", "shape": "dot", "size": 1, "title": "Serbia (1)", "value": 1}, {"group": "Asia", "id": "Kazakhstan", "label": "Kazakhstan (2)", "shape": "dot", "size": 2, "title": "Kazakhstan (2)", "value": 2}, {"group": "Asia", "id": "South Korea", "label": "South Korea (1)", "shape": "dot", "size": 1, "title": "South Korea (1)", "value": 1}, {"group": "Latinoam\u00e9rica", "id": "Ecuador", "label": "Ecuador (1)", "shape": "dot", "size": 1, "title": "Ecuador (1)", "value": 1}, {"group": "Europa", "id": "Czech Republic", "label": "Czech Republic (2)", "shape": "dot", "size": 2, "title": "Czech Republic (2)", "value": 2}, {"group": "Europa", "id": "Cyprus", "label": "Cyprus (4)", "shape": "dot", "size": 4, "title": "Cyprus (4)", "value": 4}, {"group": "Europa", "id": "France", "label": "France (5)", "shape": "dot", "size": 5, "title": "France (5)", "value": 5}, {"group": "Europa", "id": "Poland", "label": "Poland (1)", "shape": "dot", "size": 1, "title": "Poland (1)", "value": 1}, {"group": "Asia", "id": "Israel", "label": "Israel (4)", "shape": "dot", "size": 4, "title": "Israel (4)", "value": 4}]);
+                  edges = new vis.DataSet([{"from": "Indonesia", "label": "1", "title": "1", "to": "Taiwan", "width": 1}, {"from": "Indonesia", "label": "1", "title": "1", "to": "Mexico", "width": 1}, {"from": "Indonesia", "label": "1", "title": "1", "to": "Colombia", "width": 1}, {"from": "Indonesia", "label": "1", "title": "1", "to": "Malaysia", "width": 1}, {"from": "Australia", "label": "2", "title": "2", "to": "Turkey", "width": 1}, {"from": "Australia", "label": "1", "title": "1", "to": "New Zealand", "width": 1}, {"from": "Mozambique", "label": "1", "title": "1", "to": "Portugal", "width": 1}, {"from": "Colombia", "label": "1", "title": "1", "to": "Spain", "width": 1}, {"from": "Colombia", "label": "1", "title": "1", "to": "Mexico", "width": 1}, {"from": "Turkey", "label": "1", "title": "1", "to": "United Kingdom", "width": 1}, {"from": "Turkey", "label": "1", "title": "1", "to": "Taiwan", "width": 1}, {"from": "Turkey", "label": "2", "title": "2", "to": "United States", "width": 1}, {"from": "Peru", "label": "1", "title": "1", "to": "Spain", "width": 1}, {"from": "Uzbekistan", "label": "1", "title": "1", "to": "Russian Federation", "width": 1}, {"from": "Egypt", "label": "1", "title": "1", "to": "Saudi Arabia", "width": 1}, {"from": "Puerto Rico", "label": "2", "title": "2", "to": "Mexico", "width": 1}, {"from": "Mexico", "label": "1", "title": "1", "to": "Spain", "width": 1}, {"from": "United Kingdom", "label": "1", "title": "1", "to": "Palestine", "width": 1}, {"from": "United Kingdom", "label": "1", "title": "1", "to": "China", "width": 1}, {"from": "United Kingdom", "label": "2", "title": "2", "to": "Japan", "width": 1}, {"from": "Taiwan", "label": "1", "title": "1", "to": "United States", "width": 1}, {"from": "Taiwan", "label": "1", "title": "1", "to": "China", "width": 1}, {"from": "Taiwan", "label": "1", "title": "1", "to": "India", "width": 1}, {"from": "Finland", "label": "1", "title": "1", "to": "Greece", "width": 1}, {"from": "Netherlands", "label": "1", "title": "1", "to": "India", "width": 1}, {"from": "Rwanda", "label": "2", "title": "2", "to": "Kenya", "width": 1}, {"from": "United States", "label": "1", "title": "1", "to": "Palestine", "width": 1}, {"from": "India", "label": "1", "title": "1", "to": "China", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
