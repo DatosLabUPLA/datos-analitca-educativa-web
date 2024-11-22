@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "blue", "id": "CI-PPDAC", "label": "CI-PPDAC (10)", "shape": "dot", "size": 10, "title": "CI-PPDAC (10)", "value": 10}, {"color": "purple", "id": "DPE", "label": "DPE (25)", "shape": "dot", "size": 25, "title": "DPE (25)", "value": 25}, {"color": "purple", "id": "GAISE", "label": "GAISE (18)", "shape": "dot", "size": 18, "title": "GAISE (18)", "value": 18}, {"color": "green", "id": "Project", "label": "Project (12)", "shape": "dot", "size": 12, "title": "Project (12)", "value": 12}, {"color": "green", "id": "Other", "label": "Other (26)", "shape": "dot", "size": 26, "title": "Other (26)", "value": 26}, {"color": "blue", "id": "CI", "label": "CI (11)", "shape": "dot", "size": 11, "title": "CI (11)", "value": 11}, {"color": "orange", "id": "United States", "label": "United States (9)", "shape": "dot", "size": 9, "title": "United States (9)", "value": 9}, {"color": "#97c2fc", "id": "Measuring Central Tendency", "label": "Measuring Central Tendency (8)", "shape": "dot", "size": 8, "title": "Measuring Central Tendency (8)", "value": 8}, {"color": "#97c2fc", "id": "Random", "label": "Random (8)", "shape": "dot", "size": 8, "title": "Random (8)", "value": 8}, {"color": "#97c2fc", "id": "Measuring variability", "label": "Measuring variability (8)", "shape": "dot", "size": 8, "title": "Measuring variability (8)", "value": 8}, {"color": "blue", "id": "ECPE", "label": "ECPE (28)", "shape": "dot", "size": 28, "title": "ECPE (28)", "value": 28}, {"color": "#97c2fc", "id": "Cbasic", "label": "Cbasic (12)", "shape": "dot", "size": 12, "title": "Cbasic (12)", "value": 12}, {"color": "orange", "id": "Australia", "label": "Australia (5)", "shape": "dot", "size": 5, "title": "Australia (5)", "value": 5}, {"color": "blue", "id": "PGACE", "label": "PGACE (6)", "shape": "dot", "size": 6, "title": "PGACE (6)", "value": 6}, {"color": "#97c2fc", "id": "Graph of Data", "label": "Graph of Data (7)", "shape": "dot", "size": 7, "title": "Graph of Data (7)", "value": 7}, {"color": "pink", "id": "student", "label": "student (17)", "shape": "dot", "size": 17, "title": "student (17)", "value": 17}, {"color": "pink", "id": "teacher", "label": "teacher (10)", "shape": "dot", "size": 10, "title": "teacher (10)", "value": 10}, {"color": "pink", "id": "school", "label": "school (13)", "shape": "dot", "size": 13, "title": "school (13)", "value": 13}, {"color": "pink", "id": "prospective", "label": "prospective (6)", "shape": "dot", "size": 6, "title": "prospective (6)", "value": 6}, {"color": "#97c2fc", "id": "Variation", "label": "Variation (6)", "shape": "dot", "size": 6, "title": "Variation (6)", "value": 6}, {"color": "#97c2fc", "id": "CBasic", "label": "CBasic (7)", "shape": "dot", "size": 7, "title": "CBasic (7)", "value": 7}, {"color": "#97c2fc", "id": "Hypothesis Testing", "label": "Hypothesis Testing (8)", "shape": "dot", "size": 8, "title": "Hypothesis Testing (8)", "value": 8}, {"color": "purple", "id": "PE", "label": "PE (6)", "shape": "dot", "size": 6, "title": "PE (6)", "value": 6}, {"color": "orange", "id": "Germany", "label": "Germany (2)", "shape": "dot", "size": 2, "title": "Germany (2)", "value": 2}, {"color": "pink", "id": "textbooks", "label": "textbooks (3)", "shape": "dot", "size": 3, "title": "textbooks (3)", "value": 3}, {"color": "#97c2fc", "id": "Concordance coefficient", "label": "Concordance coefficient (2)", "shape": "dot", "size": 2, "title": "Concordance coefficient (2)", "value": 2}, {"color": "pink", "id": "university", "label": "university (3)", "shape": "dot", "size": 3, "title": "university (3)", "value": 3}, {"color": "orange", "id": "Mexico", "label": "Mexico (3)", "shape": "dot", "size": 3, "title": "Mexico (3)", "value": 3}, {"color": "#97c2fc", "id": "Analysis of Variance", "label": "Analysis of Variance (2)", "shape": "dot", "size": 2, "title": "Analysis of Variance (2)", "value": 2}, {"color": "purple", "id": "DefinicionPE", "label": "DefinicionPE (4)", "shape": "dot", "size": 4, "title": "DefinicionPE (4)", "value": 4}, {"color": "#97c2fc", "id": "Regression Models", "label": "Regression Models (4)", "shape": "dot", "size": 4, "title": "Regression Models (4)", "value": 4}, {"color": "#97c2fc", "id": "Interval Estimation", "label": "Interval Estimation (2)", "shape": "dot", "size": 2, "title": "Interval Estimation (2)", "value": 2}, {"color": "orange", "id": "New Zeland", "label": "New Zeland (2)", "shape": "dot", "size": 2, "title": "New Zeland (2)", "value": 2}, {"color": "#97c2fc", "id": "Variability", "label": "Variability (2)", "shape": "dot", "size": 2, "title": "Variability (2)", "value": 2}, {"color": "#97c2fc", "id": "Reliability coefficient", "label": "Reliability coefficient (2)", "shape": "dot", "size": 2, "title": "Reliability coefficient (2)", "value": 2}, {"color": "#97c2fc", "id": "Multivariate Analysis", "label": "Multivariate Analysis (2)", "shape": "dot", "size": 2, "title": "Multivariate Analysis (2)", "value": 2}, {"color": "#97c2fc", "id": "Continuous Distributions", "label": "Continuous Distributions (2)", "shape": "dot", "size": 2, "title": "Continuous Distributions (2)", "value": 2}, {"color": "#97c2fc", "id": "Measures of association", "label": "Measures of association (3)", "shape": "dot", "size": 3, "title": "Measures of association (3)", "value": 3}, {"color": "#97c2fc", "id": "Estimation", "label": "Estimation (2)", "shape": "dot", "size": 2, "title": "Estimation (2)", "value": 2}, {"color": "#97c2fc", "id": "Distribution", "label": "Distribution (2)", "shape": "dot", "size": 2, "title": "Distribution (2)", "value": 2}, {"color": "#97c2fc", "id": "Graph", "label": "Graph (2)", "shape": "dot", "size": 2, "title": "Graph (2)", "value": 2}, {"color": "purple", "id": "NCTM", "label": "NCTM (2)", "shape": "dot", "size": 2, "title": "NCTM (2)", "value": 2}, {"color": "#97c2fc", "id": "Tables", "label": "Tables (2)", "shape": "dot", "size": 2, "title": "Tables (2)", "value": 2}, {"color": "#97c2fc", "id": "Discrete Distributions", "label": "Discrete Distributions (2)", "shape": "dot", "size": 2, "title": "Discrete Distributions (2)", "value": 2}, {"color": "purple", "id": "DevelopingPE", "label": "DevelopingPE (2)", "shape": "dot", "size": 2, "title": "DevelopingPE (2)", "value": 2}, {"color": "orange", "id": "Malaysia", "label": "Malaysia (2)", "shape": "dot", "size": 2, "title": "Malaysia (2)", "value": 2}, {"color": "orange", "id": "UK", "label": "UK (2)", "shape": "dot", "size": 2, "title": "UK (2)", "value": 2}, {"color": "purple", "id": "ASA", "label": "ASA (2)", "shape": "dot", "size": 2, "title": "ASA (2)", "value": 2}, {"color": "#97c2fc", "id": "Probability", "label": "Probability (5)", "shape": "dot", "size": 5, "title": "Probability (5)", "value": 5}, {"color": "#97c2fc", "id": "Distribution Data", "label": "Distribution Data (4)", "shape": "dot", "size": 4, "title": "Distribution Data (4)", "value": 4}, {"color": "#97c2fc", "id": "Experimental Designs", "label": "Experimental Designs (2)", "shape": "dot", "size": 2, "title": "Experimental Designs (2)", "value": 2}]);
+                  edges = new vis.DataSet([{"from": "CI-PPDAC", "label": "9", "title": "9", "to": "DPE", "width": 1}, {"from": "CI-PPDAC", "label": "6", "title": "6", "to": "GAISE", "width": 1}, {"from": "CI-PPDAC", "label": "6", "title": "6", "to": "Project", "width": 1}, {"from": "Other", "label": "9", "title": "9", "to": "CI", "width": 1}, {"from": "Other", "label": "8", "title": "8", "to": "United States", "width": 1}, {"from": "Other", "label": "6", "title": "6", "to": "Measuring Central Tendency", "width": 1}, {"from": "Other", "label": "7", "title": "7", "to": "Random", "width": 1}, {"from": "Other", "label": "6", "title": "6", "to": "Measuring variability", "width": 1}, {"from": "Other", "label": "16", "title": "16", "to": "DPE", "width": 1}, {"from": "Other", "label": "22", "title": "22", "to": "ECPE", "width": 1}, {"from": "Other", "label": "10", "title": "10", "to": "Cbasic", "width": 1}, {"from": "Other", "label": "5", "title": "5", "to": "Australia", "width": 1}, {"from": "Other", "label": "5", "title": "5", "to": "PGACE", "width": 1}, {"from": "Other", "label": "5", "title": "5", "to": "Graph of Data", "width": 1}, {"from": "Other", "label": "12", "title": "12", "to": "student", "width": 1}, {"from": "Other", "label": "7", "title": "7", "to": "teacher", "width": 1}, {"from": "Other", "label": "11", "title": "11", "to": "school", "width": 1}, {"from": "Other", "label": "13", "title": "13", "to": "GAISE", "width": 1}, {"from": "Cbasic", "label": "6", "title": "6", "to": "GAISE", "width": 1}, {"from": "Cbasic", "label": "5", "title": "5", "to": "CI", "width": 1}, {"from": "Cbasic", "label": "9", "title": "9", "to": "ECPE", "width": 1}, {"from": "Cbasic", "label": "5", "title": "5", "to": "student", "width": 1}, {"from": "Cbasic", "label": "6", "title": "6", "to": "DPE", "width": 1}, {"from": "prospective", "label": "6", "title": "6", "to": "teacher", "width": 1}, {"from": "student", "label": "5", "title": "5", "to": "Variation", "width": 1}, {"from": "student", "label": "8", "title": "8", "to": "GAISE", "width": 1}, {"from": "student", "label": "5", "title": "5", "to": "Project", "width": 1}, {"from": "student", "label": "6", "title": "6", "to": "CBasic", "width": 1}, {"from": "student", "label": "10", "title": "10", "to": "DPE", "width": 1}, {"from": "student", "label": "15", "title": "15", "to": "ECPE", "width": 1}, {"from": "student", "label": "5", "title": "5", "to": "United States", "width": 1}, {"from": "student", "label": "5", "title": "5", "to": "CI", "width": 1}, {"from": "student", "label": "9", "title": "9", "to": "school", "width": 1}, {"from": "Graph of Data", "label": "5", "title": "5", "to": "DPE", "width": 1}, {"from": "Graph of Data", "label": "6", "title": "6", "to": "ECPE", "width": 1}, {"from": "Hypothesis Testing", "label": "6", "title": "6", "to": "ECPE", "width": 1}, {"from": "Hypothesis Testing", "label": "6", "title": "6", "to": "DPE", "width": 1}, {"from": "Hypothesis Testing", "label": "5", "title": "5", "to": "CI", "width": 1}, {"from": "Random", "label": "6", "title": "6", "to": "DPE", "width": 1}, {"from": "Random", "label": "8", "title": "8", "to": "ECPE", "width": 1}, {"from": "ECPE", "label": "6", "title": "6", "to": "Variation", "width": 1}, {"from": "ECPE", "label": "8", "title": "8", "to": "United States", "width": 1}, {"from": "ECPE", "label": "13", "title": "13", "to": "GAISE", "width": 1}, {"from": "ECPE", "label": "6", "title": "6", "to": "PGACE", "width": 1}, {"from": "ECPE", "label": "19", "title": "19", "to": "DPE", "width": 1}, {"from": "ECPE", "label": "5", "title": "5", "to": "PE", "width": 1}, {"from": "ECPE", "label": "9", "title": "9", "to": "CI", "width": 1}, {"from": "ECPE", "label": "6", "title": "6", "to": "Measuring variability", "width": 1}, {"from": "ECPE", "label": "7", "title": "7", "to": "teacher", "width": 1}, {"from": "ECPE", "label": "6", "title": "6", "to": "Measuring Central Tendency", "width": 1}, {"from": "ECPE", "label": "6", "title": "6", "to": "Project", "width": 1}, {"from": "ECPE", "label": "12", "title": "12", "to": "school", "width": 1}, {"from": "CI", "label": "7", "title": "7", "to": "GAISE", "width": 1}, {"from": "CI", "label": "5", "title": "5", "to": "school", "width": 1}, {"from": "CI", "label": "7", "title": "7", "to": "DPE", "width": 1}, {"from": "Variation", "label": "5", "title": "5", "to": "DPE", "width": 1}, {"from": "Measuring variability", "label": "6", "title": "6", "to": "DPE", "width": 1}, {"from": "Measuring variability", "label": "5", "title": "5", "to": "Measuring Central Tendency", "width": 1}, {"from": "United States", "label": "5", "title": "5", "to": "DPE", "width": 1}, {"from": "United States", "label": "6", "title": "6", "to": "GAISE", "width": 1}, {"from": "school", "label": "5", "title": "5", "to": "GAISE", "width": 1}, {"from": "school", "label": "5", "title": "5", "to": "Measuring Central Tendency", "width": 1}, {"from": "school", "label": "11", "title": "11", "to": "DPE", "width": 1}, {"from": "DPE", "label": "11", "title": "11", "to": "GAISE", "width": 1}, {"from": "DPE", "label": "9", "title": "9", "to": "Project", "width": 1}, {"from": "DPE", "label": "5", "title": "5", "to": "PE", "width": 1}, {"from": "DPE", "label": "6", "title": "6", "to": "teacher", "width": 1}, {"from": "DPE", "label": "6", "title": "6", "to": "CBasic", "width": 1}, {"from": "DPE", "label": "5", "title": "5", "to": "PGACE", "width": 1}, {"from": "DPE", "label": "6", "title": "6", "to": "Measuring Central Tendency", "width": 1}, {"from": "Project", "label": "5", "title": "5", "to": "GAISE", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": true,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
