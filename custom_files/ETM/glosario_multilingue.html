@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glosario Multilingüe</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .search-bar { margin-bottom: 20px; }
+        .buttons { margin-bottom: 20px; }
+        .buttons button { margin-right: 10px; padding: 10px 20px; cursor: pointer; }
+        .term { font-weight: bold; color: #2c3e50; }
+        .definition { margin-left: 10px; color: #34495e; }
+        .hidden { display: none; }
+        .cross-lang { font-style: italic; color: #7f8c8d; margin-left: 5px; }
+        .cross-lang b { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1 id="title">Glosario Multilingüe</h1>
+    <div class="buttons">
+        <button onclick="changeLanguage('es')">ES</button>
+        <button onclick="changeLanguage('fr')">FR</button>
+        <button onclick="changeLanguage('en')">EN</button>
+    </div>
+    <input type="text" id="searchInput" class="search-bar" placeholder="Buscar un término..." onkeyup="filterTerms()" />
+    <ul id="glossary">
+
+        <li class="entry lang-es">
+            <span class="term">El propósito del trabajo.</span>: 
+            <span class="definition">Este atributo ayuda a distinguir la noción de trabajo de una simple actividad. Esto se hace asignando un objetivo a una acción o un conjunto de acciones, aclarando sus cuestiones y señalando su relevancia general a largo plazo. 
+                <span class="cross-lang">FR: <b>La finalité du travail</b>; EN: <b>The purpose of the work</b></span>
+            </span>
+        </li>
+        <li class="entry lang-fr hidden">
+            <span class="term">La finalité du travail</span>: 
+            <span class="definition">Cet attribut aide à distinguer la notion de travail  d’une simple activité. Cela se fait en assignant un objectif à une action ou un ensemble d’actions, en clarifiant ses enjeux et en inscrivant leur pertinence générale sur le long terme 
+                <span class="cross-lang">ES: <b>El propósito del trabajo.</b>; EN: <b>The purpose of the work</b></span>
+            </span>
+        </li>
+        <li class="entry lang-en hidden">
+            <span class="term">The purpose of the work</span>: 
+            <span class="definition">This attribute helps distinguish the notion of work from a simple activity. This is done by assigning an objective to an action or a set of actions, by clarifying its issues and by noting their general relevance in the long term. 
+                <span class="cross-lang">ES: <b>El propósito del trabajo.</b>; FR: <b>La finalité du travail</b></span>
+            </span>
+        </li>
+    
+    </ul>
+    <script>
+        const languageData = {
+            "es": {
+                "title": "Glosario ETM",
+                "searchPlaceholder": "Buscar un término..."
+            },
+            "fr": {
+                "title": "Glossaire ETM",
+                "searchPlaceholder": "Rechercher un terme..."
+            },
+            "en": {
+                "title": "MWS Glossary",
+                "searchPlaceholder": "Search a term..."
+            }
+        };
+
+        function changeLanguage(lang) {
+            // Ocultar todos los idiomas
+            const allEntries = document.querySelectorAll('.entry');
+            allEntries.forEach(entry => entry.classList.add('hidden'));
+            
+            // Mostrar solo el idioma seleccionado
+            const selectedEntries = document.querySelectorAll(`.lang-${lang}`);
+            selectedEntries.forEach(entry => entry.classList.remove('hidden'));
+
+            // Cambiar título y placeholder del buscador
+            document.getElementById("title").textContent = languageData[lang].title;
+            document.getElementById("searchInput").placeholder = languageData[lang].searchPlaceholder;
+        }
+
+        function filterTerms() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const visibleEntries = document.querySelectorAll('.entry:not(.hidden)');
+
+            visibleEntries.forEach(entry => {
+                const term = entry.getElementsByClassName('term')[0];
+                if (term.innerHTML.toLowerCase().indexOf(filter) > -1) {
+                    entry.style.display = "";
+                } else {
+                    entry.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
