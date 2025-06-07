@@ -3,14 +3,6 @@
 <head>
     
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    
-        <script>
-            L_NO_TOUCH = false;
-            L_DISABLE_3D = false;
-        </script>
-    
-    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
-    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -25,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_5b59974898a4ca1105214c6fbe4e97a7 {
+                #map_0a9a15764098b1bea091ae3084d7b302 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -34,6 +26,29 @@
                 }
                 .leaflet-container { font-size: 1rem; }
             </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
         
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
@@ -42,14 +57,14 @@
 <body>
     
     
-            <div class="folium-map" id="map_5b59974898a4ca1105214c6fbe4e97a7" ></div>
+            <div class="folium-map" id="map_0a9a15764098b1bea091ae3084d7b302" ></div>
         
 </body>
 <script>
     
     
-            var map_5b59974898a4ca1105214c6fbe4e97a7 = L.map(
-                "map_5b59974898a4ca1105214c6fbe4e97a7",
+            var map_0a9a15764098b1bea091ae3084d7b302 = L.map(
+                "map_0a9a15764098b1bea091ae3084d7b302",
                 {
                     center: [13.700349702690028, -30.549259588646404],
                     crs: L.CRS.EPSG3857,
@@ -66,7 +81,7 @@
 
         
     
-            var tile_layer_8138437a3103b896cf7c5cdf0fc5b090 = L.tileLayer(
+            var tile_layer_e8dd17fd776a6ca6a4cf31860e59c5e3 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -83,10 +98,10 @@
             );
         
     
-            tile_layer_8138437a3103b896cf7c5cdf0fc5b090.addTo(map_5b59974898a4ca1105214c6fbe4e97a7);
+            tile_layer_e8dd17fd776a6ca6a4cf31860e59c5e3.addTo(map_0a9a15764098b1bea091ae3084d7b302);
         
     
-            var marker_cluster_3da2d09cdae9a9a218b4a82005c44e59 = L.markerClusterGroup(
+            var marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd = L.markerClusterGroup(
                 {
   "spiderfyOnMaxZoom": true,
   "spiderfyDistanceMultiplier": 2,
@@ -98,14 +113,14 @@
             );
         
     
-            var marker_c2baa2152772be58b8f32d729ebcfd08 = L.marker(
+            var marker_0b2dfcfda5e97838beecf858cd3f4938 = L.marker(
                 [-33.03919162111296, -71.60062834442994],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_cc1f968d0c099dec37f07c4158f50c20 = L.AwesomeMarkers.icon(
+            var icon_26b51a62be9017fdb5c93f8c7b958218 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -116,34 +131,34 @@
             );
         
     
-        var popup_17308f242e400aad642f220721b44c1a = L.popup({
+        var popup_99dcb3a4a00c361e4b67bdfc968340de = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_a5327d1e0a1dbff0f1416e163e3df1fc = $(`<div id="html_a5327d1e0a1dbff0f1416e163e3df1fc" style="width: 100.0%; height: 100.0%;"><div>Fabiola ARÉVALO-MENESES<br>Étudiant(e) en doctorat<br>Pontificia Universidad Católica de Valparaíso, Chile.</div></div>`)[0];
-                popup_17308f242e400aad642f220721b44c1a.setContent(html_a5327d1e0a1dbff0f1416e163e3df1fc);
+                var html_17148659c8dbd1742a6f2e38bc73cb84 = $(`<div id="html_17148659c8dbd1742a6f2e38bc73cb84" style="width: 100.0%; height: 100.0%;"><div>Fabiola ARÉVALO-MENESES<br>Étudiant(e) en doctorat<br>Pontificia Universidad Católica de Valparaíso, Chile.</div></div>`)[0];
+                popup_99dcb3a4a00c361e4b67bdfc968340de.setContent(html_17148659c8dbd1742a6f2e38bc73cb84);
             
         
 
-        marker_c2baa2152772be58b8f32d729ebcfd08.bindPopup(popup_17308f242e400aad642f220721b44c1a)
+        marker_0b2dfcfda5e97838beecf858cd3f4938.bindPopup(popup_99dcb3a4a00c361e4b67bdfc968340de)
         ;
 
         
     
     
-                marker_c2baa2152772be58b8f32d729ebcfd08.setIcon(icon_cc1f968d0c099dec37f07c4158f50c20);
+                marker_0b2dfcfda5e97838beecf858cd3f4938.setIcon(icon_26b51a62be9017fdb5c93f8c7b958218);
             
     
-            var marker_258bb61470000e122856bef47f106f46 = L.marker(
+            var marker_4753c151349b1f191d97c04227be9b7b = L.marker(
                 [-35.43595698818209, -71.62198734293472],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_ba154d9faa82e3dba918819ba9e5ab35 = L.AwesomeMarkers.icon(
+            var icon_6daea2a9005f6bee5fa5d893099a33d1 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -154,34 +169,34 @@
             );
         
     
-        var popup_46eca5f8905276bcf41ce6b69cf578b7 = L.popup({
+        var popup_702e8567f8b4e6df845193f5e4f109c5 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_19ee9a7186003e0ec50642079343d725 = $(`<div id="html_19ee9a7186003e0ec50642079343d725" style="width: 100.0%; height: 100.0%;"><div>Denisse AVILES HENN<br>Étudiant(e) en doctorat<br>Universidad Católica del Maule, Chile.</div></div>`)[0];
-                popup_46eca5f8905276bcf41ce6b69cf578b7.setContent(html_19ee9a7186003e0ec50642079343d725);
+                var html_f2df0e7fcb3f2c91cd256a679a357013 = $(`<div id="html_f2df0e7fcb3f2c91cd256a679a357013" style="width: 100.0%; height: 100.0%;"><div>Denisse AVILES HENN<br>Étudiant(e) en doctorat<br>Universidad Católica del Maule, Chile.</div></div>`)[0];
+                popup_702e8567f8b4e6df845193f5e4f109c5.setContent(html_f2df0e7fcb3f2c91cd256a679a357013);
             
         
 
-        marker_258bb61470000e122856bef47f106f46.bindPopup(popup_46eca5f8905276bcf41ce6b69cf578b7)
+        marker_4753c151349b1f191d97c04227be9b7b.bindPopup(popup_702e8567f8b4e6df845193f5e4f109c5)
         ;
 
         
     
     
-                marker_258bb61470000e122856bef47f106f46.setIcon(icon_ba154d9faa82e3dba918819ba9e5ab35);
+                marker_4753c151349b1f191d97c04227be9b7b.setIcon(icon_6daea2a9005f6bee5fa5d893099a33d1);
             
     
-            var marker_dc12a9a1b5a07d971cc134fd1a57af80 = L.marker(
+            var marker_b119a25a6a2eed5b7dae148ef675c3ce = L.marker(
                 [-33.03919162111296, -71.60062834442994],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_187216bf2c46d6ec1329d365d8ed6490 = L.AwesomeMarkers.icon(
+            var icon_4347fc67be4ad82282ee467fddf16966 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -192,34 +207,34 @@
             );
         
     
-        var popup_1153629c4879e0f706001ccd35728edd = L.popup({
+        var popup_3ea7e33c5da700b81ccc7eabab9a4577 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_d1310248a0c9c2fc072a663f439b3551 = $(`<div id="html_d1310248a0c9c2fc072a663f439b3551" style="width: 100.0%; height: 100.0%;"><div>Alejandro CABRERA-BAQUEDANO<br>Étudiant(e) en doctorat<br>Pontificia Universidad Católica de Valparaíso, Chile.</div></div>`)[0];
-                popup_1153629c4879e0f706001ccd35728edd.setContent(html_d1310248a0c9c2fc072a663f439b3551);
+                var html_c5a9411ce5714b396b4f180c567124a2 = $(`<div id="html_c5a9411ce5714b396b4f180c567124a2" style="width: 100.0%; height: 100.0%;"><div>Alejandro CABRERA-BAQUEDANO<br>Étudiant(e) en doctorat<br>Pontificia Universidad Católica de Valparaíso, Chile.</div></div>`)[0];
+                popup_3ea7e33c5da700b81ccc7eabab9a4577.setContent(html_c5a9411ce5714b396b4f180c567124a2);
             
         
 
-        marker_dc12a9a1b5a07d971cc134fd1a57af80.bindPopup(popup_1153629c4879e0f706001ccd35728edd)
+        marker_b119a25a6a2eed5b7dae148ef675c3ce.bindPopup(popup_3ea7e33c5da700b81ccc7eabab9a4577)
         ;
 
         
     
     
-                marker_dc12a9a1b5a07d971cc134fd1a57af80.setIcon(icon_187216bf2c46d6ec1329d365d8ed6490);
+                marker_b119a25a6a2eed5b7dae148ef675c3ce.setIcon(icon_4347fc67be4ad82282ee467fddf16966);
             
     
-            var marker_8df015f042c7391efb305500c75fd988 = L.marker(
+            var marker_296fff40724ff19244e1d6ccb483be6e = L.marker(
                 [-12.070633255697942, -77.0814249908151],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_2082d6c40bd7463a64a054433d060731 = L.AwesomeMarkers.icon(
+            var icon_edda4782d45b2f1e7530c207fafc19c8 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -230,34 +245,34 @@
             );
         
     
-        var popup_2c76593880bdd45d4673043d7365f0dc = L.popup({
+        var popup_8621a52594c9055f615525177fbba3ba = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_87915eb6322723320fb65eea7aec81e4 = $(`<div id="html_87915eb6322723320fb65eea7aec81e4" style="width: 100.0%; height: 100.0%;"><div>Magaly CAMPOS MOTTA<br>Professeure/chercheuse<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
-                popup_2c76593880bdd45d4673043d7365f0dc.setContent(html_87915eb6322723320fb65eea7aec81e4);
+                var html_46d8d75762c7c60dcf9fe1a7a0555077 = $(`<div id="html_46d8d75762c7c60dcf9fe1a7a0555077" style="width: 100.0%; height: 100.0%;"><div>Magaly CAMPOS MOTTA<br>Professeure/chercheuse<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
+                popup_8621a52594c9055f615525177fbba3ba.setContent(html_46d8d75762c7c60dcf9fe1a7a0555077);
             
         
 
-        marker_8df015f042c7391efb305500c75fd988.bindPopup(popup_2c76593880bdd45d4673043d7365f0dc)
+        marker_296fff40724ff19244e1d6ccb483be6e.bindPopup(popup_8621a52594c9055f615525177fbba3ba)
         ;
 
         
     
     
-                marker_8df015f042c7391efb305500c75fd988.setIcon(icon_2082d6c40bd7463a64a054433d060731);
+                marker_296fff40724ff19244e1d6ccb483be6e.setIcon(icon_edda4782d45b2f1e7530c207fafc19c8);
             
     
-            var marker_5e3b6be83aabae59d8846ea982b7ea1b = L.marker(
+            var marker_790a78408ca0ce1147d9310a92930dc2 = L.marker(
                 [-33.03919162111296, -71.60062834442994],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_9bc5d155848f09bfb109eb0b3f293bba = L.AwesomeMarkers.icon(
+            var icon_c064bd0c1c68bd9c24b723c45ca38306 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -268,34 +283,34 @@
             );
         
     
-        var popup_e6ae207959b19ee4f712914d2591f1e2 = L.popup({
+        var popup_4731f6a35b09ab1622299da11c66c975 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_dfaa79da3673cc42c7c228819d8557df = $(`<div id="html_dfaa79da3673cc42c7c228819d8557df" style="width: 100.0%; height: 100.0%;"><div><a href="https://sites.google.com/pucp.edu.pe/florisabelcarrillolarare/" target="_blank">Flor CARRILLO</a><br>Étudiant(e) en doctorat<br>Pontificia Universidad Católica de Valparaíso, Chile.</div></div>`)[0];
-                popup_e6ae207959b19ee4f712914d2591f1e2.setContent(html_dfaa79da3673cc42c7c228819d8557df);
+                var html_2a59a6b10cacda446004594576e973ce = $(`<div id="html_2a59a6b10cacda446004594576e973ce" style="width: 100.0%; height: 100.0%;"><div><a href="https://sites.google.com/pucp.edu.pe/florisabelcarrillolarare/" target="_blank">Flor CARRILLO</a><br>Étudiant(e) en doctorat<br>Pontificia Universidad Católica de Valparaíso, Chile.</div></div>`)[0];
+                popup_4731f6a35b09ab1622299da11c66c975.setContent(html_2a59a6b10cacda446004594576e973ce);
             
         
 
-        marker_5e3b6be83aabae59d8846ea982b7ea1b.bindPopup(popup_e6ae207959b19ee4f712914d2591f1e2)
+        marker_790a78408ca0ce1147d9310a92930dc2.bindPopup(popup_4731f6a35b09ab1622299da11c66c975)
         ;
 
         
     
     
-                marker_5e3b6be83aabae59d8846ea982b7ea1b.setIcon(icon_9bc5d155848f09bfb109eb0b3f293bba);
+                marker_790a78408ca0ce1147d9310a92930dc2.setIcon(icon_c064bd0c1c68bd9c24b723c45ca38306);
             
     
-            var marker_93df10d1ffc6e0baf37f662232149cbf = L.marker(
+            var marker_2c5b24946fbff0335c7370c9623e1c2c = L.marker(
                 [-33.445376331155856, -70.661703653763],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_64fa0745e09d053592ff31624944c37c = L.AwesomeMarkers.icon(
+            var icon_43d9f476eb7d0f61cb7b8bec9cfd7c1d = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -306,34 +321,34 @@
             );
         
     
-        var popup_4acb12044725682b4036619d257fe0dd = L.popup({
+        var popup_cf57ff7a2bae523414757d2c6583f7a3 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_50f0580bc8464bbf892ef9befe793f46 = $(`<div id="html_50f0580bc8464bbf892ef9befe793f46" style="width: 100.0%; height: 100.0%;"><div><a href="https://doctoradoeducacion.cl/persona/gonzalo-espinoza-vasquez/" target="_blank">Gonzalo ESPINOZA-VÁSQUEZ</a><br>Professeur/chercheur<br>Universidad Alberto Hurtado, Chile.</div></div>`)[0];
-                popup_4acb12044725682b4036619d257fe0dd.setContent(html_50f0580bc8464bbf892ef9befe793f46);
+                var html_5281a51d0da14617b80441bf884ecf89 = $(`<div id="html_5281a51d0da14617b80441bf884ecf89" style="width: 100.0%; height: 100.0%;"><div><a href="https://doctoradoeducacion.cl/persona/gonzalo-espinoza-vasquez/" target="_blank">Gonzalo ESPINOZA-VÁSQUEZ</a><br>Professeur/chercheur<br>Universidad Alberto Hurtado, Chile.</div></div>`)[0];
+                popup_cf57ff7a2bae523414757d2c6583f7a3.setContent(html_5281a51d0da14617b80441bf884ecf89);
             
         
 
-        marker_93df10d1ffc6e0baf37f662232149cbf.bindPopup(popup_4acb12044725682b4036619d257fe0dd)
+        marker_2c5b24946fbff0335c7370c9623e1c2c.bindPopup(popup_cf57ff7a2bae523414757d2c6583f7a3)
         ;
 
         
     
     
-                marker_93df10d1ffc6e0baf37f662232149cbf.setIcon(icon_64fa0745e09d053592ff31624944c37c);
+                marker_2c5b24946fbff0335c7370c9623e1c2c.setIcon(icon_43d9f476eb7d0f61cb7b8bec9cfd7c1d);
             
     
-            var marker_d2317ec4108d66e68eace0d9a7d06bab = L.marker(
+            var marker_f45a51465001ba0dee27d33e7b180e88 = L.marker(
                 [-12.070633255697942, -77.0814249908148],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_873bdd3b0059a58dca1d558bcc227aab = L.AwesomeMarkers.icon(
+            var icon_89622886dc0a50714ad10c5e0ecd7f6e = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -344,34 +359,34 @@
             );
         
     
-        var popup_78d4a63cc871c765b42ac45faee85c72 = L.popup({
+        var popup_f0ccd867d3fdc72728f5faaf81618bf5 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_c3f489a4164bc3533f82e4abd1ddeb1f = $(`<div id="html_c3f489a4164bc3533f82e4abd1ddeb1f" style="width: 100.0%; height: 100.0%;"><div>Jesús FLORES SALAZAR<br>Professeure/chercheuse<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
-                popup_78d4a63cc871c765b42ac45faee85c72.setContent(html_c3f489a4164bc3533f82e4abd1ddeb1f);
+                var html_d7510dabdf0243a039041a5857c6874c = $(`<div id="html_d7510dabdf0243a039041a5857c6874c" style="width: 100.0%; height: 100.0%;"><div>Jesús FLORES SALAZAR<br>Professeure/chercheuse<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
+                popup_f0ccd867d3fdc72728f5faaf81618bf5.setContent(html_d7510dabdf0243a039041a5857c6874c);
             
         
 
-        marker_d2317ec4108d66e68eace0d9a7d06bab.bindPopup(popup_78d4a63cc871c765b42ac45faee85c72)
+        marker_f45a51465001ba0dee27d33e7b180e88.bindPopup(popup_f0ccd867d3fdc72728f5faaf81618bf5)
         ;
 
         
     
     
-                marker_d2317ec4108d66e68eace0d9a7d06bab.setIcon(icon_873bdd3b0059a58dca1d558bcc227aab);
+                marker_f45a51465001ba0dee27d33e7b180e88.setIcon(icon_89622886dc0a50714ad10c5e0ecd7f6e);
             
     
-            var marker_7ddb96af62eb60ea5b57a56d04942dab = L.marker(
+            var marker_3f7ac7a5cae5290221915d56536d09d1 = L.marker(
                 [-33.024108848667915, -71.64057738478361],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_f341fc064b2754bf420d0f6d3628c840 = L.AwesomeMarkers.icon(
+            var icon_20fbe2975fa059f4229df92d79b52f06 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -382,34 +397,34 @@
             );
         
     
-        var popup_e3b5a764d30374fb478a6a826c4d49d3 = L.popup({
+        var popup_5f5441de5eaddf6c11b4b0608c4d4bde = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_6b771c6285004a894f03c92d4b5f204a = $(`<div id="html_6b771c6285004a894f03c92d4b5f204a" style="width: 100.0%; height: 100.0%;"><div><a href="https://www.upla.cl/facultad/cienciaseducacion/jorge-gaona-paredes/" target="_blank">Jorge GAONA</a><br>Professeur/chercheur<br>Universidad de Playa Ancha, Chile.</div></div>`)[0];
-                popup_e3b5a764d30374fb478a6a826c4d49d3.setContent(html_6b771c6285004a894f03c92d4b5f204a);
+                var html_ba8f55bd98bcf26ffa900d99e58c201f = $(`<div id="html_ba8f55bd98bcf26ffa900d99e58c201f" style="width: 100.0%; height: 100.0%;"><div><a href="https://www.upla.cl/facultad/cienciaseducacion/jorge-gaona-paredes/" target="_blank">Jorge GAONA</a><br>Professeur/chercheur<br>Universidad de Playa Ancha, Chile.</div></div>`)[0];
+                popup_5f5441de5eaddf6c11b4b0608c4d4bde.setContent(html_ba8f55bd98bcf26ffa900d99e58c201f);
             
         
 
-        marker_7ddb96af62eb60ea5b57a56d04942dab.bindPopup(popup_e3b5a764d30374fb478a6a826c4d49d3)
+        marker_3f7ac7a5cae5290221915d56536d09d1.bindPopup(popup_5f5441de5eaddf6c11b4b0608c4d4bde)
         ;
 
         
     
     
-                marker_7ddb96af62eb60ea5b57a56d04942dab.setIcon(icon_f341fc064b2754bf420d0f6d3628c840);
+                marker_3f7ac7a5cae5290221915d56536d09d1.setIcon(icon_20fbe2975fa059f4229df92d79b52f06);
             
     
-            var marker_08d8faea348c4a4fe36311d4f08a5af0 = L.marker(
+            var marker_e0cdcebfc20a4c8f3ab37a5159b16609 = L.marker(
                 [-12.070633255697942, -77.0814249908153],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_09f23e8585d3c8a6b3793e1c3f1b3599 = L.AwesomeMarkers.icon(
+            var icon_1c97c301bb7fd29974c07ad22ee0aa48 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -420,34 +435,34 @@
             );
         
     
-        var popup_ab0d2e9a021da7729b1f7a68f3e25309 = L.popup({
+        var popup_416ded87d61dc125a91b483e7859e813 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_ea1f3f9c5800157cc56cc2d853f92794 = $(`<div id="html_ea1f3f9c5800157cc56cc2d853f92794" style="width: 100.0%; height: 100.0%;"><div><a href="https://www.pucp.edu.pe/profesor/daysi-garcia-cuellar" target="_blank">Daysi GARCÍA CUELLAR</a><br>Professeure/chercheuse<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
-                popup_ab0d2e9a021da7729b1f7a68f3e25309.setContent(html_ea1f3f9c5800157cc56cc2d853f92794);
+                var html_6c584c7874d2486bdc1e365f1b8e93ce = $(`<div id="html_6c584c7874d2486bdc1e365f1b8e93ce" style="width: 100.0%; height: 100.0%;"><div><a href="https://www.pucp.edu.pe/profesor/daysi-garcia-cuellar" target="_blank">Daysi GARCÍA CUELLAR</a><br>Professeure/chercheuse<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
+                popup_416ded87d61dc125a91b483e7859e813.setContent(html_6c584c7874d2486bdc1e365f1b8e93ce);
             
         
 
-        marker_08d8faea348c4a4fe36311d4f08a5af0.bindPopup(popup_ab0d2e9a021da7729b1f7a68f3e25309)
+        marker_e0cdcebfc20a4c8f3ab37a5159b16609.bindPopup(popup_416ded87d61dc125a91b483e7859e813)
         ;
 
         
     
     
-                marker_08d8faea348c4a4fe36311d4f08a5af0.setIcon(icon_09f23e8585d3c8a6b3793e1c3f1b3599);
+                marker_e0cdcebfc20a4c8f3ab37a5159b16609.setIcon(icon_1c97c301bb7fd29974c07ad22ee0aa48);
             
     
-            var marker_a74b85fc5cbf158b029dc6053be70a7e = L.marker(
+            var marker_2d338ff8241f5c00e8d4168d821483ce = L.marker(
                 [40.44608953199353, -3.7298566323416984],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_508ae9ca83947db3e6c08f8007be5fc6 = L.AwesomeMarkers.icon(
+            var icon_c8e9cdbdf3d802e95f5497e3fbd47a82 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -458,34 +473,34 @@
             );
         
     
-        var popup_ee4370c6b2f79a8770d1557a58e156fa = L.popup({
+        var popup_418163cc112391e495ec29869e75af44 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_252204de1ddde27bb0339d9c78a0b6b0 = $(`<div id="html_252204de1ddde27bb0339d9c78a0b6b0" style="width: 100.0%; height: 100.0%;"><div><a href="https://produccioncientifica.ucm.es/investigadores/142063/detalle" target="_blank">Inés Mª GÓMEZ-CHACÓN</a><br>Professeure/chercheuse<br>Universidad Complutense de Madrid, España.</div></div>`)[0];
-                popup_ee4370c6b2f79a8770d1557a58e156fa.setContent(html_252204de1ddde27bb0339d9c78a0b6b0);
+                var html_cf8817e47e72b6d42e4a60dcc7e0394c = $(`<div id="html_cf8817e47e72b6d42e4a60dcc7e0394c" style="width: 100.0%; height: 100.0%;"><div><a href="https://produccioncientifica.ucm.es/investigadores/142063/detalle" target="_blank">Inés Mª GÓMEZ-CHACÓN</a><br>Professeure/chercheuse<br>Universidad Complutense de Madrid, España.</div></div>`)[0];
+                popup_418163cc112391e495ec29869e75af44.setContent(html_cf8817e47e72b6d42e4a60dcc7e0394c);
             
         
 
-        marker_a74b85fc5cbf158b029dc6053be70a7e.bindPopup(popup_ee4370c6b2f79a8770d1557a58e156fa)
+        marker_2d338ff8241f5c00e8d4168d821483ce.bindPopup(popup_418163cc112391e495ec29869e75af44)
         ;
 
         
     
     
-                marker_a74b85fc5cbf158b029dc6053be70a7e.setIcon(icon_508ae9ca83947db3e6c08f8007be5fc6);
+                marker_2d338ff8241f5c00e8d4168d821483ce.setIcon(icon_c8e9cdbdf3d802e95f5497e3fbd47a82);
             
     
-            var marker_3ad940434f5cd79f6f77c77ba1fe53a4 = L.marker(
+            var marker_26d5f192be1d6c49542ec3012c0e570e = L.marker(
                 [-33.03919162111296, -71.60062834442994],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_feb1b4560b01c6d1ed79bf45eacd3b22 = L.AwesomeMarkers.icon(
+            var icon_20ce2f9338ac9fef3f48f3240bea7756 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -496,34 +511,34 @@
             );
         
     
-        var popup_156ea7d82be75636a6de5396d9d20884 = L.popup({
+        var popup_04b0e72959034fd03448b248fe0c38d8 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_6da3abe69c0f765bc8e5a50ccdcc7295 = $(`<div id="html_6da3abe69c0f765bc8e5a50ccdcc7295" style="width: 100.0%; height: 100.0%;"><div><a href="https://sites.google.com/mail.pucv.cl/francisco-guantecura/presentaci%C3%B3n?authuser=0" target="_blank">Francisco GUANTECURA</a><br>Étudiant(e) en doctorat<br>Pontificia Universidad Católica de Valparaíso, Chile.</div></div>`)[0];
-                popup_156ea7d82be75636a6de5396d9d20884.setContent(html_6da3abe69c0f765bc8e5a50ccdcc7295);
+                var html_aedd3758d64d702c2e832f8aad67b93a = $(`<div id="html_aedd3758d64d702c2e832f8aad67b93a" style="width: 100.0%; height: 100.0%;"><div><a href="https://sites.google.com/mail.pucv.cl/francisco-guantecura/presentaci%C3%B3n?authuser=0" target="_blank">Francisco GUANTECURA</a><br>Étudiant(e) en doctorat<br>Pontificia Universidad Católica de Valparaíso, Chile.</div></div>`)[0];
+                popup_04b0e72959034fd03448b248fe0c38d8.setContent(html_aedd3758d64d702c2e832f8aad67b93a);
             
         
 
-        marker_3ad940434f5cd79f6f77c77ba1fe53a4.bindPopup(popup_156ea7d82be75636a6de5396d9d20884)
+        marker_26d5f192be1d6c49542ec3012c0e570e.bindPopup(popup_04b0e72959034fd03448b248fe0c38d8)
         ;
 
         
     
     
-                marker_3ad940434f5cd79f6f77c77ba1fe53a4.setIcon(icon_feb1b4560b01c6d1ed79bf45eacd3b22);
+                marker_26d5f192be1d6c49542ec3012c0e570e.setIcon(icon_20ce2f9338ac9fef3f48f3240bea7756);
             
     
-            var marker_68f7a67c02bc238d5998764f6e4bf2a0 = L.marker(
+            var marker_21bce02304b00b5a7d55078d2a0942df = L.marker(
                 [-35.43595698818209, -71.62198734293472],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_f82d2a9df65bee69d9177855de373c76 = L.AwesomeMarkers.icon(
+            var icon_6669ad49b5c8253c209d40f682c9a1b8 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -534,34 +549,34 @@
             );
         
     
-        var popup_02441d4971849a4738e2c0f4c52651d3 = L.popup({
+        var popup_81ff10068ea1f535da194096da93b7dc = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_8e259c9c536e1b593cf2148e3f603a4f = $(`<div id="html_8e259c9c536e1b593cf2148e3f603a4f" style="width: 100.0%; height: 100.0%;"><div>Carolina HENRIQUEZ RIVAS<br>Professeure/chercheuse<br>Universidad Católica del Maule, Chile.</div></div>`)[0];
-                popup_02441d4971849a4738e2c0f4c52651d3.setContent(html_8e259c9c536e1b593cf2148e3f603a4f);
+                var html_a0663918029bae0353a261ce346a1db8 = $(`<div id="html_a0663918029bae0353a261ce346a1db8" style="width: 100.0%; height: 100.0%;"><div>Carolina HENRIQUEZ RIVAS<br>Professeure/chercheuse<br>Universidad Católica del Maule, Chile.</div></div>`)[0];
+                popup_81ff10068ea1f535da194096da93b7dc.setContent(html_a0663918029bae0353a261ce346a1db8);
             
         
 
-        marker_68f7a67c02bc238d5998764f6e4bf2a0.bindPopup(popup_02441d4971849a4738e2c0f4c52651d3)
+        marker_21bce02304b00b5a7d55078d2a0942df.bindPopup(popup_81ff10068ea1f535da194096da93b7dc)
         ;
 
         
     
     
-                marker_68f7a67c02bc238d5998764f6e4bf2a0.setIcon(icon_f82d2a9df65bee69d9177855de373c76);
+                marker_21bce02304b00b5a7d55078d2a0942df.setIcon(icon_6669ad49b5c8253c209d40f682c9a1b8);
             
     
-            var marker_b37f15a69826493cc412710a782ade2d = L.marker(
+            var marker_f91f69e5200d42a82c9d420f0dfee19d = L.marker(
                 [48.82718305268761, 2.380757312893146],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_dec9ab2f33d77e9dd764812aef503261 = L.AwesomeMarkers.icon(
+            var icon_f26195a784a2d322edf26387c53702aa = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -572,34 +587,34 @@
             );
         
     
-        var popup_ff9f8e29a94ab7ca1bd255e983b5f057 = L.popup({
+        var popup_bddcce8d9059719a7578995fabbad003 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_c8280d9ef83c0827d96c3687cd39da56 = $(`<div id="html_c8280d9ef83c0827d96c3687cd39da56" style="width: 100.0%; height: 100.0%;"><div>Philippe HOPPENOT<br>Professeur/chercheur<br>LDAR, France.</div></div>`)[0];
-                popup_ff9f8e29a94ab7ca1bd255e983b5f057.setContent(html_c8280d9ef83c0827d96c3687cd39da56);
+                var html_6e0213e840303eb1609c5df68ba72628 = $(`<div id="html_6e0213e840303eb1609c5df68ba72628" style="width: 100.0%; height: 100.0%;"><div>Philippe HOPPENOT<br>Professeur/chercheur<br>LDAR, France.</div></div>`)[0];
+                popup_bddcce8d9059719a7578995fabbad003.setContent(html_6e0213e840303eb1609c5df68ba72628);
             
         
 
-        marker_b37f15a69826493cc412710a782ade2d.bindPopup(popup_ff9f8e29a94ab7ca1bd255e983b5f057)
+        marker_f91f69e5200d42a82c9d420f0dfee19d.bindPopup(popup_bddcce8d9059719a7578995fabbad003)
         ;
 
         
     
     
-                marker_b37f15a69826493cc412710a782ade2d.setIcon(icon_dec9ab2f33d77e9dd764812aef503261);
+                marker_f91f69e5200d42a82c9d420f0dfee19d.setIcon(icon_f26195a784a2d322edf26387c53702aa);
             
     
-            var marker_8334c16eaa1ce98af8e4d6210f302161 = L.marker(
+            var marker_49f0c313e1736198794d58dac78490e7 = L.marker(
                 [-12.070633255697942, -77.0814249908148],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_630c61fd02576ccf0c3745e1169a86a1 = L.AwesomeMarkers.icon(
+            var icon_b55c0b15d0fb440ba19e92800bb8740e = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -610,34 +625,34 @@
             );
         
     
-        var popup_a6527c38eaf682e6acbaef74aedbee5e = L.popup({
+        var popup_d6f6c4511438dd1498333581f97ba87f = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_4860960ed3aa070704aec4afa746be11 = $(`<div id="html_4860960ed3aa070704aec4afa746be11" style="width: 100.0%; height: 100.0%;"><div>Iris Inés HUACCAN CONDORI <br>Professeure/chercheuse<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
-                popup_a6527c38eaf682e6acbaef74aedbee5e.setContent(html_4860960ed3aa070704aec4afa746be11);
+                var html_48e25074034569dea208c11171d71fed = $(`<div id="html_48e25074034569dea208c11171d71fed" style="width: 100.0%; height: 100.0%;"><div>Iris Inés HUACCAN CONDORI <br>Professeure/chercheuse<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
+                popup_d6f6c4511438dd1498333581f97ba87f.setContent(html_48e25074034569dea208c11171d71fed);
             
         
 
-        marker_8334c16eaa1ce98af8e4d6210f302161.bindPopup(popup_a6527c38eaf682e6acbaef74aedbee5e)
+        marker_49f0c313e1736198794d58dac78490e7.bindPopup(popup_d6f6c4511438dd1498333581f97ba87f)
         ;
 
         
     
     
-                marker_8334c16eaa1ce98af8e4d6210f302161.setIcon(icon_630c61fd02576ccf0c3745e1169a86a1);
+                marker_49f0c313e1736198794d58dac78490e7.setIcon(icon_b55c0b15d0fb440ba19e92800bb8740e);
             
     
-            var marker_b07fef195c13ec0f7f615add2dc83df6 = L.marker(
+            var marker_b7d8aecf45ab4480c0dd3fb183d5478f = L.marker(
                 [-12.070633255697942, -77.0814249908155],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_25d7630f9e3dd0ae90641f67b484d4d9 = L.AwesomeMarkers.icon(
+            var icon_469699bc6dc64be3a9148328b3b536c3 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -648,34 +663,34 @@
             );
         
     
-        var popup_32d2e16e172843c0cbb536fd2b0f4fe4 = L.popup({
+        var popup_85243aa4f46cb6adfb5bbd10677ea96d = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_59851edf0a2b5d445bba5e725f313b91 = $(`<div id="html_59851edf0a2b5d445bba5e725f313b91" style="width: 100.0%; height: 100.0%;"><div>Cristian JULIAN TRUJILLO<br>Étudiant(e) en doctorat<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
-                popup_32d2e16e172843c0cbb536fd2b0f4fe4.setContent(html_59851edf0a2b5d445bba5e725f313b91);
+                var html_cf107a7bb26df8b0624b13a5617ae1e2 = $(`<div id="html_cf107a7bb26df8b0624b13a5617ae1e2" style="width: 100.0%; height: 100.0%;"><div>Cristian JULIAN TRUJILLO<br>Étudiant(e) en doctorat<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
+                popup_85243aa4f46cb6adfb5bbd10677ea96d.setContent(html_cf107a7bb26df8b0624b13a5617ae1e2);
             
         
 
-        marker_b07fef195c13ec0f7f615add2dc83df6.bindPopup(popup_32d2e16e172843c0cbb536fd2b0f4fe4)
+        marker_b7d8aecf45ab4480c0dd3fb183d5478f.bindPopup(popup_85243aa4f46cb6adfb5bbd10677ea96d)
         ;
 
         
     
     
-                marker_b07fef195c13ec0f7f615add2dc83df6.setIcon(icon_25d7630f9e3dd0ae90641f67b484d4d9);
+                marker_b7d8aecf45ab4480c0dd3fb183d5478f.setIcon(icon_469699bc6dc64be3a9148328b3b536c3);
             
     
-            var marker_5d07575c15653439087a13ba66c5b1b7 = L.marker(
+            var marker_db61df033e6db57f3750f01421b56ef4 = L.marker(
                 [48.82718305268761, 2.380757312893146],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_d422c96efe7fc62d19853f01ce24ac12 = L.AwesomeMarkers.icon(
+            var icon_72247cd7c52f95ec8f19f426ef92fe56 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -686,34 +701,34 @@
             );
         
     
-        var popup_589f1b42565cc9a3ba1f17f3420219b0 = L.popup({
+        var popup_aa5754e25691ed6914d28419056ca647 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_2c11a4786c7b00265d81318ae65cc416 = $(`<div id="html_2c11a4786c7b00265d81318ae65cc416" style="width: 100.0%; height: 100.0%;"><div><a href="https://www.ldar.website/alain-kuzniak" target="_blank">Alain KUZNIAK</a><br>Professeur/chercheur<br>LDAR, France, Université Paris Cité, France.</div></div>`)[0];
-                popup_589f1b42565cc9a3ba1f17f3420219b0.setContent(html_2c11a4786c7b00265d81318ae65cc416);
+                var html_eddd2ea7ac71c8a71fe1f3127b9b0448 = $(`<div id="html_eddd2ea7ac71c8a71fe1f3127b9b0448" style="width: 100.0%; height: 100.0%;"><div><a href="https://www.ldar.website/alain-kuzniak" target="_blank">Alain KUZNIAK</a><br>Professeur/chercheur<br>LDAR, France, Université Paris Cité, France.</div></div>`)[0];
+                popup_aa5754e25691ed6914d28419056ca647.setContent(html_eddd2ea7ac71c8a71fe1f3127b9b0448);
             
         
 
-        marker_5d07575c15653439087a13ba66c5b1b7.bindPopup(popup_589f1b42565cc9a3ba1f17f3420219b0)
+        marker_db61df033e6db57f3750f01421b56ef4.bindPopup(popup_aa5754e25691ed6914d28419056ca647)
         ;
 
         
     
     
-                marker_5d07575c15653439087a13ba66c5b1b7.setIcon(icon_d422c96efe7fc62d19853f01ce24ac12);
+                marker_db61df033e6db57f3750f01421b56ef4.setIcon(icon_72247cd7c52f95ec8f19f426ef92fe56);
             
     
-            var marker_faefbc2af2690f475ac1769ad90e85e3 = L.marker(
+            var marker_a2d73cbc5935bb3b4d2f8c1e29f29214 = L.marker(
                 [49.039307168629584, 2.07618229028202],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_44bc6a4771b56fc238470926c278f987 = L.AwesomeMarkers.icon(
+            var icon_2b7c9de2497b31564606fdc430908650 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -724,34 +739,34 @@
             );
         
     
-        var popup_a2839d3548f7e23c1e82b2aec760c1b3 = L.popup({
+        var popup_f62d5371ae696f32d8cf3af7a1837e4b = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_ac80255d99bb4905341f164a6eca0e32 = $(`<div id="html_ac80255d99bb4905341f164a6eca0e32" style="width: 100.0%; height: 100.0%;"><div><a href="https://www.cyu.fr/dominique-laval" target="_blank">Dominique LAVAL</a><br>Professeur/chercheur<br>Université Cergy Paris, France.</div></div>`)[0];
-                popup_a2839d3548f7e23c1e82b2aec760c1b3.setContent(html_ac80255d99bb4905341f164a6eca0e32);
+                var html_f29d52ba7ddcbeb9b17ef9a86222064d = $(`<div id="html_f29d52ba7ddcbeb9b17ef9a86222064d" style="width: 100.0%; height: 100.0%;"><div><a href="https://www.cyu.fr/dominique-laval" target="_blank">Dominique LAVAL</a><br>Professeur/chercheur<br>Université Cergy Paris, France.</div></div>`)[0];
+                popup_f62d5371ae696f32d8cf3af7a1837e4b.setContent(html_f29d52ba7ddcbeb9b17ef9a86222064d);
             
         
 
-        marker_faefbc2af2690f475ac1769ad90e85e3.bindPopup(popup_a2839d3548f7e23c1e82b2aec760c1b3)
+        marker_a2d73cbc5935bb3b4d2f8c1e29f29214.bindPopup(popup_f62d5371ae696f32d8cf3af7a1837e4b)
         ;
 
         
     
     
-                marker_faefbc2af2690f475ac1769ad90e85e3.setIcon(icon_44bc6a4771b56fc238470926c278f987);
+                marker_a2d73cbc5935bb3b4d2f8c1e29f29214.setIcon(icon_2b7c9de2497b31564606fdc430908650);
             
     
-            var marker_bf74f90362a7ae981461849b2c15a6c4 = L.marker(
+            var marker_f449e4601161ffc788602d7b8a0c902c = L.marker(
                 [-33.068858607433036, -71.55282197103153],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_1609598a4685ef0178f859792bc91d57 = L.AwesomeMarkers.icon(
+            var icon_893a1d58725cbcdc58b4947eff1d933b = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -762,34 +777,34 @@
             );
         
     
-        var popup_373d60ab6ecb298852ef337356d511fd = L.popup({
+        var popup_ad9da9001df89a1da1cbd029cd98e21a = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_35168fcec0825fcd3240d6d77b35072e = $(`<div id="html_35168fcec0825fcd3240d6d77b35072e" style="width: 100.0%; height: 100.0%;"><div>Soledad LÓPEZ<br>Professeure/chercheuse<br>Universidad de Viña del Mar, Chile.</div></div>`)[0];
-                popup_373d60ab6ecb298852ef337356d511fd.setContent(html_35168fcec0825fcd3240d6d77b35072e);
+                var html_0bb4d2b2e9309df46450c28e461324e2 = $(`<div id="html_0bb4d2b2e9309df46450c28e461324e2" style="width: 100.0%; height: 100.0%;"><div>Soledad LÓPEZ<br>Professeure/chercheuse<br>Universidad de Viña del Mar, Chile.</div></div>`)[0];
+                popup_ad9da9001df89a1da1cbd029cd98e21a.setContent(html_0bb4d2b2e9309df46450c28e461324e2);
             
         
 
-        marker_bf74f90362a7ae981461849b2c15a6c4.bindPopup(popup_373d60ab6ecb298852ef337356d511fd)
+        marker_f449e4601161ffc788602d7b8a0c902c.bindPopup(popup_ad9da9001df89a1da1cbd029cd98e21a)
         ;
 
         
     
     
-                marker_bf74f90362a7ae981461849b2c15a6c4.setIcon(icon_1609598a4685ef0178f859792bc91d57);
+                marker_f449e4601161ffc788602d7b8a0c902c.setIcon(icon_893a1d58725cbcdc58b4947eff1d933b);
             
     
-            var marker_d00fdc8dee842da62b64c2d0acc42104 = L.marker(
+            var marker_2dd4e8bffdbc37ffe90a9c464a5aa3fe = L.marker(
                 [-33.39119308479517, -70.50080776591993],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_9d93292cd4780941e026ad7b359f3806 = L.AwesomeMarkers.icon(
+            var icon_835e5b72aebf905d07b76c845e2100b4 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -800,34 +815,34 @@
             );
         
     
-        var popup_469d9a6eceebbba2fa479d07e98ed7a1 = L.popup({
+        var popup_db959abfdca515e81f50d621259fcd4d = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_5ca4b95eb3e63246186c1dcac0d46c03 = $(`<div id="html_5ca4b95eb3e63246186c1dcac0d46c03" style="width: 100.0%; height: 100.0%;"><div>Katherine MACHUCA<br>Professeure/chercheuse<br>Universidad del Desarrollo, Chile.</div></div>`)[0];
-                popup_469d9a6eceebbba2fa479d07e98ed7a1.setContent(html_5ca4b95eb3e63246186c1dcac0d46c03);
+                var html_740795d51dc211a710194f68e644a73f = $(`<div id="html_740795d51dc211a710194f68e644a73f" style="width: 100.0%; height: 100.0%;"><div>Katherine MACHUCA<br>Professeure/chercheuse<br>Universidad del Desarrollo, Chile.</div></div>`)[0];
+                popup_db959abfdca515e81f50d621259fcd4d.setContent(html_740795d51dc211a710194f68e644a73f);
             
         
 
-        marker_d00fdc8dee842da62b64c2d0acc42104.bindPopup(popup_469d9a6eceebbba2fa479d07e98ed7a1)
+        marker_2dd4e8bffdbc37ffe90a9c464a5aa3fe.bindPopup(popup_db959abfdca515e81f50d621259fcd4d)
         ;
 
         
     
     
-                marker_d00fdc8dee842da62b64c2d0acc42104.setIcon(icon_9d93292cd4780941e026ad7b359f3806);
+                marker_2dd4e8bffdbc37ffe90a9c464a5aa3fe.setIcon(icon_835e5b72aebf905d07b76c845e2100b4);
             
     
-            var marker_6b746ebba11f675f2daf6e32e2966b61 = L.marker(
+            var marker_c641ce7f234f9d3195c96cbb5c1d49f2 = L.marker(
                 [48.82718305268761, 2.380757312893146],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_a9f00f394e0787153fea5dea145d9aaf = L.AwesomeMarkers.icon(
+            var icon_e62008fd39628ae0a6a36b81422909b7 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -838,34 +853,34 @@
             );
         
     
-        var popup_ffa278c7664bb5e84781269b921154c8 = L.popup({
+        var popup_c264acd921701593e087627d28f8c4ca = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_0cfdf5e2988427b4d3d47749d9bc7e6c = $(`<div id="html_0cfdf5e2988427b4d3d47749d9bc7e6c" style="width: 100.0%; height: 100.0%;"><div><a href="https://www.ldar.website/blandinemasselin" target="_blank">Blandine MASSELIN</a><br>Professeure/chercheuse<br>LDAR, France, IREM de Normandie.</div></div>`)[0];
-                popup_ffa278c7664bb5e84781269b921154c8.setContent(html_0cfdf5e2988427b4d3d47749d9bc7e6c);
+                var html_6e88aebb4e8f3b4fbcd3991dd58e1cee = $(`<div id="html_6e88aebb4e8f3b4fbcd3991dd58e1cee" style="width: 100.0%; height: 100.0%;"><div><a href="https://www.ldar.website/blandinemasselin" target="_blank">Blandine MASSELIN</a><br>Professeure/chercheuse<br>LDAR, France, IREM de Normandie.</div></div>`)[0];
+                popup_c264acd921701593e087627d28f8c4ca.setContent(html_6e88aebb4e8f3b4fbcd3991dd58e1cee);
             
         
 
-        marker_6b746ebba11f675f2daf6e32e2966b61.bindPopup(popup_ffa278c7664bb5e84781269b921154c8)
+        marker_c641ce7f234f9d3195c96cbb5c1d49f2.bindPopup(popup_c264acd921701593e087627d28f8c4ca)
         ;
 
         
     
     
-                marker_6b746ebba11f675f2daf6e32e2966b61.setIcon(icon_a9f00f394e0787153fea5dea145d9aaf);
+                marker_c641ce7f234f9d3195c96cbb5c1d49f2.setIcon(icon_e62008fd39628ae0a6a36b81422909b7);
             
     
-            var marker_892a4d1a6f7b7016b689a47b2b63a0b4 = L.marker(
+            var marker_7e965ebfd2188c83058d3c3f1fb5f384 = L.marker(
                 [-33.026040687109635, -71.63903221405185],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_66b576e060e0572d4428928e5b9b616c = L.AwesomeMarkers.icon(
+            var icon_fc30531ef14add77b69564ec16c967ec = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -876,34 +891,34 @@
             );
         
     
-        var popup_3fe19885cd62078fc4d2ac4d141f312e = L.popup({
+        var popup_cebda837c10929805850a57fa53996e4 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_502ae024d7fe3cafb8c6d377e9a72419 = $(`<div id="html_502ae024d7fe3cafb8c6d377e9a72419" style="width: 100.0%; height: 100.0%;"><div><a href="https://matematica.uv.cl/r.-menares.html" target="_blank">Romina MENARES</a><br>Professeure/chercheuse<br>Universidad de Valparaíso, Chile.</div></div>`)[0];
-                popup_3fe19885cd62078fc4d2ac4d141f312e.setContent(html_502ae024d7fe3cafb8c6d377e9a72419);
+                var html_8499fb6d5f2b14cc67fe052d60f2f83e = $(`<div id="html_8499fb6d5f2b14cc67fe052d60f2f83e" style="width: 100.0%; height: 100.0%;"><div><a href="https://matematica.uv.cl/r.-menares.html" target="_blank">Romina MENARES</a><br>Professeure/chercheuse<br>Universidad de Valparaíso, Chile.</div></div>`)[0];
+                popup_cebda837c10929805850a57fa53996e4.setContent(html_8499fb6d5f2b14cc67fe052d60f2f83e);
             
         
 
-        marker_892a4d1a6f7b7016b689a47b2b63a0b4.bindPopup(popup_3fe19885cd62078fc4d2ac4d141f312e)
+        marker_7e965ebfd2188c83058d3c3f1fb5f384.bindPopup(popup_cebda837c10929805850a57fa53996e4)
         ;
 
         
     
     
-                marker_892a4d1a6f7b7016b689a47b2b63a0b4.setIcon(icon_66b576e060e0572d4428928e5b9b616c);
+                marker_7e965ebfd2188c83058d3c3f1fb5f384.setIcon(icon_fc30531ef14add77b69564ec16c967ec);
             
     
-            var marker_c41bf283b3d8bd1ad190ae4079eb4e20 = L.marker(
+            var marker_a81660689f36bbc5f9e8df1da624dc96 = L.marker(
                 [45.51356835648423, -73.56034815412497],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_34d7842ecf8ebde1f383dae14200c1c7 = L.AwesomeMarkers.icon(
+            var icon_76750f50fab243a3548da4ec234008a3 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -914,34 +929,34 @@
             );
         
     
-        var popup_f345bed2ea750e2b775c683ced4065a3 = L.popup({
+        var popup_0e78cda1f8b0d985b531ec9200d06d74 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_0b6e14fd0bbf91925a3892e60f8e7a95 = $(`<div id="html_0b6e14fd0bbf91925a3892e60f8e7a95" style="width: 100.0%; height: 100.0%;"><div>Sandrine MICHOT<br>Étudiant(e) en doctorat<br>Universite du Quebec à Montreal.</div></div>`)[0];
-                popup_f345bed2ea750e2b775c683ced4065a3.setContent(html_0b6e14fd0bbf91925a3892e60f8e7a95);
+                var html_3ba417b65236a6c0e8eba3815480eb25 = $(`<div id="html_3ba417b65236a6c0e8eba3815480eb25" style="width: 100.0%; height: 100.0%;"><div>Sandrine MICHOT<br>Étudiant(e) en doctorat<br>Universite du Quebec à Montreal.</div></div>`)[0];
+                popup_0e78cda1f8b0d985b531ec9200d06d74.setContent(html_3ba417b65236a6c0e8eba3815480eb25);
             
         
 
-        marker_c41bf283b3d8bd1ad190ae4079eb4e20.bindPopup(popup_f345bed2ea750e2b775c683ced4065a3)
+        marker_a81660689f36bbc5f9e8df1da624dc96.bindPopup(popup_0e78cda1f8b0d985b531ec9200d06d74)
         ;
 
         
     
     
-                marker_c41bf283b3d8bd1ad190ae4079eb4e20.setIcon(icon_34d7842ecf8ebde1f383dae14200c1c7);
+                marker_a81660689f36bbc5f9e8df1da624dc96.setIcon(icon_76750f50fab243a3548da4ec234008a3);
             
     
-            var marker_6996cbaba5266f3c6f83dbdfb7a20ec8 = L.marker(
+            var marker_a4686cc339de8dc96bf00d75ea7c7408 = L.marker(
                 [-33.03919162111296, -71.60062834442994],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_acb91bc3f09e1ef29ff0819cd331b27b = L.AwesomeMarkers.icon(
+            var icon_edb0f89c277620aef3273f6ad61a30b4 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -952,34 +967,34 @@
             );
         
     
-        var popup_75303ca8b46534090a2dcd11cac776f1 = L.popup({
+        var popup_4eb5005f82732fe10e256467be937736 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_cd91d7f243d180cbcd1cb80ec8e29699 = $(`<div id="html_cd91d7f243d180cbcd1cb80ec8e29699" style="width: 100.0%; height: 100.0%;"><div><a href="http://ima.ucv.cl/academicos/elizabeth-montoya/" target="_blank">Elizabeth MONTOYA DELGADILLO</a><br>Professeure/chercheuse<br>Pontificia Universidad Católica de Valparaíso, Chile.</div></div>`)[0];
-                popup_75303ca8b46534090a2dcd11cac776f1.setContent(html_cd91d7f243d180cbcd1cb80ec8e29699);
+                var html_2c2f8335f50961278070e4a0b1f0ef3d = $(`<div id="html_2c2f8335f50961278070e4a0b1f0ef3d" style="width: 100.0%; height: 100.0%;"><div><a href="http://ima.ucv.cl/academicos/elizabeth-montoya/" target="_blank">Elizabeth MONTOYA DELGADILLO</a><br>Professeure/chercheuse<br>Pontificia Universidad Católica de Valparaíso, Chile.</div></div>`)[0];
+                popup_4eb5005f82732fe10e256467be937736.setContent(html_2c2f8335f50961278070e4a0b1f0ef3d);
             
         
 
-        marker_6996cbaba5266f3c6f83dbdfb7a20ec8.bindPopup(popup_75303ca8b46534090a2dcd11cac776f1)
+        marker_a4686cc339de8dc96bf00d75ea7c7408.bindPopup(popup_4eb5005f82732fe10e256467be937736)
         ;
 
         
     
     
-                marker_6996cbaba5266f3c6f83dbdfb7a20ec8.setIcon(icon_acb91bc3f09e1ef29ff0819cd331b27b);
+                marker_a4686cc339de8dc96bf00d75ea7c7408.setIcon(icon_edb0f89c277620aef3273f6ad61a30b4);
             
     
-            var marker_a4c1f066ab5a022276705b56fd3eaf88 = L.marker(
+            var marker_4d2a8074e7c8851a114a3fe7c1b25d14 = L.marker(
                 [48.82718305268761, 2.380757312893146],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_4763b1bd4d3a30f2ab0d6aea657b4744 = L.AwesomeMarkers.icon(
+            var icon_372297de6e9ed418abf3d3ec391d4d93 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -990,34 +1005,34 @@
             );
         
     
-        var popup_2ab86759762a9727a351dd17c02f6955 = L.popup({
+        var popup_2e8c0518028c72664d7ebce3cbdb8f39 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_3b94bad7772c34ee536c7880ed40e55c = $(`<div id="html_3b94bad7772c34ee536c7880ed40e55c" style="width: 100.0%; height: 100.0%;"><div><a href="https://www.ldar.website/assia-nechache" target="_blank">Assia NECHACHE</a><br>Professeure/chercheuse<br>LDAR, France, Université Cergy Paris, France.</div></div>`)[0];
-                popup_2ab86759762a9727a351dd17c02f6955.setContent(html_3b94bad7772c34ee536c7880ed40e55c);
+                var html_cdcc6271cd802d8dffd077c139bbdcd9 = $(`<div id="html_cdcc6271cd802d8dffd077c139bbdcd9" style="width: 100.0%; height: 100.0%;"><div><a href="https://www.ldar.website/assia-nechache" target="_blank">Assia NECHACHE</a><br>Professeure/chercheuse<br>LDAR, France, Université Cergy Paris, France.</div></div>`)[0];
+                popup_2e8c0518028c72664d7ebce3cbdb8f39.setContent(html_cdcc6271cd802d8dffd077c139bbdcd9);
             
         
 
-        marker_a4c1f066ab5a022276705b56fd3eaf88.bindPopup(popup_2ab86759762a9727a351dd17c02f6955)
+        marker_4d2a8074e7c8851a114a3fe7c1b25d14.bindPopup(popup_2e8c0518028c72664d7ebce3cbdb8f39)
         ;
 
         
     
     
-                marker_a4c1f066ab5a022276705b56fd3eaf88.setIcon(icon_4763b1bd4d3a30f2ab0d6aea657b4744);
+                marker_4d2a8074e7c8851a114a3fe7c1b25d14.setIcon(icon_372297de6e9ed418abf3d3ec391d4d93);
             
     
-            var marker_6fbf83b83fad6740294a853ff614be92 = L.marker(
+            var marker_a60f7f0d027b1b8e36d49c0df4c5a6a8 = L.marker(
                 [-12.070633255697942, -77.081424990815],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_9848f7b6275c0b5b6ce7144da266690c = L.AwesomeMarkers.icon(
+            var icon_36a65c24975636a5a52583d5fdd4a8cf = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1028,34 +1043,34 @@
             );
         
     
-        var popup_953f618924a7594bc823dfe15ada937d = L.popup({
+        var popup_c074e4261fe281c470a05afdd2762cae = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_d68038e14be24e606546a431a7ef9750 = $(`<div id="html_d68038e14be24e606546a431a7ef9750" style="width: 100.0%; height: 100.0%;"><div><a href="https://www.pucp.edu.pe/profesor/veronica-neira-fernandez" target="_blank">Verónica NEIRA FERNÁNDEZ</a><br>Professeure/chercheuse<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
-                popup_953f618924a7594bc823dfe15ada937d.setContent(html_d68038e14be24e606546a431a7ef9750);
+                var html_42ae8fe69df4172017fe9aec1183ada3 = $(`<div id="html_42ae8fe69df4172017fe9aec1183ada3" style="width: 100.0%; height: 100.0%;"><div><a href="https://www.pucp.edu.pe/profesor/veronica-neira-fernandez" target="_blank">Verónica NEIRA FERNÁNDEZ</a><br>Professeure/chercheuse<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
+                popup_c074e4261fe281c470a05afdd2762cae.setContent(html_42ae8fe69df4172017fe9aec1183ada3);
             
         
 
-        marker_6fbf83b83fad6740294a853ff614be92.bindPopup(popup_953f618924a7594bc823dfe15ada937d)
+        marker_a60f7f0d027b1b8e36d49c0df4c5a6a8.bindPopup(popup_c074e4261fe281c470a05afdd2762cae)
         ;
 
         
     
     
-                marker_6fbf83b83fad6740294a853ff614be92.setIcon(icon_9848f7b6275c0b5b6ce7144da266690c);
+                marker_a60f7f0d027b1b8e36d49c0df4c5a6a8.setIcon(icon_36a65c24975636a5a52583d5fdd4a8cf);
             
     
-            var marker_1d41b832e63cee769c66922a1c25c06a = L.marker(
+            var marker_45b27d63925525be1945266711e2fdcf = L.marker(
                 [40.80121874997567, 21.423010076915606],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_d052948f48fd990f459c0226cb747e3e = L.AwesomeMarkers.icon(
+            var icon_be8f1d255853fc8f87e242ee89168d5f = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1066,34 +1081,34 @@
             );
         
     
-        var popup_d25acf76ec8db8bfe0a1636b8d47a513 = L.popup({
+        var popup_a344e229400c6ee3fd7c170c676bc7cf = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_25155f80afeaa2f3055e22369bf4713c = $(`<div id="html_25155f80afeaa2f3055e22369bf4713c" style="width: 100.0%; height: 100.0%;"><div>Konstandinos NIKOLANTONAKIS<br>Professeur/chercheur<br>University of Western Macedonia, Greece.</div></div>`)[0];
-                popup_d25acf76ec8db8bfe0a1636b8d47a513.setContent(html_25155f80afeaa2f3055e22369bf4713c);
+                var html_516b6f497feeb4c8f60ba6b6c2d22744 = $(`<div id="html_516b6f497feeb4c8f60ba6b6c2d22744" style="width: 100.0%; height: 100.0%;"><div>Konstandinos NIKOLANTONAKIS<br>Professeur/chercheur<br>University of Western Macedonia, Greece.</div></div>`)[0];
+                popup_a344e229400c6ee3fd7c170c676bc7cf.setContent(html_516b6f497feeb4c8f60ba6b6c2d22744);
             
         
 
-        marker_1d41b832e63cee769c66922a1c25c06a.bindPopup(popup_d25acf76ec8db8bfe0a1636b8d47a513)
+        marker_45b27d63925525be1945266711e2fdcf.bindPopup(popup_a344e229400c6ee3fd7c170c676bc7cf)
         ;
 
         
     
     
-                marker_1d41b832e63cee769c66922a1c25c06a.setIcon(icon_d052948f48fd990f459c0226cb747e3e);
+                marker_45b27d63925525be1945266711e2fdcf.setIcon(icon_be8f1d255853fc8f87e242ee89168d5f);
             
     
-            var marker_8c94e8dfb2c96cda656252f4beb09c0d = L.marker(
+            var marker_043be26f6db385d0b9d6b4bd74697605 = L.marker(
                 [19.422602227313604, -99.15108785408758],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_8f34b41bb55d81b1f998b008a7ff32ae = L.AwesomeMarkers.icon(
+            var icon_e6bf909ba66d2f18d497d88c29454098 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1104,34 +1119,34 @@
             );
         
     
-        var popup_43bfb82bf54e2737b2c61c81caf29b20 = L.popup({
+        var popup_44f05a37ef5703dcd87fe3c1a26cf0c0 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_52905fd50fb3b3eadb2388c4e37ff7a4 = $(`<div id="html_52905fd50fb3b3eadb2388c4e37ff7a4" style="width: 100.0%; height: 100.0%;"><div>Rosa-Elvira PÁEZ<br>Professeure/chercheuse<br>Universidad Autónoma de la Ciudad de México, México.</div></div>`)[0];
-                popup_43bfb82bf54e2737b2c61c81caf29b20.setContent(html_52905fd50fb3b3eadb2388c4e37ff7a4);
+                var html_634ea812241670601027238dc78b9ef5 = $(`<div id="html_634ea812241670601027238dc78b9ef5" style="width: 100.0%; height: 100.0%;"><div>Rosa-Elvira PÁEZ<br>Professeure/chercheuse<br>Universidad Autónoma de la Ciudad de México, México.</div></div>`)[0];
+                popup_44f05a37ef5703dcd87fe3c1a26cf0c0.setContent(html_634ea812241670601027238dc78b9ef5);
             
         
 
-        marker_8c94e8dfb2c96cda656252f4beb09c0d.bindPopup(popup_43bfb82bf54e2737b2c61c81caf29b20)
+        marker_043be26f6db385d0b9d6b4bd74697605.bindPopup(popup_44f05a37ef5703dcd87fe3c1a26cf0c0)
         ;
 
         
     
     
-                marker_8c94e8dfb2c96cda656252f4beb09c0d.setIcon(icon_8f34b41bb55d81b1f998b008a7ff32ae);
+                marker_043be26f6db385d0b9d6b4bd74697605.setIcon(icon_e6bf909ba66d2f18d497d88c29454098);
             
     
-            var marker_5a8fbb8973c415d9fcafdb3b3af44165 = L.marker(
+            var marker_20e5b690b8f8d49d7b8cf0d2a28ccb1d = L.marker(
                 [-33.024108848667915, -71.64057738478361],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_322c9f0a34e77db874551ef30405931a = L.AwesomeMarkers.icon(
+            var icon_70f85ab1c7279506fe0866fc2c6d8341 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -1142,34 +1157,34 @@
             );
         
     
-        var popup_919fe031167de8e260d2ac85a1d688b4 = L.popup({
+        var popup_ebf30cae99a19d839d74f1017a23c5b1 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_4e0a47bc53e12f4a1cd83253fb920787 = $(`<div id="html_4e0a47bc53e12f4a1cd83253fb920787" style="width: 100.0%; height: 100.0%;"><div>Catalina PALACIOS<br>Étudiant(e) en doctorat<br>Universidad de Playa Ancha, Chile.</div></div>`)[0];
-                popup_919fe031167de8e260d2ac85a1d688b4.setContent(html_4e0a47bc53e12f4a1cd83253fb920787);
+                var html_244b09a11d1c7054c183f7c6a5b35909 = $(`<div id="html_244b09a11d1c7054c183f7c6a5b35909" style="width: 100.0%; height: 100.0%;"><div>Catalina PALACIOS<br>Étudiant(e) en doctorat<br>Universidad de Playa Ancha, Chile.</div></div>`)[0];
+                popup_ebf30cae99a19d839d74f1017a23c5b1.setContent(html_244b09a11d1c7054c183f7c6a5b35909);
             
         
 
-        marker_5a8fbb8973c415d9fcafdb3b3af44165.bindPopup(popup_919fe031167de8e260d2ac85a1d688b4)
+        marker_20e5b690b8f8d49d7b8cf0d2a28ccb1d.bindPopup(popup_ebf30cae99a19d839d74f1017a23c5b1)
         ;
 
         
     
     
-                marker_5a8fbb8973c415d9fcafdb3b3af44165.setIcon(icon_322c9f0a34e77db874551ef30405931a);
+                marker_20e5b690b8f8d49d7b8cf0d2a28ccb1d.setIcon(icon_70f85ab1c7279506fe0866fc2c6d8341);
             
     
-            var marker_2f316659025adc3382ad922fb0f9a060 = L.marker(
+            var marker_ac67c1cff342667476ec972fe55de3b8 = L.marker(
                 [-35.43595698818209, -71.62198734293472],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_81e766034bda325266178d1fcaca7b7d = L.AwesomeMarkers.icon(
+            var icon_f66d32b55cd88bd7cd4b46ca9a75d720 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -1180,34 +1195,34 @@
             );
         
     
-        var popup_2412c6c1f566567d5c177e3456390051 = L.popup({
+        var popup_c56600a4a41a374a67cc917befa79c24 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_32d6d702e0d4daa019598e2c049499f8 = $(`<div id="html_32d6d702e0d4daa019598e2c049499f8" style="width: 100.0%; height: 100.0%;"><div>Darlis PANQUEBAN<br>Étudiant(e) en doctorat<br>Universidad Católica del Maule, Chile.</div></div>`)[0];
-                popup_2412c6c1f566567d5c177e3456390051.setContent(html_32d6d702e0d4daa019598e2c049499f8);
+                var html_2dd5939362c2d98fa50d36fe188afd63 = $(`<div id="html_2dd5939362c2d98fa50d36fe188afd63" style="width: 100.0%; height: 100.0%;"><div>Darlis PANQUEBAN<br>Étudiant(e) en doctorat<br>Universidad Católica del Maule, Chile.</div></div>`)[0];
+                popup_c56600a4a41a374a67cc917befa79c24.setContent(html_2dd5939362c2d98fa50d36fe188afd63);
             
         
 
-        marker_2f316659025adc3382ad922fb0f9a060.bindPopup(popup_2412c6c1f566567d5c177e3456390051)
+        marker_ac67c1cff342667476ec972fe55de3b8.bindPopup(popup_c56600a4a41a374a67cc917befa79c24)
         ;
 
         
     
     
-                marker_2f316659025adc3382ad922fb0f9a060.setIcon(icon_81e766034bda325266178d1fcaca7b7d);
+                marker_ac67c1cff342667476ec972fe55de3b8.setIcon(icon_f66d32b55cd88bd7cd4b46ca9a75d720);
             
     
-            var marker_798a6966df09c76771813dbdd2a93a42 = L.marker(
+            var marker_660b0e02aa4cb0de97cbbac263ba145f = L.marker(
                 [48.82718305268761, 2.380757312893146],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_ae5302b84c0bf047f35768c1da64aa0e = L.AwesomeMarkers.icon(
+            var icon_e9e9181a42abc707b3d3399b55f00cd6 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1218,34 +1233,34 @@
             );
         
     
-        var popup_26c27d7c453f49f670d0750860255a3e = L.popup({
+        var popup_200c787c233b08831929e8d01150cc21 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_2b662cc7cf8ef16ab2ba430929817275 = $(`<div id="html_2b662cc7cf8ef16ab2ba430929817275" style="width: 100.0%; height: 100.0%;"><div><a href="https://www.ldar.website/bernard-parzysz" target="_blank">Bernard PARZYSZ</a><br>Professeur/chercheur<br>LDAR, France, Université d'Orléans.</div></div>`)[0];
-                popup_26c27d7c453f49f670d0750860255a3e.setContent(html_2b662cc7cf8ef16ab2ba430929817275);
+                var html_31792f366fb2dee0a542df100d6b0491 = $(`<div id="html_31792f366fb2dee0a542df100d6b0491" style="width: 100.0%; height: 100.0%;"><div><a href="https://www.ldar.website/bernard-parzysz" target="_blank">Bernard PARZYSZ</a><br>Professeur/chercheur<br>LDAR, France, Université d'Orléans.</div></div>`)[0];
+                popup_200c787c233b08831929e8d01150cc21.setContent(html_31792f366fb2dee0a542df100d6b0491);
             
         
 
-        marker_798a6966df09c76771813dbdd2a93a42.bindPopup(popup_26c27d7c453f49f670d0750860255a3e)
+        marker_660b0e02aa4cb0de97cbbac263ba145f.bindPopup(popup_200c787c233b08831929e8d01150cc21)
         ;
 
         
     
     
-                marker_798a6966df09c76771813dbdd2a93a42.setIcon(icon_ae5302b84c0bf047f35768c1da64aa0e);
+                marker_660b0e02aa4cb0de97cbbac263ba145f.setIcon(icon_e9e9181a42abc707b3d3399b55f00cd6);
             
     
-            var marker_da7f623e6873011a2e5a05da8201eec4 = L.marker(
+            var marker_198e2be5d0bbddf8ca00d82815fedc78 = L.marker(
                 [-12.070633255697942, -77.0814249908149],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_b9656a01f76ee72b2750e301c1841e6e = L.AwesomeMarkers.icon(
+            var icon_99943c92c4e85251a71c512a3cebbe43 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1256,34 +1271,34 @@
             );
         
     
-        var popup_48d3058489e89e8400550876259c4b8f = L.popup({
+        var popup_23a233d6a7113ba89cfc5f8576f2c298 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_b0dab4ec4bd7639f31f44585e85c03ca = $(`<div id="html_b0dab4ec4bd7639f31f44585e85c03ca" style="width: 100.0%; height: 100.0%;"><div>Nelson PEÑALOZA VARA<br>Professeur/chercheur<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
-                popup_48d3058489e89e8400550876259c4b8f.setContent(html_b0dab4ec4bd7639f31f44585e85c03ca);
+                var html_dc04d29b180fa0174581db7e342c664c = $(`<div id="html_dc04d29b180fa0174581db7e342c664c" style="width: 100.0%; height: 100.0%;"><div>Nelson PEÑALOZA VARA<br>Professeur/chercheur<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
+                popup_23a233d6a7113ba89cfc5f8576f2c298.setContent(html_dc04d29b180fa0174581db7e342c664c);
             
         
 
-        marker_da7f623e6873011a2e5a05da8201eec4.bindPopup(popup_48d3058489e89e8400550876259c4b8f)
+        marker_198e2be5d0bbddf8ca00d82815fedc78.bindPopup(popup_23a233d6a7113ba89cfc5f8576f2c298)
         ;
 
         
     
     
-                marker_da7f623e6873011a2e5a05da8201eec4.setIcon(icon_b9656a01f76ee72b2750e301c1841e6e);
+                marker_198e2be5d0bbddf8ca00d82815fedc78.setIcon(icon_99943c92c4e85251a71c512a3cebbe43);
             
     
-            var marker_e64513fe91891da85880a91858a3e3e1 = L.marker(
+            var marker_9a4225aae09d5cce2ffe28df9319b4aa = L.marker(
                 [-33.14630788978054, -71.57004393155142],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_90b981f0175118c31ce37e2f3979294a = L.AwesomeMarkers.icon(
+            var icon_a1f8ac1484ffe24fe3a5b68bda2c3320 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1294,34 +1309,34 @@
             );
         
     
-        var popup_2cea34e7edc1332ca0c2a08122558158 = L.popup({
+        var popup_664027f6ab0391f7ee798a5e45456c78 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_a1583d4d5dd7e12a192dafa8323573b9 = $(`<div id="html_a1583d4d5dd7e12a192dafa8323573b9" style="width: 100.0%; height: 100.0%;"><div>Claudia REYES AVENDAÑO<br>Professeure/chercheuse<br>Pontificia Universidad Católica de Valparaíso, Chile.</div></div>`)[0];
-                popup_2cea34e7edc1332ca0c2a08122558158.setContent(html_a1583d4d5dd7e12a192dafa8323573b9);
+                var html_cc524ba4c47d3068a5160ec4bc56b52d = $(`<div id="html_cc524ba4c47d3068a5160ec4bc56b52d" style="width: 100.0%; height: 100.0%;"><div>Claudia REYES AVENDAÑO<br>Professeure/chercheuse<br>Pontificia Universidad Católica de Valparaíso, Chile.</div></div>`)[0];
+                popup_664027f6ab0391f7ee798a5e45456c78.setContent(html_cc524ba4c47d3068a5160ec4bc56b52d);
             
         
 
-        marker_e64513fe91891da85880a91858a3e3e1.bindPopup(popup_2cea34e7edc1332ca0c2a08122558158)
+        marker_9a4225aae09d5cce2ffe28df9319b4aa.bindPopup(popup_664027f6ab0391f7ee798a5e45456c78)
         ;
 
         
     
     
-                marker_e64513fe91891da85880a91858a3e3e1.setIcon(icon_90b981f0175118c31ce37e2f3979294a);
+                marker_9a4225aae09d5cce2ffe28df9319b4aa.setIcon(icon_a1f8ac1484ffe24fe3a5b68bda2c3320);
             
     
-            var marker_29830c4b140a9fba405e4ff6b951655a = L.marker(
+            var marker_e545141d9ef0b49bdd12589f1c26b519 = L.marker(
                 [45.51110449583584, -73.6115639329031],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_f81766d35ac7383cdb190f177d8b9f61 = L.AwesomeMarkers.icon(
+            var icon_b3e259c3b815373121dc89cb47b1a302 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1332,34 +1347,34 @@
             );
         
     
-        var popup_b3f0d8d656d909ddfa7b1be3552597f2 = L.popup({
+        var popup_b3e19e8d3e3a8ad6e9137e0e24dc485c = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_2e4adf6b629c95d647e07b7425135375 = $(`<div id="html_2e4adf6b629c95d647e07b7425135375" style="width: 100.0%; height: 100.0%;"><div><a href="https://fse.umontreal.ca/faculte/corps-professoral/fiche/in/in13817/sg/Philippe%20R.%20Richard/" target="_blank">Philippe R. RICHARD</a><br>Professeur/chercheur<br>Université de Montréal, Canada.</div></div>`)[0];
-                popup_b3f0d8d656d909ddfa7b1be3552597f2.setContent(html_2e4adf6b629c95d647e07b7425135375);
+                var html_24ee52491932fc410010faa009e1bd18 = $(`<div id="html_24ee52491932fc410010faa009e1bd18" style="width: 100.0%; height: 100.0%;"><div><a href="https://fse.umontreal.ca/faculte/corps-professoral/fiche/in/in13817/sg/Philippe%20R.%20Richard/" target="_blank">Philippe R. RICHARD</a><br>Professeur/chercheur<br>Université de Montréal, Canada.</div></div>`)[0];
+                popup_b3e19e8d3e3a8ad6e9137e0e24dc485c.setContent(html_24ee52491932fc410010faa009e1bd18);
             
         
 
-        marker_29830c4b140a9fba405e4ff6b951655a.bindPopup(popup_b3f0d8d656d909ddfa7b1be3552597f2)
+        marker_e545141d9ef0b49bdd12589f1c26b519.bindPopup(popup_b3e19e8d3e3a8ad6e9137e0e24dc485c)
         ;
 
         
     
     
-                marker_29830c4b140a9fba405e4ff6b951655a.setIcon(icon_f81766d35ac7383cdb190f177d8b9f61);
+                marker_e545141d9ef0b49bdd12589f1c26b519.setIcon(icon_b3e259c3b815373121dc89cb47b1a302);
             
     
-            var marker_6c163bc92c6f316d7f774b24da035145 = L.marker(
+            var marker_88b50f3ddecb71dd5df6e144736e5d62 = L.marker(
                 [48.82718305268761, 2.380757312893146],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_8bd956992dd3e29ba9938395bcd8ada3 = L.AwesomeMarkers.icon(
+            var icon_30d95af4e86ae1d729180c7bcf92fc85 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1370,34 +1385,34 @@
             );
         
     
-        var popup_eab237f08973bd95531d15591aa8e00d = L.popup({
+        var popup_c631a72b31f40c3786debe58fdbaff79 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_20058cf07ba138b6a977117787391490 = $(`<div id="html_20058cf07ba138b6a977117787391490" style="width: 100.0%; height: 100.0%;"><div>Leonard SÁNCHEZ<br>Professeur/chercheur<br>LDAR, France.</div></div>`)[0];
-                popup_eab237f08973bd95531d15591aa8e00d.setContent(html_20058cf07ba138b6a977117787391490);
+                var html_427fb69f6ed5874a4041099adca177a1 = $(`<div id="html_427fb69f6ed5874a4041099adca177a1" style="width: 100.0%; height: 100.0%;"><div>Leonard SÁNCHEZ<br>Professeur/chercheur<br>LDAR, France.</div></div>`)[0];
+                popup_c631a72b31f40c3786debe58fdbaff79.setContent(html_427fb69f6ed5874a4041099adca177a1);
             
         
 
-        marker_6c163bc92c6f316d7f774b24da035145.bindPopup(popup_eab237f08973bd95531d15591aa8e00d)
+        marker_88b50f3ddecb71dd5df6e144736e5d62.bindPopup(popup_c631a72b31f40c3786debe58fdbaff79)
         ;
 
         
     
     
-                marker_6c163bc92c6f316d7f774b24da035145.setIcon(icon_8bd956992dd3e29ba9938395bcd8ada3);
+                marker_88b50f3ddecb71dd5df6e144736e5d62.setIcon(icon_30d95af4e86ae1d729180c7bcf92fc85);
             
     
-            var marker_2d50fdae509094c2481e3996a5a35c44 = L.marker(
+            var marker_8b44f6ed214550470af5cc38dc9767d3 = L.marker(
                 [48.82718305268761, 2.380757312893146],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_b7c201e369e80e5b0ce9820d60f53b2d = L.AwesomeMarkers.icon(
+            var icon_bc8c89247b70bd96bf2e8ebf94484a61 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -1408,34 +1423,34 @@
             );
         
     
-        var popup_7618f018dcf8058cc85553d5a39d723d = L.popup({
+        var popup_21accf102703afd8faf6751ade823c44 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_26cf534e3d997db57350b63c1087221a = $(`<div id="html_26cf534e3d997db57350b63c1087221a" style="width: 100.0%; height: 100.0%;"><div>Norma SEGURA-CORELLA<br>Étudiant(e) en doctorat<br>LDAR, France, Université Paris Cité, France.</div></div>`)[0];
-                popup_7618f018dcf8058cc85553d5a39d723d.setContent(html_26cf534e3d997db57350b63c1087221a);
+                var html_e79b3555633e51aea58c03a97f8f787a = $(`<div id="html_e79b3555633e51aea58c03a97f8f787a" style="width: 100.0%; height: 100.0%;"><div>Norma SEGURA-CORELLA<br>Étudiant(e) en doctorat<br>Universidad de Costa Rica, Costa Rica; LDAR, France, Université Paris Cité, France.</div></div>`)[0];
+                popup_21accf102703afd8faf6751ade823c44.setContent(html_e79b3555633e51aea58c03a97f8f787a);
             
         
 
-        marker_2d50fdae509094c2481e3996a5a35c44.bindPopup(popup_7618f018dcf8058cc85553d5a39d723d)
+        marker_8b44f6ed214550470af5cc38dc9767d3.bindPopup(popup_21accf102703afd8faf6751ade823c44)
         ;
 
         
     
     
-                marker_2d50fdae509094c2481e3996a5a35c44.setIcon(icon_b7c201e369e80e5b0ce9820d60f53b2d);
+                marker_8b44f6ed214550470af5cc38dc9767d3.setIcon(icon_bc8c89247b70bd96bf2e8ebf94484a61);
             
     
-            var marker_437a42701a7c0cb4fef842533bd995bf = L.marker(
+            var marker_35ae93d4f9744119cbfff93b8995887c = L.marker(
                 [-12.070633255697942, -77.081424990816],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_28cdbc3a669e5c1876bba28431ed8a62 = L.AwesomeMarkers.icon(
+            var icon_5a33849dbff80b7afaae2b92432d3848 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1446,34 +1461,34 @@
             );
         
     
-        var popup_4db6a5f04f4ebac897bfc8b8a2301627 = L.popup({
+        var popup_7b39ec5e3cd6600981e369687c979465 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_ad01afe8fcdbcecaf32c4103ec80ad39 = $(`<div id="html_ad01afe8fcdbcecaf32c4103ec80ad39" style="width: 100.0%; height: 100.0%;"><div>Pedro TASAYCO CASAS<br>Professeur/chercheur<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
-                popup_4db6a5f04f4ebac897bfc8b8a2301627.setContent(html_ad01afe8fcdbcecaf32c4103ec80ad39);
+                var html_43e74616c8d3f5a51e2a805f9fc64388 = $(`<div id="html_43e74616c8d3f5a51e2a805f9fc64388" style="width: 100.0%; height: 100.0%;"><div>Pedro TASAYCO CASAS<br>Professeur/chercheur<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
+                popup_7b39ec5e3cd6600981e369687c979465.setContent(html_43e74616c8d3f5a51e2a805f9fc64388);
             
         
 
-        marker_437a42701a7c0cb4fef842533bd995bf.bindPopup(popup_4db6a5f04f4ebac897bfc8b8a2301627)
+        marker_35ae93d4f9744119cbfff93b8995887c.bindPopup(popup_7b39ec5e3cd6600981e369687c979465)
         ;
 
         
     
     
-                marker_437a42701a7c0cb4fef842533bd995bf.setIcon(icon_28cdbc3a669e5c1876bba28431ed8a62);
+                marker_35ae93d4f9744119cbfff93b8995887c.setIcon(icon_5a33849dbff80b7afaae2b92432d3848);
             
     
-            var marker_b92724b0d408b747ff2abc270c57f31f = L.marker(
+            var marker_090b8f75f62d03a3770ff488e3c4c995 = L.marker(
                 [-12.070633255697942, -77.0814249908158],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_73e227f3668c316514a12bded8865697 = L.AwesomeMarkers.icon(
+            var icon_58a0beaf70fe53d22e9e256756991db0 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1484,34 +1499,34 @@
             );
         
     
-        var popup_5454922607a39510986ef450c63ba29e = L.popup({
+        var popup_06909f8d52238dfc9fa625a00c845bb5 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_622cf7593ca48e66236f42cfa2090979 = $(`<div id="html_622cf7593ca48e66236f42cfa2090979" style="width: 100.0%; height: 100.0%;"><div>Morella THÉRY ROMERO<br>Professeure/chercheuse<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
-                popup_5454922607a39510986ef450c63ba29e.setContent(html_622cf7593ca48e66236f42cfa2090979);
+                var html_ddb057f8e463f1d37f4e19fb2f8fbfd8 = $(`<div id="html_ddb057f8e463f1d37f4e19fb2f8fbfd8" style="width: 100.0%; height: 100.0%;"><div>Morella THÉRY ROMERO<br>Professeure/chercheuse<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
+                popup_06909f8d52238dfc9fa625a00c845bb5.setContent(html_ddb057f8e463f1d37f4e19fb2f8fbfd8);
             
         
 
-        marker_b92724b0d408b747ff2abc270c57f31f.bindPopup(popup_5454922607a39510986ef450c63ba29e)
+        marker_090b8f75f62d03a3770ff488e3c4c995.bindPopup(popup_06909f8d52238dfc9fa625a00c845bb5)
         ;
 
         
     
     
-                marker_b92724b0d408b747ff2abc270c57f31f.setIcon(icon_73e227f3668c316514a12bded8865697);
+                marker_090b8f75f62d03a3770ff488e3c4c995.setIcon(icon_58a0beaf70fe53d22e9e256756991db0);
             
     
-            var marker_bc05cf7ef06254465e76ef4b73059a08 = L.marker(
+            var marker_f544bc47a9b5a9cc723dab174b18c0af = L.marker(
                 [-12.070633255697942, -77.0814249908154],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_ce149d729f855092299e105c88b31dec = L.AwesomeMarkers.icon(
+            var icon_bd218f129b1cab1dbce19a7c90553d69 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -1522,34 +1537,34 @@
             );
         
     
-        var popup_9c6edabcb230aa2e7721f70a6346b6a8 = L.popup({
+        var popup_836640fcb420ac86a678e9c02770ce8d = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_8bee50f92a61e15f2ebcebe232795ef3 = $(`<div id="html_8bee50f92a61e15f2ebcebe232795ef3" style="width: 100.0%; height: 100.0%;"><div>Marco TICSE AUCAHUASI<br>Étudiant(e) en doctorat<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
-                popup_9c6edabcb230aa2e7721f70a6346b6a8.setContent(html_8bee50f92a61e15f2ebcebe232795ef3);
+                var html_54f59ca15ba62ea1df597fd350597f99 = $(`<div id="html_54f59ca15ba62ea1df597fd350597f99" style="width: 100.0%; height: 100.0%;"><div>Marco TICSE AUCAHUASI<br>Étudiant(e) en doctorat<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
+                popup_836640fcb420ac86a678e9c02770ce8d.setContent(html_54f59ca15ba62ea1df597fd350597f99);
             
         
 
-        marker_bc05cf7ef06254465e76ef4b73059a08.bindPopup(popup_9c6edabcb230aa2e7721f70a6346b6a8)
+        marker_f544bc47a9b5a9cc723dab174b18c0af.bindPopup(popup_836640fcb420ac86a678e9c02770ce8d)
         ;
 
         
     
     
-                marker_bc05cf7ef06254465e76ef4b73059a08.setIcon(icon_ce149d729f855092299e105c88b31dec);
+                marker_f544bc47a9b5a9cc723dab174b18c0af.setIcon(icon_bd218f129b1cab1dbce19a7c90553d69);
             
     
-            var marker_ef62f6e31871aecd0f7a5f603b78c327 = L.marker(
+            var marker_5ca9eb20e14194c19814022f351eb230 = L.marker(
                 [48.82718305268761, 2.380757312893146],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_57a64d1ba2691c978da02e1820bda8cf = L.AwesomeMarkers.icon(
+            var icon_6d4b36b39c06bf66ee858993b4decddf = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1560,34 +1575,34 @@
             );
         
     
-        var popup_9078eef9bf6c90817490147919364123 = L.popup({
+        var popup_6598c39c2e2fef06395a88d036775fd0 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_77853771f25ba22c282f6d3d5cdaece3 = $(`<div id="html_77853771f25ba22c282f6d3d5cdaece3" style="width: 100.0%; height: 100.0%;"><div>Jannick TRUNKENWALD<br>Professeur/chercheur<br>LDAR, France.</div></div>`)[0];
-                popup_9078eef9bf6c90817490147919364123.setContent(html_77853771f25ba22c282f6d3d5cdaece3);
+                var html_85f2f3f574f2e77014fe8750f8b36d25 = $(`<div id="html_85f2f3f574f2e77014fe8750f8b36d25" style="width: 100.0%; height: 100.0%;"><div>Jannick TRUNKENWALD<br>Professeur/chercheur<br>LDAR, France.</div></div>`)[0];
+                popup_6598c39c2e2fef06395a88d036775fd0.setContent(html_85f2f3f574f2e77014fe8750f8b36d25);
             
         
 
-        marker_ef62f6e31871aecd0f7a5f603b78c327.bindPopup(popup_9078eef9bf6c90817490147919364123)
+        marker_5ca9eb20e14194c19814022f351eb230.bindPopup(popup_6598c39c2e2fef06395a88d036775fd0)
         ;
 
         
     
     
-                marker_ef62f6e31871aecd0f7a5f603b78c327.setIcon(icon_57a64d1ba2691c978da02e1820bda8cf);
+                marker_5ca9eb20e14194c19814022f351eb230.setIcon(icon_6d4b36b39c06bf66ee858993b4decddf);
             
     
-            var marker_53baf958fb00313e9d78eea3602b4d2a = L.marker(
+            var marker_b386cd9ccbcc1232130ff1226a39ecb2 = L.marker(
                 [48.82718305268761, 2.380757312893146],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_c00352a4aaf5a1a62866788e7349ff54 = L.AwesomeMarkers.icon(
+            var icon_5a0a4cd9b272ae2eb62ce21fb8e5e2d8 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1598,34 +1613,34 @@
             );
         
     
-        var popup_56b5b68cb525d5636349adbb98f5910a = L.popup({
+        var popup_3bdab6a66c700c386b9bfaeff55884ca = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_4e42afda6bc0d46da40b0765ed7785f4 = $(`<div id="html_4e42afda6bc0d46da40b0765ed7785f4" style="width: 100.0%; height: 100.0%;"><div>Fabrice VANDEBROUCK<br>Professeur/chercheur<br>LDAR, France, Université Paris Cité, France.</div></div>`)[0];
-                popup_56b5b68cb525d5636349adbb98f5910a.setContent(html_4e42afda6bc0d46da40b0765ed7785f4);
+                var html_e7e793f800176586f0e7b99bb0a9cfbf = $(`<div id="html_e7e793f800176586f0e7b99bb0a9cfbf" style="width: 100.0%; height: 100.0%;"><div>Fabrice VANDEBROUCK<br>Professeur/chercheur<br>LDAR, France, Université Paris Cité, France.</div></div>`)[0];
+                popup_3bdab6a66c700c386b9bfaeff55884ca.setContent(html_e7e793f800176586f0e7b99bb0a9cfbf);
             
         
 
-        marker_53baf958fb00313e9d78eea3602b4d2a.bindPopup(popup_56b5b68cb525d5636349adbb98f5910a)
+        marker_b386cd9ccbcc1232130ff1226a39ecb2.bindPopup(popup_3bdab6a66c700c386b9bfaeff55884ca)
         ;
 
         
     
     
-                marker_53baf958fb00313e9d78eea3602b4d2a.setIcon(icon_c00352a4aaf5a1a62866788e7349ff54);
+                marker_b386cd9ccbcc1232130ff1226a39ecb2.setIcon(icon_5a0a4cd9b272ae2eb62ce21fb8e5e2d8);
             
     
-            var marker_d1cdcbbb410429b594af66583f803308 = L.marker(
+            var marker_5298c9e6766a181e8108f92a8feacbb7 = L.marker(
                 [45.51356835648423, -73.56034815412497],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_d1d63f819323f7b29fc90774be037360 = L.AwesomeMarkers.icon(
+            var icon_1007d782e0d3aeb1aa8ed33b76bb2c9e = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1636,34 +1651,34 @@
             );
         
     
-        var popup_8825c27b484ff6e5188c55c2bc9917b0 = L.popup({
+        var popup_b955351cc2b276f679d1b2e998844c18 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_190ee741717a9cf6f10894bf57dbd844 = $(`<div id="html_190ee741717a9cf6f10894bf57dbd844" style="width: 100.0%; height: 100.0%;"><div><a href="https://professeurs.uqam.ca/professeur/venant.fabienne/" target="_blank">Fabienne VENANT</a><br>Professeure/chercheuse<br>Université du Québec à Montréal, Canada.</div></div>`)[0];
-                popup_8825c27b484ff6e5188c55c2bc9917b0.setContent(html_190ee741717a9cf6f10894bf57dbd844);
+                var html_7a8e94716024aace1946b2dfe4a9b9e6 = $(`<div id="html_7a8e94716024aace1946b2dfe4a9b9e6" style="width: 100.0%; height: 100.0%;"><div><a href="https://professeurs.uqam.ca/professeur/venant.fabienne/" target="_blank">Fabienne VENANT</a><br>Professeure/chercheuse<br>Université du Québec à Montréal, Canada.</div></div>`)[0];
+                popup_b955351cc2b276f679d1b2e998844c18.setContent(html_7a8e94716024aace1946b2dfe4a9b9e6);
             
         
 
-        marker_d1cdcbbb410429b594af66583f803308.bindPopup(popup_8825c27b484ff6e5188c55c2bc9917b0)
+        marker_5298c9e6766a181e8108f92a8feacbb7.bindPopup(popup_b955351cc2b276f679d1b2e998844c18)
         ;
 
         
     
     
-                marker_d1cdcbbb410429b594af66583f803308.setIcon(icon_d1d63f819323f7b29fc90774be037360);
+                marker_5298c9e6766a181e8108f92a8feacbb7.setIcon(icon_1007d782e0d3aeb1aa8ed33b76bb2c9e);
             
     
-            var marker_f18cb8daf546b0d32b9539c913cb3ebc = L.marker(
+            var marker_6b2b5ab19161604ffcdd2b9debe9b265 = L.marker(
                 [-35.848155301157156, -71.57941758343563],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_75fac2008485b8dc1b4098f5f7843b5c = L.AwesomeMarkers.icon(
+            var icon_0dce785988fb73c25e8e50bab7465ddd = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1674,34 +1689,34 @@
             );
         
     
-        var popup_38e809009886e36f3f437ff8d4b9048f = L.popup({
+        var popup_d99da706541fbedc72f0ca92fba10362 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_c2124dbc1168d60f346b871da7d88a75 = $(`<div id="html_c2124dbc1168d60f346b871da7d88a75" style="width: 100.0%; height: 100.0%;"><div>Paula VERDUGO-HERNÁNDEZ<br>Professeure/chercheuse<br>Universidad de Talca, Chile.</div></div>`)[0];
-                popup_38e809009886e36f3f437ff8d4b9048f.setContent(html_c2124dbc1168d60f346b871da7d88a75);
+                var html_913dd67f7adb58f1263a092d3329d750 = $(`<div id="html_913dd67f7adb58f1263a092d3329d750" style="width: 100.0%; height: 100.0%;"><div>Paula VERDUGO-HERNÁNDEZ<br>Professeure/chercheuse<br>Universidad de Talca, Chile.</div></div>`)[0];
+                popup_d99da706541fbedc72f0ca92fba10362.setContent(html_913dd67f7adb58f1263a092d3329d750);
             
         
 
-        marker_f18cb8daf546b0d32b9539c913cb3ebc.bindPopup(popup_38e809009886e36f3f437ff8d4b9048f)
+        marker_6b2b5ab19161604ffcdd2b9debe9b265.bindPopup(popup_d99da706541fbedc72f0ca92fba10362)
         ;
 
         
     
     
-                marker_f18cb8daf546b0d32b9539c913cb3ebc.setIcon(icon_75fac2008485b8dc1b4098f5f7843b5c);
+                marker_6b2b5ab19161604ffcdd2b9debe9b265.setIcon(icon_0dce785988fb73c25e8e50bab7465ddd);
             
     
-            var marker_4d09f90b2ddb1869c815d21ff71050d7 = L.marker(
+            var marker_13744fcec43f087b91f1b05463dc626b = L.marker(
                 [-33.39119308479517, -70.50080776591993],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_9874f84a4df07e1a17ad2731d63f049e = L.AwesomeMarkers.icon(
+            var icon_139fa3e1e219a11cb305cd5b1d028022 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1712,34 +1727,34 @@
             );
         
     
-        var popup_8b58e7237e308896a0f6c994f81a1976 = L.popup({
+        var popup_fb167c6347cd8e3a7635cc9fb52d6e95 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_80bbf8bf64433446169f1bf28437d275 = $(`<div id="html_80bbf8bf64433446169f1bf28437d275" style="width: 100.0%; height: 100.0%;"><div><a href="https://educacion.udd.cl/persona/pedro-vidal-szabo-2/#!/page=1" target="_blank">Pedro VIDAL-SZABÓ</a><br>Professeur/chercheur<br>Universidad del Desarrollo, Chile.</div></div>`)[0];
-                popup_8b58e7237e308896a0f6c994f81a1976.setContent(html_80bbf8bf64433446169f1bf28437d275);
+                var html_bafa11640dbecebf993f2c649302a297 = $(`<div id="html_bafa11640dbecebf993f2c649302a297" style="width: 100.0%; height: 100.0%;"><div><a href="https://educacion.udd.cl/persona/pedro-vidal-szabo-2/#!/page=1" target="_blank">Pedro VIDAL-SZABÓ</a><br>Professeur/chercheur<br>Universidad del Desarrollo, Chile.</div></div>`)[0];
+                popup_fb167c6347cd8e3a7635cc9fb52d6e95.setContent(html_bafa11640dbecebf993f2c649302a297);
             
         
 
-        marker_4d09f90b2ddb1869c815d21ff71050d7.bindPopup(popup_8b58e7237e308896a0f6c994f81a1976)
+        marker_13744fcec43f087b91f1b05463dc626b.bindPopup(popup_fb167c6347cd8e3a7635cc9fb52d6e95)
         ;
 
         
     
     
-                marker_4d09f90b2ddb1869c815d21ff71050d7.setIcon(icon_9874f84a4df07e1a17ad2731d63f049e);
+                marker_13744fcec43f087b91f1b05463dc626b.setIcon(icon_139fa3e1e219a11cb305cd5b1d028022);
             
     
-            var marker_ebcf5380550ef99784f102b96f7e8891 = L.marker(
+            var marker_d7d7f3d17c2bdb57bf902ac89a06840d = L.marker(
                 [-12.070633255697942, -77.0814249908156],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_a560818724d113d3b80575ea7d1cc268 = L.AwesomeMarkers.icon(
+            var icon_6f323621a577a92b4d68201b739903ad = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1750,34 +1765,34 @@
             );
         
     
-        var popup_716288e0fc010617b4152965a2223e34 = L.popup({
+        var popup_5f33eb8bea16745d5767eb15fb0d4047 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_15c2600a054ed8026ed73302943eeca3 = $(`<div id="html_15c2600a054ed8026ed73302943eeca3" style="width: 100.0%; height: 100.0%;"><div><a href="http://fresno.ulima.edu.pe/bu_dbdirexp01.nsf/planadocenteweb/JVIVAS" target="_blank">Jorge VIVAS PACHAS</a><br>Professeur/chercheur<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
-                popup_716288e0fc010617b4152965a2223e34.setContent(html_15c2600a054ed8026ed73302943eeca3);
+                var html_c1c0c9e81ffb582f613bbd5c5edd58cd = $(`<div id="html_c1c0c9e81ffb582f613bbd5c5edd58cd" style="width: 100.0%; height: 100.0%;"><div><a href="http://fresno.ulima.edu.pe/bu_dbdirexp01.nsf/planadocenteweb/JVIVAS" target="_blank">Jorge VIVAS PACHAS</a><br>Professeur/chercheur<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
+                popup_5f33eb8bea16745d5767eb15fb0d4047.setContent(html_c1c0c9e81ffb582f613bbd5c5edd58cd);
             
         
 
-        marker_ebcf5380550ef99784f102b96f7e8891.bindPopup(popup_716288e0fc010617b4152965a2223e34)
+        marker_d7d7f3d17c2bdb57bf902ac89a06840d.bindPopup(popup_5f33eb8bea16745d5767eb15fb0d4047)
         ;
 
         
     
     
-                marker_ebcf5380550ef99784f102b96f7e8891.setIcon(icon_a560818724d113d3b80575ea7d1cc268);
+                marker_d7d7f3d17c2bdb57bf902ac89a06840d.setIcon(icon_6f323621a577a92b4d68201b739903ad);
             
     
-            var marker_dc0401ebf92605c0e881e3c9a77cc1c5 = L.marker(
+            var marker_6014e97b8a0d23fd88230988963beab4 = L.marker(
                 [48.82718305268761, 2.380757312893146],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_237caf1eb6b3cc5143c7c07a29edd47f = L.AwesomeMarkers.icon(
+            var icon_2fb9f4cb0a260d910549fef9d3d7ad23 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1788,34 +1803,34 @@
             );
         
     
-        var popup_660e3830f35d36cb1a97e0b444214de2 = L.popup({
+        var popup_f11a7fc953ab5a77978b9709eea0e8a6 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_ba0d9862bbb464c97804c54576c6857b = $(`<div id="html_ba0d9862bbb464c97804c54576c6857b" style="width: 100.0%; height: 100.0%;"><div><a href="https://cv.hal.science/laurent-vivier" target="_blank">Laurent VIVIER</a><br>Professeur/chercheur<br>LDAR, France, Université Paris Cité, France.</div></div>`)[0];
-                popup_660e3830f35d36cb1a97e0b444214de2.setContent(html_ba0d9862bbb464c97804c54576c6857b);
+                var html_8346a1243071f6ae9c93365c9ef93434 = $(`<div id="html_8346a1243071f6ae9c93365c9ef93434" style="width: 100.0%; height: 100.0%;"><div><a href="https://cv.hal.science/laurent-vivier" target="_blank">Laurent VIVIER</a><br>Professeur/chercheur<br>LDAR, France, Université Paris Cité, France.</div></div>`)[0];
+                popup_f11a7fc953ab5a77978b9709eea0e8a6.setContent(html_8346a1243071f6ae9c93365c9ef93434);
             
         
 
-        marker_dc0401ebf92605c0e881e3c9a77cc1c5.bindPopup(popup_660e3830f35d36cb1a97e0b444214de2)
+        marker_6014e97b8a0d23fd88230988963beab4.bindPopup(popup_f11a7fc953ab5a77978b9709eea0e8a6)
         ;
 
         
     
     
-                marker_dc0401ebf92605c0e881e3c9a77cc1c5.setIcon(icon_237caf1eb6b3cc5143c7c07a29edd47f);
+                marker_6014e97b8a0d23fd88230988963beab4.setIcon(icon_2fb9f4cb0a260d910549fef9d3d7ad23);
             
     
-            var marker_a27532ecf7e80764a9138c815a2738e4 = L.marker(
+            var marker_2c5d32475312898ef33f35b307db5f42 = L.marker(
                 [-12.070633255697942, -77.0814249908157],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_642dc7f6466114116672d0525b4e8206 = L.AwesomeMarkers.icon(
+            var icon_1537fa71c9082d846e8b5ab8f3c1beea = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1826,34 +1841,34 @@
             );
         
     
-        var popup_6b2b9c691b2c65f7ee9b2b00e5d658a8 = L.popup({
+        var popup_f433f2fc5c810beeda1163d04b4946b1 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_f9e8534fed4f88180dcfe5cec112f4e6 = $(`<div id="html_f9e8534fed4f88180dcfe5cec112f4e6" style="width: 100.0%; height: 100.0%;"><div>Juan VIZA FERNANDEZ<br>Professeur/chercheur<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
-                popup_6b2b9c691b2c65f7ee9b2b00e5d658a8.setContent(html_f9e8534fed4f88180dcfe5cec112f4e6);
+                var html_6a2ec0af9770d6f9270606c881f11872 = $(`<div id="html_6a2ec0af9770d6f9270606c881f11872" style="width: 100.0%; height: 100.0%;"><div>Juan VIZA FERNANDEZ<br>Professeur/chercheur<br>Pontificia Universidad Católica del Perú, Perú.</div></div>`)[0];
+                popup_f433f2fc5c810beeda1163d04b4946b1.setContent(html_6a2ec0af9770d6f9270606c881f11872);
             
         
 
-        marker_a27532ecf7e80764a9138c815a2738e4.bindPopup(popup_6b2b9c691b2c65f7ee9b2b00e5d658a8)
+        marker_2c5d32475312898ef33f35b307db5f42.bindPopup(popup_f433f2fc5c810beeda1163d04b4946b1)
         ;
 
         
     
     
-                marker_a27532ecf7e80764a9138c815a2738e4.setIcon(icon_642dc7f6466114116672d0525b4e8206);
+                marker_2c5d32475312898ef33f35b307db5f42.setIcon(icon_1537fa71c9082d846e8b5ab8f3c1beea);
             
     
-            var marker_9416a05a3df874ea97e646b4ab45a3e1 = L.marker(
+            var marker_87eb349698d3f7e4a95c993af9900f85 = L.marker(
                 [39.54173500501591, 28.00826192883577],
                 {
 }
-            ).addTo(marker_cluster_3da2d09cdae9a9a218b4a82005c44e59);
+            ).addTo(marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd);
         
     
-            var icon_d4c4769bc30c578a3a756d65d3ddae31 = L.AwesomeMarkers.icon(
+            var icon_c3a8558324c426bf1c1272a6e5e77dd0 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -1864,27 +1879,27 @@
             );
         
     
-        var popup_f1f2922605fcf1feff8bcdc98aef7f81 = L.popup({
+        var popup_a191db598b435d830399a4cb85155083 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_b48ed98515ef1a537c519c79a457ad5c = $(`<div id="html_b48ed98515ef1a537c519c79a457ad5c" style="width: 100.0%; height: 100.0%;"><div>Ozan Deniz KIYICI<br>Étudiant(e) en doctorat<br>Balıkesir University, Türkiye.</div></div>`)[0];
-                popup_f1f2922605fcf1feff8bcdc98aef7f81.setContent(html_b48ed98515ef1a537c519c79a457ad5c);
+                var html_16e88801082a9e5833d2a18ba06c9833 = $(`<div id="html_16e88801082a9e5833d2a18ba06c9833" style="width: 100.0%; height: 100.0%;"><div>Ozan Deniz KIYICI<br>Étudiant(e) en doctorat<br>Balıkesir University, Türkiye.</div></div>`)[0];
+                popup_a191db598b435d830399a4cb85155083.setContent(html_16e88801082a9e5833d2a18ba06c9833);
             
         
 
-        marker_9416a05a3df874ea97e646b4ab45a3e1.bindPopup(popup_f1f2922605fcf1feff8bcdc98aef7f81)
+        marker_87eb349698d3f7e4a95c993af9900f85.bindPopup(popup_a191db598b435d830399a4cb85155083)
         ;
 
         
     
     
-                marker_9416a05a3df874ea97e646b4ab45a3e1.setIcon(icon_d4c4769bc30c578a3a756d65d3ddae31);
+                marker_87eb349698d3f7e4a95c993af9900f85.setIcon(icon_c3a8558324c426bf1c1272a6e5e77dd0);
             
     
-            marker_cluster_3da2d09cdae9a9a218b4a82005c44e59.addTo(map_5b59974898a4ca1105214c6fbe4e97a7);
+            marker_cluster_e2c4dcbfbb2c19426c2f1df4d92acdbd.addTo(map_0a9a15764098b1bea091ae3084d7b302);
         
 </script>
 </html>
