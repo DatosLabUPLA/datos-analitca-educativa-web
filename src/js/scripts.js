@@ -182,7 +182,12 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     }
 
-    if (window.location.pathname == '/proyecto.html') {
+    // Detectar si estamos en la página de proyecto
+    // Puede ser /proyecto.html o /proyecto/slug
+    const isProjectPage = window.location.pathname === '/proyecto.html' || 
+                         window.location.pathname.startsWith('/proyecto/');
+
+    if (isProjectPage) {
         // Muestra el spinner
         document.getElementById('loader-titulo').style.display = 'block';
         document.getElementById('loader-html').style.display = 'block';
@@ -192,17 +197,22 @@ window.addEventListener('DOMContentLoaded', event => {
         let id = urlParams.get('id');
         let slug = urlParams.get('slug');
 
+        // Si la URL es /proyecto/slug (sin query params), extraer el slug del pathname
+        if (!slug && window.location.pathname.startsWith('/proyecto/')) {
+            const pathParts = window.location.pathname.split('/');
+            // pathParts = ['', 'proyecto', 'slug']
+            if (pathParts.length >= 3 && pathParts[2]) {
+                slug = pathParts[2];
+                console.log('Slug extraído del pathname:', slug);
+            }
+        }
+
         // Verificar si viene de una redirección 404 (ruta amigable)
         const sessionSlug = sessionStorage.getItem('projectSlug');
-        if (sessionSlug) {
+        if (sessionSlug && !slug) {
             slug = sessionSlug;
             sessionStorage.removeItem('projectSlug');
-            
-            // Actualizar la URL en el navegador sin recargar la página
-            // Esto hace que la URL se vea limpia: /proyecto/slug
-            if (window.history && window.history.replaceState) {
-                window.history.replaceState({}, '', '/proyecto/' + slug);
-            }
+            console.log('Slug extraído de sessionStorage:', slug);
         }
 
         // Determinar qué endpoint usar
