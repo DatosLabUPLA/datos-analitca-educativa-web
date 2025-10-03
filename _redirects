@@ -1,0 +1,5 @@
+# Cloudflare Pages Redirects
+# https://developers.cloudflare.com/pages/platform/redirects/
+
+# Rewrite (no redirect) de rutas de proyecto a proyecto.html preservando el slug como query param
+/proyecto/:slug  /proyecto.html?slug=:slug  200
