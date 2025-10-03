@@ -125,12 +125,22 @@ window.addEventListener('DOMContentLoaded', event => {
                     var img = `assets/img/portfolio/placeholder.jpg`;
                 }
 
+                // URL del proyecto: priorizar slug sobre id
+                // Formato: /proyecto/slug (sin .html, sin query params)
+                let projectUrl;
+                if (item.slug && item.slug.trim() !== '') {
+                    projectUrl = `/proyecto/${item.slug}`;
+                } else {
+                    // Fallback para proyectos sin slug
+                    projectUrl = `/proyecto.html?id=${item.id}`;
+                }
+
 
                 // Aquí, crea el HTML según los datos recibidos de la API
                 html_project += `
                     <!-- Project ${item.proyecto} -->
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="/proyecto.html?id=${item.id}" target="_self" title="${item.proyecto}">
+                        <a class="portfolio-box" href="${projectUrl}" target="_self" title="${item.proyecto}">
                             <img class="img-fluid project-img" src="${img}" alt="${item.proyecto}">
                             <div class="portfolio-box-caption-alt">
                                 <div class="project-name">
@@ -177,12 +187,39 @@ window.addEventListener('DOMContentLoaded', event => {
         document.getElementById('loader-titulo').style.display = 'block';
         document.getElementById('loader-html').style.display = 'block';
 
-
         // Get the url parameters
         const urlParams = new URLSearchParams(window.location.search);
-        const id = urlParams.get('id');
+        let id = urlParams.get('id');
+        let slug = urlParams.get('slug');
 
-        const projectsUrlId = baseUrl + '/projects/' + id;
+        // Verificar si viene de una redirección 404 (ruta amigable)
+        const sessionSlug = sessionStorage.getItem('projectSlug');
+        if (sessionSlug) {
+            slug = sessionSlug;
+            sessionStorage.removeItem('projectSlug');
+            
+            // Actualizar la URL en el navegador sin recargar la página
+            // Esto hace que la URL se vea limpia: /proyecto/slug
+            if (window.history && window.history.replaceState) {
+                window.history.replaceState({}, '', '/proyecto/' + slug);
+            }
+        }
+
+        // Determinar qué endpoint usar
+        let projectsUrlId;
+        if (slug) {
+            // Si hay un slug, usar el endpoint de slug
+            projectsUrlId = baseUrl + '/projects/slug/' + slug;
+        } else if (id) {
+            // Si hay un id, usar el endpoint de id
+            projectsUrlId = baseUrl + '/projects/' + id;
+        } else {
+            // Si no hay ni id ni slug, mostrar error
+            console.error('No se proporcionó ni id ni slug en la URL');
+            document.getElementById('loader-titulo').style.display = 'none';
+            document.getElementById('loader-html').style.display = 'none';
+            return;
+        }
 
         // Procesa Proyectos
         fetch(projectsUrlId)

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Redireccionando...</title>
+    <script>
+        // Single Page Apps para GitHub Pages
+        // MIT License
+        // https://github.com/rafgraph/spa-github-pages
+        
+        // Este script toma la ruta actual y la convierte en un query parameter
+        // que puede ser leído por el JavaScript principal
+        
+        (function() {
+            var redirect = sessionStorage.redirect;
+            delete sessionStorage.redirect;
+            
+            if (redirect && redirect !== location.href) {
+                // Si hay una redirección guardada, navegar a ella
+                history.replaceState(null, null, redirect);
+            } else {
+                // Capturar la ruta actual
+                var path = location.pathname;
+                
+                // Verificar si es una ruta de proyecto: /proyecto/slug
+                var projectMatch = path.match(/^\/proyecto\/([^\/]+)\/?$/);
+                
+                if (projectMatch) {
+                    var slug = projectMatch[1];
+                    // Redirigir a proyecto.html con el slug en el hash
+                    // Usamos hash para que GitHub Pages no haga otra redirección
+                    sessionStorage.setItem('projectSlug', slug);
+                    window.location.replace('/proyecto.html');
+                } else {
+                    // Si no es una ruta de proyecto, ir a la página principal
+                    window.location.replace('/');
+                }
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h2>Redireccionando...</h2>
+        <p>Si no eres redirigido automáticamente, <a href="/">haz clic aquí</a>.</p>
+    </div>
+</body>
+</html>
