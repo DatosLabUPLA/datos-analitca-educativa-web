@@ -2,6 +2,73 @@
 // Scripts
 // 
 
+// Función para inyectar estilos de Bootstrap en iframes del mismo dominio
+function injectBootstrapIntoIframes() {
+    const iframes = document.querySelectorAll('iframe');
+    console.log(`🎨 Intentando inyectar Bootstrap en ${iframes.length} iframe(s)`);
+    
+    iframes.forEach((iframe, index) => {
+        try {
+            // Esperar a que el iframe esté completamente cargado
+            iframe.onload = function() {
+                try {
+                    // Intentar acceder al documento del iframe (solo funciona si es el mismo dominio)
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    
+                    if (!iframeDoc) {
+                        console.warn(`⚠️ No se pudo acceder al documento del iframe ${index + 1} (posiblemente dominio diferente)`);
+                        return;
+                    }
+                    
+                    // Verificar si Bootstrap ya está cargado
+                    const existingBootstrap = iframeDoc.querySelector('link[href*="bootstrap"]');
+                    if (existingBootstrap) {
+                        console.log(`✅ Bootstrap ya está en el iframe ${index + 1}`);
+                        return;
+                    }
+                    
+                    // Crear y agregar el link de Bootstrap CSS
+                    const link = iframeDoc.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css';
+                    link.integrity = 'sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65';
+                    link.crossOrigin = 'anonymous';
+                    
+                    // Agregar al head del iframe
+                    if (iframeDoc.head) {
+                        iframeDoc.head.appendChild(link);
+                        console.log(`✅ Bootstrap inyectado exitosamente en iframe ${index + 1}`);
+                    }
+                    
+                    // También agregar estilos personalizados para mejorar la visualización
+                    const style = iframeDoc.createElement('style');
+                    style.textContent = `
+                        body {
+                            font-family: 'Merriweather', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+                            padding: 1rem;
+                        }
+                    `;
+                    if (iframeDoc.head) {
+                        iframeDoc.head.appendChild(style);
+                    }
+                    
+                } catch (error) {
+                    console.warn(`⚠️ No se pudo inyectar estilos en iframe ${index + 1}:`, error.message);
+                    console.info('ℹ️ Esto es normal si el iframe carga contenido de un dominio diferente (CORS)');
+                }
+            };
+            
+            // Si el iframe ya está cargado, disparar onload manualmente
+            if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
+                iframe.onload();
+            }
+            
+        } catch (error) {
+            console.warn(`⚠️ Error al procesar iframe ${index + 1}:`, error.message);
+        }
+    });
+}
+
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
@@ -313,6 +380,11 @@ window.addEventListener('DOMContentLoaded', event => {
                 .then(data => {
                     // Procesa los datos y genera el HTML
                     document.getElementById('proyecto_html_raw').innerHTML = data.html;
+                    
+                    // Inyectar estilos de Bootstrap en todos los iframes
+                    setTimeout(() => {
+                        injectBootstrapIntoIframes();
+                    }, 500); // Esperar un poco para que los iframes se carguen
                 })
                 .catch(error => {
                     console.error('Error al procesar la API:', error);
