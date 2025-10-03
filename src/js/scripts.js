@@ -77,8 +77,11 @@ window.addEventListener('DOMContentLoaded', event => {
 
     // Si la url es la url base
     if (window.location.pathname == '/') {
-        // Muestra el spinner
-        document.getElementById('loader-projects').style.display = 'block';
+        // Muestra el spinner solo si existe el elemento
+        const loaderProjects = document.getElementById('loader-projects');
+        if (loaderProjects) {
+            loaderProjects.style.display = 'block';
+        }
 
         // Procesa Datos Home
         fetch(homeUrl)
@@ -90,13 +93,18 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         })
         .then(data => {
-            // Procesa los datos y genera el HTML
-            document.getElementById('titulo_principal').innerHTML = data.TITULO_PRINCIPAL;
-            document.getElementById('sub_titulo_principal').innerHTML = data.SUB_TITULO_PRINCIPAL;
-            document.getElementById('titulo_secundario').innerHTML = data.TITULO_SECUNDARIO;
-            document.getElementById('sub_titulo_secundario').innerHTML = data.SUB_TITULO_SECUNDARIO;
-            document.getElementById('titulo_contacto').innerHTML = data.TITULO_CONTACTO;
-            document.getElementById('sub_titulo_contacto').innerHTML = data.SUB_TITULO_CONTACTO;
+            // Procesa los datos y genera el HTML (solo si los elementos existen)
+            const updateElement = (id, value) => {
+                const element = document.getElementById(id);
+                if (element) element.innerHTML = value;
+            };
+            
+            updateElement('titulo_principal', data.TITULO_PRINCIPAL);
+            updateElement('sub_titulo_principal', data.SUB_TITULO_PRINCIPAL);
+            updateElement('titulo_secundario', data.TITULO_SECUNDARIO);
+            updateElement('sub_titulo_secundario', data.SUB_TITULO_SECUNDARIO);
+            updateElement('titulo_contacto', data.TITULO_CONTACTO);
+            updateElement('sub_titulo_contacto', data.SUB_TITULO_CONTACTO);
         })
         .catch(error => {
             console.error('Error al procesar la API:', error);
@@ -177,8 +185,11 @@ window.addEventListener('DOMContentLoaded', event => {
             console.error('Error al procesar la API:', error);
         })
         .finally(() => {
-            // Oculta el spinner
-            document.getElementById('loader-projects').style.display = 'none';
+            // Oculta el spinner solo si existe
+            const loaderProjects = document.getElementById('loader-projects');
+            if (loaderProjects) {
+                loaderProjects.style.display = 'none';
+            }
         });
     }
 
