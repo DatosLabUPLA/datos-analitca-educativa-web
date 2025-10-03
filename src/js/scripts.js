@@ -200,8 +200,10 @@ window.addEventListener('DOMContentLoaded', event => {
 
     if (isProjectPage) {
         // Muestra el spinner
-        document.getElementById('loader-titulo').style.display = 'block';
-        document.getElementById('loader-html').style.display = 'block';
+        const loaderTitulo = document.getElementById('loader-titulo');
+        const loaderHtml = document.getElementById('loader-html');
+        if (loaderTitulo) loaderTitulo.style.display = 'block';
+        if (loaderHtml) loaderHtml.style.display = 'block';
 
         // Get the url parameters
         const urlParams = new URLSearchParams(window.location.search);
@@ -241,8 +243,10 @@ window.addEventListener('DOMContentLoaded', event => {
         } else {
             // Si no hay ni id ni slug, mostrar error
             console.error('❌ No se proporcionó ni id ni slug en la URL');
-            document.getElementById('loader-titulo').style.display = 'none';
-            document.getElementById('loader-html').style.display = 'none';
+            const loaderTitulo = document.getElementById('loader-titulo');
+            const loaderHtml = document.getElementById('loader-html');
+            if (loaderTitulo) loaderTitulo.style.display = 'none';
+            if (loaderHtml) loaderHtml.style.display = 'none';
             document.getElementById('proyecto_titulo').innerHTML = 'Error: No se proporcionó ID o slug';
             return;
         }
@@ -269,8 +273,10 @@ window.addEventListener('DOMContentLoaded', event => {
                     <p>Verifica que el slug existe en Google Sheets.</p>
                     <p><a href="/">Volver a la página principal</a></p>
                 `;
-                document.getElementById('loader-titulo').style.display = 'none';
-                document.getElementById('loader-html').style.display = 'none';
+                const loaderTitulo = document.getElementById('loader-titulo');
+                const loaderHtml = document.getElementById('loader-html');
+                if (loaderTitulo) loaderTitulo.style.display = 'none';
+                if (loaderHtml) loaderHtml.style.display = 'none';
                 return;
             }
             
@@ -278,8 +284,10 @@ window.addEventListener('DOMContentLoaded', event => {
             if (!data.proyecto) {
                 console.error('❌ La API no devolvió datos válidos:', data);
                 document.getElementById('proyecto_titulo').innerHTML = 'Error: Datos inválidos';
-                document.getElementById('loader-titulo').style.display = 'none';
-                document.getElementById('loader-html').style.display = 'none';
+                const loaderTitulo = document.getElementById('loader-titulo');
+                const loaderHtml = document.getElementById('loader-html');
+                if (loaderTitulo) loaderTitulo.style.display = 'none';
+                if (loaderHtml) loaderHtml.style.display = 'none';
                 return;
             }
             
@@ -311,8 +319,10 @@ window.addEventListener('DOMContentLoaded', event => {
                 })
                 .finally(() => {
                     // Oculta el spinner
-                    document.getElementById('loader-titulo').style.display = 'none';
-                    document.getElementById('loader-html').style.display = 'none';
+                    const loaderTitulo = document.getElementById('loader-titulo');
+                    const loaderHtml = document.getElementById('loader-html');
+                    if (loaderTitulo) loaderTitulo.style.display = 'none';
+                    if (loaderHtml) loaderHtml.style.display = 'none';
                 });
 
             }else{
@@ -331,7 +341,8 @@ window.addEventListener('DOMContentLoaded', event => {
         })
         .finally(() => {
             // Oculta el spinner
-            document.getElementById('loader-titulo').style.display = 'none';
+            const loaderTitulo = document.getElementById('loader-titulo');
+            if (loaderTitulo) loaderTitulo.style.display = 'none';
         });
         
     }
