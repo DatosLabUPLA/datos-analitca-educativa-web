@@ -220,28 +220,60 @@ window.addEventListener('DOMContentLoaded', event => {
         if (slug) {
             // Si hay un slug, usar el endpoint de slug
             projectsUrlId = baseUrl + '/projects/slug/' + slug;
+            console.log('🔍 Buscando proyecto por slug:', slug);
+            console.log('📡 URL de API:', projectsUrlId);
         } else if (id) {
             // Si hay un id, usar el endpoint de id
             projectsUrlId = baseUrl + '/projects/' + id;
+            console.log('🔍 Buscando proyecto por ID:', id);
+            console.log('📡 URL de API:', projectsUrlId);
         } else {
             // Si no hay ni id ni slug, mostrar error
-            console.error('No se proporcionó ni id ni slug en la URL');
+            console.error('❌ No se proporcionó ni id ni slug en la URL');
             document.getElementById('loader-titulo').style.display = 'none';
             document.getElementById('loader-html').style.display = 'none';
+            document.getElementById('proyecto_titulo').innerHTML = 'Error: No se proporcionó ID o slug';
             return;
         }
 
         // Procesa Proyectos
         fetch(projectsUrlId)
         .then(response => {
+            console.log('📥 Respuesta de API - Status:', response.status);
             if (response.ok) {
                 return response.json();
             } else {
-                throw new Error('Error al obtener datos de la API');
+                throw new Error(`Error al obtener datos de la API: ${response.status}`);
             }
         })
         .then(data => {
+            console.log('✅ Datos recibidos de la API:', data);
+            
+            // Verificar si hay un error en la respuesta
+            if (data.error) {
+                console.error('❌ Error en la respuesta de la API:', data.message || data.error);
+                document.getElementById('proyecto_titulo').innerHTML = `Error: ${data.message || data.error}`;
+                document.getElementById('proyecto_descripcion').innerHTML = `
+                    <p>No se pudo cargar el proyecto con slug "${slug}".</p>
+                    <p>Verifica que el slug existe en Google Sheets.</p>
+                    <p><a href="/">Volver a la página principal</a></p>
+                `;
+                document.getElementById('loader-titulo').style.display = 'none';
+                document.getElementById('loader-html').style.display = 'none';
+                return;
+            }
+            
+            // Verificar que los datos necesarios existen
+            if (!data.proyecto) {
+                console.error('❌ La API no devolvió datos válidos:', data);
+                document.getElementById('proyecto_titulo').innerHTML = 'Error: Datos inválidos';
+                document.getElementById('loader-titulo').style.display = 'none';
+                document.getElementById('loader-html').style.display = 'none';
+                return;
+            }
+            
             // Procesa los datos y genera el HTML
+            console.log('📝 Proyecto encontrado:', data.proyecto);
             document.getElementById('proyecto_titulo').innerHTML = `${data.proyecto} - (${data.anio})`;
             document.getElementById('proyecto_descripcion').innerHTML = data.descripcion;
             document.getElementById('proyecto_equipo').innerHTML = data.equipo;
@@ -278,7 +310,13 @@ window.addEventListener('DOMContentLoaded', event => {
 
         })
         .catch(error => {
-            console.error('Error al procesar la API:', error);
+            console.error('❌ Error al procesar la API:', error);
+            document.getElementById('proyecto_titulo').innerHTML = 'Error al cargar el proyecto';
+            document.getElementById('proyecto_descripcion').innerHTML = `
+                <p>Hubo un error al cargar los datos del proyecto.</p>
+                <p>Error: ${error.message}</p>
+                <p><a href="/">Volver a la página principal</a></p>
+            `;
         })
         .finally(() => {
             // Oculta el spinner
