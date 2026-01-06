@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3914165c14b349533988c90983474980 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_3914165c14b349533988c90983474980" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3914165c14b349533988c90983474980 = L.map(
+                "map_3914165c14b349533988c90983474980",
+                {
+                    center: [-35.0, -71.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_fc8d697145b4f413a5a9e9ba394a0c67 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_fc8d697145b4f413a5a9e9ba394a0c67.addTo(map_3914165c14b349533988c90983474980);
+        
+    
+            var marker_cluster_39d5c16d351e2535eed9698d97d4eb05 = L.markerClusterGroup(
+                {
+  "showCoverageOnHover": false,
+  "spiderfyOnMaxZoom": true,
+  "disableClusteringAtZoom": 11,
+  "maxClusterRadius": 60,
+}
+            );
+        
+    
+            var marker_ba2baa72365ede379f7296a82db8ede7 = L.marker(
+                [-33.49330726237012, -70.60589610368336],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_75d8d231e4097c4b08d8b04781ed6dc7 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                PUC (13)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_91bf86f15035c6db81aa77fbc0bc1ff8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_93a3dbdf4064ec54c2a4fa6e16aba601 = $(`<div id="html_93a3dbdf4064ec54c2a4fa6e16aba601" style="width: 100.0%; height: 100.0%;">Benjamín Astorga Ferreiro<br>Camila Ruz Reveco<br>Daniela Pérez Peña<br>Daniela Serey Leiva<br>Felipe Martínez Martínez<br>Horacio Cornejo Garcés<br>José Miguel Aguilera Carranza<br>Juan Apablaza Soto<br>Julio Ferreira Aguilera<br>Kamila Huaqui Rojo<br>Katherinne Panire Barraza<br>María José Holloway Saavedra<br>Nicole Concha Lagos</div>`)[0];
+                popup_91bf86f15035c6db81aa77fbc0bc1ff8.setContent(html_93a3dbdf4064ec54c2a4fa6e16aba601);
+            
+        
+
+        marker_ba2baa72365ede379f7296a82db8ede7.bindPopup(popup_91bf86f15035c6db81aa77fbc0bc1ff8)
+        ;
+
+        
+    
+    
+                marker_ba2baa72365ede379f7296a82db8ede7.setIcon(div_icon_75d8d231e4097c4b08d8b04781ed6dc7);
+            
+    
+            var marker_83e17890b308b8fdc9ac58c7c1805b47 = L.marker(
+                [-33.02147584344188, -71.6353827010247],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_b35c76055c6d81a9be47148f55a085a2 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                PUCV (1)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_7002788c404a0108fcee2a2337437711 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e0620d34655d42ec0891bf32f9d62b2c = $(`<div id="html_e0620d34655d42ec0891bf32f9d62b2c" style="width: 100.0%; height: 100.0%;">José Gonzáles Olavarría</div>`)[0];
+                popup_7002788c404a0108fcee2a2337437711.setContent(html_e0620d34655d42ec0891bf32f9d62b2c);
+            
+        
+
+        marker_83e17890b308b8fdc9ac58c7c1805b47.bindPopup(popup_7002788c404a0108fcee2a2337437711)
+        ;
+
+        
+    
+    
+                marker_83e17890b308b8fdc9ac58c7c1805b47.setIcon(div_icon_b35c76055c6d81a9be47148f55a085a2);
+            
+    
+            var marker_2ae523a15499e99f0230b3c8d436dd35 = L.marker(
+                [-23.700984403194465, -70.42102355271092],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_2d4181532f5155eba3d815380e9be879 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UA (7)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_5c48e42adc6ede820fec154f8c4a9e33 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9b7932892dd3e83cf6b485cfd98b9f71 = $(`<div id="html_9b7932892dd3e83cf6b485cfd98b9f71" style="width: 100.0%; height: 100.0%;">Catalina Marín Lacazette<br>Daniza Rojas Castro<br>Francisca Peña Barraza<br>Frank Honores Barrios<br>Marianela García Miranda<br>Stefhanie Galleguillos Toro<br>Yiccia Roco Múñoz</div>`)[0];
+                popup_5c48e42adc6ede820fec154f8c4a9e33.setContent(html_9b7932892dd3e83cf6b485cfd98b9f71);
+            
+        
+
+        marker_2ae523a15499e99f0230b3c8d436dd35.bindPopup(popup_5c48e42adc6ede820fec154f8c4a9e33)
+        ;
+
+        
+    
+    
+                marker_2ae523a15499e99f0230b3c8d436dd35.setIcon(div_icon_2d4181532f5155eba3d815380e9be879);
+            
+    
+            var marker_9ffe5aaf7c8f2f27132c4c9b4fb960a0 = L.marker(
+                [-39.82028338338371, -73.24570227612932],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_45b91b4f118f651022f777ca18fa96c6 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UACh (4)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_8059eb1a3d9161932105bdbee496cea4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_73154ec476ddb0495b27658a904e4a6e = $(`<div id="html_73154ec476ddb0495b27658a904e4a6e" style="width: 100.0%; height: 100.0%;">Constanza John Lavín<br>Diana Ojeda Rivas<br>Diego Chávez Llancafilo<br>Francisca Oyarzo Zuñiga</div>`)[0];
+                popup_8059eb1a3d9161932105bdbee496cea4.setContent(html_73154ec476ddb0495b27658a904e4a6e);
+            
+        
+
+        marker_9ffe5aaf7c8f2f27132c4c9b4fb960a0.bindPopup(popup_8059eb1a3d9161932105bdbee496cea4)
+        ;
+
+        
+    
+    
+                marker_9ffe5aaf7c8f2f27132c4c9b4fb960a0.setIcon(div_icon_45b91b4f118f651022f777ca18fa96c6);
+            
+    
+            var marker_a3a7f330e93adfd40aaad8fff0274edb = L.marker(
+                [-33.44498315633084, -70.66131684877685],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_322915944cc7b967dd7dbf0f10565aa3 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UAH (6)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_96f238c01b197b57927fff9b8385fd9b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_192f89088cd7b45257d368a3972ce6ca = $(`<div id="html_192f89088cd7b45257d368a3972ce6ca" style="width: 100.0%; height: 100.0%;">Claudio Reyes Durán<br>Fanny García Sereño<br>Fernanda Olivares Arévalo<br>Karen Riveros Barrueto<br>Rocío Navarro<br>Tania Gamboa</div>`)[0];
+                popup_96f238c01b197b57927fff9b8385fd9b.setContent(html_192f89088cd7b45257d368a3972ce6ca);
+            
+        
+
+        marker_a3a7f330e93adfd40aaad8fff0274edb.bindPopup(popup_96f238c01b197b57927fff9b8385fd9b)
+        ;
+
+        
+    
+    
+                marker_a3a7f330e93adfd40aaad8fff0274edb.setIcon(div_icon_322915944cc7b967dd7dbf0f10565aa3);
+            
+    
+            var marker_1c2520918366852a0eda1e35fbe70100 = L.marker(
+                [40.546877628144145, -3.694329717907852],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_1da4e67168d9d0c2bed7801d749b27ba = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UAM (1)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_00370a862ae069a1144b9de92b28df2f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_479a5a3a8760c6895cce5665e889c6e2 = $(`<div id="html_479a5a3a8760c6895cce5665e889c6e2" style="width: 100.0%; height: 100.0%;">Rocío Concha López</div>`)[0];
+                popup_00370a862ae069a1144b9de92b28df2f.setContent(html_479a5a3a8760c6895cce5665e889c6e2);
+            
+        
+
+        marker_1c2520918366852a0eda1e35fbe70100.bindPopup(popup_00370a862ae069a1144b9de92b28df2f)
+        ;
+
+        
+    
+    
+                marker_1c2520918366852a0eda1e35fbe70100.setIcon(div_icon_1da4e67168d9d0c2bed7801d749b27ba);
+            
+    
+            var marker_73faa4d4a41758719d7fd803c8eb70a2 = L.marker(
+                [-36.817673461803935, -73.0067831763879],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_1e3019ec6fc1f376e348da3de44a9148 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UBB (4)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_57b05dab8d792710e995a9987d3cf7a4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2d759f37144625c146e1f6d1e3e6e198 = $(`<div id="html_2d759f37144625c146e1f6d1e3e6e198" style="width: 100.0%; height: 100.0%;">Ana Canales San Martín<br>Denisse Espinosa Valenzuela<br>Juan Pablo Hidalgo Ortiz</div>`)[0];
+                popup_57b05dab8d792710e995a9987d3cf7a4.setContent(html_2d759f37144625c146e1f6d1e3e6e198);
+            
+        
+
+        marker_73faa4d4a41758719d7fd803c8eb70a2.bindPopup(popup_57b05dab8d792710e995a9987d3cf7a4)
+        ;
+
+        
+    
+    
+                marker_73faa4d4a41758719d7fd803c8eb70a2.setIcon(div_icon_1e3019ec6fc1f376e348da3de44a9148);
+            
+    
+            var marker_98872c33863e0bd7d87df96cfc78bafc = L.marker(
+                [-33.46697072438891, -70.65731518677988],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_7003726e7455f19f93e8b988eacf9615 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UBO (9)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_bbe134eccc8d362c1632dd665a5fa06d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5c1fd48e039d51341d6a3daafc0686f6 = $(`<div id="html_5c1fd48e039d51341d6a3daafc0686f6" style="width: 100.0%; height: 100.0%;">Claudia Silza Vergara<br>Daniel Huenul Astete<br>Fabian Pinazo Reyes<br>Francisco Monsalve Lazo<br>Inés Vega Henríquez<br>José Miguel Jiménez Salazar<br>Karina López Faune<br>Vanessa Amaral<br>Viviana Bonilla Orozco</div>`)[0];
+                popup_bbe134eccc8d362c1632dd665a5fa06d.setContent(html_5c1fd48e039d51341d6a3daafc0686f6);
+            
+        
+
+        marker_98872c33863e0bd7d87df96cfc78bafc.bindPopup(popup_bbe134eccc8d362c1632dd665a5fa06d)
+        ;
+
+        
+    
+    
+                marker_98872c33863e0bd7d87df96cfc78bafc.setIcon(div_icon_7003726e7455f19f93e8b988eacf9615);
+            
+    
+            var marker_88e77aeaa1abad3e035503a1c6e930e3 = L.marker(
+                [-35.4186573650624, -71.61281385063816],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_ab60b371a1e5dec610a8c6d0e7e89658 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UCM (11)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_ff6055d8a7526e97d3a18883680a3fa2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d04173ec1ce7539ef2662a3c099d5218 = $(`<div id="html_d04173ec1ce7539ef2662a3c099d5218" style="width: 100.0%; height: 100.0%;">Anyia Acevedo Toledo<br>Carmen Alfaro-Contreras<br>Carolina Rodríguez Muñoz<br>César García Jaque<br>Ivette Martínez Urzúa<br>Javiera Bilbao González<br>Mauricio Tapia Fonseca<br>Miguel Olave Maturana<br>Moira Lara-Leal<br>Silvana Valdés Gutiérrez<br>Victor Monzon Godoy</div>`)[0];
+                popup_ff6055d8a7526e97d3a18883680a3fa2.setContent(html_d04173ec1ce7539ef2662a3c099d5218);
+            
+        
+
+        marker_88e77aeaa1abad3e035503a1c6e930e3.bindPopup(popup_ff6055d8a7526e97d3a18883680a3fa2)
+        ;
+
+        
+    
+    
+                marker_88e77aeaa1abad3e035503a1c6e930e3.setIcon(div_icon_ab60b371a1e5dec610a8c6d0e7e89658);
+            
+    
+            var marker_e7dfa9e68653173f3ed75aa73bc3d797 = L.marker(
+                [-38.735009299312466, -72.60452166355624],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_dfcea60eb0fb7725d3335e702e1f5002 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UCT (1)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_83bb11dbb61414d22bbcedfd3ae47235 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_74f5d92c6710f4e2a299fd58340e2ec2 = $(`<div id="html_74f5d92c6710f4e2a299fd58340e2ec2" style="width: 100.0%; height: 100.0%;">Roberto Ramos Cartaya</div>`)[0];
+                popup_83bb11dbb61414d22bbcedfd3ae47235.setContent(html_74f5d92c6710f4e2a299fd58340e2ec2);
+            
+        
+
+        marker_e7dfa9e68653173f3ed75aa73bc3d797.bindPopup(popup_83bb11dbb61414d22bbcedfd3ae47235)
+        ;
+
+        
+    
+    
+                marker_e7dfa9e68653173f3ed75aa73bc3d797.setIcon(div_icon_dfcea60eb0fb7725d3335e702e1f5002);
+            
+    
+            var marker_5314854ff04c93aceeb32191322bfaa8 = L.marker(
+                [-33.45188582135305, -70.66069184765287],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_ea898140b26cc7d021550df362f9d7f9 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UCentral (1)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_f19df3d6b92038957bd24ee4114e7020 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fe1ce0ce52a606102fa4904514e2d275 = $(`<div id="html_fe1ce0ce52a606102fa4904514e2d275" style="width: 100.0%; height: 100.0%;">Valentina Medel Concha</div>`)[0];
+                popup_f19df3d6b92038957bd24ee4114e7020.setContent(html_fe1ce0ce52a606102fa4904514e2d275);
+            
+        
+
+        marker_5314854ff04c93aceeb32191322bfaa8.bindPopup(popup_f19df3d6b92038957bd24ee4114e7020)
+        ;
+
+        
+    
+    
+                marker_5314854ff04c93aceeb32191322bfaa8.setIcon(div_icon_ea898140b26cc7d021550df362f9d7f9);
+            
+    
+            var marker_5c2c8152756488b580b78ef3bcbb3eb6 = L.marker(
+                [-33.44435758321665, -70.65098032171427],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_350104046859606c03032cf8fa475ada = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UChile (12)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_aada176204315bd2f2506cc9dfff506c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1ee9f85caef254f762662ce67dc2c143 = $(`<div id="html_1ee9f85caef254f762662ce67dc2c143" style="width: 100.0%; height: 100.0%;">Antonia Poblete<br>Carlos Molina<br>Claudia Araya López<br>Daniela Barruel Ayala<br>Eduardo González Navarro<br>José Ignacio Garrote Ramos<br>Lidiia Shepelytska<br>María Ignacia Silva Blanco<br>Matías Suárez Godoy<br>Rhonny Latorre<br>Roberto Muñoz García<br>Valeria Guerrero Alfaro</div>`)[0];
+                popup_aada176204315bd2f2506cc9dfff506c.setContent(html_1ee9f85caef254f762662ce67dc2c143);
+            
+        
+
+        marker_5c2c8152756488b580b78ef3bcbb3eb6.bindPopup(popup_aada176204315bd2f2506cc9dfff506c)
+        ;
+
+        
+    
+    
+                marker_5c2c8152756488b580b78ef3bcbb3eb6.setIcon(div_icon_350104046859606c03032cf8fa475ada);
+            
+    
+            var marker_cbb546d6310a21b795560e23b34f2490 = L.marker(
+                [-33.377797130978735, -70.50734452816549],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_035ff3d6a2699ff38f3221bf3fd2fde8 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UDD (1)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_03e6751687ee97821b6e7379cc7342dc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_49bdcdc60f563ff292619547eff7c88a = $(`<div id="html_49bdcdc60f563ff292619547eff7c88a" style="width: 100.0%; height: 100.0%;">Roy Ananías Gray</div>`)[0];
+                popup_03e6751687ee97821b6e7379cc7342dc.setContent(html_49bdcdc60f563ff292619547eff7c88a);
+            
+        
+
+        marker_cbb546d6310a21b795560e23b34f2490.bindPopup(popup_03e6751687ee97821b6e7379cc7342dc)
+        ;
+
+        
+    
+    
+                marker_cbb546d6310a21b795560e23b34f2490.setIcon(div_icon_035ff3d6a2699ff38f3221bf3fd2fde8);
+            
+    
+            var marker_bf93158d372f2948ce021e2906290e8f = L.marker(
+                [41.985870243286186, 2.8271259938232878],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_e3c0d48e3ba9465149e535fe32b818c3 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UDG (1)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_bad621c1e0505259984609431550eb64 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e5ab27d1c8a9971635289643ab2f8887 = $(`<div id="html_e5ab27d1c8a9971635289643ab2f8887" style="width: 100.0%; height: 100.0%;">José Peiret Villacura</div>`)[0];
+                popup_bad621c1e0505259984609431550eb64.setContent(html_e5ab27d1c8a9971635289643ab2f8887);
+            
+        
+
+        marker_bf93158d372f2948ce021e2906290e8f.bindPopup(popup_bad621c1e0505259984609431550eb64)
+        ;
+
+        
+    
+    
+                marker_bf93158d372f2948ce021e2906290e8f.setIcon(div_icon_e3c0d48e3ba9465149e535fe32b818c3);
+            
+    
+            var marker_a81fc80b26eae975334fae577dd6d91f = L.marker(
+                [-33.4483733181711, -70.66875994997966],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_19d637e34e8971a9c291e851661fa219 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UDLA (1)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_b2b75ea09f10e416ddc6a73d5efaa136 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2c581cdf69edb4a31a0c49c1127db382 = $(`<div id="html_2c581cdf69edb4a31a0c49c1127db382" style="width: 100.0%; height: 100.0%;">Sara Joiko</div>`)[0];
+                popup_b2b75ea09f10e416ddc6a73d5efaa136.setContent(html_2c581cdf69edb4a31a0c49c1127db382);
+            
+        
+
+        marker_a81fc80b26eae975334fae577dd6d91f.bindPopup(popup_b2b75ea09f10e416ddc6a73d5efaa136)
+        ;
+
+        
+    
+    
+                marker_a81fc80b26eae975334fae577dd6d91f.setIcon(div_icon_19d637e34e8971a9c291e851661fa219);
+            
+    
+            var marker_8f29d85614afca78445d3c3630cbcc3b = L.marker(
+                [-33.44927528023574, -70.6614297765588],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_68515976a1338c16d03fefe70537c8fa = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UDP (2)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_f7322e6ec8dbd7e9042f5fca3d0a8e99 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_56bcb41c7d76e781684690c719f9a69c = $(`<div id="html_56bcb41c7d76e781684690c719f9a69c" style="width: 100.0%; height: 100.0%;">Carla Vargas Valdés<br>Macarena Alegría García</div>`)[0];
+                popup_f7322e6ec8dbd7e9042f5fca3d0a8e99.setContent(html_56bcb41c7d76e781684690c719f9a69c);
+            
+        
+
+        marker_8f29d85614afca78445d3c3630cbcc3b.bindPopup(popup_f7322e6ec8dbd7e9042f5fca3d0a8e99)
+        ;
+
+        
+    
+    
+                marker_8f29d85614afca78445d3c3630cbcc3b.setIcon(div_icon_68515976a1338c16d03fefe70537c8fa);
+            
+    
+            var marker_58bd6ce518acc44a25f656a5f66a8fd1 = L.marker(
+                [-33.4363694308131, -70.6084076981631],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_4f057bb68e898c55ab963687d1d5e8fe = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UFT (1)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_d6b86354f5b354e781b8f9d51fd368d8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_222391c65ad336f0b4f2ea7781b4b2a6 = $(`<div id="html_222391c65ad336f0b4f2ea7781b4b2a6" style="width: 100.0%; height: 100.0%;">Camila Aqueveque Muñoz</div>`)[0];
+                popup_d6b86354f5b354e781b8f9d51fd368d8.setContent(html_222391c65ad336f0b4f2ea7781b4b2a6);
+            
+        
+
+        marker_58bd6ce518acc44a25f656a5f66a8fd1.bindPopup(popup_d6b86354f5b354e781b8f9d51fd368d8)
+        ;
+
+        
+    
+    
+                marker_58bd6ce518acc44a25f656a5f66a8fd1.setIcon(div_icon_4f057bb68e898c55ab963687d1d5e8fe);
+            
+    
+            var marker_0e3704b5bc44f1b082397ec064f9c0ff = L.marker(
+                [-40.57862439431923, -73.13235796989062],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_b87d81b11f032ca83644077b2d24c461 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                ULagos (3)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_f9ff1c30d670e923f48814974117bad3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7669b5cf2d1cff11b5e769b2cd859f4c = $(`<div id="html_7669b5cf2d1cff11b5e769b2cd859f4c" style="width: 100.0%; height: 100.0%;">Laura-Renée Lachhein Olivares<br>Macarena Gárnica-Alarcón<br>Mariela Rojas Farías</div>`)[0];
+                popup_f9ff1c30d670e923f48814974117bad3.setContent(html_7669b5cf2d1cff11b5e769b2cd859f4c);
+            
+        
+
+        marker_0e3704b5bc44f1b082397ec064f9c0ff.bindPopup(popup_f9ff1c30d670e923f48814974117bad3)
+        ;
+
+        
+    
+    
+                marker_0e3704b5bc44f1b082397ec064f9c0ff.setIcon(div_icon_b87d81b11f032ca83644077b2d24c461);
+            
+    
+            var marker_e9df94cecd1711341e77443b25931171 = L.marker(
+                [-33.460770059450404, -70.59769136764506],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_08ee2ebb9f240a9e91ad37310ac28c90 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UMCE (12)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_17275ab44f1cd7c641193ca96cc9027b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6499e0c78d3dfb99033aa0ae0bcc483b = $(`<div id="html_6499e0c78d3dfb99033aa0ae0bcc483b" style="width: 100.0%; height: 100.0%;">Adriana Anabalón-Quzada<br>Alicia Zepeda González<br>Camila Nieto Sepúlveda<br>Camila Zuñiga Peñailillo<br>Cristina Martínez Quiroz<br>Edith Ubilla Briones<br>Gisella Flores Muñoz<br>Iris Gómez González<br>Karen Pascal Mamani<br>Mariela Bravo Rivera<br>Pía Marticorena Guajardo<br>Valentina Sanhueza Toloza</div>`)[0];
+                popup_17275ab44f1cd7c641193ca96cc9027b.setContent(html_6499e0c78d3dfb99033aa0ae0bcc483b);
+            
+        
+
+        marker_e9df94cecd1711341e77443b25931171.bindPopup(popup_17275ab44f1cd7c641193ca96cc9027b)
+        ;
+
+        
+    
+    
+                marker_e9df94cecd1711341e77443b25931171.setIcon(div_icon_08ee2ebb9f240a9e91ad37310ac28c90);
+            
+    
+            var marker_82a2c25afcb73afa98b4056518dc4798 = L.marker(
+                [-33.4510056714197, -70.66804075596184],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_7226813080ca2bc705c9c33c882d385e = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UNAB (12)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_15c0fa364b7bf8c08730156e4401a0ec = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fe0dc6f42cec23d2591e2fa5aa3251a0 = $(`<div id="html_fe0dc6f42cec23d2591e2fa5aa3251a0" style="width: 100.0%; height: 100.0%;">Alberto Horno Salinas<br>Fabian Pinazo Reyes<br>Javiera Mejías Norambuena<br>Jocelyn Bustos Miranda<br>Jorge Barbosa Chacón<br>Karina López Faune<br>Marcelo Ortíz Olivares<br>Maryam Ghasemisarukolai<br>María José Lagunas Wlack<br>Romina Castro Espinoza<br>Wilsy Michel Fernández<br>Yoko Urzúa Faúndez</div>`)[0];
+                popup_15c0fa364b7bf8c08730156e4401a0ec.setContent(html_fe0dc6f42cec23d2591e2fa5aa3251a0);
+            
+        
+
+        marker_82a2c25afcb73afa98b4056518dc4798.bindPopup(popup_15c0fa364b7bf8c08730156e4401a0ec)
+        ;
+
+        
+    
+    
+                marker_82a2c25afcb73afa98b4056518dc4798.setIcon(div_icon_7226813080ca2bc705c9c33c882d385e);
+            
+    
+            var marker_30257b28096e9672c9a7d4e2694371df = L.marker(
+                [-22.22482108895509, -45.93099437355973],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_3cbfc914ceeb375dd4b3266c1d28d32f = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UNIV\u00c1S (2)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_2fbfb0bc9b181a01700c9b00a5ca3a0a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_46a58801014589a60d808d015f67eafd = $(`<div id="html_46a58801014589a60d808d015f67eafd" style="width: 100.0%; height: 100.0%;">Paulo Herinque Rodrigues<br>Paulo Heríque Rodríguez</div>`)[0];
+                popup_2fbfb0bc9b181a01700c9b00a5ca3a0a.setContent(html_46a58801014589a60d808d015f67eafd);
+            
+        
+
+        marker_30257b28096e9672c9a7d4e2694371df.bindPopup(popup_2fbfb0bc9b181a01700c9b00a5ca3a0a)
+        ;
+
+        
+    
+    
+                marker_30257b28096e9672c9a7d4e2694371df.setIcon(div_icon_3cbfc914ceeb375dd4b3266c1d28d32f);
+            
+    
+            var marker_8da8ff7e507857380e443e8643e6b911 = L.marker(
+                [-33.02449407023135, -71.6404861832235],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_43ebe7f6a479c5f2bbf9f65c15b3f51f = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UPLA (10)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_a8ba5447010cc9b099d78dbba09c510f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a1a28654ad63e33bd6b93970e1230512 = $(`<div id="html_a1a28654ad63e33bd6b93970e1230512" style="width: 100.0%; height: 100.0%;">Alexis Llancos Roldan<br>Catalina Palacios Bezama<br>Delane Sánchez Cariaga<br>Eduardo Muñoz Riquelme<br>Fabian Cabaluz Ducasse<br>Jorge Gaona Paredes<br>Juan Manuel Guevara Olguín<br>Nasalia Caniulao Almocid<br>Silza Ahumada Tapia<br>Viviana Seguel Herrera</div>`)[0];
+                popup_a8ba5447010cc9b099d78dbba09c510f.setContent(html_a1a28654ad63e33bd6b93970e1230512);
+            
+        
+
+        marker_8da8ff7e507857380e443e8643e6b911.bindPopup(popup_a8ba5447010cc9b099d78dbba09c510f)
+        ;
+
+        
+    
+    
+                marker_8da8ff7e507857380e443e8643e6b911.setIcon(div_icon_43ebe7f6a479c5f2bbf9f65c15b3f51f);
+            
+    
+            var marker_a40cdc6906d0a9d6e982304804457b47 = L.marker(
+                [4.658611343367753, -74.0592764650694],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_7bf6cd0e133470c3520e8ba0f0648a6f = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UPN (1)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_5b7e4494cb8a94156133a8efea5f6efa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_632a9e00858c9fbf697d817d5b44c8a3 = $(`<div id="html_632a9e00858c9fbf697d817d5b44c8a3" style="width: 100.0%; height: 100.0%;">Juan Camilo Cardenal</div>`)[0];
+                popup_5b7e4494cb8a94156133a8efea5f6efa.setContent(html_632a9e00858c9fbf697d817d5b44c8a3);
+            
+        
+
+        marker_a40cdc6906d0a9d6e982304804457b47.bindPopup(popup_5b7e4494cb8a94156133a8efea5f6efa)
+        ;
+
+        
+    
+    
+                marker_a40cdc6906d0a9d6e982304804457b47.setIcon(div_icon_7bf6cd0e133470c3520e8ba0f0648a6f);
+            
+    
+            var marker_c2269677904c7dd621b7d44faf12cd1a = L.marker(
+                [-33.45018740420635, -70.68027292651138],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_1c7bc08b9fe13fe63688b263de08def2 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                USACH (4)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_138fb2b06c8a16a68a37a5d1854e8139 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8f74ef1a50a7c6a2e3266f1587537284 = $(`<div id="html_8f74ef1a50a7c6a2e3266f1587537284" style="width: 100.0%; height: 100.0%;">Geraldine Ortiz Labrín<br>Oscar Torres Medina<br>Roberto Martínez Puas<br>Silvia Gutiérrez Silva</div>`)[0];
+                popup_138fb2b06c8a16a68a37a5d1854e8139.setContent(html_8f74ef1a50a7c6a2e3266f1587537284);
+            
+        
+
+        marker_c2269677904c7dd621b7d44faf12cd1a.bindPopup(popup_138fb2b06c8a16a68a37a5d1854e8139)
+        ;
+
+        
+    
+    
+                marker_c2269677904c7dd621b7d44faf12cd1a.setIcon(div_icon_1c7bc08b9fe13fe63688b263de08def2);
+            
+    
+            var marker_f6d7b1add7d7c2597406c1727e643bf0 = L.marker(
+                [-33.45018740420635, -70.68027292651138],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_bb17f0e1d06e00d693c6ae32678a0cd3 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                USACh (1)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_d38b1914879c5a840cf1d58498e1c24c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d44a76e1d3ad50a5ac8e6439717c189f = $(`<div id="html_d44a76e1d3ad50a5ac8e6439717c189f" style="width: 100.0%; height: 100.0%;">Fernanda Pineda Aichele</div>`)[0];
+                popup_d38b1914879c5a840cf1d58498e1c24c.setContent(html_d44a76e1d3ad50a5ac8e6439717c189f);
+            
+        
+
+        marker_f6d7b1add7d7c2597406c1727e643bf0.bindPopup(popup_d38b1914879c5a840cf1d58498e1c24c)
+        ;
+
+        
+    
+    
+                marker_f6d7b1add7d7c2597406c1727e643bf0.setIcon(div_icon_bb17f0e1d06e00d693c6ae32678a0cd3);
+            
+    
+            var marker_448e46ccf3267d01d9a26afe799cda0c = L.marker(
+                [20.69246834491693, -103.35884583524559],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_7b3e10c335df5c3253603bbfa5d66395 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                USG (1)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_759845c159a5324605c6040da9bea110 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_44460de74cc95aca03ed64ea2f6c7590 = $(`<div id="html_44460de74cc95aca03ed64ea2f6c7590" style="width: 100.0%; height: 100.0%;">Vanessa García Miranda</div>`)[0];
+                popup_759845c159a5324605c6040da9bea110.setContent(html_44460de74cc95aca03ed64ea2f6c7590);
+            
+        
+
+        marker_448e46ccf3267d01d9a26afe799cda0c.bindPopup(popup_759845c159a5324605c6040da9bea110)
+        ;
+
+        
+    
+    
+                marker_448e46ccf3267d01d9a26afe799cda0c.setIcon(div_icon_7b3e10c335df5c3253603bbfa5d66395);
+            
+    
+            var marker_f51ca0da7b82e07fe36318ee314abe5e = L.marker(
+                [-18.486153214378163, -70.29410701607047],
+                {
+}
+            ).addTo(marker_cluster_39d5c16d351e2535eed9698d97d4eb05);
+        
+    
+            var div_icon_c7dfb388a56b61a721f071f9a1b31f17 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"\n                display: inline-block;\n                font-size: 11px;\n                font-weight: bold;\n                color: black;\n                background-color: rgba(255,255,255,0.85);\n                padding: 2px 6px;\n                border-radius: 4px;\n                border: 1px solid #555;\n                white-space: nowrap;\n            \"\u003e\n                UTA (1)\n            \u003c/div\u003e\n            ",
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_ff02158df5d679ec8664263caece12f3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cf5907f4f55173a5eb6cd5c481f3365d = $(`<div id="html_cf5907f4f55173a5eb6cd5c481f3365d" style="width: 100.0%; height: 100.0%;">Gustavo Guerrero Molina</div>`)[0];
+                popup_ff02158df5d679ec8664263caece12f3.setContent(html_cf5907f4f55173a5eb6cd5c481f3365d);
+            
+        
+
+        marker_f51ca0da7b82e07fe36318ee314abe5e.bindPopup(popup_ff02158df5d679ec8664263caece12f3)
+        ;
+
+        
+    
+    
+                marker_f51ca0da7b82e07fe36318ee314abe5e.setIcon(div_icon_c7dfb388a56b61a721f071f9a1b31f17);
+            
+    
+            marker_cluster_39d5c16d351e2535eed9698d97d4eb05.addTo(map_3914165c14b349533988c90983474980);
+        
+    
+            var layer_control_ab35f3fde852a6885caa2496246d8d49_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_fc8d697145b4f413a5a9e9ba394a0c67,
+                },
+                overlays :  {
+                    "Universidades" : marker_cluster_39d5c16d351e2535eed9698d97d4eb05,
+                },
+            };
+            let layer_control_ab35f3fde852a6885caa2496246d8d49 = L.control.layers(
+                layer_control_ab35f3fde852a6885caa2496246d8d49_layers.base_layers,
+                layer_control_ab35f3fde852a6885caa2496246d8d49_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_3914165c14b349533988c90983474980);
+
+        
+</script>
+</html>
