@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Hidalgo Neira María Teresa</title>
+<style>
+  /* Layout general */
+  .page-wrap {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  body {
+    font-family: "Lato", sans-serif;
+    color: #565656;
+    font-size: 1rem;
+    margin: 24px;
+    line-height: 1.5;
+  }
+
+  /* Cabecera (foto + nombre + afiliación) */
+  .autor-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 8px 0 16px;
+  }
+  @media (max-width: 720px) {
+    .autor-info { flex-direction: column; align-items: flex-start; }
+  }
+  .circular-image {
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,.08);
+  }
+  h1 {
+    color: #009bdb;
+    font-weight: 800;
+    font-size: 2.1rem;
+    line-height: 1.15;
+    margin: 0 0 6px 0;
+  }
+  .autor-meta {
+    color: #8b8b8b;
+    margin: 0;
+    line-height: 1.35;
+  }
+
+  /* Íconos de redes académicas bajo la afiliación */
+  .socials-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .socials-icons a {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+    transition: transform .1s ease, opacity .2s ease;
+  }
+  .socials-icons a:hover { transform: translateY(-1px); opacity: .9; }
+  .socials-icons img { width: 24px; height: 24px; display: block; }
+
+  /* Títulos de secciones */
+  h2 {
+    margin-top: 1.25rem;
+    color: #009bdb;
+  }
+  h3 {
+    margin: 0.75rem 0 0.25rem;
+    color: #B33F34;   /* color de los años y subtítulos */
+    font-weight: 700;
+  }
+  .section-title {
+    margin: 24px 0 8px;
+    color: #B33F34;
+    font-weight: 800;
+    letter-spacing: .2px;
+  }
+  .section-list {
+    margin: 0 0 16px 0;
+    padding-left: 1.1rem;
+  }
+  .section-list li {
+    margin: 8px 0;
+  }
+  .section-list li::marker { color: #B33F34; }
+
+  /* Botón Mostrar más */
+  .btn-mas {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #B33F34;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+  }
+  .btn-mas:hover {
+    background-color: #992F27;
+    transform: scale(1.02);
+  }
+
+  ul { margin-top: 0.25rem; }
+</style>
+<script>
+function toggleMore(id, btn){
+  var el = document.getElementById(id);
+  if(!el) return;
+  var hidden = (el.style.display === '' || el.style.display === 'none');
+  if(hidden){
+    el.style.display = 'block';
+    btn.textContent = 'Mostrar menos';
+  }else{
+    el.style.display = 'none';
+    btn.textContent = 'Mostrar más';
+    window.scrollTo({top: btn.offsetTop - 120, behavior: 'smooth'});
+  }
+}
+</script>
+</head>
+<body>
+<div class="page-wrap">
+<div class="autor-info"><img class="circular-image" src="https://www.upla.cl/facultad/cienciaseducacion/wp-content/uploads/2021/08/480_hidalgomaria.jpg" alt="Foto de María Teresa Hidalgo Neira"><div><h1>María Teresa Hidalgo Neira</h1><p class="autor-meta">Académica Asistente Media Jornada <br>Ciencias de la Educación<br>Facultad de Ciencias de la Educación<br>Universidad de Playa Ancha</p></div></div><h3 class="section-title">Postgrado</h3><ul class="section-list"><li>Diplomada en Metodología de la Investigación, Universidad Santo Tomás, Chile.</li><li>Magíster en Administración Educacional, mención en Gestión de Sistemas Educativos, Universidad de Playa Ancha, Chile.</li></ul><h3 class="section-title">Pregrado</h3><ul class="section-list"><li>Profesor de Estado en Educación Diferencial, mención Trastornos de Audición y Lenguaje, Universidad de Chile.</li></ul><h3 class="section-title">Responsabilidades</h3><ul class="section-list"><li>Consejera de Facultad.</li><li>Coordinadora Programa Magíster en Educación Inclusiva.</li><li>Coordinadora de la Unidad de Acompañamiento Estudiantil.</li><li>Representante de la Facultad
+de Ciencias de la Educación ante la Comisión Curricular Central.</li></ul><h2>Actividades académicas: congresos, seminarios y pasantías</h2><h3>2023</h3>
+<p>(2023) <strong>Visita técnica: </strong><i>Visita técnica</i>. Entre el 06/11/2023 y el 11/11/2023. En , desarrollado en Departamento De Postgrado De La Universidad Federal De Santa Catarina, En Su Campus Central De Florianópolis En Brasil, Florianapolis, <strong>Brasil</strong>. Modalidad: Presencial.</p>
+<p>(2023) <strong>Exposición: </strong><i>Repensar el futuro de la educación
+superior desde la inclusión</i>. Entre el 12/06/2023 y el 14/06/2023. En Primer Encuentro Nacional De La Red De Educación Superior Inclusiva, desarrollado en Universidad De Andrés Bello, Talcahuano, <strong>Chile</strong>. Modalidad: Presencial.</p><p style="color:lightgrey;">Fecha de actualización: 16/01/2026</p></div></body></html>
