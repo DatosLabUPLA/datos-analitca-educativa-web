@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f6bb827ef295a90c273430a5b70b3979 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f6bb827ef295a90c273430a5b70b3979" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f6bb827ef295a90c273430a5b70b3979 = L.map(
+                "map_f6bb827ef295a90c273430a5b70b3979",
+                {
+                    center: [42.80162660856675, -1.6594372454899515],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_3f6a1e241530e331678058a81658277e = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_3f6a1e241530e331678058a81658277e.addTo(map_f6bb827ef295a90c273430a5b70b3979);
+        
+    
+            var marker_cluster_25e60758100d2ed0cf3cd421d08b5788 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_07e27295232c48f84096d39221ff492c = L.marker(
+                [42.80162660856675, -1.6594372454899515],
+                {
+}
+            ).addTo(marker_cluster_25e60758100d2ed0cf3cd421d08b5788);
+        
+    
+            var icon_ba69fa230ee20e11982d1bae6af6060f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8ee2751e6d2f17394f3d74f4ef857732 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9f22d5cf137f3de0bd2f5d71f516a8e0 = $(`<div id="html_9f22d5cf137f3de0bd2f5d71f516a8e0" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2022)  Trujillo Cristoffanini Macarena</span></b><br><b>Conferencia invitada:</b><br><span style='color: gray;'>Violencia de género y violencia contra las mujeres</span><br><b>En:</b> XIV Congreso Español de Sociología<br><span style='color: gray;'>Federación Española De Sociología<br>30/06/2022<br>Navarra, España<br>Modalidad: Presencial</span></div>`)[0];
+                popup_8ee2751e6d2f17394f3d74f4ef857732.setContent(html_9f22d5cf137f3de0bd2f5d71f516a8e0);
+            
+        
+
+        marker_07e27295232c48f84096d39221ff492c.bindPopup(popup_8ee2751e6d2f17394f3d74f4ef857732)
+        ;
+
+        
+    
+    
+                marker_07e27295232c48f84096d39221ff492c.setIcon(icon_ba69fa230ee20e11982d1bae6af6060f);
+            
+    
+            marker_cluster_25e60758100d2ed0cf3cd421d08b5788.addTo(map_f6bb827ef295a90c273430a5b70b3979);
+        
+    
+            tile_layer_3f6a1e241530e331678058a81658277e.addTo(map_f6bb827ef295a90c273430a5b70b3979);
+        
+    
+                marker_07e27295232c48f84096d39221ff492c.setIcon(icon_ba69fa230ee20e11982d1bae6af6060f);
+            
+    
+            marker_cluster_25e60758100d2ed0cf3cd421d08b5788.addTo(map_f6bb827ef295a90c273430a5b70b3979);
+        
+    
+            tile_layer_3f6a1e241530e331678058a81658277e.addTo(map_f6bb827ef295a90c273430a5b70b3979);
+        
+    
+                marker_07e27295232c48f84096d39221ff492c.setIcon(icon_ba69fa230ee20e11982d1bae6af6060f);
+            
+    
+            marker_cluster_25e60758100d2ed0cf3cd421d08b5788.addTo(map_f6bb827ef295a90c273430a5b70b3979);
+        
+</script>
+</html>
