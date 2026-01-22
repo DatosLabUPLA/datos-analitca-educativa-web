@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ahumada Tapia Silza</title>
+<style>
+  /* Layout general */
+  .page-wrap {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  body {
+    font-family: "Lato", sans-serif;
+    color: #565656;
+    font-size: 1rem;
+    margin: 24px;
+    line-height: 1.5;
+  }
+
+  /* Cabecera (foto + nombre + afiliación) */
+  .autor-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 8px 0 16px;
+  }
+  @media (max-width: 720px) {
+    .autor-info { flex-direction: column; align-items: flex-start; }
+  }
+  .circular-image {
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,.08);
+  }
+  h1 {
+    color: #009bdb;
+    font-weight: 800;
+    font-size: 2.1rem;
+    line-height: 1.15;
+    margin: 0 0 6px 0;
+  }
+  .autor-meta {
+    color: #8b8b8b;
+    margin: 0;
+    line-height: 1.35;
+  }
+
+  /* Íconos de redes académicas bajo la afiliación */
+  .socials-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .socials-icons a {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+    transition: transform .1s ease, opacity .2s ease;
+  }
+  .socials-icons a:hover { transform: translateY(-1px); opacity: .9; }
+  .socials-icons img { width: 24px; height: 24px; display: block; }
+
+  /* Títulos de secciones */
+  h2 {
+    margin-top: 1.25rem;
+    color: #009bdb;
+  }
+  h3 {
+    margin: 0.75rem 0 0.25rem;
+    color: #B33F34;   /* color de los años y subtítulos */
+    font-weight: 700;
+  }
+  .section-title {
+    margin: 24px 0 8px;
+    color: #B33F34;
+    font-weight: 800;
+    letter-spacing: .2px;
+  }
+  .section-list {
+    margin: 0 0 16px 0;
+    padding-left: 1.1rem;
+  }
+  .section-list li {
+    margin: 8px 0;
+  }
+  .section-list li::marker { color: #B33F34; }
+
+  /* Botón Mostrar más */
+  .btn-mas {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #B33F34;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+  }
+  .btn-mas:hover {
+    background-color: #992F27;
+    transform: scale(1.02);
+  }
+
+  ul { margin-top: 0.25rem; }
+</style>
+<script>
+function toggleMore(id, btn){
+  var el = document.getElementById(id);
+  if(!el) return;
+  var hidden = (el.style.display === '' || el.style.display === 'none');
+  if(hidden){
+    el.style.display = 'block';
+    btn.textContent = 'Mostrar menos';
+  }else{
+    el.style.display = 'none';
+    btn.textContent = 'Mostrar más';
+    window.scrollTo({top: btn.offsetTop - 120, behavior: 'smooth'});
+  }
+}
+</script>
+</head>
+<body>
+<div class="page-wrap">
+<div class="autor-info"><img class="circular-image" src="https://www.upla.cl/facultad/cienciaseducacion/wp-content/uploads/2023/10/480_ahumadasilza.jpg" alt="Foto de Silza Ahumada Tapia"><div><h1>Silza Ahumada Tapia</h1><p class="autor-meta">Académica  Jornada Completa<br>Pedagogía<br>Facultad de Ciencias de la Educación<br>Universidad de Playa Ancha</p><div class="socials-icons"><a href="https://orcid.org/0000-0002-6269-4939" target="_blank" aria-label="ORCID" title="ORCID"><img src="https://info.orcid.org/wp-content/uploads/2020/12/orcid_16x16.gif" alt="ORCID"></a><a href="https://www.researchgate.net/profile/Silza-Ahumada" target="_blank" aria-label="ResearchGate" title="ResearchGate"><img src="https://www.svgrepo.com/show/314548/researchgate.svg" alt="ResearchGate"></a><a href="https://scholar.google.es/citations?user=nbpsJzcAAAAJ&hl=es&oi=sra" target="_blank" aria-label="Google Scholar" title="Google Scholar"><img src="https://img.icons8.com/?size=512&id=drPiDBy9kkJ3&format=png" alt="Google Scholar"></a></div></div></div><h3 class="section-title">Postgrado</h3><ul class="section-list"><li>Doctora en Educación y Sociedad, Universidad Andrés Bello, Chile.</li></ul><h3 class="section-title">Pregrado</h3><ul class="section-list"><li>Licenciada en Lengua y Literatura Hispánica mención Lingüística , Universidad de Chile.</li></ul><h2>Publicaciones en revistas de investigación</h2><h3>2025</h3>
+<p>(2025) Torres, M.L; Bañales, G.; Martínez, M., Perales-Escudero, M. y Ahumada, S. <a href="https://ojs.rmie.mx/index.php/rmie/article/view/261" target="_blank">Creencias docentes acerca de la argumentación escrita en innovaciones curriculares en la educación secundaria chilena</a>. <i>Revista Mexicana de Investigación Educativa</i>. Artículo: Scopus.</p>
+<div id="ahumada_tapia_silza-articulos-more" style="display:none;">
+<h3>2023</h3>
+<p>(2023) Ahumada S.; Bañales G.; Graham S.; Torres M. L. <a href="https://doi.org/10.1007/s11145-022-10380-5" target="_blank">Facilitators and barriers to writing instruction in Chile: teachers’ preparation and knowledge about teaching writing</a>. <i>Reading and Writing</i>. Artículo: Scopus, WoS.</p>
+<h3>2022</h3>
+<p>(2022) Graham S.; Ahumada S.; Bañales G.; Puente A.; Guajardo M y Muñoz I. <a href="https://doi.org/10.1177/0022219420941795" target="_blank">Intermediate-Grade Teachers’ Adaptations for Weaker Writers: A National Survey in Urban Schools in Chile</a>. <i>Journal of Learning Disabilities</i>. Artículo: Scopus, WoS.</p>
+<h3>2020</h3>
+<p>(2020) Bañales G.; Ahumada S.; Graham S.; Puente A.; Guajardo M. y Muñoz I. <a href="https://doi.org/10.1007/s11145-020-10055-z" target="_blank">Teaching writing in grades 4–6 in urban schools in Chile: a national survey</a>. <i>Reading and Writing</i>. Artículo: Scopus, WoS.</p>
+<h3>2018</h3>
+<p>(2018) Bañales G.; Ahumada S.; Martínez R.; Martínez M. y Messina P. <a href="https://doi.org/10.4067/s0718-48832018000100059" target="_blank">Research of writing in primary education in Chile: A review of decade (2007-2016) [Investigaciones de la escritura en la educación básica en Chile: Revisión de una década (2007-2016)]</a>. <i>RLA</i>. Artículo: Scopus.</p>
+</div>
+<button class="btn-mas" onclick="toggleMore('ahumada_tapia_silza-articulos-more', this)">Mostrar más</button><h2>Libros o capítulos de libros</h2><h3>2020</h3>
+<p>(2020) Graham S.; Bañales G.; Ahumada S.; Muñoz P.; Alvarez P. y Harris K. R. <a href="https://doi.org/10.4324/9780429423635-9" target="_blank">Writing strategies interventions</a>. <i>Handbook of Strategies and Strategic Processing</i>. Capítulo de Libro.</p><h2>Proyectos de investigación con financiamiento externo</h2><h3>2025</h3>
+<p>(2025) Creencias y expectativas estereotipadas de género en la enseñanza de la escritura: Exploración a través de las voces docentes.</p><ul><li><b>Investigadora/or Responsable:</b> Ahumada Tapia Silza.</li><li><b>Equipo de trabajo:</b> Ahumada Tapia Silza, -.</li><li><b>Nombre del concurso:</b> FONDECYT Iniciación 2025.</li><li><b>Código del proyecto:</b> 11250726</li></ul>
+<div id="ahumada_tapia_silza-proy-externos-more" style="display:none;">
+<h3>2024</h3>
+<p>(2024) Exploring Chilean teachers' voices about the SRSD teaching model for writing: a professional development experience.</p><ul><li><b>Investigadora/or Responsable:</b> Bañales, Gerardo; Universidad Andrés Bello.</li><li><b>Equipo de trabajo:</b> Bañales, Gerardo; Universidad Andrés Bello, Graham, Steve. Austin State University; Ahumada, Silza. Univesidad de Playa Ancha; Guajardo, Marcela. Universidad Andrés Bello. .</li><li><b>Nombre del concurso:</b> Cintana Education Research Call 2024.</li><li><b>Código del proyecto:</b> sin información</li></ul>
+<h3>2023</h3>
+<p>(2023) Explorando de las creencias y conocimientos para
+enseñanza de la escritura de estudiantes de
+pedagogía en Educación Básica y Educación
+Diferencial.</p><ul><li><b>Investigadora/or Responsable:</b> Ahumada Tapia Silza.</li><li><b>Nombre del concurso:</b> IESED - Fortalecimiento de la investigación y la formación avanzada en Educación en el sistema de universidades estatales RED 21995 (2023).</li><li><b>Código del proyecto:</b> </li></ul>
+</div>
+<button class="btn-mas" onclick="toggleMore('ahumada_tapia_silza-proy-externos-more', this)">Mostrar más</button><h2>Proyectos de investigación con financiamiento interno</h2><h3>2025</h3>
+<p>(2025) Reflexión para la transformación: Talleres de Pedagogía Sensible al Género en la FID.</p><ul><li><b>Investigadora/or Responsable:</b> Ahumada Tapia Silza.</li><li><b>Equipo de trabajo:</b> -.</li><li><b>Nombre del concurso:</b> Concurso Regular de Investigación INGE 2024 .</li><li><b>Código del proyecto:</b> sin información</li></ul><h2>Organización/Comité científico en eventos de la Facultad</h2><h3>2026</h3>
+<p><strong>Congreso:</strong> II Congreso de Estudiantes de Postgrado en Educación. <strong>Rol:</strong> Organización y comité científico. <strong>Fecha:</strong> del 8 al 9 de enero de 2026. En Casa Central, Facultad de Ciencias de la Educación,  Universidad de Playa Ancha, Av. Playa Ancha 850;, 3er piso Valparaíso. <strong>Modalidad:</strong> Presencial. Más información en el <a href="https://www.upla.cl/facultad/cienciaseducacion/agenda/ii-congreso-de-estudiantes-de-postgrado-en-educacion/" target="_blank">enlace</a>.</p>
+<div id="ahumada_tapia_silza-eventos-facultad-more" style="display:none;">
+<h3>2025</h3>
+<p><strong>Seminario:</strong> 1er Seminario Internacional de Didáctica Universitaria:  ¿se puede hablar de una Didáctica para la Formación Inicial Docente?. <strong>Rol:</strong> Organización y comité científico. <strong>Fecha:</strong> 28 de octubre de 2025. En UPLA; Casa Central; Av. Playa Ancha 850; Valparaíso. <strong>Modalidad:</strong> Híbrido. Más información en el <a href="https://www.upla.cl/facultad/cienciaseducacion/agenda/1er-seminario-internacional-de-didactica-universitaria-se-puede-hablar-de-una-didactica-para-la-formacion-inicial-docente/" target="_blank">enlace</a>.</p>
+<p><strong>Jornada:</strong> Jornadas de Extensión “Pedagogía y Evaluación: Diálogo para el logro de aprendizajes”,. <strong>Rol:</strong> Organización. <strong>Fecha:</strong> 14 de agosto de 2025. En Casa Central, Universidad de Playa Ancha. Av. Playa Ancha 850; Valparaíso. <strong>Modalidad:</strong> Presencial. Más información en el <a href="https://www.upla.cl/facultad/cienciaseducacion/agenda/jornadas-de-extension-pedagogia-y-evaluacion-dialogo-para-el-logro-de-aprendizajes/" target="_blank">enlace</a>.</p>
+</div>
+<button class="btn-mas" onclick="toggleMore('ahumada_tapia_silza-eventos-facultad-more', this)">Mostrar más</button><h2>Actividades académicas: congresos, seminarios y pasantías</h2><h3>2025</h3>
+<p>(2025) <strong>Exposición: </strong><i>Reflexionar y narrar: talleres de pedagogía sensible al género</i>. Entre el 15/01/2025 y el 17/01/2025. En Xx Congreso Nacional Y Xiv Congreso Internacional De Investigadores En Educación, Inveduc 2025: “Democracia Y Conocimiento En Tiempos De Crisis: Perspectivas Educativas Globales”, desarrollado en Universidad De Los Lagos, Osorno, <strong>Chile</strong>. Modalidad: Presencial.</p>
+<div id="ahumada_tapia_silza-actividades-more" style="display:none;">
+<h3>2024</h3>
+<p>(2024) <strong>Exposición: </strong><i>Barriers and facilitators to teach writing: views from chilean teachers about contextual factors</i>. Entre el 26/06/2024 y el 28/06/2024. En Sig Writing 2024, desarrollado en Earli; Paris Nanterre University (Francia), Sorbonne Nouvelle University (Francia); University Of Turku (Finlandia), París, <strong>Francia</strong>. Modalidad: Virtual.</p>
+<p>(2024) <strong>Exposición: </strong><i>Preservice teacher’s beliefs about writing: translation and adaptation to spanish of a survey</i>. Entre el 26/06/2024 y el 28/06/2024. En Sig Writing 2024, desarrollado en Earli, University , París, <strong>Francia</strong>. Modalidad: Virtual.</p>
+<h3>2023</h3>
+<p>(2023) <strong>Exposición: </strong><i>Factores contextuales y docentes que inciden en la enseñanza de la escritura</i>. Entre el 18/05/2023 y el 23/05/2023. En Seminario Enseñanza Estratégica De La Escritura: Experiencias De Intervención, desarrollado en Grupo De Investigación Didáctica De Lectura Y Escritura (Dile)- Universidad Andrés Bello, Santiago, <strong>Chile</strong>. Modalidad: Presencial.</p>
+<h3>2022</h3>
+<p>(2022) <strong>Exposición: </strong><i>Barriers and facilitators to teach writing in 4-6 grades: views from chilean teachers</i>. Entre el 17/06/2022 y el 19/06/2022. En Sig Writing Research School, desarrollado en Earli; Umeå University, Umeå, <strong>Suecia</strong>. Modalidad: Presencial.</p>
+<p>(2022) <strong>Exposición: </strong><i>Teachers' beliefs and their role in the teaching of written argumentation</i>. Entre el 20/06/2022 y el 22/06/2022. En Sig Writing 2022, desarrollado en Umeå University, Umeå, <strong>Suecia</strong>. Modalidad: Presencial.</p>
+<p>(2022) <strong>Exposición: </strong><i>Implementation of a professional learning communities for teaching writing in elementary schools: a case study</i>. Entre el 17/06/2022 y el 19/06/2022. En Sig Writing Research School, desarrollado en Earli; Umeå University, Umeå, <strong>Suecia</strong>. Modalidad: Presencial.</p>
+<h3>2021</h3>
+<p>(2021) <strong>Exposición: </strong><i>Enseñar escritura: prácticas didácticas de docentes de 4to a 6to grado</i>. El 29/04/2021. En Seminario De Experiencias Investigativas En Comprensión Lectora Y Producción De Textos, desarrollado en Universidad Andrés Bello Santiago, <strong>Chile</strong>. Modalidad: Virtual.</p>
+<h3>2019</h3>
+<p>(2019) <strong>Poster: </strong><i>Formación inicial docente y autoeficacia para la enseñanza de la escritura</i>. Entre el 07/01/2019 y el 10/01/2019. En Eduinclusiva Escuela De Verano, desarrollado en Centro De Investigación Para La Educación Inclusiva, Santiago, <strong>Chile</strong>. Modalidad: Presencial.</p>
+</div>
+<button class="btn-mas" onclick="toggleMore('ahumada_tapia_silza-actividades-more', this)">Mostrar más</button><p style="color:lightgrey;">Fecha de actualización: 22/01/2026</p></div></body></html>
