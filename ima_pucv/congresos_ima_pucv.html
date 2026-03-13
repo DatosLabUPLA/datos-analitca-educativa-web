@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_519f6b03f7535af5bef2b9ca6a89babb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_519f6b03f7535af5bef2b9ca6a89babb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_519f6b03f7535af5bef2b9ca6a89babb = L.map(
+                "map_519f6b03f7535af5bef2b9ca6a89babb",
+                {
+                    center: [-1.3933372621717908, -48.81178177836836],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_578d0b8218c8af7b5c399b9fd24a3944 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_578d0b8218c8af7b5c399b9fd24a3944.addTo(map_519f6b03f7535af5bef2b9ca6a89babb);
+        
+    
+            var marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_7206fa9731b9e145906eac43ff696ff3 = L.marker(
+                [48.827754205724965, 2.3808193306863146],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_cf286d5e195e836b5d3884dca32810a9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d8f730787204e5f4fc2e32de36f0f016 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b7d6e9bcc37a3cbd0201852ea387fb77 = $(`<div id="html_b7d6e9bcc37a3cbd0201852ea387fb77" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Gaona Paredes Jorge</span></b><br><b>Profesor visitante:</b><br><span style='color: gray;'>Estancia de investigación (Invitado por la Université Paris Cité)</span><br><b>En:</b> Proyecto ECOS-ANID 220035 (año 2)<br><span style='color: gray;'>Université Paris Cité<br>03/06/2024<br>París, Francia<br>Modalidad: Presencial</span></div>`)[0];
+                popup_d8f730787204e5f4fc2e32de36f0f016.setContent(html_b7d6e9bcc37a3cbd0201852ea387fb77);
+            
+        
+
+        marker_7206fa9731b9e145906eac43ff696ff3.bindPopup(popup_d8f730787204e5f4fc2e32de36f0f016)
+        ;
+
+        
+    
+    
+                marker_7206fa9731b9e145906eac43ff696ff3.setIcon(icon_cf286d5e195e836b5d3884dca32810a9);
+            
+    
+            var marker_5c81d6267f01789a449b76749305f903 = L.marker(
+                [-33.047169565156416, -71.60571788626359],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_83aec0e68a0277783183dece3f0142fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9d3df6d4dac819f636df843d17bc1b61 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c24abf32e2f1e70c5af54e498734d463 = $(`<div id="html_c24abf32e2f1e70c5af54e498734d463" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Gaona Paredes Jorge</span></b><br><b>Panel de discusión:</b><br><span style='color: gray;'>¿IA ahora qué hacemos? Panel de educación sobre inteligencia artificial</span><br><b>En:</b> Congreso Futuro 2024<br><span style='color: gray;'>Congreso Nacional De Chile<br>15/01/2024<br>Valparaíso, Chile<br>Modalidad: Presencial</span></div>`)[0];
+                popup_9d3df6d4dac819f636df843d17bc1b61.setContent(html_c24abf32e2f1e70c5af54e498734d463);
+            
+        
+
+        marker_5c81d6267f01789a449b76749305f903.bindPopup(popup_9d3df6d4dac819f636df843d17bc1b61)
+        ;
+
+        
+    
+    
+                marker_5c81d6267f01789a449b76749305f903.setIcon(icon_83aec0e68a0277783183dece3f0142fc);
+            
+    
+            var marker_3511a822d4148913c96f7f9545f7017c = L.marker(
+                [-33.44094375009957, -70.63543510538246],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_017ed1f9cad12cdb5393dad9c753001f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5df275f011c650d89ee5ced2e7ece7eb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_90da9df3119d749cab0cb193c53e783f = $(`<div id="html_90da9df3119d749cab0cb193c53e783f" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Gaona Paredes Jorge</span></b><br><b>Conferencia invitada:</b><br><span style='color: gray;'>Tareas abiertas en un sistema de evaluación en línea para enriquecer el trabajo matemático de los estudiantes</span><br><b>En:</b> Webinar "transformando la enseñanza de las matemáticas: prácticas pedagógicas innovadoras con tic"<br><span style='color: gray;'>Ciae, Universidad De Chile<br>24/04/2024<br>Santiago, Chile<br>Modalidad: Virtual</span></div>`)[0];
+                popup_5df275f011c650d89ee5ced2e7ece7eb.setContent(html_90da9df3119d749cab0cb193c53e783f);
+            
+        
+
+        marker_3511a822d4148913c96f7f9545f7017c.bindPopup(popup_5df275f011c650d89ee5ced2e7ece7eb)
+        ;
+
+        
+    
+    
+                marker_3511a822d4148913c96f7f9545f7017c.setIcon(icon_017ed1f9cad12cdb5393dad9c753001f);
+            
+    
+            var marker_3bc423312ef40c823ab6bc1f1a84c592 = L.marker(
+                [-34.16362698904729, -70.74149369629633],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_296ed2ed18bf953e63d75c1eb6322453 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4236aa3f408132f55c0428d2657f6286 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_98f58163c0746ece9155e3dfff636c28 = $(`<div id="html_98f58163c0746ece9155e3dfff636c28" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Gaona Paredes Jorge</span></b><br><b>Jornada de trabajo:</b><br><span style='color: gray;'>Relación entre el feedback y el trabajo matemático de estudiantes en el contexto de evaluaciones en línea en matemáticas</span><br><b>En:</b> Lectura y escritura académica en educación matemática en Magíster en Enseñanza y Aprendizaje de la Matemática de la Universidad de O'Higgins<br><span style='color: gray;'>Universidad De O'Higgins<br>10/05/2024<br>Rancagua, Chile<br>Modalidad: Presencial</span></div>`)[0];
+                popup_4236aa3f408132f55c0428d2657f6286.setContent(html_98f58163c0746ece9155e3dfff636c28);
+            
+        
+
+        marker_3bc423312ef40c823ab6bc1f1a84c592.bindPopup(popup_4236aa3f408132f55c0428d2657f6286)
+        ;
+
+        
+    
+    
+                marker_3bc423312ef40c823ab6bc1f1a84c592.setIcon(icon_296ed2ed18bf953e63d75c1eb6322453);
+            
+    
+            var marker_a627be8aaf48e19e291a081f9cba5bef = L.marker(
+                [-22.39610340358784, -47.54624511164023],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_1f605b6921a43ff364e9758f44ef66ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b26c7f87f33dcd56c325718e03f0a5ab = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_19eb40f7adbb0ccb3c14c529be7daadb = $(`<div id="html_19eb40f7adbb0ccb3c14c529be7daadb" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Tarefas abertas para enriquecer o trabalho matemático dos estudantes</span><br><b>En:</b> Seminario Grupo de Pesquisa Interlocuções entre geometria e Educação Matemática (teorEMa)<br><span style='color: gray;'>Universidade Estadual Paulista “Júlio De Mesquita Filho”<br>16/04/2024<br>Rio Claro, Brasil<br>Modalidad: Virtual</span></div>`)[0];
+                popup_b26c7f87f33dcd56c325718e03f0a5ab.setContent(html_19eb40f7adbb0ccb3c14c529be7daadb);
+            
+        
+
+        marker_a627be8aaf48e19e291a081f9cba5bef.bindPopup(popup_b26c7f87f33dcd56c325718e03f0a5ab)
+        ;
+
+        
+    
+    
+                marker_a627be8aaf48e19e291a081f9cba5bef.setIcon(icon_1f605b6921a43ff364e9758f44ef66ce);
+            
+    
+            var marker_474345e914ae4e951f4a7d790c9bd070 = L.marker(
+                [9.93851082084851, -84.04430176560972],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_a93895d416b00234a28340f6a194a64c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a58a1ff3140d3a67305ef94677d3fdd4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f72e7c75982ca7809db603c0f409aa3a = $(`<div id="html_f72e7c75982ca7809db603c0f409aa3a" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Análisis del espacio de trabajo matemático de una tarea abierta contextualizada sobre funciones en un entorno tecnológico</span><br><b>En:</b> 37 Reunión Latinoamericana de Matemática Educativa<br><span style='color: gray;'>Universidad De Costa Rica<br>22/07/2024<br>San José, Costa Rica<br>Modalidad: Presencial</span></div>`)[0];
+                popup_a58a1ff3140d3a67305ef94677d3fdd4.setContent(html_f72e7c75982ca7809db603c0f409aa3a);
+            
+        
+
+        marker_474345e914ae4e951f4a7d790c9bd070.bindPopup(popup_a58a1ff3140d3a67305ef94677d3fdd4)
+        ;
+
+        
+    
+    
+                marker_474345e914ae4e951f4a7d790c9bd070.setIcon(icon_a93895d416b00234a28340f6a194a64c);
+            
+    
+            var marker_17e0b0d8a547d1ac3dc97c632aeec77a = L.marker(
+                [-37.4711544143226, -72.34470872023971],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_4fe40668f8b37dc95baafaec1a661e84 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b192aedfaecccd80fdaf57d25ecfd953 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dd7c2511ef5271904bb287356ba2dbba = $(`<div id="html_dd7c2511ef5271904bb287356ba2dbba" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Gaona Paredes Jorge</span></b><br><b>Conferencia invitada:</b><br><span style='color: gray;'>FONDECYT 11230953. Relación entre el feedback y el trabajo matemático de estudiantes en el contexto de evaluaciones en línea en matemáticas</span><br><b>En:</b> Jornadas Nacionales de Educación Matemática<br><span style='color: gray;'>Universidad De Concepción<br>12/12/2024<br>Los Ángeles, Chile<br>Modalidad: Presencial</span></div>`)[0];
+                popup_b192aedfaecccd80fdaf57d25ecfd953.setContent(html_dd7c2511ef5271904bb287356ba2dbba);
+            
+        
+
+        marker_17e0b0d8a547d1ac3dc97c632aeec77a.bindPopup(popup_b192aedfaecccd80fdaf57d25ecfd953)
+        ;
+
+        
+    
+    
+                marker_17e0b0d8a547d1ac3dc97c632aeec77a.setIcon(icon_4fe40668f8b37dc95baafaec1a661e84);
+            
+    
+            var marker_28b0e9e876f25fd7fa14231cf98b0dfe = L.marker(
+                [43.37715305803048, -3.214619962568452],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_8ef420dd2c36d8164f8af94d69eea7fa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_04fd9f2354174a936af708b8075229fd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_47ce1a3c4a11143811d62963524ad765 = $(`<div id="html_47ce1a3c4a11143811d62963524ad765" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Gaona Paredes Jorge</span></b><br><b>Taller:</b><br><span style='color: gray;'>Travail mathématique en algèbre linéaire avec la technologie numérique. Projet ECOS-ANID C22H03</span><br><b>En:</b> Huitième Symposium d'Étude sur le Travail Mathématique (ETM8)<br><span style='color: gray;'>Universidad De Cantabria<br>21/10/2024<br>Castro-Urdiales, España<br>Modalidad: Presencial</span></div>`)[0];
+                popup_04fd9f2354174a936af708b8075229fd.setContent(html_47ce1a3c4a11143811d62963524ad765);
+            
+        
+
+        marker_28b0e9e876f25fd7fa14231cf98b0dfe.bindPopup(popup_04fd9f2354174a936af708b8075229fd)
+        ;
+
+        
+    
+    
+                marker_28b0e9e876f25fd7fa14231cf98b0dfe.setIcon(icon_8ef420dd2c36d8164f8af94d69eea7fa);
+            
+    
+            var marker_5b4aff99cd01518a89a5b28bf04773d8 = L.marker(
+                [43.377121865065526, -3.214716522089057],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_2e16f47cfb8e43c7786a556cb330ad70 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_174ccad26dc0bcecefd52555d87dccaa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3eb136fb0f8fd5845667d4ef4d9cafb9 = $(`<div id="html_3eb136fb0f8fd5845667d4ef4d9cafb9" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2024)  Gaona Paredes Jorge</span></b><br><b>Comunicación Breve:</b><br><span style='color: gray;'>Tâches ouvertes dans un environnement numérique pour le développement de l'ETM collectif</span><br><b>En:</b> Huitième Symposium d'Étude sur le Travail Mathématique (ETM8)<br><span style='color: gray;'>Universidad De Cantabria<br>21/10/2024<br>Castro-Urdiales, España<br>Modalidad: Presencial</span></div>`)[0];
+                popup_174ccad26dc0bcecefd52555d87dccaa.setContent(html_3eb136fb0f8fd5845667d4ef4d9cafb9);
+            
+        
+
+        marker_5b4aff99cd01518a89a5b28bf04773d8.bindPopup(popup_174ccad26dc0bcecefd52555d87dccaa)
+        ;
+
+        
+    
+    
+                marker_5b4aff99cd01518a89a5b28bf04773d8.setIcon(icon_2e16f47cfb8e43c7786a556cb330ad70);
+            
+    
+            var marker_3f2ff58dbfcb2412feee8aceaa5e0307 = L.marker(
+                [-33.444048109971895, -70.63149550639174],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_4e753054bc73823292d75bce3d3644ff = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_293ae924c3c4f825f12925c8a3d49b97 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_19241f07848bea6679e5b9387df1d02d = $(`<div id="html_19241f07848bea6679e5b9387df1d02d" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Búsquedas bibliográficas sistemáticas en educación matemática en la era de la inteligencia artificial</span><br><b>En:</b> Jornada de Trabajo Fondecyt Nº 11230953<br><span style='color: gray;'>Universidad Metropolitana De Ciencias De La Educación (Umce)<br>05/12/2023<br>Santiago, Chile<br>Modalidad: Presencial</span></div>`)[0];
+                popup_293ae924c3c4f825f12925c8a3d49b97.setContent(html_19241f07848bea6679e5b9387df1d02d);
+            
+        
+
+        marker_3f2ff58dbfcb2412feee8aceaa5e0307.bindPopup(popup_293ae924c3c4f825f12925c8a3d49b97)
+        ;
+
+        
+    
+    
+                marker_3f2ff58dbfcb2412feee8aceaa5e0307.setIcon(icon_4e753054bc73823292d75bce3d3644ff);
+            
+    
+            var marker_4f8e74c73fa157f5dbb960993a2ebd12 = L.marker(
+                [-35.409338730964066, -72.02099638241808],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_6565b561c93df06c81ea8e2a436531ea = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_357edc648c25fa5586a45d069b677a5c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b5ba35f3cf101f467906509aa5b4c332 = $(`<div id="html_b5ba35f3cf101f467906509aa5b4c332" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Jornada de trabajo avances de los proyectos Fondecyt de Iniciación Nº 11230953, 11231088 y 11230240.</span><br><b>En:</b> <br><span style='color: gray;'>Universidad De Talca<br>15/11/2023<br>Talca, Chile<br>Modalidad: Presencial</span></div>`)[0];
+                popup_357edc648c25fa5586a45d069b677a5c.setContent(html_b5ba35f3cf101f467906509aa5b4c332);
+            
+        
+
+        marker_4f8e74c73fa157f5dbb960993a2ebd12.bindPopup(popup_357edc648c25fa5586a45d069b677a5c)
+        ;
+
+        
+    
+    
+                marker_4f8e74c73fa157f5dbb960993a2ebd12.setIcon(icon_6565b561c93df06c81ea8e2a436531ea);
+            
+    
+            var marker_68ddcf48a24c3045ec544a192809d896 = L.marker(
+                [-12.104086326420006, -77.03887567216148],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_8979847448f84bc418cdcb6eea684687 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9d14b4cabebcaa24d3394a5946483838 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_31343359a7098b609f88ff5540ea9380 = $(`<div id="html_31343359a7098b609f88ff5540ea9380" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>¿Cuál es el trabajo matemático a partir de modificaciones en las variables didácticos de las tareas propuestas?</span><br><b>En:</b> XVI Conferencia Interamericana de Educación Matemática<br><span style='color: gray;'>Universidad De Lima<br>30/07/2023<br>Lima, Perú<br>Modalidad: Presencial</span></div>`)[0];
+                popup_9d14b4cabebcaa24d3394a5946483838.setContent(html_31343359a7098b609f88ff5540ea9380);
+            
+        
+
+        marker_68ddcf48a24c3045ec544a192809d896.bindPopup(popup_9d14b4cabebcaa24d3394a5946483838)
+        ;
+
+        
+    
+    
+                marker_68ddcf48a24c3045ec544a192809d896.setIcon(icon_8979847448f84bc418cdcb6eea684687);
+            
+    
+            var marker_18f9978f9283ec7a37153ffcda68fa13 = L.marker(
+                [-27.466967587522227, -58.78349508843798],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_dfd686b8640afa8632d72db92a547cf3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5d224e5743595d32674bb7fb2338fef8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ec87869a5b73d71880399ff709539589 = $(`<div id="html_ec87869a5b73d71880399ff709539589" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Conferencia invitada:</b><br><span style='color: gray;'>Enseñar, aprender y evaluar en matemáticas en la era de la inteligencia artificial</span><br><b>En:</b> 1ºCeM : 1er congreso de Educación Matemática<br><span style='color: gray;'>Universidad Nacional Del Nordeste<br>26/10/2023<br>Corrientes, Argentina<br>Modalidad: Virtual</span></div>`)[0];
+                popup_5d224e5743595d32674bb7fb2338fef8.setContent(html_ec87869a5b73d71880399ff709539589);
+            
+        
+
+        marker_18f9978f9283ec7a37153ffcda68fa13.bindPopup(popup_5d224e5743595d32674bb7fb2338fef8)
+        ;
+
+        
+    
+    
+                marker_18f9978f9283ec7a37153ffcda68fa13.setIcon(icon_dfd686b8640afa8632d72db92a547cf3);
+            
+    
+            var marker_29ec905c86130a39e428e469cd682391 = L.marker(
+                [-33.025664956773376, -71.63897498465656],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_563ce0c08b7fc757a06382d64114ec16 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cc7486f29c6428b23577d9475dd0b62b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aa6669e60bad3cafb88192d6676929a5 = $(`<div id="html_aa6669e60bad3cafb88192d6676929a5" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Conferencia invitada:</b><br><span style='color: gray;'>Inteligencia artificial en la didáctica de las matemáticas, algunos ejemplos de uso</span><br><b>En:</b> Jornadas IMUV 2023<br><span style='color: gray;'>Universidad De Valparaíso<br>29/11/2023<br>Valparaíso, Chile<br>Modalidad: Presencial</span></div>`)[0];
+                popup_cc7486f29c6428b23577d9475dd0b62b.setContent(html_aa6669e60bad3cafb88192d6676929a5);
+            
+        
+
+        marker_29ec905c86130a39e428e469cd682391.bindPopup(popup_cc7486f29c6428b23577d9475dd0b62b)
+        ;
+
+        
+    
+    
+                marker_29ec905c86130a39e428e469cd682391.setIcon(icon_563ce0c08b7fc757a06382d64114ec16);
+            
+    
+            var marker_4848305e839c0ad65c6a97e90a73fcd5 = L.marker(
+                [-35.04060175094781, -71.71887715416189],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_4db74c81f8b33ea13e708b4ebbeb1fb5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ff5506bcaeb28a746a591556fb78b6b8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_093e7532ddc9c74bc889444de1a7cf75 = $(`<div id="html_093e7532ddc9c74bc889444de1a7cf75" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Relación entre el feedback y el trabajo matemático de estudiantes en el contexto de evaluaciones en línea en matemáticas</span><br><b>En:</b> Jornada de trabajo en el Doctorado en Didáctica de las Matemáticas<br><span style='color: gray;'>Universidad Católica Del Maule<br>14/07/2023<br>Talca, Chile<br>Modalidad: Presencial</span></div>`)[0];
+                popup_ff5506bcaeb28a746a591556fb78b6b8.setContent(html_093e7532ddc9c74bc889444de1a7cf75);
+            
+        
+
+        marker_4848305e839c0ad65c6a97e90a73fcd5.bindPopup(popup_ff5506bcaeb28a746a591556fb78b6b8)
+        ;
+
+        
+    
+    
+                marker_4848305e839c0ad65c6a97e90a73fcd5.setIcon(icon_4db74c81f8b33ea13e708b4ebbeb1fb5);
+            
+    
+            var marker_15ccea030a7fecc36a5eceed71ab7229 = L.marker(
+                [48.11072045972344, 4.370123208876365],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_d249b9fc6ed8b4b43fd9b8522cbba564 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_815ac94f9d567465223aeb406b75e39b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7badfac53267ed38ab664ad45b01300f = $(`<div id="html_7badfac53267ed38ab664ad45b01300f" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Travail mathématique en géométrie 3D et trigonométrie dans une tâche d'un système d'évaluation en ligne avec feedback automatique</span><br><b>En:</b> XXIIeme École d'Été de Didactique des Mathématiques<br><span style='color: gray;'>Association Pour La Recherche En Didactique Des Mathématiques (Ardm)<br>16/10/2023<br>Bar Sur Seine, Francia<br>Modalidad: Presencial</span></div>`)[0];
+                popup_815ac94f9d567465223aeb406b75e39b.setContent(html_7badfac53267ed38ab664ad45b01300f);
+            
+        
+
+        marker_15ccea030a7fecc36a5eceed71ab7229.bindPopup(popup_815ac94f9d567465223aeb406b75e39b)
+        ;
+
+        
+    
+    
+                marker_15ccea030a7fecc36a5eceed71ab7229.setIcon(icon_d249b9fc6ed8b4b43fd9b8522cbba564);
+            
+    
+            var marker_3684b75253b76093f4c721aaa9318ee7 = L.marker(
+                [48.82767836437274, 2.382166816709801],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_a5aad0663f6e4553ba77e55b31816876 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_32bb47cb1e500038a73b62e180eb60bc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6f735234a39db12cffcbe369d74c5ef1 = $(`<div id="html_6f735234a39db12cffcbe369d74c5ef1" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2023)  Gaona Paredes Jorge</span></b><br><b>Profesor visitante:</b><br><span style='color: gray;'>Trabajo matemático de profesores en formación inicial apoyado por artefactos digitales en el dominio del álgebra lineal</span><br><b>En:</b> Ecos-Anid Id 220035<br><span style='color: gray;'>Université Paris Cité<br>26/09/2023<br>París, Francia<br>Modalidad: Presencial</span></div>`)[0];
+                popup_32bb47cb1e500038a73b62e180eb60bc.setContent(html_6f735234a39db12cffcbe369d74c5ef1);
+            
+        
+
+        marker_3684b75253b76093f4c721aaa9318ee7.bindPopup(popup_32bb47cb1e500038a73b62e180eb60bc)
+        ;
+
+        
+    
+    
+                marker_3684b75253b76093f4c721aaa9318ee7.setIcon(icon_a5aad0663f6e4553ba77e55b31816876);
+            
+    
+            var marker_fb70d903361be165d3d02932e7731ffc = L.marker(
+                [48.5665097498707, 7.752797620427827],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_fe7dc502585b04177f616ab962e47cf8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0fcc23ca81af7f11d2106fd5d5270ac4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fec37d4fdb0a83d310a4ed70c6bc1b9f = $(`<div id="html_fec37d4fdb0a83d310a4ed70c6bc1b9f" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2022)  Gaona Paredes Jorge</span></b><br><b>Exposición:</b><br><span style='color: gray;'>Apprentissage des nombres complexes en utilisant différents systèmes de calcul symbolique et d'un systeme d'évaluation en ligne dans la formation initiale d'enseignants</span><br><b>En:</b> Septième symposium d’Étude sur le Travail Mathématique<br><span style='color: gray;'>Inspe - Université De Strasbourg<br>27/06/2022<br>Estrasburgo, Francia<br>Modalidad: Presencial</span></div>`)[0];
+                popup_0fcc23ca81af7f11d2106fd5d5270ac4.setContent(html_fec37d4fdb0a83d310a4ed70c6bc1b9f);
+            
+        
+
+        marker_fb70d903361be165d3d02932e7731ffc.bindPopup(popup_0fcc23ca81af7f11d2106fd5d5270ac4)
+        ;
+
+        
+    
+    
+                marker_fb70d903361be165d3d02932e7731ffc.setIcon(icon_fe7dc502585b04177f616ab962e47cf8);
+            
+    
+            var marker_1df1945aeeb4dd023048789986ecd84e = L.marker(
+                [19.510849079912703, -99.129807207382],
+                {
+}
+            ).addTo(marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec);
+        
+    
+            var icon_71081b536e69296017827d4211807365 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4c789c10a23562b5cd8be326ea04a3d7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4c210cb84d22bf1afce4a76a10499117 = $(`<div id="html_4c210cb84d22bf1afce4a76a10499117" style="width: 100.0%; height: 100.0%;"><b><span style='color: blue;'>(2022)  Gaona Paredes Jorge</span></b><br><b>Conferencia invitada:</b><br><span style='color: gray;'>¿Cuál es es el trabajo matemático según las variables didáctica? el caso de un sistema de evaluación en línea</span><br><b>En:</b> Seminario Enseñanza del Cálculo, Ciencias y Matemáticas<br><span style='color: gray;'>Cinvestav<br>14/10/2022<br>Ciudad De México, México<br>Modalidad: Virtual</span></div>`)[0];
+                popup_4c789c10a23562b5cd8be326ea04a3d7.setContent(html_4c210cb84d22bf1afce4a76a10499117);
+            
+        
+
+        marker_1df1945aeeb4dd023048789986ecd84e.bindPopup(popup_4c789c10a23562b5cd8be326ea04a3d7)
+        ;
+
+        
+    
+    
+                marker_1df1945aeeb4dd023048789986ecd84e.setIcon(icon_71081b536e69296017827d4211807365);
+            
+    
+            marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec.addTo(map_519f6b03f7535af5bef2b9ca6a89babb);
+        
+    
+            tile_layer_578d0b8218c8af7b5c399b9fd24a3944.addTo(map_519f6b03f7535af5bef2b9ca6a89babb);
+        
+    
+                marker_7206fa9731b9e145906eac43ff696ff3.setIcon(icon_cf286d5e195e836b5d3884dca32810a9);
+            
+    
+                marker_5c81d6267f01789a449b76749305f903.setIcon(icon_83aec0e68a0277783183dece3f0142fc);
+            
+    
+                marker_3511a822d4148913c96f7f9545f7017c.setIcon(icon_017ed1f9cad12cdb5393dad9c753001f);
+            
+    
+                marker_3bc423312ef40c823ab6bc1f1a84c592.setIcon(icon_296ed2ed18bf953e63d75c1eb6322453);
+            
+    
+                marker_a627be8aaf48e19e291a081f9cba5bef.setIcon(icon_1f605b6921a43ff364e9758f44ef66ce);
+            
+    
+                marker_474345e914ae4e951f4a7d790c9bd070.setIcon(icon_a93895d416b00234a28340f6a194a64c);
+            
+    
+                marker_17e0b0d8a547d1ac3dc97c632aeec77a.setIcon(icon_4fe40668f8b37dc95baafaec1a661e84);
+            
+    
+                marker_28b0e9e876f25fd7fa14231cf98b0dfe.setIcon(icon_8ef420dd2c36d8164f8af94d69eea7fa);
+            
+    
+                marker_5b4aff99cd01518a89a5b28bf04773d8.setIcon(icon_2e16f47cfb8e43c7786a556cb330ad70);
+            
+    
+                marker_3f2ff58dbfcb2412feee8aceaa5e0307.setIcon(icon_4e753054bc73823292d75bce3d3644ff);
+            
+    
+                marker_4f8e74c73fa157f5dbb960993a2ebd12.setIcon(icon_6565b561c93df06c81ea8e2a436531ea);
+            
+    
+                marker_68ddcf48a24c3045ec544a192809d896.setIcon(icon_8979847448f84bc418cdcb6eea684687);
+            
+    
+                marker_18f9978f9283ec7a37153ffcda68fa13.setIcon(icon_dfd686b8640afa8632d72db92a547cf3);
+            
+    
+                marker_29ec905c86130a39e428e469cd682391.setIcon(icon_563ce0c08b7fc757a06382d64114ec16);
+            
+    
+                marker_4848305e839c0ad65c6a97e90a73fcd5.setIcon(icon_4db74c81f8b33ea13e708b4ebbeb1fb5);
+            
+    
+                marker_15ccea030a7fecc36a5eceed71ab7229.setIcon(icon_d249b9fc6ed8b4b43fd9b8522cbba564);
+            
+    
+                marker_3684b75253b76093f4c721aaa9318ee7.setIcon(icon_a5aad0663f6e4553ba77e55b31816876);
+            
+    
+                marker_fb70d903361be165d3d02932e7731ffc.setIcon(icon_fe7dc502585b04177f616ab962e47cf8);
+            
+    
+                marker_1df1945aeeb4dd023048789986ecd84e.setIcon(icon_71081b536e69296017827d4211807365);
+            
+    
+            marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec.addTo(map_519f6b03f7535af5bef2b9ca6a89babb);
+        
+    
+            tile_layer_578d0b8218c8af7b5c399b9fd24a3944.addTo(map_519f6b03f7535af5bef2b9ca6a89babb);
+        
+    
+                marker_7206fa9731b9e145906eac43ff696ff3.setIcon(icon_cf286d5e195e836b5d3884dca32810a9);
+            
+    
+                marker_5c81d6267f01789a449b76749305f903.setIcon(icon_83aec0e68a0277783183dece3f0142fc);
+            
+    
+                marker_3511a822d4148913c96f7f9545f7017c.setIcon(icon_017ed1f9cad12cdb5393dad9c753001f);
+            
+    
+                marker_3bc423312ef40c823ab6bc1f1a84c592.setIcon(icon_296ed2ed18bf953e63d75c1eb6322453);
+            
+    
+                marker_a627be8aaf48e19e291a081f9cba5bef.setIcon(icon_1f605b6921a43ff364e9758f44ef66ce);
+            
+    
+                marker_474345e914ae4e951f4a7d790c9bd070.setIcon(icon_a93895d416b00234a28340f6a194a64c);
+            
+    
+                marker_17e0b0d8a547d1ac3dc97c632aeec77a.setIcon(icon_4fe40668f8b37dc95baafaec1a661e84);
+            
+    
+                marker_28b0e9e876f25fd7fa14231cf98b0dfe.setIcon(icon_8ef420dd2c36d8164f8af94d69eea7fa);
+            
+    
+                marker_5b4aff99cd01518a89a5b28bf04773d8.setIcon(icon_2e16f47cfb8e43c7786a556cb330ad70);
+            
+    
+                marker_3f2ff58dbfcb2412feee8aceaa5e0307.setIcon(icon_4e753054bc73823292d75bce3d3644ff);
+            
+    
+                marker_4f8e74c73fa157f5dbb960993a2ebd12.setIcon(icon_6565b561c93df06c81ea8e2a436531ea);
+            
+    
+                marker_68ddcf48a24c3045ec544a192809d896.setIcon(icon_8979847448f84bc418cdcb6eea684687);
+            
+    
+                marker_18f9978f9283ec7a37153ffcda68fa13.setIcon(icon_dfd686b8640afa8632d72db92a547cf3);
+            
+    
+                marker_29ec905c86130a39e428e469cd682391.setIcon(icon_563ce0c08b7fc757a06382d64114ec16);
+            
+    
+                marker_4848305e839c0ad65c6a97e90a73fcd5.setIcon(icon_4db74c81f8b33ea13e708b4ebbeb1fb5);
+            
+    
+                marker_15ccea030a7fecc36a5eceed71ab7229.setIcon(icon_d249b9fc6ed8b4b43fd9b8522cbba564);
+            
+    
+                marker_3684b75253b76093f4c721aaa9318ee7.setIcon(icon_a5aad0663f6e4553ba77e55b31816876);
+            
+    
+                marker_fb70d903361be165d3d02932e7731ffc.setIcon(icon_fe7dc502585b04177f616ab962e47cf8);
+            
+    
+                marker_1df1945aeeb4dd023048789986ecd84e.setIcon(icon_71081b536e69296017827d4211807365);
+            
+    
+            marker_cluster_4f5ceaa9b118d59c3456a45f6ddb49ec.addTo(map_519f6b03f7535af5bef2b9ca6a89babb);
+        
+</script>
+</html>
