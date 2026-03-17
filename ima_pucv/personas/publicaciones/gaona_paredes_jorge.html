@@ -3,117 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <title>Gaona Paredes Jorge</title>
-<link href="https://fonts.googleapis.com/css2?family=Georgia&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  .page-wrap { max-width: 860px; margin: 0 auto; }
-  body {
-    font-family: "Open Sans", Arial, sans-serif;
-    color: #222222;
-    font-size: 1rem;
-    margin: 40px 32px;
-    line-height: 1.75;
-    background: #ffffff;
-    text-align: justify;
+  /* Layout general */
+  .page-wrap {
+    max-width: 960px;
+    margin: 0 auto;
   }
+  body {
+    font-family: "Lato", sans-serif;
+    color: #565656;
+    font-size: 1rem;
+    margin: 24px;
+    line-height: 1.5;
+  }
+
+  /* Cabecera (foto + nombre + afiliación) */
   .autor-info {
     display: flex;
     align-items: center;
-    gap: 24px;
-    margin: 0 0 24px;
-    text-align: left;
+    gap: 20px;
+    margin: 8px 0 16px;
   }
   @media (max-width: 720px) {
     .autor-info { flex-direction: column; align-items: flex-start; }
   }
   .circular-image {
     border-radius: 50%;
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
     object-fit: cover;
-    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,.08);
   }
   h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    color: #1a6496;
-    font-weight: normal;
-    font-size: 2rem;
-    line-height: 1.2;
+    color: #009bdb;
+    font-weight: 800;
+    font-size: 2.1rem;
+    line-height: 1.15;
     margin: 0 0 6px 0;
-    text-align: left;
-  }
-  h2 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #222222;
-    border-bottom: 2px solid #dddddd;
-    padding-bottom: 4px;
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-    text-align: left;
-  }
-  h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #444444;
-    margin: 1rem 0 0.25rem;
-    text-align: left;
   }
   .autor-meta {
-    color: #555555;
+    color: #8b8b8b;
     margin: 0;
-    line-height: 1.5;
-    font-size: 0.95rem;
+    line-height: 1.35;
   }
+
+  /* Íconos de redes académicas bajo la afiliación */
   .socials-icons {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     margin-top: 8px;
   }
   .socials-icons a {
     display: inline-flex;
     align-items: center;
     line-height: 0;
-    opacity: .85;
-    transition: opacity .2s;
+    transition: transform .1s ease, opacity .2s ease;
   }
-  .socials-icons a:hover { opacity: 1; }
-  .socials-icons img { width: 22px; height: 22px; display: block; }
-  .section-title {
-    font-size: 0.95rem;
+  .socials-icons a:hover { transform: translateY(-1px); opacity: .9; }
+  .socials-icons img { width: 24px; height: 24px; display: block; }
+
+  /* Títulos de secciones */
+  h2 {
+    margin-top: 1.25rem;
+    color: #009bdb;
+  }
+  h3 {
+    margin: 0.75rem 0 0.25rem;
+    color: #B33F34;   /* color de los años y subtítulos */
     font-weight: 700;
-    color: #333333;
-    margin: 1.2rem 0 4px;
-    text-transform: uppercase;
-    letter-spacing: .4px;
+  }
+  .section-title {
+    margin: 24px 0 8px;
+    color: #B33F34;
+    font-weight: 800;
+    letter-spacing: .2px;
   }
   .section-list {
-    margin: 0 0 12px 0;
-    padding-left: 1.2rem;
+    margin: 0 0 16px 0;
+    padding-left: 1.1rem;
   }
-  .section-list li { margin: 5px 0; }
-  .section-list li::marker { color: #1a6496; }
-  p { margin: 0.5rem 0; }
+  .section-list li {
+    margin: 8px 0;
+  }
+  .section-list li::marker { color: #B33F34; }
+
+  /* Botón Mostrar más */
   .btn-mas {
     display: inline-block;
-    margin-top: 0.75rem;
-    padding: 0.5rem 1.25rem;
-    border: 1px solid #1a6496;
-    border-radius: 3px;
-    background-color: #ffffff;
-    color: #1a6496;
-    font-size: 0.9rem;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #B33F34;
+    color: white;
+    font-size: 1rem;
     font-weight: 600;
+    text-align: center;
     cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.1s ease;
   }
   .btn-mas:hover {
-    background-color: #1a6496;
-    color: #ffffff;
+    background-color: #992F27;
+    transform: scale(1.02);
   }
+
   ul { margin-top: 0.25rem; }
-  a { color: #1a6496; }
-  a:hover { text-decoration: underline; }
 </style>
 <script>
 function toggleMore(id, btn){
@@ -133,7 +127,7 @@ function toggleMore(id, btn){
 </head>
 <body>
 <div class="page-wrap">
-<div class="autor-info"><img class="circular-image" src="https://www.upla.cl/facultad/cienciaseducacion/wp-content/uploads/2023/04/2023_0403_jorgegaona.jpg" alt="Foto de Jorge Gaona Paredes"><div><h1>Jorge Gaona Paredes</h1><p class="autor-meta">Académico  Jornada Completa<br>Instituto de Matemáticas<br>Facultad de Ciencias de la Educación<br>Universidad de Playa Ancha</p><div class="socials-icons"><a href="https://orcid.org/0000-0001-6367-529X" target="_blank" aria-label="ORCID" title="ORCID"><img src="https://info.orcid.org/wp-content/uploads/2020/12/orcid_16x16.gif" alt="ORCID"></a><a href="https://www.researchgate.net/profile/Jorge-Gaona-3" target="_blank" aria-label="ResearchGate" title="ResearchGate"><img src="https://www.svgrepo.com/show/314548/researchgate.svg" alt="ResearchGate"></a><a href="https://scholar.google.es/citations?user=ulOjPuMAAAAJ&hl=es" target="_blank" aria-label="Google Scholar" title="Google Scholar"><img src="https://img.icons8.com/?size=512&id=drPiDBy9kkJ3&format=png" alt="Google Scholar"></a></div></div></div><h3 class="section-title">Postgrado</h3><ul class="section-list"><li>Doctor en Didáctica de las Matemáticas, Universidad Paris Diderot, Francia.</li><li>Máster en Didáctica de las Matemáticas, Universidad Paris Diderot, Francia.</li></ul><h3 class="section-title">Pregrado</h3><ul class="section-list"><li>Licenciado en Matemáticas, Pontificia Universidad Católica de Valparaíso.</li></ul><h3 class="section-title">Responsabilidades</h3><ul class="section-list"><li>Coordinador Investigación Facultad de Ciencias de la Educación.</li><li>Consejero Doctorado en Educación (Programa Consorciado).</li></ul><h2>Publicaciones en revistas de investigación</h2><h3>2025</h3>
+<div class="autor-info"><img class="circular-image" src="https://www.upla.cl/facultad/cienciaseducacion/wp-content/uploads/2023/04/2023_0403_jorgegaona.jpg" alt="Foto de Jorge Gaona Paredes"><div><h1>Jorge Gaona Paredes</h1><p class="autor-meta">Académico  Jornada Completa<br>Instituto de Matemáticas<br>Facultad de Ciencias<br>Pontificia Universidad Católica de Valparaíso</p><div class="socials-icons"><a href="https://orcid.org/0000-0001-6367-529X" target="_blank" aria-label="ORCID" title="ORCID"><img src="https://info.orcid.org/wp-content/uploads/2020/12/orcid_16x16.gif" alt="ORCID"></a><a href="https://www.researchgate.net/profile/Jorge-Gaona-3" target="_blank" aria-label="ResearchGate" title="ResearchGate"><img src="https://www.svgrepo.com/show/314548/researchgate.svg" alt="ResearchGate"></a><a href="https://scholar.google.es/citations?user=ulOjPuMAAAAJ&hl=es" target="_blank" aria-label="Google Scholar" title="Google Scholar"><img src="https://img.icons8.com/?size=512&id=drPiDBy9kkJ3&format=png" alt="Google Scholar"></a></div></div></div><h3 class="section-title">Postgrado</h3><ul class="section-list"><li>Doctor en Didáctica de las Matemáticas, Universidad Paris Diderot, Francia.</li><li>Máster en Didáctica de las Matemáticas, Universidad Paris Diderot, Francia.</li></ul><h3 class="section-title">Pregrado</h3><ul class="section-list"><li>Licenciado en Matemáticas, Pontificia Universidad Católica de Valparaíso.</li></ul><h3 class="section-title">Responsabilidades</h3><ul class="section-list"><li>Coordinador Investigación Facultad de Ciencias de la Educación.</li><li>Consejero Doctorado en Educación (Programa Consorciado).</li></ul><h2>Publicaciones en revistas de investigación</h2><h3>2025</h3>
 <p>(2025) Hernández, R; Gaona, J; Huincahue, J; Cancino, V. <a href="https://doi.org/10.1080/0020739X.2025.2546886" target="_blank">Mathematical thinking styles in university students Mathematical thinking styles in university students</a>. <i>International Journal of Mathematical Education in Science and Technology</i>. Artículo: Scopus.</p>
 <p>(2025) Menares-Espinoza, R,; Gaona, J,; y Henríquez-Rivas, C. <a href="https://doi.org/10.29333/ejmste/16861" target="_blank">Pre-service teachers’ mathematical work on a calculus task that connects school and university</a>. <i>Eurasia Journal of Mathematics, Science and Technology Education</i>. Artículo: Scopus.</p>
 <p>(2025) Miranda, D. G.; Gaona, J.; Ramírez, P.; Vergara, A.; y Menares, R. <a href="https://doi.org/10.1177/21582440251357059" target="_blank">A Model in Crisis? Analyzing Assessment Convergence Between Future Teachers and Their Respective Training Institutions in Chile</a>. <i>SAGE Open</i>. Artículo: Scopus, WoS.</p>
@@ -165,7 +159,14 @@ function toggleMore(id, btn){
 <h3>2019</h3>
 <p>(2019) Drijvers P.; Gitirana V.; Monaghan J.; Okumus S.; Besnier S.; Pfeiffer C.; Mercat C.; Thomas A.; Christo D.; Bellemain F.; Faggiano E.; Orozco-Santiago J.; Ndlovu M.; Dijke-Droogers M. van; Ignácio R. da S.; Swidan O.; Filho P. L.; Albuquerque R. M. de; Hadjerrouit S.; ... Rodrigues A. <a href="https://doi.org/10.1007/978-3-030-20393-1" target="_blank">Transitions Toward Digital Resources: Change, Invariance, and Orchestration</a>. <i>The 'Resource' Approach to Mathematics Education</i>. Capítulo de Libro.</p>
 </div>
-<button class="btn-mas" onclick="toggleMore('gaona_paredes_jorge-libros-more', this)">Mostrar más</button><h2>Proyectos de investigación con financiamiento externo</h2><p>() (sin título).</p><ul><li><b>Investigadora/or Responsable:</b> Gaona Paredes Jorge.</li><li><b>Nombre del concurso:</b> FONDECYT Iniciación 2023.</li><li><b>Código del proyecto:</b> Fondecyt 11230953</li></ul><p>() (sin título).</p><ul><li><b>Investigadora/or Responsable:</b> Gaona Paredes Jorge.</li><li><b>Equipo de trabajo:</b> Gaona Paredes Jorge, López Silvia, Universidad de Viña del Mar; Menares Romina, Universidad de Valparaíso; Montoya Elizabeth, Pontificia Universidad Católica de Valparaíso; Rodríguez Miguel, Facultad de Ciencias de la Educación, Universidad de Playa Ancha; Abboud Maha, Université Paris Cité, Francia; Vandebrouck Fabrice, Université Paris Cité, Francia; Vivier Laurent, Université Paris Cité, Francia .</li><li><b>Nombre del concurso:</b> ECOS-ANID Convocatoria 2022.</li><li><b>Código del proyecto:</b> ECOS220035</li></ul><p>() (sin título).</p><ul><li><b>Investigadora/or Responsable:</b> Cabaluz Ducasse Fabián.</li><li><b>Equipo de trabajo:</b> Cabaluz Ducasse Fabián, Gaona Jorge, Facultad de Ciencias de la Educación, Universidad de Playa Ancha.</li><li><b>Nombre del concurso:</b> Proyectos de innovación Pedagógica (PIP).</li><li><b>Código del proyecto:</b> RED2099-2</li></ul><h2>Proyectos de investigación con financiamiento interno</h2><h3>2024</h3>
+<button class="btn-mas" onclick="toggleMore('gaona_paredes_jorge-libros-more', this)">Mostrar más</button><h2>Proyectos de investigación con financiamiento externo</h2><h3>2023</h3>
+<p>(2023) Relación entre el feedback y el trabajo matemático de estudiantes en el contexto de evaluaciones en línea en matemáticas.</p><ul><li><b>Investigadora/or Responsable:</b> Gaona Paredes Jorge.</li><li><b>Nombre del concurso:</b> FONDECYT Iniciación 2023.</li><li><b>Código del proyecto:</b> Fondecyt 11230953</li></ul>
+<p>(2023) Trabajo matemático de profesores en Formación Inicial y estudiantes de licenciatura científica soportado por artefactos digitales en el dominio del álgebra lineal.</p><ul><li><b>Investigadora/or Responsable:</b> Gaona Paredes Jorge.</li><li><b>Equipo de trabajo:</b> Gaona Paredes Jorge, López Silvia, Universidad de Viña del Mar; Menares Romina, Universidad de Valparaíso; Montoya Elizabeth, Pontificia Universidad Católica de Valparaíso; Rodríguez Miguel, Facultad de Ciencias de la Educación, Universidad de Playa Ancha; Abboud Maha, Université Paris Cité, Francia; Vandebrouck Fabrice, Université Paris Cité, Francia; Vivier Laurent, Université Paris Cité, Francia .</li><li><b>Nombre del concurso:</b> ECOS-ANID Convocatoria 2022.</li><li><b>Código del proyecto:</b> ECOS220035</li></ul>
+<div id="gaona_paredes_jorge-proy-externos-more" style="display:none;">
+<h3>2022</h3>
+<p>(2022) Educación y movimientos sociales en América Latina: cartografía interactiva y rutas de navegación por experiencias transformadoras.</p><ul><li><b>Investigadora/or Responsable:</b> Cabaluz Ducasse Fabián.</li><li><b>Equipo de trabajo:</b> Cabaluz Ducasse Fabián, Gaona Jorge, Facultad de Ciencias de la Educación, Universidad de Playa Ancha.</li><li><b>Nombre del concurso:</b> Proyectos de innovación Pedagógica (PIP).</li><li><b>Código del proyecto:</b> RED2099-2</li></ul>
+</div>
+<button class="btn-mas" onclick="toggleMore('gaona_paredes_jorge-proy-externos-more', this)">Mostrar más</button><h2>Proyectos de investigación con financiamiento interno</h2><h3>2024</h3>
 <p>(2024) Prototipo de plataforma web para la disponibilización de datos accesibles, interoperables y
 reutilizables respecto de la productividad científica de personas, equipos e instituciones.</p><ul><li><b>Investigadora/or Responsable:</b> Otra/otro académico que no pertenece a la Facultad de Ciencias de la Educación.</li><li><b>Equipo de trabajo:</b> Durán Ronald, Facultad de Humanidades, Universidad de Playa Ancha; Manríquez Ronald, Facultad de Ciencias Naturales y Exactas, Universidad de Playa Ancha; Gaona Jorge, Facultad de Ciencias de la Educación, Universidad de Playa Ancha; Lagos Ezequiel, Facultad de Ingeniería, Universidad de Playa Ancha; Peña Pallauta Paulina, Facultad de Ciencias Sociales, Universidad de Playa Ancha; Valdebenito Carolina,  Facultad de Ciencias Sociales, Universidad de Playa Ancha.</li><li><b>Nombre del concurso:</b> Concurso de Investigación y Desarrollo en Innovación (I+D+i+e)
 y Emprendimiento .</li><li><b>Código del proyecto:</b> </li></ul><h2>Organización/Comité científico en eventos de la Facultad</h2><h3>2026</h3>
