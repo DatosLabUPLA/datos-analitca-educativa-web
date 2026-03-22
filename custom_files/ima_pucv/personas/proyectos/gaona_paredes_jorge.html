@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Proyectos — Gaona Paredes Jorge</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  .page-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  body {
+    font-family: "Open Sans", Arial, sans-serif;
+    color: #222222;
+    font-size: 1rem;
+    margin: 40px 32px;
+    line-height: 1.75;
+    background: #ffffff;
+    text-align: justify;
+  }
+  h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1a6496;
+    border-bottom: 2px solid #1a6496;
+    padding-bottom: 4px;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #444444;
+    margin: 1rem 0 0.25rem;
+    text-align: left;
+  }
+  p { margin: 0.5rem 0; }
+  ul { margin: 0.25rem 0 0.5rem 1.2rem; }
+  li { margin: 3px 0; }
+  a { color: #1a6496; }
+  a:hover { text-decoration: underline; }
+  .btn-mas {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid #1a6496;
+    border-radius: 3px;
+    background-color: #ffffff;
+    color: #1a6496;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .btn-mas:hover {
+    background-color: #1a6496;
+    color: #ffffff;
+  }
+</style>
+<script>
+function toggleMore(id, btn) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var hidden = (el.style.display === '' || el.style.display === 'none');
+  if (hidden) {
+    el.style.display = 'block';
+    btn.textContent = 'Mostrar menos';
+  } else {
+    el.style.display = 'none';
+    btn.textContent = 'Mostrar más';
+    window.scrollTo({top: btn.offsetTop - 120, behavior: 'smooth'});
+  }
+}
+</script>
+</head>
+<body>
+<div class="page-wrap">
+<h2>Proyectos de investigación con financiamiento externo</h2><p>(2023-2025) Relación entre el feedback y el trabajo matemático de estudiantes en el contexto de evaluaciones en línea en matemáticas.</p><ul><li><b>Investigadora/or Responsable:</b> Gaona Paredes Jorge.</li><li><b>Nombre del concurso:</b> FONDECYT Iniciación 2023.</li><li><b>Código del proyecto:</b> Fondecyt 11230953</li></ul>
+<p>(2023-2025) Trabajo matemático de profesores en Formación Inicial y estudiantes de licenciatura científica soportado por artefactos digitales en el dominio del álgebra lineal.</p><ul><li><b>Investigadora/or Responsable:</b> Gaona Paredes Jorge.</li><li><b>Equipo de trabajo:</b> Gaona Paredes Jorge, Gaona Jorge, IMA PUCV; López Silvia, Universidad de Viña del Mar; Menares Romina, Universidad de Valparaíso; Montoya Elizabeth, Pontificia Universidad Católica de Valparaíso; Abboud Maha, Université Paris Cité, Francia; Vandebrouck Fabrice, Université Paris Cité, Francia; Vivier Laurent, Université Paris Cité, Francia .</li><li><b>Nombre del concurso:</b> ECOS-ANID Convocatoria 2022.</li><li><b>Código del proyecto:</b> ECOS220035</li></ul>
+<div id="gaona_paredes_jorge-proy-externos-more" style="display:none;">
+<p>(2024) Prototipo de plataforma web para la disponibilización de datos accesibles, interoperables y
+reutilizables respecto de la productividad científica de personas, equipos e instituciones.</p><ul><li><b>Investigadora/or Responsable:</b> Guevara Miguel, Facultad de Ingeniería, Universidad de Playa Ancha.</li><li><b>Equipo de trabajo:</b> Guevara Miguel, Facultad de Ingeniería, Universidad de Playa Ancha, Durán Ronald, Facultad de Humanidades, Universidad de Playa Ancha; Manríquez Ronald, Facultad de Ciencias Naturales y Exactas, Universidad de Playa Ancha; Gaona Jorge, IMA PUCV; Lagos Ezequiel, Facultad de Ingeniería, Universidad de Playa Ancha; Peña Pallauta Paulina, Facultad de Ciencias Sociales, Universidad de Playa Ancha; Valdebenito Carolina,  Facultad de Ciencias Sociales, Universidad de Playa Ancha.</li><li><b>Nombre del concurso:</b> Concurso de Investigación y Desarrollo en Innovación (I+D+i+e)
+y Emprendimiento .</li><li><b>Código del proyecto:</b> </li></ul>
+<p>(2022) Educación y movimientos sociales en América Latina: cartografía interactiva y rutas de navegación por experiencias transformadoras.</p><ul><li><b>Investigadora/or Responsable:</b> Cabaluz Ducasse Fabián.</li><li><b>Equipo de trabajo:</b> Cabaluz Ducasse Fabián, Gaona Jorge, IMA PUCV.</li><li><b>Nombre del concurso:</b> Proyectos de innovación Pedagógica (PIP).</li><li><b>Código del proyecto:</b> RED2099-2</li></ul>
+</div>
+<button class="btn-mas" onclick="toggleMore('gaona_paredes_jorge-proy-externos-more', this)">Mostrar más</button><p style="color: #cccccc; font-size: 0.85rem; margin-top: 2rem;">Fecha de actualización: 22/03/2026</p></div></body></html>
