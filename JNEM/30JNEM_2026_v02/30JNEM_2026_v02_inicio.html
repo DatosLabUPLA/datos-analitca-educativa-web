@@ -169,5 +169,54 @@ body { font-family:'Source Sans 3',sans-serif; color:var(--text); background:var
     <div class="container"><p class="desc-text">Bajo esta consigna, la ciudad de Valparaíso y la Pontificia Universidad Católica de Valparaíso se preparan para recibir las Trigésimas Jornadas Nacionales de Educación Matemática, concebidas como un espacio de encuentro, reflexión y diálogo en torno a los desafíos contemporáneos de la educación matemática en un mundo marcado por profundas transformaciones sociales, tecnológicas y ambientales.</p><p class="desc-text">Las Jornadas se proponen como un escenario para compartir y problematizar experiencias de investigación y de práctica en educación matemática, poniendo especial énfasis en el rol de la disciplina en la construcción de una sociedad más sustentable, justa y crítica, así como en las oportunidades y tensiones que emergen con el avance de la inteligencia artificial en los procesos de enseñanza, aprendizaje y formación docente. Conferencias internacionales y nacionales, presentaciones de investigaciones, mesas de discusión, talleres y exposiciones de pósteres conformarán un programa orientado a promover el intercambio académico y profesional entre investigadores, docentes y estudiantes del área.</p><p class="desc-text">La Sociedad Chilena de Educación Matemática y la Pontificia Universidad Católica de Valparaíso tienen el agrado de invitarles a participar en las 30 Jornadas Nacionales de Educación Matemática, que se realizarán los días 14, 15 y 16 de diciembre de 2026, en la ciudad de Valparaíso, Chile. Esperamos que este tradicional encuentro sea, una vez más, un espacio fértil para pensar colectivamente la educación matemática y su contribución a la transformación del futuro.</p><p class="desc-text">Esperamos contar con su valiosa participación.</p><p class="desc-text">¡Bienvenidos a Valparaíso!</p></div>
 </section>
 
+<script>
+let currentSlide=0;
+const track=document.getElementById('galleryTrack');
+const dotsC=document.getElementById('galleryDots');
+if(track){
+    const slides=track.querySelectorAll('.gallery-item');
+    const total=slides.length;
+    for(let i=0;i<total;i++){
+        const d=document.createElement('div');
+        d.className='gallery-dot'+(i===0?' active':'');
+        d.onclick=()=>goTo(i);
+        dotsC.appendChild(d);
+    }
+    function goTo(n){
+        currentSlide=((n%total)+total)%total;
+        track.style.transform=`translateX(-${currentSlide*100}%)`;
+        dotsC.querySelectorAll('.gallery-dot').forEach((d,i)=>d.classList.toggle('active',i===currentSlide));
+    }
+    window.moveGallery=function(dir){goTo(currentSlide+dir);};
+    if(total>1)setInterval(()=>goTo(currentSlide+1),5000);
+}
+
+let satSlide=0;
+const satTrack=document.getElementById('satTrack');
+const satDotsC=document.getElementById('satDots');
+if(satTrack){
+    const satSlides=satTrack.querySelectorAll('.gallery-item');
+    const satTotal=satSlides.length;
+    for(let i=0;i<satTotal;i++){
+        const d=document.createElement('div');
+        d.className='gallery-dot'+(i===0?' active':'');
+        d.onclick=()=>satGoTo(i);
+        satDotsC.appendChild(d);
+    }
+    function satGoTo(n){
+        satSlide=((n%satTotal)+satTotal)%satTotal;
+        satTrack.style.transform=`translateX(-${satSlide*100}%)`;
+        satDotsC.querySelectorAll('.gallery-dot').forEach((d,i)=>d.classList.toggle('active',i===satSlide));
+    }
+    window.moveSatGallery=function(dir){satGoTo(satSlide+dir);};
+    if(satTotal>1)setInterval(()=>satGoTo(satSlide+1),6000);
+}
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.15});
+reveals.forEach(el=>obs.observe(el));
+</script>
+
 </body>
 </html>
