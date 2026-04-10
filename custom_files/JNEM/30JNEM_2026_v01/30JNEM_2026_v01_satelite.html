@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jornadas Nacionales de Educación Matemática 2026 — Acerca</title>
+<title>Jornadas Nacionales de Educación Matemática 2026 — Satelite</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -155,24 +155,72 @@ body { font-family:'Source Sans 3',sans-serif; color:var(--text); background:var
 </head>
 <body>
 
-<section class="section comite-section reveal" id="cientifico">
+<section class="section satelite-section reveal" id="satelite">
     <div class="container">
-        <h2 class="section-title">Comité Científico</h2>
-        <div class="directiva-grid"><div class="directiva-card"><span class="role-badge">Presidencia</span><p class="member-name">Marcela Parraguez (PUCV)</p></div><div class="directiva-card"><span class="role-badge">Vicepresidencia</span><p class="member-name">Diana Zakaryan (PUCV)</p></div><div class="directiva-card"><span class="role-badge">Secretaría</span><p class="member-name">Elizabeth Montoya (PUCV)</p></div></div><div class="comite-group"><h3>Miembros</h3><ul class="members-list"><li>Melissa Andrade (PUCV)</li><li>Soledad Estrella (PUCV)</li><li>Jorge Gaona (PUCV)</li><li>Manuel Goizueta (PUCV)</li><li>Carolina Guerrero (PUCV)</li><li>Arturo Mena (PUCV)</li><li>Elizabeth Montoya (PUCV)</li><li>Astrid Morales (PUCV)</li><li>Raimundo Olfos (PUCV)</li><li>Marcela Parraguez (PUCV)</li><li>Elisabeth Ramos (PUCV)</li><li>Felipe Ruz (PUCV)</li><li>Patricia Vásquez (PUCV)</li><li>Diana Zakaryan (PUCV)</li></ul></div>
+        <h2 class="section-title">Jornada Satélite</h2>
+        <div class="satelite-card">
+            <h3>Jornada Satélite 30JNEM 2026</h3>
+            <p class="sat-desc">En esta ocasión el Comité Organizador de las 30 Jornadas Nacionales de Educación Matemática ha decidido realizar una Jornada Satélite previa al congreso, pensando en la importancia de contar con espacios de encuentro para la discusión de investigaciones en curso por jóvenes investigadores o estudiantes de postgrado (magister y doctorado) en Didáctica de la Matemática o en Educación Matemática.</p>
+            
+<div class="sat-carousel gallery-carousel" id="satCarousel">
+    <div class="gallery-track" id="satTrack"><div class="gallery-item"><img src="https://drive.google.com/thumbnail?id=1JsMEGOIIQddKup58hxxFknwGHq6z9JHC&sz=w800" alt="Lugar jornada satélite" loading="lazy" onerror="this.parentElement.style.display='none'"></div></div>
+    <button class="gallery-btn gallery-btn-prev" onclick="moveSatGallery(-1)">‹</button>
+    <button class="gallery-btn gallery-btn-next" onclick="moveSatGallery(1)">›</button>
+    <div class="gallery-dots" id="satDots"></div>
+</div>
+            <div class="sat-details"><div class="sat-detail-item"><span class="sat-icon">📅</span><span>13 de diciembre de 2026</span></div><div class="sat-detail-item"><span class="sat-icon">📍</span><span>Instituto de Matemáticas, Pontificia Universidad Católica de Valparaíso</span></div><div class="sat-detail-item"><span class="sat-icon">🏢</span><span>Blanco Viel 596, Cerro Barón, Valparaíso</span></div><div class="sat-detail-item"><a href="https://maps.app.goo.gl/6mFukbp1RmoJ9hqh9" target="_blank" class="sat-maps-link">Ver en Google Maps →</a></div><div class="sat-detail-item"><span class="sat-icon">✉️</span><a href="mailto:30jnem@pucv.cl">30jnem@pucv.cl</a></div></div>
+        </div>
     </div>
 </section>
-<section class="section comite-section-alt reveal" id="organizador">
-    <div class="container">
-        <h2 class="section-title">Comité Organizador</h2>
-        <div class="directiva-grid"><div class="directiva-card"><span class="role-badge">Presidencia</span><p class="member-name">Raimundo Olfos (PUCV)</p></div><div class="directiva-card"><span class="role-badge">Vicepresidencia</span><p class="member-name">Melissa Andrade<br>Elisabeth Ramos</p></div><div class="directiva-card"><span class="role-badge">Comité de Gestión de Datos</span><p class="member-name">Jorge Gaona (PUCV)<br>Juan Pablo Vargas (UDLA)</p></div><div class="directiva-card"><span class="role-badge">Representante(s) SOCHIEM</span><p class="member-name">Sergio Morales (UdeC)</p></div></div><div class="comite-group"><h3>Miembros</h3><ul class="members-list"><li>Carolina Guerrero (PUCV)</li><li>Astrid Morales (PUCV)</li><li>María Inés Pezoa (PUCV)</li><li>Patricia Vásquez (PUCV)</li></ul></div>
-    </div>
-</section>
-<section class="section comite-section reveal" id="logistico">
-    <div class="container">
-        <h2 class="section-title">Comité Logístico</h2>
-        <div class="comite-group"><h3>Miembros</h3><ul class="members-list"><li>Manuel Ampuero (PUCV)</li><li>Fabiola Arévalo (PUCV)</li><li>Luis Carlos (PUCV)</li><li>Diana Flores (PUCV)</li><li>Francisco Guantecura (PUCV)</li><li>José Luis López (PUCV)</li><li>Juan Felipe Medina (PUCV)</li><li>Alejandra Mondaca (PUCV)</li><li>Brahiam Ramírez (PUCV)</li><li>Patricio Santibañez (PUCV)</li></ul></div>
-    </div>
-</section>
+
+<script>
+let currentSlide=0;
+const track=document.getElementById('galleryTrack');
+const dotsC=document.getElementById('galleryDots');
+if(track){
+    const slides=track.querySelectorAll('.gallery-item');
+    const total=slides.length;
+    for(let i=0;i<total;i++){
+        const d=document.createElement('div');
+        d.className='gallery-dot'+(i===0?' active':'');
+        d.onclick=()=>goTo(i);
+        dotsC.appendChild(d);
+    }
+    function goTo(n){
+        currentSlide=((n%total)+total)%total;
+        track.style.transform=`translateX(-${currentSlide*100}%)`;
+        dotsC.querySelectorAll('.gallery-dot').forEach((d,i)=>d.classList.toggle('active',i===currentSlide));
+    }
+    window.moveGallery=function(dir){goTo(currentSlide+dir);};
+    if(total>1)setInterval(()=>goTo(currentSlide+1),5000);
+}
+
+let satSlide=0;
+const satTrack=document.getElementById('satTrack');
+const satDotsC=document.getElementById('satDots');
+if(satTrack){
+    const satSlides=satTrack.querySelectorAll('.gallery-item');
+    const satTotal=satSlides.length;
+    for(let i=0;i<satTotal;i++){
+        const d=document.createElement('div');
+        d.className='gallery-dot'+(i===0?' active':'');
+        d.onclick=()=>satGoTo(i);
+        satDotsC.appendChild(d);
+    }
+    function satGoTo(n){
+        satSlide=((n%satTotal)+satTotal)%satTotal;
+        satTrack.style.transform=`translateX(-${satSlide*100}%)`;
+        satDotsC.querySelectorAll('.gallery-dot').forEach((d,i)=>d.classList.toggle('active',i===satSlide));
+    }
+    window.moveSatGallery=function(dir){satGoTo(satSlide+dir);};
+    if(satTotal>1)setInterval(()=>satGoTo(satSlide+1),6000);
+}
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.15});
+reveals.forEach(el=>obs.observe(el));
+</script>
 
 </body>
 </html>
