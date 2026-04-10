@@ -174,5 +174,54 @@ body { font-family:'Source Sans 3',sans-serif; color:var(--text); background:var
     </div>
 </section>
 
+<script>
+let currentSlide=0;
+const track=document.getElementById('galleryTrack');
+const dotsC=document.getElementById('galleryDots');
+if(track){
+    const slides=track.querySelectorAll('.gallery-item');
+    const total=slides.length;
+    for(let i=0;i<total;i++){
+        const d=document.createElement('div');
+        d.className='gallery-dot'+(i===0?' active':'');
+        d.onclick=()=>goTo(i);
+        dotsC.appendChild(d);
+    }
+    function goTo(n){
+        currentSlide=((n%total)+total)%total;
+        track.style.transform=`translateX(-${currentSlide*100}%)`;
+        dotsC.querySelectorAll('.gallery-dot').forEach((d,i)=>d.classList.toggle('active',i===currentSlide));
+    }
+    window.moveGallery=function(dir){goTo(currentSlide+dir);};
+    if(total>1)setInterval(()=>goTo(currentSlide+1),5000);
+}
+
+let satSlide=0;
+const satTrack=document.getElementById('satTrack');
+const satDotsC=document.getElementById('satDots');
+if(satTrack){
+    const satSlides=satTrack.querySelectorAll('.gallery-item');
+    const satTotal=satSlides.length;
+    for(let i=0;i<satTotal;i++){
+        const d=document.createElement('div');
+        d.className='gallery-dot'+(i===0?' active':'');
+        d.onclick=()=>satGoTo(i);
+        satDotsC.appendChild(d);
+    }
+    function satGoTo(n){
+        satSlide=((n%satTotal)+satTotal)%satTotal;
+        satTrack.style.transform=`translateX(-${satSlide*100}%)`;
+        satDotsC.querySelectorAll('.gallery-dot').forEach((d,i)=>d.classList.toggle('active',i===satSlide));
+    }
+    window.moveSatGallery=function(dir){satGoTo(satSlide+dir);};
+    if(satTotal>1)setInterval(()=>satGoTo(satSlide+1),6000);
+}
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.15});
+reveals.forEach(el=>obs.observe(el));
+</script>
+
 </body>
 </html>
