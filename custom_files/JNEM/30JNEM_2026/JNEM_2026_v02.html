@@ -16,7 +16,7 @@
 html { scroll-behavior:smooth; }
 body { font-family:'Source Sans 3',sans-serif; color:var(--text); background:var(--bg); line-height:1.7; overflow-x:hidden; }
 
-/* HERO */
+/* HERO texto (sin imagen destacada) */
 .hero { min-height:100vh; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;
     background:linear-gradient(135deg, var(--pri) 0%, color-mix(in srgb, var(--pri) 70%, black) 100%); }
 .hero::before { content:''; position:absolute; inset:0;
@@ -30,11 +30,26 @@ body { font-family:'Source Sans 3',sans-serif; color:var(--text); background:var
 .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2.4rem,6vw,4.5rem); font-weight:900; color:#fff; line-height:1.15; margin-bottom:1rem; }
 .hero-tagline { font-size:clamp(1rem,2.5vw,1.35rem); color:rgba(255,255,255,0.8); font-style:italic; font-family:'Playfair Display',serif; margin-bottom:0.8rem; }
 .hero-institution { font-size:1rem; color:rgba(255,255,255,0.65); font-weight:300; letter-spacing:0.05em; margin-bottom:1.5rem; }
-.hero-meta { display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center; margin-top:1.5rem; }
-.hero-meta-item { display:flex; align-items:center; gap:0.5rem; color:rgba(255,255,255,0.75); font-size:0.95rem; }
-.hero-meta-item svg { width:18px; height:18px; stroke:var(--sec); fill:none; stroke-width:2; }
-.cta-button { display:inline-block; margin-top:2rem; background:var(--sec); color:var(--pri); font-weight:700; padding:0.9em 2.5em; border-radius:50px; text-decoration:none; font-size:0.95rem; letter-spacing:0.05em; text-transform:uppercase; transition:transform 0.3s,box-shadow 0.3s; box-shadow:0 4px 20px #f4ce4655; }
+.hero .hero-meta { display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center; margin-top:1.5rem; }
+.hero .hero-meta-item { display:flex; align-items:center; gap:0.5rem; color:rgba(255,255,255,0.75); font-size:0.95rem; }
+.hero .hero-meta-item svg { width:18px; height:18px; stroke:var(--sec); fill:none; stroke-width:2; }
+.cta-button { display:inline-block; margin-top:1rem; background:var(--sec); color:var(--pri); font-weight:700; padding:0.9em 2.5em; border-radius:50px; text-decoration:none; font-size:0.95rem; letter-spacing:0.05em; text-transform:uppercase; transition:transform 0.3s,box-shadow 0.3s; box-shadow:0 4px 20px #f4ce4655; }
 .cta-button:hover { transform:translateY(-2px); box-shadow:0 8px 30px #f4ce4677; }
+
+/* HERO modo imagen (cuando hay imagen destacada) */
+.hero-image-mode { background:var(--pri); display:flex; flex-direction:column; align-items:center; animation:fadeUp 1s ease-out; }
+.hero-image-wrap { width:100%; display:flex; justify-content:center; align-items:center; padding:0; }
+.hero-image-wrap img { width:100%; max-width:1920px; height:auto; display:block; }
+.hero-meta-bar { width:100%; background:color-mix(in srgb, var(--pri) 92%, black); padding:1.5rem 2rem; display:flex; flex-direction:column; align-items:center; gap:1rem; border-top:3px solid var(--sec); }
+.hero-meta-bar .hero-meta { display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; }
+.hero-meta-bar .hero-meta-item { display:flex; align-items:center; gap:0.6rem; color:rgba(255,255,255,0.9); font-size:1rem; font-weight:500; }
+.hero-meta-bar .hero-meta-item svg { width:20px; height:20px; stroke:var(--sec); fill:none; stroke-width:2; }
+
+/* BANNER INSTITUCIONAL (tarjeta clara sobre fondo claro) */
+.banner-section { background:var(--bg); padding:3.5rem 1.5rem; display:flex; flex-direction:column; align-items:center; gap:1.2rem; }
+.banner-label { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.2em; color:var(--text-light); }
+.banner-wrap { max-width:1100px; width:100%; background:var(--card-bg); border-radius:16px; padding:1.5rem 2rem; box-shadow:0 4px 24px rgba(0,0,0,0.08); display:flex; justify-content:center; align-items:center; border:1px solid rgba(0,0,0,0.04); }
+.banner-wrap img { max-width:100%; height:auto; display:block; border-radius:8px; }
 
 /* SECCIONES */
 .section { padding:5rem 0; }
@@ -134,12 +149,17 @@ body { font-family:'Source Sans 3',sans-serif; color:var(--text); background:var
     .container { padding:0 1.2rem; }
     .afiche-card { flex-direction:column; text-align:center; }
     .afiche-img-wrap { flex:none; max-width:280px; margin:0 auto; }
+    .banner-section { padding:2rem 1rem; }
+    .banner-wrap { padding:1rem; }
+    .hero-meta-bar { padding:1.2rem 1rem; }
+    .hero-meta-bar .hero-meta { gap:1.2rem; }
 }
 .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease,transform 0.7s ease; }
 .reveal.visible { opacity:1; transform:translateY(0); }
 </style>
 </head>
 <body>
+
 
 <section class="hero" id="hero">
     <div class="hero-content">
@@ -267,7 +287,6 @@ if(track){
     if(total>1)setInterval(()=>goTo(currentSlide+1),5000);
 }
 
-// Satellite gallery carousel
 let satSlide=0;
 const satTrack=document.getElementById('satTrack');
 const satDotsC=document.getElementById('satDots');
