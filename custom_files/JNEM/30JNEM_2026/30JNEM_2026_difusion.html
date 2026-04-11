@@ -137,6 +137,14 @@ body { font-family:'Source Sans 3',sans-serif; color:var(--text); background:var
 
 .footer { background:color-mix(in srgb, var(--pri) 90%, black); color:rgba(255,255,255,0.4); text-align:center; padding:2rem; font-size:0.85rem; }
 
+/* Menú de comités */
+.comite-nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--sec-light); }
+.comite-nav-inner { max-width:1100px; margin:0 auto; display:flex; justify-content:center; gap:2.5rem; padding:1rem 2rem; flex-wrap:wrap; }
+.comite-nav a { text-decoration:none; color:var(--text-light); font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:0.4rem 0; border-bottom:2px solid transparent; transition:color 0.3s, border-color 0.3s; }
+.comite-nav a:hover { color:var(--pri); border-bottom-color:var(--sec); }
+
+section[id] { scroll-margin-top:80px; }
+
 @media (max-width:768px) {
     .hero h1 { font-size:2rem; }
     .hero-year { font-size:1.5rem; }
@@ -148,6 +156,8 @@ body { font-family:'Source Sans 3',sans-serif; color:var(--text); background:var
     .banner-wrap { padding:1rem; }
     .hero-meta-bar { padding:1.2rem 1rem; }
     .hero-meta-bar .hero-meta { gap:1.2rem; }
+    .comite-nav-inner { gap:1.2rem; padding:0.8rem 1rem; }
+    .comite-nav a { font-size:0.75rem; }
 }
 .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease,transform 0.7s ease; }
 .reveal.visible { opacity:1; transform:translateY(0); }
