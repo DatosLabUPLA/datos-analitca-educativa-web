@@ -232,5 +232,15 @@ const obs=new IntersectionObserver(es=>{
 reveals.forEach(el=>obs.observe(el));
 </script>
 
+<script>
+function sendHeight() {
+  parent.postMessage(
+    { type: "resize", height: document.body.scrollHeight },
+    "*"
+  );
+}
+window.addEventListener("load", sendHeight);
+window.addEventListener("resize", sendHeight);
+</script>
 </body>
 </html>
