@@ -166,7 +166,7 @@ section[id] { scroll-margin-top:80px; }
 <body>
 
 <nav class="comite-nav">
-    <div class="comite-nav-inner"><a href="#cientifico">Científico</a><a href="#organizador">Organizador</a><a href="#logistico">Logístico</a></div>
+    <div class="comite-nav-inner"><a href="#" data-target="cientifico">Científico</a><a href="#" data-target="organizador">Organizador</a><a href="#" data-target="logistico">Logístico</a></div>
 </nav>
 <section class="section comite-section reveal" id="cientifico">
     <div class="container">
@@ -243,8 +243,32 @@ function sendHeight() {
     "*"
   );
 }
+
 window.addEventListener("load", sendHeight);
 window.addEventListener("resize", sendHeight);
+
+window.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".comite-nav a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.dataset.target;
+      const section = document.getElementById(targetId);
+
+      if (section) {
+        const rect = section.getBoundingClientRect();
+
+        parent.postMessage(
+          {
+            type: "scrollToSection",
+            offset: rect.top
+          },
+          "*"
+        );
+      }
+    });
+  });
+});
 </script>
 </body>
 </html>
