@@ -237,8 +237,32 @@ function sendHeight() {
     "*"
   );
 }
+
 window.addEventListener("load", sendHeight);
 window.addEventListener("resize", sendHeight);
+
+window.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".comite-nav a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.dataset.target;
+      const section = document.getElementById(targetId);
+
+      if (section) {
+        const rect = section.getBoundingClientRect();
+
+        parent.postMessage(
+          {
+            type: "scrollToSection",
+            offset: rect.top
+          },
+          "*"
+        );
+      }
+    });
+  });
+});
 </script>
 </body>
 </html>
