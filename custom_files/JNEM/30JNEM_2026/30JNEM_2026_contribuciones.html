@@ -165,20 +165,24 @@ section[id] { scroll-margin-top:80px; }
 
 
 .contrib-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:2rem; }
-.contrib-card { background:var(--card-bg); border-radius:20px; padding:2rem; box-shadow:0 4px 24px rgba(0,0,0,0.06); border-top:4px solid var(--sec); }
-.contrib-header { display:flex; align-items:center; gap:1rem; margin-bottom:1rem; }
-.contrib-sigla { display:inline-flex; align-items:center; justify-content:center; min-width:52px; height:52px; background:var(--pri); color:#fff; font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:900; border-radius:12px; padding:0 0.5rem; }
+.contrib-card { background:var(--card-bg); border-radius:20px; padding:2rem; box-shadow:0 4px 24px rgba(0,0,0,0.06); border-top:4px solid var(--sec); display:flex; flex-direction:column; gap:0.8rem; }
+.contrib-header { display:flex; align-items:center; gap:1rem; }
+.contrib-sigla { display:inline-flex; align-items:center; justify-content:center; min-width:52px; height:52px; background:var(--pri); color:#fff; font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:900; border-radius:12px; padding:0 0.5rem; flex-shrink:0; }
 .contrib-tipo { font-family:'Playfair Display',serif; font-size:1.25rem; font-weight:700; color:var(--pri); }
-.contrib-desc { color:var(--text); line-height:1.8; margin-bottom:1rem; }
-.contrib-meta { display:flex; flex-wrap:wrap; gap:0.5rem 1.5rem; margin-bottom:1rem; }
-.contrib-meta-item { font-size:0.9rem; color:var(--text-light); }
+.contrib-desc { color:var(--text); line-height:1.85; font-size:1.05rem; }
+.contrib-meta { display:flex; flex-wrap:wrap; gap:0.4rem 1.4rem; }
+.contrib-meta-item { font-size:0.88rem; color:var(--text-light); }
 .contrib-meta-item strong { color:var(--pri); }
-.contrib-secciones-title { font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--sec); margin-bottom:0.5rem; }
-.contrib-sections { list-style:none; display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1rem; }
-.contrib-sections li { font-size:0.85rem; background:var(--pri-light); color:var(--pri); padding:0.25em 0.8em; border-radius:50px; border:1px solid var(--sec-light); }
-.contrib-abrev { font-size:0.85rem; color:var(--text-light); margin-bottom:0.6rem; background:var(--bg); border-radius:8px; padding:0.6rem 1rem; border-left:3px solid var(--sec); }
-.contrib-abrev code { display:block; margin-top:0.3rem; font-size:0.8rem; color:var(--pri); word-break:break-all; }
-.contrib-nota { font-size:0.88rem; color:var(--text-light); background:var(--sec-light); border-radius:8px; padding:0.6rem 1rem; margin-top:0.5rem; line-height:1.6; }
+.contrib-secciones-title { font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--sec); margin-bottom:0.3rem; }
+.contrib-sections { list-style:none; display:flex; flex-wrap:wrap; gap:0.35rem; }
+.contrib-sections li { font-size:0.82rem; background:var(--pri-light); color:var(--pri); padding:0.2em 0.75em; border-radius:50px; border:1px solid var(--sec-light); }
+.contrib-nota { font-size:0.88rem; color:var(--text-light); background:var(--sec-light); border-radius:8px; padding:0.6rem 1rem; line-height:1.6; }
+.contrib-abrev-wrap { margin-top:auto; border-top:1px solid var(--sec-light); padding-top:0.8rem; }
+.contrib-abrev-title { font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-light); cursor:pointer; list-style:none; }
+.contrib-abrev-title::-webkit-details-marker { display:none; }
+.contrib-abrev-title::before { content:'▸ '; font-size:0.7rem; }
+details[open] .contrib-abrev-title::before { content:'▾ '; }
+.contrib-abrev-code { display:block; margin-top:0.5rem; font-size:0.78rem; color:var(--pri); word-break:break-all; background:var(--bg); padding:0.5rem 0.8rem; border-radius:6px; line-height:1.6; }
 
 </style>
 </head>
@@ -197,9 +201,12 @@ section[id] { scroll-margin-top:80px; }
     <div class="contrib-meta"><span class="contrib-meta-item"><strong>Páginas:</strong> —</span><span class="contrib-meta-item"><strong>Duración:</strong> 30 min</span></div>
     
     
-    <div class="contrib-abrev"><strong>Nombre del archivo:</strong><code>Tipo de propuesta_Codificador de nivel_Codificador de tematica_primeras dos palabras del título_ciego. Los codificadores de nivel son: B=Básico;M=Medio;S=Superior;FP=Formación de Profesores.
- Ejemplo: RI_B_DR_Una secuencia_ciego</code></div>
     
+    <details class="contrib-abrev-wrap">
+    <summary class="contrib-abrev-title">Nombre del archivo</summary>
+    <code class="contrib-abrev-code">Tipo de propuesta_Codificador de nivel_Codificador de tematica_primeras dos palabras del título_ciego. Los codificadores de nivel son: B=Básico;M=Medio;S=Superior;FP=Formación de Profesores.
+ Ejemplo: RI_B_DR_Una secuencia_ciego</code>
+</details>
 </div>
 <div class="contrib-card reveal" id="contrib-cb">
     <div class="contrib-header">
@@ -210,9 +217,12 @@ section[id] { scroll-margin-top:80px; }
     <div class="contrib-meta"><span class="contrib-meta-item"><strong>Páginas:</strong> 4</span><span class="contrib-meta-item"><strong>Duración:</strong> 20 min</span></div>
     
     
-    <div class="contrib-abrev"><strong>Nombre del archivo:</strong><code>Tipo de propuesta_Codificador de nivel_Codificador de tematica_primeras dos palabras del título_ciego. Los codificadores de nivel son: B=Básico;M=Medio;S=Superior;FP=Formación de Profesores.
- Ejemplo: CB_B_DR_Una secuencia_ciego</code></div>
     
+    <details class="contrib-abrev-wrap">
+    <summary class="contrib-abrev-title">Nombre del archivo</summary>
+    <code class="contrib-abrev-code">Tipo de propuesta_Codificador de nivel_Codificador de tematica_primeras dos palabras del título_ciego. Los codificadores de nivel son: B=Básico;M=Medio;S=Superior;FP=Formación de Profesores.
+ Ejemplo: CB_B_DR_Una secuencia_ciego</code>
+</details>
 </div>
 <div class="contrib-card reveal" id="contrib-t">
     <div class="contrib-header">
@@ -223,9 +233,12 @@ section[id] { scroll-margin-top:80px; }
     <div class="contrib-meta"><span class="contrib-meta-item"><strong>Páginas:</strong> 4</span><span class="contrib-meta-item"><strong>Duración:</strong> 2 sesiones × 90 min</span></div>
     
     
-    <div class="contrib-abrev"><strong>Nombre del archivo:</strong><code>Tipo de propuesta_Codificador de nivel_Codificador de tematica_primeras dos palabras del título_ciego. Los codificadores de nivel son: B=Básico;M=Medio;S=Superior;FP=Formación de Profesores.
- Ejemplo: T_B_DR_Una secuencia_ciego</code></div>
     
+    <details class="contrib-abrev-wrap">
+    <summary class="contrib-abrev-title">Nombre del archivo</summary>
+    <code class="contrib-abrev-code">Tipo de propuesta_Codificador de nivel_Codificador de tematica_primeras dos palabras del título_ciego. Los codificadores de nivel son: B=Básico;M=Medio;S=Superior;FP=Formación de Profesores.
+ Ejemplo: T_B_DR_Una secuencia_ciego</code>
+</details>
 </div>
 <div class="contrib-card reveal" id="contrib-p">
     <div class="contrib-header">
@@ -236,9 +249,12 @@ section[id] { scroll-margin-top:80px; }
     <div class="contrib-meta"><span class="contrib-meta-item"><strong>Páginas:</strong> 1</span><span class="contrib-meta-item"><strong>Duración:</strong> Sesión de pósters</span></div>
     
     
-    <div class="contrib-abrev"><strong>Nombre del archivo:</strong><code>Tipo de propuesta_Codificador de nivel_Codificador de tematica_primeras dos palabras del título_ciego. Los codificadores de nivel son: B=Básico;M=Medio;S=Superior;FP=Formación de Profesores.
- Ejemplo: P_B_DR_Una secuencia_ciego</code></div>
     
+    <details class="contrib-abrev-wrap">
+    <summary class="contrib-abrev-title">Nombre del archivo</summary>
+    <code class="contrib-abrev-code">Tipo de propuesta_Codificador de nivel_Codificador de tematica_primeras dos palabras del título_ciego. Los codificadores de nivel son: B=Básico;M=Medio;S=Superior;FP=Formación de Profesores.
+ Ejemplo: P_B_DR_Una secuencia_ciego</code>
+</details>
 </div>
         </div>
     </div>
