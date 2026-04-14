@@ -197,6 +197,7 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
 </style>
 </head>
 <body>
+<nav class="comite-nav"><div class="comite-nav-inner"><a href="#" data-target="contrib-descripción">Descripción</a><a href="#" data-target="contrib-fechas-importantes">Fechas importantes</a><a href="#" data-target="contrib-envíos">Envíos</a></div></nav>
 <section class="section contrib-section reveal" id="contrib-descripción"><div class="container"><h2 class="section-title">Descripción</h2><div class="contrib-grid"><div class="contrib-card reveal" id="contrib-ri"><div class="contrib-header"><span class="contrib-sigla">RI</span><h3 class="contrib-tipo">Reporte de Investigación</h3></div><p class="contrib-desc">Presentación de avances o resultados finales de proyectos de investigación, tesis o experiencias en educación matemática en los cuales se muestren evidencias o datos.</p><div class="contrib-meta"><span class="contrib-meta-item"><strong>Duración:</strong> 30 min</span></div><details class="contrib-abrev-wrap"><summary class="contrib-abrev-title">Nombre del archivo</summary><code class="contrib-abrev-code">Tipo de propuesta_Codificador de nivel_Codificador de tematica_primeras dos palabras del título_ciego. Los codificadores de nivel son: B=Básico;M=Medio;S=Superior;FP=Formación de Profesores.
  Ejemplo: RI_B_DR_Una secuencia_ciego</code></details></div><div class="contrib-card reveal" id="contrib-cb"><div class="contrib-header"><span class="contrib-sigla">CB</span><h3 class="contrib-tipo">Comunicación Breve</h3></div><p class="contrib-desc">Presentación de avances o resultados finales de proyectos de investigación, tesis o experiencias en educación matemática.</p><div class="contrib-meta"><span class="contrib-meta-item"><strong>Páginas:</strong> 4</span><span class="contrib-meta-item"><strong>Duración:</strong> 20 min</span></div><details class="contrib-abrev-wrap"><summary class="contrib-abrev-title">Nombre del archivo</summary><code class="contrib-abrev-code">Tipo de propuesta_Codificador de nivel_Codificador de tematica_primeras dos palabras del título_ciego. Los codificadores de nivel son: B=Básico;M=Medio;S=Superior;FP=Formación de Profesores.
  Ejemplo: CB_B_DR_Una secuencia_ciego</code></details></div><div class="contrib-card reveal" id="contrib-t"><div class="contrib-header"><span class="contrib-sigla">T</span><h3 class="contrib-tipo">Taller</h3></div><p class="contrib-desc">Presentación de situaciones de enseñanza o aprendizaje buscando hacer partícipes a los asistentes en resolución de problemas, diseño de propuestas y discusión didáctica.
@@ -215,6 +216,20 @@ function sendHeight(){
 }
 window.addEventListener("load",sendHeight);
 window.addEventListener("resize",sendHeight);
+
+window.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".comite-nav a").forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.dataset.target;
+            const section = document.getElementById(targetId);
+            if (section) {
+                const rect = section.getBoundingClientRect();
+                parent.postMessage({ type: "scrollToSection", offset: rect.top }, "*");
+            }
+        });
+    });
+});
 </script>
 </body>
 </html>
