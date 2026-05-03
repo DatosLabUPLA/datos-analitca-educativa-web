@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#8e9a23", "id": "numeros", "label": "numeros (43)", "shape": "dot", "value": 43}, {"color": "#8e9a23", "id": "datos y azar", "label": "datos y azar (61)", "shape": "dot", "value": 61}, {"color": "#8e9a23", "id": "formacion docente", "label": "formacion docente (101)", "shape": "dot", "value": 101}, {"color": "#8e9a23", "id": "acceso y equidad", "label": "acceso y equidad (3)", "shape": "dot", "value": 3}, {"color": "#8e9a23", "id": "curriculum y textos", "label": "curriculum y textos (38)", "shape": "dot", "value": 38}, {"color": "#8e9a23", "id": "interdisciplina", "label": "interdisciplina (22)", "shape": "dot", "value": 22}, {"color": "#8e9a23", "id": "geometria", "label": "geometria (77)", "shape": "dot", "value": 77}, {"color": "#8e9a23", "id": "tecnologias", "label": "tecnologias (63)", "shape": "dot", "value": 63}, {"color": "#f29b8a", "id": "otra tecnologia", "label": "otra tecnologia (10)", "shape": "dot", "value": 10}, {"color": "#8e9a23", "id": "inclusion y diversidad", "label": "inclusion y diversidad (54)", "shape": "dot", "value": 54}, {"color": "#8e9a23", "id": "habilidades matematicas", "label": "habilidades matematicas (93)", "shape": "dot", "value": 93}, {"color": "#2196f3", "id": "otra habilidad", "label": "otra habilidad (17)", "shape": "dot", "value": 17}, {"color": "#2196f3", "id": "resolucion de problemas", "label": "resolucion de problemas (35)", "shape": "dot", "value": 35}, {"color": "#8e9a23", "id": "patrones y algebra", "label": "patrones y algebra (67)", "shape": "dot", "value": 67}, {"color": "#8e9a23", "id": "afecto y motivacion", "label": "afecto y motivacion (31)", "shape": "dot", "value": 31}, {"color": "#8e9a23", "id": "pensamiento computacional", "label": "pensamiento computacional (11)", "shape": "dot", "value": 11}, {"color": "#2196f3", "id": "visualizacion", "label": "visualizacion (6)", "shape": "dot", "value": 6}, {"color": "#2196f3", "id": "argumentar y comunicar", "label": "argumentar y comunicar (14)", "shape": "dot", "value": 14}, {"color": "#2196f3", "id": "representacion", "label": "representacion (6)", "shape": "dot", "value": 6}, {"color": "#f29b8a", "id": "tic", "label": "tic (9)", "shape": "dot", "value": 9}, {"color": "#2196f3", "id": "modelacion", "label": "modelacion (19)", "shape": "dot", "value": 19}, {"color": "#f29b8a", "id": "software educativo", "label": "software educativo (11)", "shape": "dot", "value": 11}, {"color": "#f29b8a", "id": "realidad virtual/aumentada", "label": "realidad virtual/aumentada (7)", "shape": "dot", "value": 7}, {"color": "#f29b8a", "id": "geogebra", "label": "geogebra (6)", "shape": "dot", "value": 6}, {"color": "#f29b8a", "id": "merge cube", "label": "merge cube (4)", "shape": "dot", "value": 4}, {"color": "#f29b8a", "id": "videojuegos", "label": "videojuegos (4)", "shape": "dot", "value": 4}, {"color": "#f29b8a", "id": "inteligencia artificial", "label": "inteligencia artificial (5)", "shape": "dot", "value": 5}, {"color": "#f29b8a", "id": "entorno digital", "label": "entorno digital (8)", "shape": "dot", "value": 8}, {"color": "#f29b8a", "id": "gamificacion", "label": "gamificacion (5)", "shape": "dot", "value": 5}, {"color": "#f29b8a", "id": "dispositivos moviles", "label": "dispositivos moviles (4)", "shape": "dot", "value": 4}, {"color": "#8e9a23", "id": "otro: memoria historica y matematica", "label": "otro: memoria historica y matematica (3)", "shape": "dot", "value": 3}]);
+                  edges = new vis.DataSet([{"color": "#cccccc", "from": "datos y azar", "label": "11", "to": "formacion docente", "width": 0.09166666666666666}, {"color": "#cccccc", "from": "numeros", "label": "8", "to": "curriculum y textos", "width": 0.06666666666666667}, {"color": "#cccccc", "from": "otra tecnologia", "label": "5", "to": "geometria", "width": 0.041666666666666664}, {"color": "#cccccc", "from": "otra tecnologia", "label": "6", "to": "tecnologias", "width": 0.05}, {"color": "#cccccc", "from": "interdisciplina", "label": "3", "to": "geometria", "width": 0.025}, {"color": "#cccccc", "from": "geometria", "label": "20", "to": "tecnologias", "width": 0.16666666666666666}, {"color": "#cccccc", "from": "formacion docente", "label": "15", "to": "inclusion y diversidad", "width": 0.125}, {"color": "#cccccc", "from": "formacion docente", "label": "14", "to": "geometria", "width": 0.11666666666666667}, {"color": "#cccccc", "from": "otra habilidad", "label": "14", "to": "habilidades matematicas", "width": 0.11666666666666667}, {"color": "#cccccc", "from": "otra habilidad", "label": "3", "to": "formacion docente", "width": 0.025}, {"color": "#cccccc", "from": "habilidades matematicas", "label": "6", "to": "formacion docente", "width": 0.05}, {"color": "#cccccc", "from": "resolucion de problemas", "label": "32", "to": "habilidades matematicas", "width": 0.26666666666666666}, {"color": "#cccccc", "from": "inclusion y diversidad", "label": "5", "to": "geometria", "width": 0.041666666666666664}, {"color": "#cccccc", "from": "patrones y algebra", "label": "9", "to": "curriculum y textos", "width": 0.075}, {"color": "#cccccc", "from": "resolucion de problemas", "label": "4", "to": "numeros", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "numeros", "label": "5", "to": "habilidades matematicas", "width": 0.041666666666666664}, {"color": "#cccccc", "from": "resolucion de problemas", "label": "5", "to": "patrones y algebra", "width": 0.041666666666666664}, {"color": "#cccccc", "from": "resolucion de problemas", "label": "6", "to": "inclusion y diversidad", "width": 0.05}, {"color": "#cccccc", "from": "patrones y algebra", "label": "14", "to": "habilidades matematicas", "width": 0.11666666666666667}, {"color": "#cccccc", "from": "patrones y algebra", "label": "4", "to": "inclusion y diversidad", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "habilidades matematicas", "label": "6", "to": "inclusion y diversidad", "width": 0.05}, {"color": "#cccccc", "from": "patrones y algebra", "label": "5", "to": "afecto y motivacion", "width": 0.041666666666666664}, {"color": "#cccccc", "from": "patrones y algebra", "label": "6", "to": "formacion docente", "width": 0.05}, {"color": "#cccccc", "from": "habilidades matematicas", "label": "6", "to": "visualizacion", "width": 0.05}, {"color": "#cccccc", "from": "curriculum y textos", "label": "4", "to": "inclusion y diversidad", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "datos y azar", "label": "17", "to": "habilidades matematicas", "width": 0.14166666666666666}, {"color": "#cccccc", "from": "datos y azar", "label": "8", "to": "argumentar y comunicar", "width": 0.06666666666666667}, {"color": "#cccccc", "from": "habilidades matematicas", "label": "14", "to": "argumentar y comunicar", "width": 0.11666666666666667}, {"color": "#cccccc", "from": "representacion", "label": "4", "to": "patrones y algebra", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "representacion", "label": "6", "to": "habilidades matematicas", "width": 0.05}, {"color": "#cccccc", "from": "datos y azar", "label": "5", "to": "curriculum y textos", "width": 0.041666666666666664}, {"color": "#cccccc", "from": "otra habilidad", "label": "4", "to": "interdisciplina", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "habilidades matematicas", "label": "5", "to": "interdisciplina", "width": 0.041666666666666664}, {"color": "#cccccc", "from": "tic", "label": "5", "to": "formacion docente", "width": 0.041666666666666664}, {"color": "#cccccc", "from": "tic", "label": "7", "to": "tecnologias", "width": 0.058333333333333334}, {"color": "#cccccc", "from": "formacion docente", "label": "15", "to": "tecnologias", "width": 0.125}, {"color": "#cccccc", "from": "interdisciplina", "label": "4", "to": "curriculum y textos", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "modelacion", "label": "19", "to": "habilidades matematicas", "width": 0.15833333333333333}, {"color": "#cccccc", "from": "modelacion", "label": "8", "to": "tecnologias", "width": 0.06666666666666667}, {"color": "#cccccc", "from": "modelacion", "label": "6", "to": "patrones y algebra", "width": 0.05}, {"color": "#cccccc", "from": "habilidades matematicas", "label": "8", "to": "tecnologias", "width": 0.06666666666666667}, {"color": "#cccccc", "from": "tecnologias", "label": "5", "to": "patrones y algebra", "width": 0.041666666666666664}, {"color": "#cccccc", "from": "tic", "label": "3", "to": "patrones y algebra", "width": 0.025}, {"color": "#cccccc", "from": "software educativo", "label": "11", "to": "tecnologias", "width": 0.09166666666666666}, {"color": "#cccccc", "from": "tecnologias", "label": "4", "to": "realidad virtual/aumentada", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "tic", "label": "4", "to": "numeros", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "numeros", "label": "6", "to": "formacion docente", "width": 0.05}, {"color": "#cccccc", "from": "numeros", "label": "5", "to": "tecnologias", "width": 0.041666666666666664}, {"color": "#cccccc", "from": "modelacion", "label": "4", "to": "otra tecnologia", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "habilidades matematicas", "label": "4", "to": "otra tecnologia", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "pensamiento computacional", "label": "4", "to": "software educativo", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "pensamiento computacional", "label": "5", "to": "tecnologias", "width": 0.041666666666666664}, {"color": "#cccccc", "from": "datos y azar", "label": "3", "to": "tecnologias", "width": 0.025}, {"color": "#cccccc", "from": "geogebra", "label": "3", "to": "tecnologias", "width": 0.025}, {"color": "#cccccc", "from": "resolucion de problemas", "label": "3", "to": "geometria", "width": 0.025}, {"color": "#cccccc", "from": "habilidades matematicas", "label": "17", "to": "geometria", "width": 0.14166666666666666}, {"color": "#cccccc", "from": "patrones y algebra", "label": "3", "to": "otra habilidad", "width": 0.025}, {"color": "#cccccc", "from": "merge cube", "label": "4", "to": "geometria", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "merge cube", "label": "4", "to": "tecnologias", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "software educativo", "label": "4", "to": "formacion docente", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "otra habilidad", "label": "6", "to": "datos y azar", "width": 0.05}, {"color": "#cccccc", "from": "geometria", "label": "5", "to": "visualizacion", "width": 0.041666666666666664}, {"color": "#cccccc", "from": "videojuegos", "label": "3", "to": "tecnologias", "width": 0.025}, {"color": "#cccccc", "from": "afecto y motivacion", "label": "6", "to": "tecnologias", "width": 0.05}, {"color": "#cccccc", "from": "afecto y motivacion", "label": "3", "to": "geometria", "width": 0.025}, {"color": "#cccccc", "from": "inteligencia artificial", "label": "5", "to": "tecnologias", "width": 0.041666666666666664}, {"color": "#cccccc", "from": "patrones y algebra", "label": "4", "to": "entorno digital", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "entorno digital", "label": "8", "to": "tecnologias", "width": 0.06666666666666667}, {"color": "#cccccc", "from": "datos y azar", "label": "5", "to": "inclusion y diversidad", "width": 0.041666666666666664}, {"color": "#cccccc", "from": "gamificacion", "label": "4", "to": "afecto y motivacion", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "gamificacion", "label": "4", "to": "tecnologias", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "modelacion", "label": "7", "to": "geometria", "width": 0.058333333333333334}, {"color": "#cccccc", "from": "dispositivos moviles", "label": "4", "to": "tecnologias", "width": 0.03333333333333333}, {"color": "#cccccc", "from": "formacion docente", "label": "3", "to": "interdisciplina", "width": 0.025}, {"color": "#cccccc", "from": "formacion docente", "label": "3", "to": "inteligencia artificial", "width": 0.025}, {"color": "#cccccc", "from": "inteligencia artificial", "label": "3", "to": "geometria", "width": 0.025}, {"color": "#cccccc", "from": "dispositivos moviles", "label": "3", "to": "geometria", "width": 0.025}, {"color": "#cccccc", "from": "dispositivos moviles", "label": "3", "to": "realidad virtual/aumentada", "width": 0.025}, {"color": "#cccccc", "from": "dispositivos moviles", "label": "3", "to": "geogebra", "width": 0.025}, {"color": "#cccccc", "from": "geometria", "label": "3", "to": "realidad virtual/aumentada", "width": 0.025}, {"color": "#cccccc", "from": "geometria", "label": "3", "to": "geogebra", "width": 0.025}, {"color": "#cccccc", "from": "realidad virtual/aumentada", "label": "3", "to": "geogebra", "width": 0.025}, {"color": "#cccccc", "from": "entorno digital", "label": "3", "to": "geometria", "width": 0.025}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"physics": {"enabled": true, "stabilization": {"enabled": true, "iterations": 300}, "barnesHut": {"gravitationalConstant": -4000, "centralGravity": 0.3, "springLength": 80, "springConstant": 0.04, "damping": 0.6}}, "interaction": {"dragNodes": true}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
