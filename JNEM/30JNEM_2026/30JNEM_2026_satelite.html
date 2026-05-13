@@ -165,14 +165,99 @@ section[id] { scroll-margin-top:80px; }
 </head>
 <body>
 
+
+<style>
+.sat-info-basica {
+    background: var(--pri-light); border-radius: 12px;
+    padding: 1.1rem 1.5rem; margin: 0 auto 2rem auto;
+    display: flex; flex-wrap: wrap; gap: 1rem 2.5rem;
+    align-items: center; max-width: 620px;
+}
+.sat-info-item { display: flex; flex-direction: column; gap: 0.1rem; }
+.sat-info-label {
+    font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.09em; color: var(--pri);
+}
+.sat-info-val { font-size: 0.95rem; color: var(--text); }
+.sat-maps-btn {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: var(--pri); color: #fff; font-size: 0.82rem;
+    font-weight: 700; padding: 0.45rem 1rem; border-radius: 50px;
+    text-decoration: none; transition: background 0.2s; white-space: nowrap;
+}
+.sat-maps-btn:hover { background: var(--sec); }
+.sat-intro {
+    font-size: 0.95rem; color: var(--text); line-height: 1.8;
+    margin: 0 auto 1.8rem auto; max-width: 620px;
+}
+.sat-car-wrap {
+    position: relative; display: flex; align-items: center;
+    gap: 1rem; max-width: 620px; margin: 0 auto;
+}
+.sat-car-viewport { overflow: hidden; flex: 1; border-radius: 16px; }
+.sat-car-track { display: flex; transition: transform 0.4s ease; }
+.sat-slide { min-width: 100%; box-sizing: border-box; }
+.sat-slide img {
+    width: 100%; height: 300px; object-fit: cover;
+    object-position: center; display: block;
+    border-radius: 16px;
+}
+.sat-btn {
+    flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%;
+    background: var(--pri-light); color: var(--pri); border: none;
+    font-size: 1.2rem; cursor: pointer; display: flex;
+    align-items: center; justify-content: center;
+    transition: background 0.2s, color 0.2s;
+}
+.sat-btn:hover { background: var(--pri); color: #fff; }
+.sat-dots {
+    display: flex; justify-content: center; gap: 6px; margin-top: 1rem;
+}
+.sat-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--pri-light); border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.2s; padding: 0;
+}
+.sat-dot.activo { background: var(--pri); transform: scale(1.3); }
+@media(max-width:600px){
+    .sat-slide img { height: 200px; }
+    .sat-btn { width: 32px; height: 32px; font-size: 1rem; }
+}
+</style>
 <section class="section com-seccion reveal" id="satelite">
     <div class="container">
         <h2 class="section-title">Jornada Satélite 30JNEM 2026</h2>
-        <div class="sede-info-basica"><div class="sede-info-item"><span class="sede-info-label">Lugar</span><span class="sede-info-val">Instituto de Matemáticas, Pontificia Universidad Católica de Valparaíso</span></div><div class="sede-info-item"><span class="sede-info-label">Dirección</span><span class="sede-info-val">Blanco Viel 596, Cerro Barón, Valparaíso</span></div><div class="sede-info-item"><span class="sede-info-label">Fecha</span><span class="sede-info-val">13 de diciembre de 2026</span></div><div class="sede-info-item"><span class="sede-info-label">Contacto</span><a href="mailto:30jnem@pucv.cl" class="sede-info-val">30jnem@pucv.cl</a></div><a href="https://maps.app.goo.gl/6mFukbp1RmoJ9hqh9" target="_blank" class="sede-maps-btn">📍 Ver en Google Maps</a></div>
-        <p class="sede-intro">En esta ocasión el Comité Organizador de las 30 Jornadas Nacionales de Educación Matemática ha decidido realizar una Jornada Satélite previa al congreso, pensando en la importancia de contar con espacios de encuentro para la discusión de investigaciones en curso por jóvenes investigadores o estudiantes de postgrado (magister y doctorado) en Didáctica de la Matemática o en Educación Matemática.</p>
-        <div class="sede-carrusel-wrap" id="car-satelite"><button class="sede-btn sede-btn-prev">‹</button><div class="sede-carrusel-viewport"><div class="sede-carrusel-track"><div class="sede-slide"><div class="sede-card"><img src="https://lh3.googleusercontent.com/d/1Fs8oijuhpUKeI2iI1A1mec8_rmCQ4Ja0" alt="Jornada Satélite" class="sede-card-foto" loading="lazy" onerror="this.style.display='none'"></div></div><div class="sede-slide"><div class="sede-card"><img src="https://lh3.googleusercontent.com/d/17oozReItq1WQj_TaHTnldp7JOFSS9hm6" alt="Jornada Satélite" class="sede-card-foto" loading="lazy" onerror="this.style.display='none'"></div></div><div class="sede-slide"><div class="sede-card"><img src="https://lh3.googleusercontent.com/d/1iF5OCy5FQp64t-SI4DbtmOD8MqKxq6Gp" alt="Jornada Satélite" class="sede-card-foto" loading="lazy" onerror="this.style.display='none'"></div></div></div></div><button class="sede-btn sede-btn-next">›</button></div><div class="sede-dots"><button class="sede-dot" aria-label="Slide 1"></button><button class="sede-dot" aria-label="Slide 2"></button><button class="sede-dot" aria-label="Slide 3"></button></div>
+        <div class="sat-info-basica"><div class="sat-info-item"><span class="sat-info-label">Lugar</span><span class="sat-info-val">Instituto de Matemáticas, Pontificia Universidad Católica de Valparaíso</span></div><div class="sat-info-item"><span class="sat-info-label">Dirección</span><span class="sat-info-val">Blanco Viel 596, Cerro Barón, Valparaíso</span></div><div class="sat-info-item"><span class="sat-info-label">Fecha</span><span class="sat-info-val">13 de diciembre de 2026</span></div><div class="sat-info-item"><span class="sat-info-label">Contacto</span><a href="mailto:30jnem@pucv.cl" class="sat-info-val">30jnem@pucv.cl</a></div><a href="https://maps.app.goo.gl/6mFukbp1RmoJ9hqh9" target="_blank" class="sat-maps-btn">📍 Ver en Google Maps</a></div>
+        <p class="sat-intro">En esta ocasión el Comité Organizador de las 30 Jornadas Nacionales de Educación Matemática ha decidido realizar una Jornada Satélite previa al congreso, pensando en la importancia de contar con espacios de encuentro para la discusión de investigaciones en curso por jóvenes investigadores o estudiantes de postgrado (magister y doctorado) en Didáctica de la Matemática o en Educación Matemática.</p>
+        <div class="sat-car-wrap"><button class="sat-btn sat-btn-prev">‹</button><div class="sat-car-viewport"><div class="sat-car-track"><div class="sat-slide"><img src="https://lh3.googleusercontent.com/d/1Fs8oijuhpUKeI2iI1A1mec8_rmCQ4Ja0" alt="Jornada Satélite" loading="lazy" onerror="this.parentElement.style.display='none'"></div><div class="sat-slide"><img src="https://lh3.googleusercontent.com/d/17oozReItq1WQj_TaHTnldp7JOFSS9hm6" alt="Jornada Satélite" loading="lazy" onerror="this.parentElement.style.display='none'"></div><div class="sat-slide"><img src="https://lh3.googleusercontent.com/d/1iF5OCy5FQp64t-SI4DbtmOD8MqKxq6Gp" alt="Jornada Satélite" loading="lazy" onerror="this.parentElement.style.display='none'"></div></div></div><button class="sat-btn sat-btn-next">›</button></div><div class="sat-dots"><button class="sat-dot" aria-label="Slide 1"></button><button class="sat-dot" aria-label="Slide 2"></button><button class="sat-dot" aria-label="Slide 3"></button></div>
     </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.sat-car-wrap').forEach(function(wrap) {
+        var track   = wrap.querySelector('.sat-car-track');
+        var slides  = wrap.querySelectorAll('.sat-slide');
+        var dots    = wrap.parentElement.querySelectorAll('.sat-dot');
+        var btnP    = wrap.querySelector('.sat-btn-prev');
+        var btnN    = wrap.querySelector('.sat-btn-next');
+        var total   = slides.length;
+        var current = 0;
+        var timer;
+        function goTo(n) {
+            current = (n + total) % total;
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            dots.forEach(function(d, i) { d.classList.toggle('activo', i === current); });
+        }
+        if (btnP) btnP.addEventListener('click', function() { clearInterval(timer); goTo(current - 1); startAuto(); });
+        if (btnN) btnN.addEventListener('click', function() { clearInterval(timer); goTo(current + 1); startAuto(); });
+        dots.forEach(function(d, i) { d.addEventListener('click', function() { clearInterval(timer); goTo(i); startAuto(); }); });
+        function startAuto() { timer = setInterval(function() { goTo(current + 1); }, 4500); }
+        goTo(0);
+        if (total > 1) startAuto();
+    });
+});
+</script>
 
 <script>
 let currentSlide=0;
