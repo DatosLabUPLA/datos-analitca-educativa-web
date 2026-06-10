@@ -167,25 +167,24 @@ section[id] { scroll-margin-top:80px; }
 
 
 .math-bg {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 0;
     pointer-events: none;
-    overflow: visible;
 }
 .math-bg svg {
     position: absolute;
 }
-body {
-    position: relative;
-    min-height: 100vh;
-}
 body > *:not(.math-bg) {
     position: relative;
     z-index: 1;
+}
+.section, .desc-section, .venue-section, .sponsors-section,
+.afiche-section, .satelite-section, .contact-section {
+    background-color: rgba(250, 249, 246, 0.92);
 }
 </style>
 </head>
