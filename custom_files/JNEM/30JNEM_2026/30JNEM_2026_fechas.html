@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fechas Importantes — 30JNEM 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --pri: #006EB6; --sec: #B78C30;
+    --bg: #faf9f6; --text: #2c2c2c; --text-light: #6b6b6b;
+    --card-bg: #ffffff; --pri-light: #006EB618; --sec-light: #B78C3022;
+}
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Source Sans 3',sans-serif; color:var(--text); background:var(--bg); line-height:1.7; overflow-x:hidden; }
+
+/* HERO texto (sin imagen destacada) */
+.hero { min-height:100vh; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;
+    background:linear-gradient(135deg, var(--pri) 0%, color-mix(in srgb, var(--pri) 70%, black) 100%); }
+.hero::before { content:''; position:absolute; inset:0;
+    background:radial-gradient(ellipse at 30% 20%, #B78C3033 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, #006EB644 0%, transparent 50%); }
+.hero-content { position:relative; z-index:1; text-align:center; padding:2rem; max-width:900px; animation:fadeUp 1s ease-out; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+.hero-year { display:inline-block; font-size:clamp(1.8rem, 4vw, 2.8rem); font-weight:900; letter-spacing:0.2em; text-transform:uppercase; color:var(--sec); border:2px solid var(--sec); padding:0.35em 1.2em; border-radius:50px; margin-bottom:1.8rem; font-family:'Playfair Display',serif; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2.4rem,6vw,4.5rem); font-weight:900; color:#fff; line-height:1.15; margin-bottom:1rem; }
+.hero-tagline { font-size:clamp(1rem,2.5vw,1.35rem); color:rgba(255,255,255,0.8); font-style:italic; font-family:'Playfair Display',serif; margin-bottom:0.8rem; }
+.hero-institution { font-size:1rem; color:rgba(255,255,255,0.65); font-weight:300; letter-spacing:0.05em; margin-bottom:1.5rem; }
+.hero .hero-meta { display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center; margin-top:1.5rem; }
+.hero .hero-meta-item { display:flex; align-items:center; gap:0.5rem; color:rgba(255,255,255,0.75); font-size:0.95rem; }
+.hero .hero-meta-item svg { width:18px; height:18px; stroke:var(--sec); fill:none; stroke-width:2; }
+.cta-button { display:inline-block; margin-top:1rem; background:var(--sec); color:var(--pri); font-weight:700; padding:0.9em 2.5em; border-radius:50px; text-decoration:none; font-size:0.95rem; letter-spacing:0.05em; text-transform:uppercase; transition:transform 0.3s,box-shadow 0.3s; box-shadow:0 4px 20px #B78C3055; }
+.cta-button:hover { transform:translateY(-2px); box-shadow:0 8px 30px #B78C3077; }
+
+/* HERO imagen */
+.hero-image-mode { background:var(--pri); display:flex; flex-direction:column; align-items:center; animation:fadeUp 1s ease-out; }
+.hero-image-wrap { width:100%; display:flex; justify-content:center; align-items:center; }
+.hero-image-wrap img { width:100%; max-width:1920px; height:auto; display:block; }
+.hero-meta-bar { width:100%; background:color-mix(in srgb, var(--pri) 92%, black); padding:1.5rem 2rem; display:flex; flex-direction:column; align-items:center; gap:1rem; border-top:3px solid var(--sec); }
+.hero-meta-bar .hero-meta { display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; }
+.hero-meta-bar .hero-meta-item { display:flex; align-items:center; gap:0.6rem; color:rgba(255,255,255,0.9); font-size:1rem; font-weight:500; }
+.hero-meta-bar .hero-meta-item svg { width:20px; height:20px; stroke:var(--sec); fill:none; stroke-width:2; }
+
+/* Banner institucional */
+.banner-section { background:var(--bg); padding:3.5rem 1.5rem; display:flex; flex-direction:column; align-items:center; gap:1.2rem; }
+.banner-label { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.2em; color:var(--text-light); }
+.banner-wrap { max-width:1100px; width:100%; background:var(--card-bg); border-radius:16px; padding:1.5rem 2rem; box-shadow:0 4px 24px rgba(0,0,0,0.08); display:flex; justify-content:center; align-items:center; border:1px solid rgba(0,0,0,0.04); }
+.banner-wrap img { max-width:100%; height:auto; display:block; border-radius:8px; }
+
+/* Secciones */
+.section { padding:5rem 0; }
+.container { max-width:1100px; margin:0 auto; padding:0 2rem; }
+.section-title { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--pri); margin-bottom:2.5rem; text-align:center; position:relative; }
+.section-title::after { content:''; display:block; width:60px; height:3px; background:var(--sec); margin:0.7rem auto 0; border-radius:2px; }
+
+/* Descripción */
+.desc-section { background:var(--card-bg); border-top:4px solid var(--sec); }
+.desc-text { font-size:1.15rem; line-height:1.9; color:var(--text); max-width:780px; margin:0 auto 1rem; text-align:center; }
+.desc-text:last-child { margin-bottom:0; }
+
+/* Sede */
+.venue-section { background:var(--pri-light); }
+.venue-block { max-width:900px; margin:0 auto; }
+.venue-info { text-align:center; margin-bottom:2rem; }
+.venue-name { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; color:var(--pri); margin-bottom:0.4rem; }
+.venue-address { color:var(--text-light); font-size:1.05rem; margin-bottom:0.3rem; }
+.venue-modality { display:inline-block; margin-top:0.5rem; font-size:0.85rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--sec); background:var(--pri); padding:0.3em 1em; border-radius:50px; }
+.venue-maps-link { display:inline-block; margin-top:0.8rem; color:var(--sec); font-weight:600; text-decoration:none; }
+.venue-maps-link:hover { text-decoration:underline; }
+
+/* Galería */
+.gallery-carousel { position:relative; overflow:hidden; border-radius:16px; box-shadow:0 8px 30px rgba(0,0,0,0.1); max-width:600px; margin:0 auto; }
+.gallery-track { display:flex; transition:transform 0.5s ease; }
+.gallery-item { min-width:100%; aspect-ratio:16/9; }
+.gallery-item img { width:100%; height:100%; object-fit:cover; }
+.gallery-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.85); border:none; cursor:pointer; width:44px; height:44px; border-radius:50%; font-size:1.4rem; color:var(--pri); display:flex; align-items:center; justify-content:center; box-shadow:0 2px 10px rgba(0,0,0,0.15); z-index:2; }
+.gallery-btn:hover { background:#fff; }
+.gallery-btn-prev { left:12px; }
+.gallery-btn-next { right:12px; }
+.gallery-dots { position:absolute; bottom:12px; left:50%; transform:translateX(-50%); display:flex; gap:8px; z-index:2; }
+.gallery-dot { width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,0.5); cursor:pointer; }
+.gallery-dot.active { background:var(--sec); }
+
+/* Afiche */
+.afiche-section { background:var(--bg); }
+.afiche-card { display:flex; gap:2.5rem; align-items:center; background:var(--card-bg); border-radius:20px; padding:2rem; box-shadow:0 4px 24px rgba(0,0,0,0.06); max-width:800px; margin:0 auto; }
+.afiche-img-wrap { flex:0 0 240px; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.1); }
+.afiche-img-wrap img { width:100%; display:block; }
+.afiche-info { flex:1; }
+.afiche-info h2 { font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--pri); margin-bottom:0.8rem; }
+.afiche-info p { color:var(--text-light); margin-bottom:1rem; line-height:1.6; }
+.afiche-download { color:var(--sec); font-weight:600; text-decoration:none; }
+.afiche-download:hover { text-decoration:underline; }
+
+/* Comités */
+.comite-section { background:var(--card-bg); }
+.comite-section-alt { background:var(--bg); }
+.directiva-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.2rem; margin-bottom:2.5rem; }
+.directiva-card { text-align:center; padding:1.8rem 1.2rem; border-radius:16px; background:linear-gradient(135deg,var(--pri-light),var(--sec-light)); border:1px solid rgba(0,0,0,0.04); }
+.role-badge { display:inline-block; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--sec); background:var(--pri); padding:0.3em 1em; border-radius:50px; margin-bottom:0.8rem; }
+.member-name { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:600; color:var(--pri); line-height:1.6; }
+.comite-group { margin-bottom:2rem; }
+.comite-group h3 { font-size:1rem; font-weight:700; color:var(--pri); margin-bottom:1rem; padding-bottom:0.5rem; border-bottom:2px solid var(--sec-light); }
+.members-list { list-style:none; display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:0.5rem; }
+.members-list li { padding:0.6rem 1rem; border-radius:8px; background:var(--bg); font-size:0.95rem; border-left:3px solid var(--sec); }
+.comite-section-alt .members-list li { background:var(--card-bg); }
+
+/* Satélite */
+.satelite-section { background:var(--sec-light); }
+.satelite-card { background:var(--card-bg); border-radius:20px; padding:2.5rem; box-shadow:0 4px 24px rgba(0,0,0,0.06); }
+.satelite-card h3 { font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--pri); margin-bottom:1rem; }
+.sat-desc { color:var(--text); line-height:1.8; margin-bottom:1.2rem; max-width:600px; margin-left:auto; margin-right:auto; }
+.sat-details { display:flex; flex-direction:column; gap:0.6rem; margin:1rem 0; }
+.sat-detail-item { display:flex; align-items:center; gap:0.6rem; font-size:0.95rem; color:var(--text-light); }
+.sat-icon { font-size:1.1rem; }
+.sat-maps-link { color:var(--sec); font-weight:600; text-decoration:none; }
+.sat-maps-link:hover { text-decoration:underline; }
+.sat-detail-item a { color:var(--text-light); text-decoration:none; }
+.sat-detail-item a:hover { color:var(--pri); }
+.sat-carousel { margin:1.5rem 0; }
+
+/* Sponsors */
+.sponsors-section { background:var(--pri-light); }
+.sponsors-text { text-align:center; font-size:1.1rem; color:var(--text-light); }
+
+/* Contacto */
+.contact-section { background:var(--pri); color:#fff; }
+.contact-section .section-title { color:#fff; }
+.contact-section .section-title::after { background:var(--sec); }
+.contact-grid { display:flex; justify-content:center; gap:2rem; text-align:center; flex-wrap:wrap; }
+.contact-item { padding:1.5rem; }
+.contact-item h3 { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--sec); margin-bottom:0.5rem; }
+.contact-item a { color:rgba(255,255,255,0.85); text-decoration:none; transition:color 0.3s; }
+.contact-item a:hover { color:var(--sec); }
+
+.footer { background:color-mix(in srgb, var(--pri) 90%, black); color:rgba(255,255,255,0.4); text-align:center; padding:2rem; font-size:0.85rem; }
+
+/* Menú de comités */
+.comite-nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--sec-light); }
+.comite-nav-inner { max-width:1100px; margin:0 auto; display:flex; justify-content:center; gap:2.5rem; padding:1rem 2rem; flex-wrap:wrap; }
+.comite-nav a { text-decoration:none; color:var(--text-light); font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:0.4rem 0; border-bottom:2px solid transparent; transition:color 0.3s, border-color 0.3s; }
+.comite-nav a:hover { color:var(--pri); border-bottom-color:var(--sec); }
+
+section[id] { scroll-margin-top:80px; }
+
+@media (max-width:768px) {
+    .hero h1 { font-size:2rem; }
+    .hero-year { font-size:1.5rem; }
+    .section { padding:3rem 0; }
+    .container { padding:0 1.2rem; }
+    .afiche-card { flex-direction:column; text-align:center; }
+    .afiche-img-wrap { flex:none; max-width:280px; margin:0 auto; }
+    .banner-section { padding:2rem 1rem; }
+    .banner-wrap { padding:1rem; }
+    .hero-meta-bar { padding:1.2rem 1rem; }
+    .hero-meta-bar .hero-meta { gap:1.2rem; }
+    .comite-nav-inner { gap:1.2rem; padding:0.8rem 1rem; }
+    .comite-nav a { font-size:0.75rem; }
+}
+.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease,transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease,transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+.tl-wrap{  position:relative;  max-width:900px;  margin:0 auto;  padding:1rem 0;}.tl-wrap::before{  content:'';  position:absolute;  left:50%;  top:0; bottom:0;  width:3px;  background:var(--pri);  transform:translateX(-50%);  z-index:1;}.tl-item{  display:flex;  width:50%;  padding:0 2.5rem 2rem 0;  position:relative;  box-sizing:border-box;}.tl-item.right{  margin-left:50%;  padding:0 0 2rem 2.5rem;}.tl-item::before{  content:'';  position:absolute;  right:-8px;  top:1.2rem;  width:16px; height:16px;  border-radius:50%;  background:var(--pri);  border:3px solid var(--sec);  z-index:1;}.tl-item.right::before{  right:auto;  left:-8px;}.tl-content{  background:var(--card-bg);  border-radius:16px;  padding:1.4rem 1.6rem;  box-shadow:0 4px 20px rgba(0,0,0,0.07);  border-top:4px solid var(--sec);  width:100%;}.tl-fecha{  font-size:0.95rem;  font-weight:700;  color:#c0392b;  margin-bottom:0.3rem;}.tl-fecha-tachada{  text-decoration:line-through;  color:#bbb !important;  font-size:0.85rem;  margin-bottom:0.1rem;}.tl-titulo{  font-family:'Playfair Display',serif;  font-size:1.1rem;  font-weight:700;  color:var(--pri);  margin-bottom:0.5rem;}.tl-texto{  font-size:0.92rem;  color:var(--text);  line-height:1.65;  margin-bottom:0.5rem;}.tl-texto a{color:var(--pri);font-weight:600;text-decoration:none;}.tl-texto a:hover{text-decoration:underline;}.tl-countdown{margin:0.6rem 0;}.countdown{display:flex;align-items:center;gap:0.3rem;flex-wrap:wrap;}.cd-box{  display:flex;flex-direction:column;align-items:center;  background:#f0f4ff;  color:var(--text);  border:1px solid #d0d8f0;  border-radius:8px;  padding:0.35rem 0.6rem;  min-width:44px;}.cd-num{font-size:1.2rem;font-weight:700;line-height:1;color:#2c3e6b;}.cd-lbl{font-size:0.58rem;text-transform:uppercase;letter-spacing:0.08em;color:#7a8aaa;margin-top:0.1rem;}.cd-sep{font-size:1.1rem;font-weight:700;color:#aab0c0;margin-bottom:0.8rem;}.gcal-btn{  display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.5rem;  font-size:0.8rem;font-weight:600;color:#1a73e8;  background:#e8f0fe;border:1px solid #c5d3f0;  border-radius:6px;padding:0.35em 0.8em;  text-decoration:none;transition:background 0.2s;}.gcal-btn:hover{background:#d2e3fc;}.tl-item[data-vencida='true'] .tl-content{  background:#f2f2f2;  border-top-color:#bbb;  box-shadow:none;}.tl-item[data-vencida='true'] .tl-fecha{color:#999;}.tl-item[data-vencida='true'] .tl-titulo{color:#777;}.tl-item[data-vencida='true']::before{background:#bbb;border-color:#ddd;}.tl-extra{max-height:0;overflow:hidden;transition:max-height 0.35s ease;}.tl-extra.open{max-height:600px;}.tl-toggle-btn{  background:none;border:none;cursor:pointer;  font-size:0.8rem;font-weight:600;  color:var(--pri);padding:0.3rem 0;  margin-top:0.2rem;text-decoration:underline;  display:block;}.tl-item[data-vencida='true'] .tl-toggle-btn{color:#999;}@media(max-width:700px){  .tl-wrap::before{left:18px;}  .tl-item,.tl-item.right{    width:100%;margin-left:0;    padding:0 0 1.5rem 3rem;  }  .tl-item::before,.tl-item.right::before{    left:10px;right:auto;  }}
+.math-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+.math-bg svg {
+    position: absolute;
+}
+body > *:not(.math-bg) {
+    position: relative;
+    z-index: 1;
+}
+.section, .desc-section, .venue-section, .sponsors-section,
+.afiche-section, .satelite-section, .contact-section, .com-seccion {
+    background-color: rgba(250, 249, 246, 0.85);
+}
+</style>
+</head>
+<body>
+
+<div class="math-bg" aria-hidden="true">
+
+  <!-- Rosa polar r=cos(5θ) — esquina superior izquierda -->
+  <svg viewBox="0 0 200 200" width="340" height="340"
+       style="top:40px;left:-90px;opacity:0.40;stroke:#006EB6;fill:none;stroke-width:0.7">
+    <path d="M175.0,100.0 L174.9,100.8 L174.6,101.6 L174.0,102.3 L173.3,103.1 L172.3,103.8 L171.2,104.5 L169.8,105.1 L168.3,105.7 L166.5,106.3 L164.6,106.8 L162.5,107.2 L160.2,107.6 L157.7,107.9 L155.1,108.1 L152.4,108.3 L149.5,108.4 L146.5,108.4 L143.3,108.3 L140.0,108.1 L136.7,107.8 L133.2,107.4 L129.7,107.0 L126.1,106.4 L122.4,105.8 L118.7,105.0 L115.0,104.2 L111.3,103.3 L107.5,102.3 L103.7,101.2 L100.0,100.0 L103.7,101.3 L107.4,102.6 L111.0,104.0 L114.6,105.4 L118.1,107.0 L121.5,108.5 L124.9,110.2 L128.1,111.8 L131.2,113.5 L134.3,115.3 L137.1,117.0 L139.9,118.8 L142.5,120.5 L145.0,122.3 L147.3,124.1 L149.4,125.8 L151.4,127.5 L153.2,129.2 L154.8,130.9 L156.2,132.5 L157.5,134.0 L158.6,135.5 L159.5,136.9 L160.2,138.2 L160.8,139.5 L161.1,140.6 L161.3,141.6 L161.2,142.6 L161.1,143.4 L160.7,144.1 L160.1,144.7 L159.4,145.1 L158.5,145.4 L157.5,145.6 L156.3,145.6 L155.0,145.5 L153.5,145.2 L151.9,144.8 L150.1,144.2 L148.3,143.5 L146.3,142.6 L144.2,141.5 L142.1,140.3 L139.8,139.0 L137.5,137.5 L135.1,135.9 L132.7,134.1 L130.2,132.1 L127.6,130.1 L125.1,127.9 L122.5,125.5 L119.9,123.1 L117.3,120.5 L114.8,117.9 L112.2,115.1 L109.7,112.2 L107.2,109.3 L104.7,106.2 L102.3,103.2 L100.0,100.0 L102.3,103.2 L104.5,106.4 L106.6,109.7 L108.6,113.0 L110.6,116.3 L112.4,119.6 L114.2,122.8 L115.8,126.1 L117.3,129.3 L118.8,132.5 L120.1,135.6 L121.2,138.6 L122.3,141.6 L123.3,144.5 L124.1,147.3 L124.8,149.9 L125.4,152.5 L125.8,154.9 L126.2,157.2 L126.4,159.3 L126.5,161.3 L126.6,163.2 L126.5,164.8 L126.3,166.3 L126.0,167.6 L125.6,168.8 L125.1,169.7 L124.5,170.4 L123.9,171.0 L123.2,171.3 L122.4,171.5 L121.6,171.4 L120.7,171.1 L119.7,170.7 L118.8,170.0 L117.7,169.1 L116.7,168.0 L115.6,166.7 L114.6,165.2 L113.5,163.5 L112.4,161.7 L111.4,159.6 L110.3,157.4 L109.3,155.0 L108.3,152.4 L107.3,149.6 L106.4,146.8 L105.5,143.7 L104.7,140.6 L103.9,137.3 L103.2,133.9 L102.6,130.4 L102.0,126.8 L101.5,123.1 L101.0,119.4 L100.7,115.6 L100.4,111.7 L100.2,107.8 L100.0,103.9 L100.0,100.0 L100.0,103.9 L99.8,107.8 L99.6,111.7 L99.3,115.6 L99.0,119.4 L98.5,123.1 L98.0,126.8 L97.4,130.4 L96.8,133.9 L96.1,137.3 L95.3,140.6 L94.5,143.7 L93.6,146.8 L92.7,149.6 L91.7,152.4 L90.7,155.0 L89.7,157.4 L88.6,159.6 L87.6,161.7 L86.5,163.5 L85.4,165.2 L84.4,166.7 L83.3,168.0 L82.3,169.1 L81.3,170.0 L80.3,170.7 L79.3,171.1 L78.4,171.4 L77.6,171.5 L76.8,171.3 L76.1,171.0 L75.5,170.4 L74.9,169.7 L74.4,168.8 L74.0,167.6 L73.7,166.3 L73.5,164.8 L73.4,163.2 L73.5,161.3 L73.6,159.3 L73.8,157.2 L74.2,154.9 L74.6,152.5 L75.2,149.9 L75.9,147.3 L76.7,144.5 L77.7,141.6 L78.8,138.6 L79.9,135.6 L81.3,132.5 L82.7,129.3 L84.2,126.1 L85.8,122.8 L87.6,119.6 L89.4,116.3 L91.4,113.0 L93.4,109.7 L95.5,106.4 L97.7,103.2 L100.0,100.0 L97.7,103.2 L95.3,106.2 L92.8,109.3 L90.3,112.2 L87.8,115.1 L85.2,117.9 L82.7,120.5 L80.1,123.1 L77.5,125.5 L74.9,127.9 L72.4,130.1 L69.8,132.1 L67.3,134.1 L64.9,135.9 L62.5,137.5 L60.2,139.0 L57.9,140.3 L55.8,141.5 L53.7,142.6 L51.7,143.5 L49.9,144.2 L48.1,144.8 L46.5,145.2 L45.0,145.5 L43.7,145.6 L42.5,145.6 L41.5,145.4 L40.6,145.1 L39.9,144.7 L39.3,144.1 L38.9,143.4 L38.8,142.6 L38.7,141.6 L38.9,140.6 L39.2,139.5 L39.8,138.2 L40.5,136.9 L41.4,135.5 L42.5,134.0 L43.7,132.5 L45.2,130.9 L46.8,129.2 L48.6,127.5 L50.6,125.8 L52.7,124.1 L55.0,122.3 L57.5,120.5 L60.1,118.8 L62.9,117.0 L65.7,115.3 L68.8,113.5 L71.9,111.8 L75.1,110.2 L78.5,108.5 L81.9,107.0 L85.4,105.4 L89.0,104.0 L92.6,102.6 L96.3,101.3 L100.0,100.0 L96.3,101.2 L92.5,102.3 L88.7,103.3 L85.0,104.2 L81.2,105.0 L77.6,105.8 L73.9,106.4 L70.3,107.0 L66.8,107.4 L63.3,107.8 L60.0,108.1 L56.7,108.3 L53.5,108.4 L50.5,108.4 L47.6,108.3 L44.9,108.1 L42.3,107.9 L39.8,107.6 L37.5,107.2 L35.4,106.8 L33.5,106.3 L31.7,105.7 L30.2,105.1 L28.8,104.5 L27.7,103.8 L26.7,103.1 L26.0,102.3 L25.4,101.6 L25.1,100.8 L25.0,100.0 L25.1,99.2 L25.4,98.4 L26.0,97.7 L26.7,96.9 L27.7,96.2 L28.8,95.5 L30.2,94.9 L31.7,94.3 L33.5,93.7 L35.4,93.2 L37.5,92.8 L39.8,92.4 L42.3,92.1 L44.9,91.9 L47.6,91.7 L50.5,91.6 L53.5,91.6 L56.7,91.7 L60.0,91.9 L63.3,92.2 L66.8,92.6 L70.3,93.0 L73.9,93.6 L77.6,94.2 L81.2,95.0 L85.0,95.8 L88.7,96.7 L92.5,97.7 L96.3,98.8 L100.0,100.0 L96.3,98.7 L92.6,97.4 L89.0,96.0 L85.4,94.6 L81.9,93.0 L78.5,91.5 L75.1,89.8 L71.9,88.2 L68.8,86.5 L65.7,84.7 L62.9,83.0 L60.1,81.2 L57.5,79.5 L55.0,77.7 L52.7,75.9 L50.6,74.2 L48.6,72.5 L46.8,70.8 L45.2,69.1 L43.7,67.5 L42.5,66.0 L41.4,64.5 L40.5,63.1 L39.8,61.8 L39.2,60.5 L38.9,59.4 L38.7,58.4 L38.8,57.4 L38.9,56.6 L39.3,55.9 L39.9,55.3 L40.6,54.9 L41.5,54.6 L42.5,54.4 L43.7,54.4 L45.0,54.5 L46.5,54.8 L48.1,55.2 L49.9,55.8 L51.7,56.5 L53.7,57.4 L55.8,58.5 L57.9,59.7 L60.2,61.0 L62.5,62.5 L64.9,64.1 L67.3,65.9 L69.8,67.9 L72.4,69.9 L74.9,72.1 L77.5,74.5 L80.1,76.9 L82.7,79.5 L85.2,82.1 L87.8,84.9 L90.3,87.8 L92.8,90.7 L95.3,93.8 L97.7,96.8 L100.0,100.0 L97.7,96.8 L95.5,93.6 L93.4,90.3 L91.4,87.0 L89.4,83.7 L87.6,80.4 L85.8,77.2 L84.2,73.9 L82.7,70.7 L81.2,67.5 L79.9,64.4 L78.8,61.4 L77.7,58.4 L76.7,55.5 L75.9,52.7 L75.2,50.1 L74.6,47.5 L74.2,45.1 L73.8,42.8 L73.6,40.7 L73.5,38.7 L73.4,36.8 L73.5,35.2 L73.7,33.7 L74.0,32.4 L74.4,31.2 L74.9,30.3 L75.5,29.6 L76.1,29.0 L76.8,28.7 L77.6,28.5 L78.4,28.6 L79.3,28.9 L80.3,29.3 L81.2,30.0 L82.3,30.9 L83.3,32.0 L84.4,33.3 L85.4,34.8 L86.5,36.5 L87.6,38.3 L88.6,40.4 L89.7,42.6 L90.7,45.0 L91.7,47.6 L92.7,50.4 L93.6,53.2 L94.5,56.3 L95.3,59.4 L96.1,62.7 L96.8,66.1 L97.4,69.6 L98.0,73.2 L98.5,76.9 L99.0,80.6 L99.3,84.4 L99.6,88.3 L99.8,92.2 L100.0,96.1 L100.0,100.0 L100.0,96.1 L100.2,92.2 L100.4,88.3 L100.7,84.4 L101.0,80.6 L101.5,76.9 L102.0,73.2 L102.6,69.6 L103.2,66.1 L103.9,62.7 L104.7,59.4 L105.5,56.3 L106.4,53.2 L107.3,50.4 L108.3,47.6 L109.3,45.0 L110.3,42.6 L111.4,40.4 L112.4,38.3 L113.5,36.5 L114.6,34.8 L115.6,33.3 L116.7,32.0 L117.7,30.9 L118.8,30.0 L119.7,29.3 L120.7,28.9 L121.6,28.6 L122.4,28.5 L123.2,28.7 L123.9,29.0 L124.5,29.6 L125.1,30.3 L125.6,31.2 L126.0,32.4 L126.3,33.7 L126.5,35.2 L126.6,36.8 L126.5,38.7 L126.4,40.7 L126.2,42.8 L125.8,45.1 L125.4,47.5 L124.8,50.1 L124.1,52.7 L123.3,55.5 L122.3,58.4 L121.2,61.4 L120.1,64.4 L118.8,67.5 L117.3,70.7 L115.8,73.9 L114.2,77.2 L112.4,80.4 L110.6,83.7 L108.6,87.0 L106.6,90.3 L104.5,93.6 L102.3,96.8 L100.0,100.0 L102.3,96.8 L104.7,93.8 L107.2,90.7 L109.7,87.8 L112.2,84.9 L114.8,82.1 L117.3,79.5 L119.9,76.9 L122.5,74.5 L125.1,72.1 L127.6,69.9 L130.2,67.9 L132.7,65.9 L135.1,64.1 L137.5,62.5 L139.8,61.0 L142.1,59.7 L144.2,58.5 L146.3,57.4 L148.3,56.5 L150.1,55.8 L151.9,55.2 L153.5,54.8 L155.0,54.5 L156.3,54.4 L157.5,54.4 L158.5,54.6 L159.4,54.9 L160.1,55.3 L160.7,55.9 L161.1,56.6 L161.2,57.4 L161.3,58.4 L161.1,59.4 L160.8,60.5 L160.2,61.8 L159.5,63.1 L158.6,64.5 L157.5,66.0 L156.2,67.5 L154.8,69.1 L153.2,70.8 L151.4,72.5 L149.4,74.2 L147.3,75.9 L145.0,77.7 L142.5,79.5 L139.9,81.2 L137.1,83.0 L134.3,84.7 L131.2,86.5 L128.1,88.2 L124.9,89.8 L121.5,91.5 L118.1,93.0 L114.6,94.6 L111.0,96.0 L107.4,97.4 L103.7,98.7 L100.0,100.0 L103.7,98.8 L107.5,97.7 L111.3,96.7 L115.0,95.8 L118.7,95.0 L122.4,94.2 L126.1,93.6 L129.7,93.0 L133.2,92.6 L136.7,92.2 L140.0,91.9 L143.3,91.7 L146.5,91.6 L149.5,91.6 L152.4,91.7 L155.1,91.9 L157.7,92.1 L160.2,92.4 L162.5,92.8 L164.6,93.2 L166.5,93.7 L168.3,94.3 L169.8,94.9 L171.2,95.5 L172.3,96.2 L173.3,96.9 L174.0,97.7 L174.6,98.4 L174.9,99.2 L175.0,100.0"/>
+  </svg>
+
+  <!-- Espiral de Arquímedes — lado derecho medio -->
+  <svg viewBox="0 0 200 200" width="300" height="300"
+       style="top:500px;right:-60px;opacity:0.40;stroke:#B78C30;fill:none;stroke-width:0.8">
+    <path d="M100.0,100.0 L100.2,100.0 L100.3,100.0 L100.5,100.1 L100.7,100.1 L100.8,100.2 L101.0,100.2 L101.1,100.3 L101.3,100.4 L101.4,100.5 L101.6,100.6 L101.7,100.8 L101.8,100.9 L101.9,101.0 L102.1,101.2 L102.2,101.4 L102.2,101.5 L102.3,101.7 L102.4,101.9 L102.4,102.1 L102.5,102.3 L102.5,102.5 L102.5,102.8 L102.5,103.0 L102.5,103.2 L102.5,103.4 L102.5,103.7 L102.4,103.9 L102.3,104.1 L102.3,104.4 L102.2,104.6 L102.1,104.8 L101.9,105.1 L101.8,105.3 L101.6,105.5 L101.5,105.8 L101.3,106.0 L101.1,106.2 L100.9,106.4 L100.7,106.6 L100.4,106.8 L100.2,107.0 L99.9,107.1 L99.6,107.3 L99.3,107.5 L99.0,107.6 L98.7,107.7 L98.4,107.8 L98.1,107.9 L97.7,108.0 L97.4,108.1 L97.0,108.1 L96.6,108.2 L96.3,108.2 L95.9,108.2 L95.5,108.2 L95.1,108.2 L94.7,108.1 L94.3,108.0 L93.9,108.0 L93.5,107.9 L93.1,107.7 L92.7,107.6 L92.3,107.4 L91.9,107.2 L91.5,107.0 L91.1,106.8 L90.7,106.6 L90.3,106.3 L89.9,106.0 L89.6,105.7 L89.2,105.4 L88.9,105.1 L88.5,104.7 L88.2,104.3 L87.9,103.9 L87.6,103.5 L87.3,103.1 L87.0,102.6 L86.7,102.2 L86.5,101.7 L86.3,101.2 L86.1,100.7 L85.9,100.2 L85.7,99.6 L85.6,99.1 L85.5,98.5 L85.4,98.0 L85.3,97.4 L85.2,96.8 L85.2,96.2 L85.2,95.6 L85.2,95.0 L85.2,94.4 L85.3,93.7 L85.4,93.1 L85.5,92.5 L85.7,91.9 L85.8,91.3 L86.0,90.6 L86.2,90.0 L86.5,89.4 L86.8,88.8 L87.1,88.2 L87.4,87.6 L87.8,87.0 L88.2,86.4 L88.6,85.8 L89.0,85.3 L89.5,84.7 L90.0,84.2 L90.5,83.7 L91.0,83.2 L91.6,82.7 L92.2,82.3 L92.8,81.8 L93.4,81.4 L94.1,81.0 L94.8,80.6 L95.5,80.3 L96.2,80.0 L96.9,79.7 L97.7,79.4 L98.4,79.1 L99.2,78.9 L100.0,78.8 L100.8,78.6 L101.6,78.5 L102.5,78.4 L103.3,78.3 L104.1,78.3 L105.0,78.3 L105.9,78.3 L106.7,78.4 L107.6,78.5 L108.4,78.7 L109.3,78.8 L110.2,79.1 L111.0,79.3 L111.9,79.6 L112.8,79.9 L113.6,80.3 L114.4,80.7 L115.3,81.1 L116.1,81.5 L116.9,82.0 L117.7,82.6 L118.4,83.1 L119.2,83.7 L119.9,84.3 L120.6,85.0 L121.3,85.7 L122.0,86.4 L122.6,87.2 L123.3,88.0 L123.8,88.8 L124.4,89.6 L124.9,90.5 L125.4,91.4 L125.9,92.3 L126.3,93.2 L126.7,94.2 L127.1,95.2 L127.4,96.2 L127.7,97.2 L128.0,98.2 L128.2,99.3 L128.4,100.4 L128.5,101.4 L128.6,102.5 L128.7,103.6 L128.7,104.7 L128.7,105.8 L128.6,107.0 L128.5,108.1 L128.3,109.2 L128.1,110.3 L127.8,111.4 L127.5,112.5 L127.2,113.6 L126.8,114.7 L126.4,115.8 L125.9,116.9 L125.4,118.0 L124.8,119.0 L124.2,120.0 L123.6,121.1 L122.9,122.1 L122.2,123.0 L121.4,124.0 L120.6,124.9 L119.7,125.8 L118.9,126.6 L117.9,127.5 L117.0,128.3 L116.0,129.0 L114.9,129.8 L113.9,130.5 L112.8,131.1 L111.7,131.8 L110.5,132.3 L109.3,132.9 L108.1,133.4 L106.9,133.8 L105.6,134.2 L104.4,134.6 L103.1,134.9 L101.8,135.1 L100.4,135.4 L99.1,135.5 L97.8,135.6 L96.4,135.7 L95.0,135.7 L93.7,135.7 L92.3,135.6 L90.9,135.4 L89.5,135.2 L88.2,134.9 L86.8,134.6 L85.4,134.3 L84.1,133.8 L82.7,133.4 L81.4,132.8 L80.1,132.3 L78.8,131.6 L77.5,130.9 L76.3,130.2 L75.0,129.4 L73.8,128.6 L72.6,127.7 L71.5,126.8 L70.4,125.8 L69.3,124.8 L68.2,123.7 L67.2,122.6 L66.3,121.4 L65.3,120.2 L64.5,119.0 L63.6,117.7 L62.8,116.4 L62.1,115.0 L61.4,113.6 L60.7,112.2 L60.1,110.8 L59.6,109.3 L59.1,107.8 L58.7,106.3 L58.3,104.7 L58.0,103.2 L57.7,101.6 L57.5,100.0 L57.4,98.4 L57.3,96.8 L57.3,95.1 L57.3,93.5 L57.4,91.9 L57.6,90.2 L57.8,88.6 L58.1,87.0 L58.5,85.3 L58.9,83.7 L59.4,82.1 L59.9,80.5 L60.6,79.0 L61.2,77.4 L62.0,75.9 L62.8,74.3 L63.6,72.9 L64.5,71.4 L65.5,70.0 L66.5,68.6 L67.6,67.2 L68.8,65.9 L70.0,64.6 L71.2,63.4 L72.5,62.2 L73.9,61.0 L75.3,59.9 L76.7,58.9 L78.2,57.9 L79.7,56.9 L81.3,56.0 L82.9,55.2 L84.6,54.4 L86.2,53.7 L88.0,53.1 L89.7,52.5 L91.5,52.0 L93.3,51.5 L95.1,51.1 L96.9,50.8 L98.8,50.5 L100.6,50.4 L102.5,50.3 L104.4,50.2 L106.3,50.2 L108.2,50.3 L110.1,50.5 L112.0,50.8 L113.9,51.1 L115.8,51.5 L117.6,52.0 L119.5,52.5 L121.3,53.1 L123.2,53.8 L125.0,54.6 L126.8,55.4 L128.5,56.3 L130.2,57.3 L131.9,58.3 L133.6,59.4 L135.2,60.6 L136.8,61.8 L138.3,63.1 L139.8,64.4 L141.3,65.9 L142.7,67.3 L144.0,68.9 L145.3,70.5 L146.5,72.1 L147.7,73.8 L148.8,75.5 L149.8,77.3 L150.8,79.1 L151.7,81.0 L152.5,82.9 L153.3,84.9 L154.0,86.9 L154.6,88.9 L155.2,90.9 L155.7,93.0 L156.1,95.1 L156.4,97.2 L156.6,99.3 L156.8,101.4 L156.8,103.6 L156.8,105.7 L156.7,107.9 L156.6,110.1 L156.3,112.2 L156.0,114.4 L155.6,116.5 L155.1,118.7 L154.5,120.8 L153.8,122.9 L153.1,125.0 L152.2,127.0 L151.3,129.1 L150.3,131.1 L149.3,133.0 L148.1,135.0 L146.9,136.9 L145.6,138.7 L144.3,140.5 L142.8,142.3 L141.3,144.0 L139.7,145.6 L138.1,147.2 L136.4,148.8 L134.6,150.3 L132.8,151.7 L130.9,153.0 L129.0,154.3 L127.0,155.5 L124.9,156.6 L122.8,157.7 L120.7,158.7 L118.5,159.6 L116.3,160.4 L114.1,161.1 L111.8,161.8 L109.5,162.4 L107.1,162.8 L104.8,163.2 L102.4,163.5 L100.0,163.8 L97.6,163.9 L95.2,163.9 L92.7,163.8 L90.3,163.7 L87.9,163.5 L85.5,163.1 L83.1,162.7 L80.7,162.2 L78.3,161.6 L75.9,160.9 L73.6,160.1 L71.2,159.2 L69.0,158.2 L66.7,157.1 L64.5,156.0 L62.3,154.7 L60.2,153.4 L58.1,152.0 L56.0,150.5 L54.0,149.0 L52.1,147.3 L50.2,145.6 L48.4,143.8 L46.7,141.9 L45.0,140.0 L43.4,138.0 L41.8,135.9 L40.4,133.8 L39.0,131.6 L37.7,129.3 L36.5,127.0 L35.4,124.7 L34.3,122.3 L33.4,119.8 L32.5,117.3 L31.7,114.8 L31.0,112.3 L30.5,109.7 L30.0,107.1 L29.6,104.4 L29.3,101.8 L29.1,99.1 L29.0,96.4 L29.0,93.7 L29.2,91.1 L29.4,88.4 L29.7,85.7 L30.1,83.0 L30.7,80.3 L31.3,77.7 L32.0,75.0 L32.8,72.4 L33.8,69.9 L34.8,67.3 L35.9,64.8 L37.2,62.3 L38.5,59.9 L39.9,57.5 L41.4,55.1 L43.0,52.9 L44.7,50.6 L46.5,48.5 L48.4,46.4 L50.3,44.3 L52.3,42.4 L54.4,40.5 L56.6,38.7 L58.9,36.9 L61.2,35.3 L63.6,33.7 L66.0,32.2 L68.5,30.8 L71.1,29.5 L73.7,28.3 L76.4,27.2 L79.1,26.2 L81.8,25.3 L84.6,24.5 L87.4,23.8 L90.3,23.3 L93.2,22.8 L96.1,22.4 L99.0,22.1 L102.0,22.0 L104.9,22.0 L107.9,22.0 L110.8,22.2 L113.8,22.5 L116.7,22.9 L119.7,23.4 L122.6,24.1 L125.5,24.8 L128.4,25.7 L131.2,26.6 L134.0,27.7 L136.8,28.9 L139.5,30.2 L142.2,31.6 L144.9,33.1 L147.5,34.7 L150.0,36.4 L152.5,38.2 L154.9,40.1 L157.2,42.1 L159.5,44.1 L161.7,46.3 L163.8,48.6 L165.8,50.9 L167.8,53.3 L169.6,55.8 L171.4,58.4 L173.0,61.0 L174.6,63.7 L176.1,66.5 L177.5,69.3 L178.7,72.2 L179.9,75.2 L180.9,78.1 L181.8,81.2 L182.7,84.2 L183.4,87.3 L184.0,90.5 L184.4,93.6 L184.8,96.8 L185.0,100.0"/>
+  </svg>
+
+  <!-- Identidad de Euler — zona inferior izquierda -->
+  <svg viewBox="0 0 260 55" width="310"
+       style="top:900px;left:4%;opacity:0.40;fill:#006EB6;stroke:none">
+    <text font-family="Georgia,serif" font-size="30" font-style="italic" x="8" y="42">
+      e<tspan dy="-13" font-size="19">iπ</tspan><tspan dy="13"> + 1 = 0</tspan>
+    </text>
+  </svg>
+
+  <!-- Campana de Gauss — zona superior derecha -->
+  <svg viewBox="0 0 200 80" width="280"
+       style="top:300px;left:55%;opacity:0.40;stroke:#006EB6;fill:none;stroke-width:1.1">
+    <path d="M0.0,70.0 L1.7,70.0 L3.3,70.0 L5.0,70.0 L6.7,70.0 L8.3,70.0 L10.0,70.0 L11.7,70.0 L13.3,70.0 L15.0,70.0 L16.7,70.0 L18.3,69.9 L20.0,69.9 L21.7,69.9 L23.3,69.9 L25.0,69.8 L26.7,69.8 L28.3,69.7 L30.0,69.6 L31.7,69.5 L33.3,69.4 L35.0,69.3 L36.7,69.1 L38.3,68.9 L40.0,68.6 L41.7,68.3 L43.3,67.9 L45.0,67.5 L46.7,66.9 L48.3,66.3 L50.0,65.6 L51.7,64.8 L53.3,63.9 L55.0,62.8 L56.7,61.7 L58.3,60.4 L60.0,58.9 L61.7,57.3 L63.3,55.5 L65.0,53.6 L66.7,51.6 L68.3,49.4 L70.0,47.1 L71.7,44.7 L73.3,42.2 L75.0,39.6 L76.7,37.0 L78.3,34.3 L80.0,31.6 L81.7,29.0 L83.3,26.5 L85.0,24.0 L86.7,21.7 L88.3,19.6 L90.0,17.7 L91.7,16.0 L93.3,14.6 L95.0,13.5 L96.7,12.7 L98.3,12.2 L100.0,12.0 L101.7,12.2 L103.3,12.7 L105.0,13.5 L106.7,14.6 L108.3,16.0 L110.0,17.7 L111.7,19.6 L113.3,21.7 L115.0,24.0 L116.7,26.5 L118.3,29.0 L120.0,31.6 L121.7,34.3 L123.3,37.0 L125.0,39.6 L126.7,42.2 L128.3,44.7 L130.0,47.1 L131.7,49.4 L133.3,51.6 L135.0,53.6 L136.7,55.5 L138.3,57.3 L140.0,58.9 L141.7,60.4 L143.3,61.7 L145.0,62.8 L146.7,63.9 L148.3,64.8 L150.0,65.6 L151.7,66.3 L153.3,66.9 L155.0,67.5 L156.7,67.9 L158.3,68.3 L160.0,68.6 L161.7,68.9 L163.3,69.1 L165.0,69.3 L166.7,69.4 L168.3,69.5 L170.0,69.6 L171.7,69.7 L173.3,69.8 L175.0,69.8 L176.7,69.9 L178.3,69.9 L180.0,69.9 L181.7,69.9 L183.3,70.0 L185.0,70.0 L186.7,70.0 L188.3,70.0 L190.0,70.0 L191.7,70.0 L193.3,70.0 L195.0,70.0 L196.7,70.0 L198.3,70.0 L200.0,70.0"/>
+    <line x1="0" y1="70" x2="200" y2="70" stroke-width="0.5"/>
+    <!-- μ y σ labels -->
+    <text font-family="Georgia,serif" font-size="9" fill="#B78C30"
+          text-anchor="middle" x="100" y="79">μ</text>
+    <text font-family="Georgia,serif" font-size="7" fill="#B78C30" x="126" y="67">σ</text>
+  </svg>
+
+  <!-- Triángulo de Sierpinski — esquina inferior derecha -->
+  <svg viewBox="0 0 200 174" width="270"
+       style="top:1200px;right:5%;opacity:0.40;stroke:#006EB6;fill:none;stroke-width:0.9">
+    <!-- nivel 0 -->
+    <polygon points="100,2 198,172 2,172"/>
+    <!-- nivel 1 -->
+    <polygon points="100,87 149,2 51,2"/>
+    <polygon points="149,172 198,87 100,87"/>
+    <polygon points="51,172 100,87 2,87"/>
+    <!-- nivel 2 -->
+    <polygon points="100,44 124,2 76,2"/>
+    <polygon points="124,87 149,44 99,44"/>
+    <polygon points="76,87 100,44 51,44"/>
+    <polygon points="149,129 173,87 124,87"/>
+    <polygon points="100,129 124,87 76,87"/>
+    <polygon points="51,129 76,87 26,87"/>
+    <polygon points="173,172 198,129 148,129"/>
+    <polygon points="124,172 149,129 99,129"/>
+    <polygon points="76,172 100,129 52,129"/>
+    <polygon points="27,172 52,129 2,129"/>
+  </svg>
+
+    <!-- Árbol binario — zona central izquierda -->
+  <svg viewBox="0 0 200 140" width="260"
+       style="top:700px;left:-20px;opacity:0.40;stroke:#B78C30;fill:#B78C30;stroke-width:0.8">
+    <circle cx="100" cy="15" r="3"/>
+    <line x1="100.0" y1="15.0" x2="70.0" y2="43.0"/>
+    <line x1="100.0" y1="15.0" x2="130.0" y2="43.0"/>
+    <circle cx="70.0" cy="43.0" r="3"/>
+    <circle cx="130.0" cy="43.0" r="3"/>
+    <line x1="70.0" y1="43.0" x2="55.0" y2="71.0"/>
+    <line x1="70.0" y1="43.0" x2="85.0" y2="71.0"/>
+    <circle cx="55.0" cy="71.0" r="3"/>
+    <circle cx="85.0" cy="71.0" r="3"/>
+    <line x1="55.0" y1="71.0" x2="47.5" y2="99.0"/>
+    <line x1="55.0" y1="71.0" x2="62.5" y2="99.0"/>
+    <circle cx="47.5" cy="99.0" r="3"/>
+    <circle cx="62.5" cy="99.0" r="3"/>
+    <line x1="47.5" y1="99.0" x2="43.8" y2="127.0"/>
+    <line x1="47.5" y1="99.0" x2="51.2" y2="127.0"/>
+    <circle cx="43.8" cy="127.0" r="3"/>
+    <circle cx="51.2" cy="127.0" r="3"/>
+    <line x1="62.5" y1="99.0" x2="58.8" y2="127.0"/>
+    <line x1="62.5" y1="99.0" x2="66.2" y2="127.0"/>
+    <circle cx="58.8" cy="127.0" r="3"/>
+    <circle cx="66.2" cy="127.0" r="3"/>
+    <line x1="85.0" y1="71.0" x2="77.5" y2="99.0"/>
+    <line x1="85.0" y1="71.0" x2="92.5" y2="99.0"/>
+    <circle cx="77.5" cy="99.0" r="3"/>
+    <circle cx="92.5" cy="99.0" r="3"/>
+    <line x1="77.5" y1="99.0" x2="73.8" y2="127.0"/>
+    <line x1="77.5" y1="99.0" x2="81.2" y2="127.0"/>
+    <circle cx="73.8" cy="127.0" r="3"/>
+    <circle cx="81.2" cy="127.0" r="3"/>
+    <line x1="92.5" y1="99.0" x2="88.8" y2="127.0"/>
+    <line x1="92.5" y1="99.0" x2="96.2" y2="127.0"/>
+    <circle cx="88.8" cy="127.0" r="3"/>
+    <circle cx="96.2" cy="127.0" r="3"/>
+    <line x1="130.0" y1="43.0" x2="115.0" y2="71.0"/>
+    <line x1="130.0" y1="43.0" x2="145.0" y2="71.0"/>
+    <circle cx="115.0" cy="71.0" r="3"/>
+    <circle cx="145.0" cy="71.0" r="3"/>
+    <line x1="115.0" y1="71.0" x2="107.5" y2="99.0"/>
+    <line x1="115.0" y1="71.0" x2="122.5" y2="99.0"/>
+    <circle cx="107.5" cy="99.0" r="3"/>
+    <circle cx="122.5" cy="99.0" r="3"/>
+    <line x1="107.5" y1="99.0" x2="103.8" y2="127.0"/>
+    <line x1="107.5" y1="99.0" x2="111.2" y2="127.0"/>
+    <circle cx="103.8" cy="127.0" r="3"/>
+    <circle cx="111.2" cy="127.0" r="3"/>
+    <line x1="122.5" y1="99.0" x2="118.8" y2="127.0"/>
+    <line x1="122.5" y1="99.0" x2="126.2" y2="127.0"/>
+    <circle cx="118.8" cy="127.0" r="3"/>
+    <circle cx="126.2" cy="127.0" r="3"/>
+    <line x1="145.0" y1="71.0" x2="137.5" y2="99.0"/>
+    <line x1="145.0" y1="71.0" x2="152.5" y2="99.0"/>
+    <circle cx="137.5" cy="99.0" r="3"/>
+    <circle cx="152.5" cy="99.0" r="3"/>
+    <line x1="137.5" y1="99.0" x2="133.8" y2="127.0"/>
+    <line x1="137.5" y1="99.0" x2="141.2" y2="127.0"/>
+    <circle cx="133.8" cy="127.0" r="3"/>
+    <circle cx="141.2" cy="127.0" r="3"/>
+    <line x1="152.5" y1="99.0" x2="148.8" y2="127.0"/>
+    <line x1="152.5" y1="99.0" x2="156.2" y2="127.0"/>
+    <circle cx="148.8" cy="127.0" r="3"/>
+    <circle cx="156.2" cy="127.0" r="3"/>
+  </svg>
+
+</div>
+<nav class="comite-nav"><div class="comite-nav-inner"><a href="#" data-target="fechas-importantes">Fechas importantes</a></div></nav><section class="section contrib-section reveal" id="fechas-importantes"><div class="container"><h2 class="section-title">Fechas importantes</h2><div class="tl-wrap"><div class="tl-item left" data-vencida="true"><div class="tl-content"><h4 class="tl-fecha">12 de diciembre del 2025</h4><h3 class="tl-titulo">Anuncio de la sede las 30JNEM</h3><div class="tl-extra"><p class="tl-texto">En la ceremonia de clausura se anunció que la PUCV organizará en la ciudad de Valparaíso las 30 Jornadas Nacionales de Educación Matemática</p></div><button class="tl-toggle-btn" onclick="event.stopPropagation();var x=this.previousElementSibling;x.classList.toggle('open');this.textContent=x.classList.contains('open')?'Mostrar menos':'Mostrar más';setTimeout(function(){parent.postMessage({type:'resize',height:document.body.scrollHeight},'*');},400);">Mostrar más</button></div></div><div class="tl-item right"><div class="tl-content"><h4 class="tl-fecha">31 de agosto del 2026</h4><h3 class="tl-titulo">Fecha límite para envío de contribuciones a 30JNEM</h3><div class="tl-extra open"><div class="countdown tl-countdown" data-target="2026-08-31" id="cd-20260831-Fechalí"><span class="cd-box"><span class="cd-num" id="cd-20260831-Fechalí-d">--</span><span class="cd-lbl">días</span></span><span class="cd-sep">:</span><span class="cd-box"><span class="cd-num" id="cd-20260831-Fechalí-h">--</span><span class="cd-lbl">horas</span></span><span class="cd-sep">:</span><span class="cd-box"><span class="cd-num" id="cd-20260831-Fechalí-m">--</span><span class="cd-lbl">min</span></span><span class="cd-sep">:</span><span class="cd-box"><span class="cd-num" id="cd-20260831-Fechalí-s">--</span><span class="cd-lbl">seg</span></span></div><p class="tl-texto">Más información en <a href="https://www.sochiem.cl/30jnem-2026/contribuciones" target="_blank">https://www.sochiem.cl/30jnem-2026/contribuciones</a> Los envíos se deben subir a al enlace: <a href="https://script.google.com/macros/s/AKfycbyALr4ZpYlV8Gt68Nc54b-BXVZAh6G9AFTFqqzbw0mD99r52lDbkS0OxZKGTr20qQ3FvQ/exec" target="_blank">https://script.google.com/macros/s/AKfycbyALr4ZpYlV8Gt68Nc54b-BXVZAh6G9AFTFqqzbw0mD99r52lDbkS0OxZKGTr20qQ3FvQ/exec</a></p><a class="gcal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Fecha+límite+para+envío+de+contribuciones+a+30JNEM&dates=20260831/20260831&details=Más+información+en+https://www.sochiem.cl/30jnem-2026/contribuciones+Los+envíos+se+deben+subir+a+al+enlace:+https://script.google.com/macros/s/AKfycbyALr4ZpYlV8Gt68Nc54b-BXVZAh6G9AFTFqqzbw0mD99r52lDbk" target="_blank"><img src="https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_16_2x.png" width="14" height="14" alt=""> Agregar a Google Calendar</a></div><button class="tl-toggle-btn" onclick="event.stopPropagation();var x=this.previousElementSibling;x.classList.toggle('open');this.textContent=x.classList.contains('open')?'Mostrar menos':'Mostrar más';setTimeout(function(){parent.postMessage({type:'resize',height:document.body.scrollHeight},'*');},400);">Mostrar menos</button></div></div><div class="tl-item left"><div class="tl-content"><h4 class="tl-fecha">31 de octubre del 2026</h4><h3 class="tl-titulo">Comunicación de resultados 30JNEM</h3><div class="tl-extra open"><div class="countdown tl-countdown" data-target="2026-10-31" id="cd-20261031-Comunica"><span class="cd-box"><span class="cd-num" id="cd-20261031-Comunica-d">--</span><span class="cd-lbl">días</span></span><span class="cd-sep">:</span><span class="cd-box"><span class="cd-num" id="cd-20261031-Comunica-h">--</span><span class="cd-lbl">horas</span></span><span class="cd-sep">:</span><span class="cd-box"><span class="cd-num" id="cd-20261031-Comunica-m">--</span><span class="cd-lbl">min</span></span><span class="cd-sep">:</span><span class="cd-box"><span class="cd-num" id="cd-20261031-Comunica-s">--</span><span class="cd-lbl">seg</span></span></div><a class="gcal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Comunicación+de+resultados+30JNEM&dates=20261031/20261031&details=" target="_blank"><img src="https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_16_2x.png" width="14" height="14" alt=""> Agregar a Google Calendar</a></div><button class="tl-toggle-btn" onclick="event.stopPropagation();var x=this.previousElementSibling;x.classList.toggle('open');this.textContent=x.classList.contains('open')?'Mostrar menos':'Mostrar más';setTimeout(function(){parent.postMessage({type:'resize',height:document.body.scrollHeight},'*');},400);">Mostrar menos</button></div></div><div class="tl-item right"><div class="tl-content"><h4 class="tl-fecha">13 de diciembre del 2026</h4><h3 class="tl-titulo">Jornada Satélite para jóvenes investigadoras/es</h3><div class="tl-extra open"><div class="countdown tl-countdown" data-target="2026-12-13" id="cd-20261213-Jornada"><span class="cd-box"><span class="cd-num" id="cd-20261213-Jornada-d">--</span><span class="cd-lbl">días</span></span><span class="cd-sep">:</span><span class="cd-box"><span class="cd-num" id="cd-20261213-Jornada-h">--</span><span class="cd-lbl">horas</span></span><span class="cd-sep">:</span><span class="cd-box"><span class="cd-num" id="cd-20261213-Jornada-m">--</span><span class="cd-lbl">min</span></span><span class="cd-sep">:</span><span class="cd-box"><span class="cd-num" id="cd-20261213-Jornada-s">--</span><span class="cd-lbl">seg</span></span></div><p class="tl-texto">La Jornada Satélite se realizará en el Instituto de Matemáticas de la PUCV. Más información en <a href="https://www.sochiem.cl/30jnem-2026/jornada-satelite" target="_blank">https://www.sochiem.cl/30jnem-2026/jornada-satelite</a></p><a class="gcal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jornada+Satélite+para+jóvenes+investigadoras/es&dates=20261213/20261213&details=La+Jornada+Satélite+se+realizará+en+el+Instituto+de+Matemáticas+de+la+PUCV.+Más+información+en+https://www.sochiem.cl/30jnem-2026/jornada-satelite" target="_blank"><img src="https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_16_2x.png" width="14" height="14" alt=""> Agregar a Google Calendar</a></div><button class="tl-toggle-btn" onclick="event.stopPropagation();var x=this.previousElementSibling;x.classList.toggle('open');this.textContent=x.classList.contains('open')?'Mostrar menos':'Mostrar más';setTimeout(function(){parent.postMessage({type:'resize',height:document.body.scrollHeight},'*');},400);">Mostrar menos</button></div></div><div class="tl-item left"><div class="tl-content"><h4 class="tl-fecha">del 14 al 16 de diciembre del 2026</h4><h3 class="tl-titulo">Jornadas Nacionales de Educación Matemática</h3><div class="tl-extra open"><div class="countdown tl-countdown" data-target="2026-12-14" id="cd-20261214-Jornadas"><span class="cd-box"><span class="cd-num" id="cd-20261214-Jornadas-d">--</span><span class="cd-lbl">días</span></span><span class="cd-sep">:</span><span class="cd-box"><span class="cd-num" id="cd-20261214-Jornadas-h">--</span><span class="cd-lbl">horas</span></span><span class="cd-sep">:</span><span class="cd-box"><span class="cd-num" id="cd-20261214-Jornadas-m">--</span><span class="cd-lbl">min</span></span><span class="cd-sep">:</span><span class="cd-box"><span class="cd-num" id="cd-20261214-Jornadas-s">--</span><span class="cd-lbl">seg</span></span></div><p class="tl-texto">La 30JNEM se desarrollará en la casa central de la PUCV, más información en <a href="https://www.sochiem.cl/30jnem-2026/sede" target="_blank">https://www.sochiem.cl/30jnem-2026/sede</a></p><a class="gcal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jornadas+Nacionales+de+Educación+Matemática&dates=20261214/20261216&details=La+30JNEM+se+desarrollará+en+la+casa+central+de+la+PUCV,+más+información+en+https://www.sochiem.cl/30jnem-2026/sede" target="_blank"><img src="https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_16_2x.png" width="14" height="14" alt=""> Agregar a Google Calendar</a></div><button class="tl-toggle-btn" onclick="event.stopPropagation();var x=this.previousElementSibling;x.classList.toggle('open');this.textContent=x.classList.contains('open')?'Mostrar menos':'Mostrar más';setTimeout(function(){parent.postMessage({type:'resize',height:document.body.scrollHeight},'*');},400);">Mostrar menos</button></div></div></div></div></section><script>function tickCountdowns(){  document.querySelectorAll('.countdown').forEach(function(el){    var iso=el.dataset.target;    var target=new Date(iso+'T23:59:59');    var now=new Date();    var diff=target-now;    var id=el.id;    if(diff<=0){      el.closest('.tl-item').setAttribute('data-vencida','true');      var extra=el.closest('.tl-content').querySelector('.tl-extra');      if(extra) extra.classList.remove('open');      var btn=el.closest('.tl-content').querySelector('.tl-toggle-btn');      if(btn) btn.textContent='Mostrar más';      return;    }    var d=Math.floor(diff/86400000);    var h=Math.floor((diff%86400000)/3600000);    var m=Math.floor((diff%3600000)/60000);    var s=Math.floor((diff%60000)/1000);    var nd=document.getElementById(id+'-d');    var nh=document.getElementById(id+'-h');    var nm=document.getElementById(id+'-m');    var ns=document.getElementById(id+'-s');    if(nd) nd.textContent=String(d).padStart(2,'0');    if(nh) nh.textContent=String(h).padStart(2,'0');    if(nm) nm.textContent=String(m).padStart(2,'0');    if(ns) ns.textContent=String(s).padStart(2,'0');  });}tickCountdowns();setInterval(tickCountdowns,1000);</script>
+
+<script>
+let currentSlide=0;
+const track=document.getElementById('galleryTrack');
+const dotsC=document.getElementById('galleryDots');
+if(track){
+    const slides=track.querySelectorAll('.gallery-item');
+    const total=slides.length;
+    for(let i=0;i<total;i++){
+        const d=document.createElement('div');
+        d.className='gallery-dot'+(i===0?' active':'');
+        d.onclick=()=>goTo(i);
+        dotsC.appendChild(d);
+    }
+    function goTo(n){
+        currentSlide=((n%total)+total)%total;
+        track.style.transform=`translateX(-${currentSlide*100}%)`;
+        dotsC.querySelectorAll('.gallery-dot').forEach((d,i)=>d.classList.toggle('active',i===currentSlide));
+    }
+    window.moveGallery=function(dir){goTo(currentSlide+dir);};
+    if(total>1)setInterval(()=>goTo(currentSlide+1),5000);
+}
+
+let satSlide=0;
+const satTrack=document.getElementById('satTrack');
+const satDotsC=document.getElementById('satDots');
+if(satTrack){
+    const satSlides=satTrack.querySelectorAll('.gallery-item');
+    const satTotal=satSlides.length;
+    for(let i=0;i<satTotal;i++){
+        const d=document.createElement('div');
+        d.className='gallery-dot'+(i===0?' active':'');
+        d.onclick=()=>satGoTo(i);
+        satDotsC.appendChild(d);
+    }
+    function satGoTo(n){
+        satSlide=((n%satTotal)+satTotal)%satTotal;
+        satTrack.style.transform=`translateX(-${satSlide*100}%)`;
+        satDotsC.querySelectorAll('.gallery-dot').forEach((d,i)=>d.classList.toggle('active',i===satSlide));
+    }
+    window.moveSatGallery=function(dir){satGoTo(satSlide+dir);};
+    if(satTotal>1)setInterval(()=>satGoTo(satSlide+1),6000);
+}
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0,rootMargin:"0px 0px -50px 0px"});
+reveals.forEach(el=>obs.observe(el));
+</script>
+
+<script>
+function sendHeight() {
+  parent.postMessage(
+    { type: "resize", height: document.body.scrollHeight },
+    "*"
+  );
+}
+
+window.addEventListener("load", sendHeight);
+window.addEventListener("resize", sendHeight);
+
+window.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".comite-nav a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.dataset.target;
+      const section = document.getElementById(targetId);
+
+      if (section) {
+        const rect = section.getBoundingClientRect();
+
+        parent.postMessage(
+          {
+            type: "scrollToSection",
+            offset: rect.top
+          },
+          "*"
+        );
+      }
+    });
+  });
+});
+</script>
+<script>function sendHeight(){  parent.postMessage({type:"resize",height:document.body.scrollHeight},"*");}window.addEventListener("load",sendHeight);window.addEventListener("resize",sendHeight);document.addEventListener("click",function(){setTimeout(sendHeight,350);});</script></body>
+</html>
