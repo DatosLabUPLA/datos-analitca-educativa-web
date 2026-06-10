@@ -168,10 +168,8 @@ section[id] { scroll-margin-top:80px; }
 
 .math-bg {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     z-index: 0;
     pointer-events: none;
 }
@@ -184,7 +182,10 @@ body > *:not(.math-bg) {
 }
 .section, .desc-section, .venue-section, .sponsors-section,
 .afiche-section, .satelite-section, .contact-section, .com-seccion {
-    background-color: rgba(250, 249, 246, 0.65);
+    background-color: color-mix(in srgb, var(--pri-light) 40%, var(--bg));
+}
+.com-seccion:nth-child(even) {
+    background-color: color-mix(in srgb, var(--sec-light) 40%, var(--bg));
 }
 </style>
 </head>
