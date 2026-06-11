@@ -421,11 +421,22 @@ if (window.self !== window.top) {
     var style = document.createElement('style');
     style.textContent = '.math-bg { position: absolute !important; } body { position: relative; }';
     document.head.appendChild(style);
-    window.addEventListener('load', function() {
+
+    function fixBgHeight() {
         var bg = document.querySelector('.math-bg');
         if (bg) bg.style.height = document.body.scrollHeight + 'px';
-    });
+    }
+
+    // Medir en varios momentos para capturar cuando el contenido esté listo
+    document.addEventListener('DOMContentLoaded', fixBgHeight);
+    window.addEventListener('load', fixBgHeight);
+    setTimeout(fixBgHeight, 500);
+    setTimeout(fixBgHeight, 1500);
+
+    // Re-medir si el body cambia de tamaño (ej: imágenes tardías)
+    if (window.ResizeObserver) {
+        new ResizeObserver(fixBgHeight).observe(document.body);
+    }
 }
-</script>
 <script>function sendHeight(){  parent.postMessage({type:"resize",height:document.body.scrollHeight},"*");}window.addEventListener("load",sendHeight);window.addEventListener("resize",sendHeight);document.addEventListener("click",function(){setTimeout(sendHeight,350);});</script></body>
 </html>
