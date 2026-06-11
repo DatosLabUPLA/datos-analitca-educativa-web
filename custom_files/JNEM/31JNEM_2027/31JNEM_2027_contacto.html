@@ -427,22 +427,12 @@ if (window.self !== window.top) {
     var style = document.createElement('style');
     style.textContent = '.math-bg { position: absolute !important; } body { position: relative; }';
     document.head.appendChild(style);
-
-    function fixBgHeight() {
+    window.addEventListener('load', function() {
         var bg = document.querySelector('.math-bg');
         if (bg) bg.style.height = document.body.scrollHeight + 'px';
-    }
-
-    // Medir en varios momentos para capturar cuando el contenido esté listo
-    document.addEventListener('DOMContentLoaded', fixBgHeight);
-    window.addEventListener('load', fixBgHeight);
-    setTimeout(fixBgHeight, 500);
-    setTimeout(fixBgHeight, 1500);
-
-    // Re-medir si el body cambia de tamaño (ej: imágenes tardías)
-    if (window.ResizeObserver) {
-        new ResizeObserver(fixBgHeight).observe(document.body);
-    }
+    });
+}
+</script>
 }
 </body>
 </html>
