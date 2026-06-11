@@ -433,8 +433,12 @@ window.addEventListener("DOMContentLoaded", function () {
 <script>
 if (window.self !== window.top) {
     var style = document.createElement('style');
-    style.textContent = '.math-bg { position: absolute !important; } body { position: relative; min-height: 100%; }';
+    style.textContent = '.math-bg { position: absolute !important; } body { position: relative; }';
     document.head.appendChild(style);
+    window.addEventListener('load', function() {
+        var bg = document.querySelector('.math-bg');
+        if (bg) bg.style.height = document.body.scrollHeight + 'px';
+    });
 }
 </script>
 </body>
