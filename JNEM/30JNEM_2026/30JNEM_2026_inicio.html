@@ -501,12 +501,18 @@ if (window.self !== window.top) {
     var style = document.createElement('style');
     style.textContent = '.math-bg { position: absolute !important; } body { position: relative; }';
     document.head.appendChild(style);
-    window.addEventListener('load', function() {
+    function fixBgHeight() {
         var bg = document.querySelector('.math-bg');
         if (bg) bg.style.height = document.body.scrollHeight + 'px';
-    });
+    }
+    document.addEventListener('DOMContentLoaded', fixBgHeight);
+    window.addEventListener('load', fixBgHeight);
+    setTimeout(fixBgHeight, 500);
+    setTimeout(fixBgHeight, 1500);
+    if (window.ResizeObserver) {
+        new ResizeObserver(fixBgHeight).observe(document.body);
+    }
 }
 </script>
-}
 </body>
 </html>
