@@ -166,16 +166,19 @@ section[id] { scroll-margin-top:80px; }
 .reveal.visible { opacity:1; transform:translateY(0); }
 
 
-.math-bg {
+
+math-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100%;          /* ← queda para fallback */
+    min-height: 100%;      /* ← añadir esto */
     z-index: 0;
     pointer-events: none;
-    overflow: hidden;
+    /* overflow: hidden;  ← ELIMINAR esta línea */
 }
+
 .math-bg svg {
     position: fixed;
 }
