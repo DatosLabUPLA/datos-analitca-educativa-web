@@ -481,7 +481,9 @@ reveals.forEach(el=>obs.observe(el));
 
 <script>
 function sendHeight() {
-  parent.postMessage({ type: "resize", height: document.body.scrollHeight }, "*");
+  var section = document.querySelector('.contrib-section') || document.querySelector('.section');
+  var h = section ? section.offsetTop + section.offsetHeight : document.body.scrollHeight;
+  parent.postMessage({ type: "resize", height: h }, "*");
 }
 window.addEventListener("load", sendHeight);
 window.addEventListener("resize", sendHeight);
@@ -504,10 +506,10 @@ if (window.self !== window.top) {
     var style = document.createElement('style');
     style.textContent = '.math-bg { position: absolute !important; } body { position: relative; }';
     document.head.appendChild(style);
-    
+
     function fixBgHeight() {
         var bg = document.querySelector('.math-bg');
-        var section = document.querySelector('.contrib-section');
+        var section = document.querySelector('.contrib-section') || document.querySelector('.section');
         if (bg && section) {
             var h = section.offsetTop + section.offsetHeight;
             bg.style.height = h + 'px';
