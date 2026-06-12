@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Envío de Contribuciones — 30JNEM 2026</title>
+<title>Envío de Contribuciones — JNEM 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -51,7 +51,10 @@ reveals.forEach(el=>obs.observe(el));
 </script>
 <script>
 function sendHeight(){
-  parent.postMessage({type:"resize",height:document.body.scrollHeight},"*");
+  var sections=document.querySelectorAll('.contrib-section,.tem-section');
+  var last=sections[sections.length-1];
+  var h=last?last.offsetTop+last.offsetHeight:document.body.scrollHeight;
+  parent.postMessage({type:"resize",height:h},"*");
 }
 window.addEventListener("load",sendHeight);
 window.addEventListener("resize",sendHeight);
