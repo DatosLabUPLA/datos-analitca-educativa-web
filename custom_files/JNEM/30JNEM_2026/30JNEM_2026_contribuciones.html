@@ -233,7 +233,10 @@ reveals.forEach(el=>obs.observe(el));
 </script>
 <script>
 function sendHeight(){
-  parent.postMessage({type:"resize",height:document.body.scrollHeight},"*");
+  var sections=document.querySelectorAll('.contrib-section,.tem-section');
+  var last=sections[sections.length-1];
+  var h=last?last.offsetTop+last.offsetHeight:document.body.scrollHeight;
+  parent.postMessage({type:"resize",height:h},"*");
 }
 window.addEventListener("load",sendHeight);
 window.addEventListener("resize",sendHeight);
