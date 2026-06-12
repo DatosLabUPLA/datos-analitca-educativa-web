@@ -517,9 +517,16 @@ if (window.self !== window.top) {
     var style = document.createElement('style');
     style.textContent = '.math-bg { position: absolute !important; } body { position: relative; }';
     document.head.appendChild(style);
+    
     function fixBgHeight() {
         var bg = document.querySelector('.math-bg');
-        if (bg) bg.style.height = document.body.scrollHeight + 'px';
+        var section = document.querySelector('.contrib-section');
+        if (bg && section) {
+            var h = section.offsetTop + section.offsetHeight;
+            bg.style.height = h + 'px';
+        } else if (bg) {
+            bg.style.height = document.body.scrollHeight + 'px';
+        }
     }
     document.addEventListener('DOMContentLoaded', fixBgHeight);
     window.addEventListener('load', fixBgHeight);
