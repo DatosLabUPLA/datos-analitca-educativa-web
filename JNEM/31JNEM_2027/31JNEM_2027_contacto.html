@@ -166,21 +166,18 @@ section[id] { scroll-margin-top:80px; }
 .reveal.visible { opacity:1; transform:translateY(0); }
 
 
-
-math-bg {
-    position: absolute;
+.math-bg {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;          /* ← queda para fallback */
-    min-height: 100%;      /* ← añadir esto */
+    height: 100%;
     z-index: 0;
     pointer-events: none;
-    /* overflow: hidden;  ← ELIMINAR esta línea */
+    overflow: hidden;
 }
-
 .math-bg svg {
-    position: fixed;
+    position: absolute;
 }
 body {
     position: relative;
@@ -431,20 +428,8 @@ window.addEventListener("DOMContentLoaded", function () {
 <script>
 if (window.self !== window.top) {
     var style = document.createElement('style');
-    style.textContent = '.math-bg { position: absolute !important; } body { position: relative; }';
+    style.textContent = '.math-bg { position: absolute !important; height: 100% !important; overflow: visible !important; }';
     document.head.appendChild(style);
-
-    function fixBgHeight() {
-        var bg = document.querySelector('.math-bg');
-        if (bg) bg.style.height = document.body.scrollHeight + 'px';
-    }
-    document.addEventListener('DOMContentLoaded', fixBgHeight);
-    window.addEventListener('load', fixBgHeight);
-    setTimeout(fixBgHeight, 500);
-    setTimeout(fixBgHeight, 1500);
-    if (window.ResizeObserver) {
-        new ResizeObserver(fixBgHeight).observe(document.body);
-    }
 }
 </script>
 </body>

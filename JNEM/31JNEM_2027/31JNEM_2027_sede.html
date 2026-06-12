@@ -166,21 +166,18 @@ section[id] { scroll-margin-top:80px; }
 .reveal.visible { opacity:1; transform:translateY(0); }
 
 .sede-info-basica { background:var(--pri-light); border-radius:12px; padding:1.1rem 1.5rem; margin-bottom:2.5rem; display:flex; flex-wrap:wrap; gap:1rem 2.5rem; align-items:center; max-width:600px; margin-left:auto; margin-right:auto; }.sede-info-item { display:flex; flex-direction:column; gap:0.1rem; }.sede-info-label { font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:0.09em; color:var(--pri); }.sede-info-val { font-size:0.95rem; color:var(--text); }.sede-maps-btn { display:inline-flex; align-items:center; gap:0.4rem; background:var(--pri); color:#fff; font-size:0.82rem; font-weight:700; padding:0.45rem 1rem; border-radius:50px; text-decoration:none; transition:background 0.2s; white-space:nowrap; }.sede-maps-btn:hover { background:var(--sec); }.sede-intro { font-size:0.95rem; color:var(--text); line-height:1.8; margin-bottom:1.8rem; max-width:600px; margin-left:auto; margin-right:auto; }.sede-carrusel-wrap { position:relative; display:flex; align-items:center; gap:1rem; max-width:600px; margin:0 auto; }.sede-carrusel-viewport { overflow:hidden; flex:1; }.sede-carrusel-track { display:flex; transition:transform 0.4s ease; }.sede-slide { min-width:100%; padding:0 0.25rem; box-sizing:border-box; }.sede-card { background:var(--card-bg); border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.07); border-top:3px solid var(--sec); overflow:hidden; display:flex; flex-direction:column; }.sede-card-foto { width:100%; height:220px; object-fit:cover; object-position:center; display:block; }.sede-card-foto-placeholder { width:100%; height:220px; min-height:180px; object-position:center; display:block; }.sede-card-foto-placeholder { width:220px; flex-shrink:0; height:auto; min-height:180px; background:var(--pri-light); display:flex; align-items:center; justify-content:center; font-size:3rem; }.sede-card-body { padding:1.4rem 1.6rem 1.6rem; display:flex; flex-direction:column; gap:0.4rem; }.sede-card-sub { font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#fff; background:var(--pri); padding:0.2em 0.75em; border-radius:50px; display:inline-block; }.sede-card-titulo { font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:700; color:var(--text); line-height:1.35; }.sede-card-texto { font-size:0.9rem; color:var(--text); line-height:1.8; }.sede-card-link { font-size:0.83rem; font-weight:700; color:var(--pri); text-decoration:none; margin-top:0.3rem; display:inline-block; }.sede-card-link:hover { color:var(--sec); }.sede-card-logo { object-fit:contain !important; background:#fff; padding:1rem; height:180px; }.sede-btn { flex-shrink:0; width:40px; height:40px; border-radius:50%; background:var(--pri-light); color:var(--pri); border:none; font-size:1.2rem; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.2s,color 0.2s; }.sede-btn:hover { background:var(--pri); color:#fff; }.sede-dots { display:flex; justify-content:center; gap:6px; margin-top:1.2rem; }.sede-dot { width:8px; height:8px; border-radius:50%; background:var(--pri-light); border:none; cursor:pointer; transition:background 0.2s,transform 0.2s; padding:0; }.sede-dot.activo { background:var(--pri); transform:scale(1.3); }@media(max-width:600px){ .sede-card { flex-direction:column; } .sede-card-foto { width:100%; height:200px; } .sede-card-logo { height:140px; padding:0.75rem; } .sede-btn { width:32px; height:32px; font-size:1rem; }}
-
-math-bg {
-    position: absolute;
+.math-bg {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;          /* ← queda para fallback */
-    min-height: 100%;      /* ← añadir esto */
+    height: 100%;
     z-index: 0;
     pointer-events: none;
-    /* overflow: hidden;  ← ELIMINAR esta línea */
+    overflow: hidden;
 }
-
 .math-bg svg {
-    position: fixed;
+    position: absolute;
 }
 body {
     position: relative;
@@ -425,20 +422,8 @@ window.addEventListener("DOMContentLoaded", function () {
 <script>
 if (window.self !== window.top) {
     var style = document.createElement('style');
-    style.textContent = '.math-bg { position: absolute !important; } body { position: relative; }';
+    style.textContent = '.math-bg { position: absolute !important; height: 100% !important; overflow: visible !important; }';
     document.head.appendChild(style);
-
-    function fixBgHeight() {
-        var bg = document.querySelector('.math-bg');
-        if (bg) bg.style.height = document.body.scrollHeight + 'px';
-    }
-    document.addEventListener('DOMContentLoaded', fixBgHeight);
-    window.addEventListener('load', fixBgHeight);
-    setTimeout(fixBgHeight, 500);
-    setTimeout(fixBgHeight, 1500);
-    if (window.ResizeObserver) {
-        new ResizeObserver(fixBgHeight).observe(document.body);
-    }
 }
 </script>
 </body>
