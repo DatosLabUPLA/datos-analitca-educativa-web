@@ -481,12 +481,13 @@ reveals.forEach(el=>obs.observe(el));
 
 <script>
 function sendHeight() {
-  var section = document.querySelector('.contrib-section') || document.querySelector('.section');
-  var h = section ? section.offsetTop + section.offsetHeight : document.body.scrollHeight;
-  parent.postMessage({ type: "resize", height: h }, "*");
+  parent.postMessage({ type: "resize", height: document.body.scrollHeight }, "*");
 }
 window.addEventListener("load", sendHeight);
 window.addEventListener("resize", sendHeight);
+if (window.MutationObserver) {
+  new MutationObserver(sendHeight).observe(document.body, { subtree: true, childList: true, attributes: true, attributeFilter: ['class', 'style'] });
+}
 window.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".comite-nav a").forEach(link => {
     link.addEventListener("click", function (e) {
@@ -509,13 +510,7 @@ if (window.self !== window.top) {
 
     function fixBgHeight() {
         var bg = document.querySelector('.math-bg');
-        var section = document.querySelector('.contrib-section') || document.querySelector('.section');
-        if (bg && section) {
-            var h = section.offsetTop + section.offsetHeight;
-            bg.style.height = h + 'px';
-        } else if (bg) {
-            bg.style.height = document.body.scrollHeight + 'px';
-        }
+        if (bg) bg.style.height = document.body.scrollHeight + 'px';
     }
     document.addEventListener('DOMContentLoaded', fixBgHeight);
     window.addEventListener('load', fixBgHeight);
