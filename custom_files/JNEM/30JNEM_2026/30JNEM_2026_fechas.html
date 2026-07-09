@@ -483,8 +483,13 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
 .countdown-lbl { font-size:0.58rem; text-transform:uppercase; letter-spacing:0.08em; opacity:0.85; }
 .countdown-sep { font-size:1.5rem; font-weight:900; color:var(--pri); align-self:flex-end; padding-bottom:0.5rem; }
 .fecha-links { display:flex; flex-direction:column; gap:0.45rem; }
-.fecha-link-btn { display:inline-flex; align-items:center; gap:6px; text-decoration:none; color:var(--pri); font-weight:600; padding:5px 11px; border:1px solid var(--sec-light); border-radius:8px; background:var(--pri-light); font-size:0.8rem; }
-.fecha-link-btn:hover { background:var(--pri); color:#fff; }
+.fecha-link-btn-cta { background:var(--pri); color:#fff; font-weight:700; transform:scale(1.05); box-shadow:0 4px 14px rgba(0,0,0,0.18); animation:fecha-pulse 2s ease-in-out infinite; }
+.fecha-link-btn-cta:hover { transform:scale(1.08); }
+
+@keyframes fecha-pulse {
+  0%, 100% { box-shadow:0 4px 14px rgba(0,0,0,0.18); }
+  50%      { box-shadow:0 4px 22px rgba(0,0,0,0.32); }
+}
 .fecha-vencido { font-size:1rem; font-weight:700; color:var(--sec); }
 
 
