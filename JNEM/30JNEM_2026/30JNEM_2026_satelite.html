@@ -536,10 +536,6 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
 }
 
 
-
-
-
-
 /* ── Fechas (timeline) ───────────────────────────────────────── */
 .tl-wrap { position:relative; max-width:900px; margin:0 auto; padding:1rem 0; }
 .tl-wrap::before { content:''; position:absolute; left:50%; top:0; bottom:0; width:3px; background:var(--pri); transform:translateX(-50%); z-index:1; }
@@ -575,6 +571,20 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
     .tl-item,.tl-item.right { width:100%; margin-left:0; padding:0 0 1.5rem 3rem; }
     .tl-item::before,.tl-item.right::before { left:10px; right:auto; }
 }
+
+/* ── Inscripción ─────────────────────────────────────────────── */
+.insc-tabla-wrap{overflow-x:auto;margin:1.5rem 0 0.8rem;}
+.insc-tabla{width:100%;border-collapse:collapse;font-size:0.9rem;}
+.insc-tabla th{background:var(--pri);color:#fff;padding:10px 12px;text-align:left;font-weight:700;}
+.insc-fecha-th{font-weight:400;font-size:0.75rem;opacity:0.85;}
+.insc-tabla td{padding:10px 12px;border-bottom:1px solid var(--sec-light);}
+.insc-tabla tbody tr:nth-child(even){background:var(--pri-light);}
+.insc-categoria{font-weight:600;color:var(--pri);}
+.insc-asterisco{color:var(--sec);}
+.insc-nota-descuento{font-size:0.82rem;color:var(--pri);margin-top:0.3rem;}
+.insc-nota-respaldo{font-size:0.8rem;color:var(--text-light);margin-bottom:0.5rem;}
+.insc-box-pago{margin-top:1.5rem;}
+.insc-box-becas{margin-top:1rem;}
 
 
 
