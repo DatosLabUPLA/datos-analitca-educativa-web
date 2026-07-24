@@ -770,7 +770,7 @@ section[id] { scroll-margin-top:60px; }
     }
     .programa-wrap .schedule {
       display: grid;
-      grid-template-columns: [times] 70px [day-1] minmax(180px, 1fr) [day-2] minmax(180px, 1fr) [day-3] minmax(180px, 1fr);
+      grid-template-columns: [times] 70px [day-1] minmax(180px, 1fr) [day-2] minmax(180px, 1fr);
       grid-template-rows:
       [days] auto
       [time-900] auto
@@ -914,7 +914,7 @@ section[id] { scroll-margin-top:60px; }
 <body>
 <div class="programa-wrap">
 <p class="legend">Leyenda: <span class="session-conferencias">conferencias</span> <span class="session-pausa">pausa</span> <span class="session-sesiones-paralelas">sesiones paralelas</span> <span class="session-talleres">talleres</span> <span class="session-plenaria">plenaria</span></p>
-<p class="jumper">Salta a <a href="#lunes">Lunes</a>, <a href="#lunes">Lunes </a>, <a href="#martes">Martes</a>.</p>
+<p class="jumper">Salta a <a href="#lunes">Lunes</a>, <a href="#martes">Martes</a>.</p>
 <div class="schedule-scroll"><div class="schedule" aria-labelledby="schedule-heading">
 <h2 class="time-slot" style="grid-row: time-900;">9:00</h2>
 <h2 class="time-slot" style="grid-row: time-1015;">10:15</h2>
@@ -930,23 +930,22 @@ section[id] { scroll-margin-top:60px; }
 <span class="day-slot" aria-hidden="true" style="grid-column: day-1; grid-row: days;" id="lunes">Lunes</span>
 <div class="session session-conferencias" style="grid-column: day-1; grid-row: time-900 / time-1015;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Conferencia Inaugural</h3><span class="session-time">9:00 - 10:15</span></div>
 <div class="session session-pausa" style="grid-column: day-1; grid-row: time-1015 / time-1030;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Café</h3><span class="session-time">10:15 - 10:30</span></div>
+<div class="session session-sesiones-paralelas" style="grid-column: day-1; grid-row: time-1030 / time-1130;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Presentaciones por Grupos (A, B y C)</h3><span class="session-time">10:30 - 11:30</span></div>
+<div class="session session-pausa" style="grid-column: day-1; grid-row: time-1130 / time-1140;"><h3 class="session-title">Tiempo libre</h3><span class="session-time">11:30 - 11:40</span></div>
+<div class="session session-sesiones-paralelas" style="grid-column: day-1; grid-row: time-1140 / time-1240;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Presentaciones por Grupos (A, B y C)</h3><span class="session-time">11:40 - 12:40</span></div>
+<div class="session session-sesiones-paralelas" style="grid-column: day-1; grid-row: time-1240 / time-1320;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Trabajo de grupos</h3><span class="session-time">12:40 - 13:20</span></div>
+<div class="session session-pausa" style="grid-column: day-1; grid-row: time-1320 / time-1445;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Almuerzo</h3><span class="session-time">13:20 - 14:45</span></div>
+<div class="session session-talleres" style="grid-column: day-1; grid-row: time-1445 / time-1545;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Actividad Grupal</h3><span class="session-time">14:45 - 15:45</span></div>
 <div class="session session-pausa" style="grid-column: day-1; grid-row: time-1545 / time-1600;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Café</h3><span class="session-time">15:45 - 16:00</span></div>
 <div class="session session-plenaria" style="grid-column: day-1; grid-row: time-1600 / time-1700;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Plenaria Estudiantes Tesistas y Cierre del día</h3><span class="session-time">16:00 - 17:00</span></div>
-<span class="day-slot" aria-hidden="true" style="grid-column: day-2; grid-row: days;" id="lunes">Lunes </span>
+<span class="day-slot" aria-hidden="true" style="grid-column: day-2; grid-row: days;" id="martes">Martes</span>
+<div class="session session-sesiones-paralelas" style="grid-column: day-2; grid-row: time-900 / time-1015;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Presentaciones por Grupos (A, B y C)</h3><span class="session-time">9:00 - 10:15</span></div>
+<div class="session session-pausa" style="grid-column: day-2; grid-row: time-1015 / time-1030;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Café</h3><span class="session-time">10:15 - 10:30</span></div>
 <div class="session session-sesiones-paralelas" style="grid-column: day-2; grid-row: time-1030 / time-1130;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Presentaciones por Grupos (A, B y C)</h3><span class="session-time">10:30 - 11:30</span></div>
-<div class="session session-pausa" style="grid-column: day-2; grid-row: time-1130 / time-1140;"><h3 class="session-title">Tiempo libre</h3><span class="session-time">11:30 - 11:40</span></div>
-<div class="session session-sesiones-paralelas" style="grid-column: day-2; grid-row: time-1140 / time-1240;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Presentaciones por Grupos (A, B y C)</h3><span class="session-time">11:40 - 12:40</span></div>
-<div class="session session-sesiones-paralelas" style="grid-column: day-2; grid-row: time-1240 / time-1320;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Trabajo de grupos</h3><span class="session-time">12:40 - 13:20</span></div>
-<div class="session session-pausa" style="grid-column: day-2; grid-row: time-1320 / time-1445;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Almuerzo</h3><span class="session-time">13:20 - 14:45</span></div>
-<div class="session session-talleres" style="grid-column: day-2; grid-row: time-1445 / time-1545;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Actividad Grupal</h3><span class="session-time">14:45 - 15:45</span></div>
-<span class="day-slot" aria-hidden="true" style="grid-column: day-3; grid-row: days;" id="martes">Martes</span>
-<div class="session session-sesiones-paralelas" style="grid-column: day-3; grid-row: time-900 / time-1015;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Presentaciones por Grupos (A, B y C)</h3><span class="session-time">9:00 - 10:15</span></div>
-<div class="session session-pausa" style="grid-column: day-3; grid-row: time-1015 / time-1030;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Café</h3><span class="session-time">10:15 - 10:30</span></div>
-<div class="session session-sesiones-paralelas" style="grid-column: day-3; grid-row: time-1030 / time-1130;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Presentaciones por Grupos (A, B y C)</h3><span class="session-time">10:30 - 11:30</span></div>
-<div class="session session-pausa" style="grid-column: day-3; grid-row: time-1130 / time-1140;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Tiempo libre</h3><span class="session-time">11:30 - 11:40</span></div>
-<div class="session session-sesiones-paralelas" style="grid-column: day-3; grid-row: time-1140 / time-1240;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Trabajo de grupos/ Reunión Comité Científico</h3><span class="session-time">11:40 - 12:40</span></div>
-<div class="session session-sesiones-paralelas" style="grid-column: day-3; grid-row: time-1240 / time-1320;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Trabajo de Grupos</h3><span class="session-time">12:40 - 13:20</span></div>
-<div class="session session-plenaria" style="grid-column: day-3; grid-row: time-1320 / time-1445;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Plenaria Estudiantes Tesistas y Cierre del día</h3><span class="session-time">13:20 - 14:45</span></div>
+<div class="session session-pausa" style="grid-column: day-2; grid-row: time-1130 / time-1140;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Tiempo libre</h3><span class="session-time">11:30 - 11:40</span></div>
+<div class="session session-sesiones-paralelas" style="grid-column: day-2; grid-row: time-1140 / time-1240;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Trabajo de grupos/ Reunión Comité Científico</h3><span class="session-time">11:40 - 12:40</span></div>
+<div class="session session-sesiones-paralelas" style="grid-column: day-2; grid-row: time-1240 / time-1320;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Trabajo de Grupos</h3><span class="session-time">12:40 - 13:20</span></div>
+<div class="session session-plenaria" style="grid-column: day-2; grid-row: time-1320 / time-1445;"><span title="Ubicación: Por definir" class="location-badge">Por definir</span><h3 class="session-title">Plenaria Estudiantes Tesistas y Cierre del día</h3><span class="session-time">13:20 - 14:45</span></div>
 </div></div>
 </div>
 <script>
