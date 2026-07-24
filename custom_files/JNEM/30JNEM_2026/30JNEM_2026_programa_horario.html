@@ -679,8 +679,10 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
       [time-1230] auto
       [time-1300] auto
       [time-1315] auto
+      [time-1400] auto
       [time-1430] auto
       [time-1500] auto
+      [time-1530] auto
       [time-1600] auto
       [time-1630] auto
       [time-1730] auto
@@ -723,12 +725,18 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
       background-color: color-mix(in srgb, var(--sec) 80%, black 20%); margin-right: 4px; border-radius: 3px; vertical-align: middle;
     }
 
+    .session-poster { background-color: var(--pri); color: #fff; }
+    span.session-poster::before {
+      content: ""; display: inline-block; width: 12px; height: 12px;
+      background-color: var(--pri); margin-right: 4px; border-radius: 3px; vertical-align: middle;
+    }
+
     
 </style>
 </head>
 <body>
 <div class="programa-wrap">
-<p class="legend">Leyenda: <span class="session-recepcion">recepción</span> <span class="session-ceremonias">ceremonias</span> <span class="session-conferencias">conferencias</span> <span class="session-pausas">pausas</span> <span class="session-sesiones-paralelas">sesiones paralelas</span> <span class="session-talleres">talleres</span></p>
+<p class="legend">Leyenda: <span class="session-recepcion">recepción</span> <span class="session-ceremonias">ceremonias</span> <span class="session-conferencias">conferencias</span> <span class="session-pausas">pausas</span> <span class="session-sesiones-paralelas">sesiones paralelas</span> <span class="session-talleres">talleres</span> <span class="session-poster">póster</span></p>
 <p class="jumper">Salta a <a href="#lunes">Lunes</a>, <a href="#martes">Martes</a>, <a href="#miercoles">Miércoles</a>.</p>
 <div class="schedule-scroll"><div class="schedule" aria-labelledby="schedule-heading">
 <h2 class="time-slot" style="grid-row: time-900;">9:00</h2>
@@ -741,8 +749,10 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
 <h2 class="time-slot" style="grid-row: time-1230;">12:30</h2>
 <h2 class="time-slot" style="grid-row: time-1300;">13:00</h2>
 <h2 class="time-slot" style="grid-row: time-1315;">13:15</h2>
+<h2 class="time-slot" style="grid-row: time-1400;">14:00</h2>
 <h2 class="time-slot" style="grid-row: time-1430;">14:30</h2>
 <h2 class="time-slot" style="grid-row: time-1500;">15:00</h2>
+<h2 class="time-slot" style="grid-row: time-1530;">15:30</h2>
 <h2 class="time-slot" style="grid-row: time-1600;">16:00</h2>
 <h2 class="time-slot" style="grid-row: time-1630;">16:30</h2>
 <h2 class="time-slot" style="grid-row: time-1730;">17:30</h2>
@@ -755,6 +765,7 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
 <div class="session session-sesiones-paralelas" style="grid-column: day-1; grid-row: time-1130 / time-1300;"><span title="Ubicación: Aula 1" class="location-badge">Aula 1</span><span title="Ubicación: Aula 2" class="location-badge">Aula 2</span><span title="Ubicación: Aula 3" class="location-badge">Aula 3</span><h3 class="session-title">Sesión paralela 1</h3><span class="session-time">11:30 - 13:00</span></div>
 <div class="session session-pausas" style="grid-column: day-1; grid-row: time-1300 / time-1430;"><span title="Ubicación: Comedor" class="location-badge">Comedor</span><h3 class="session-title">Almuerzo</h3><span class="session-time">13:00 - 14:30</span></div>
 <div class="session session-talleres" style="grid-column: day-1; grid-row: time-1430 / time-1600;"><span title="Ubicación: Sala B2" class="location-badge">Sala B2</span><h3 class="session-title">Taller 1</h3><span class="session-time">14:30 - 16:00</span></div>
+<div class="session session-poster" style="grid-column: day-1; grid-row: time-1400 / time-1530;"><span title="Ubicación: Patio casa central" class="location-badge">Patio casa central</span><h3 class="session-title">Sesión de póster</h3><span class="session-time">14:00 - 15:30</span></div>
 <div class="session session-pausas" style="grid-column: day-1; grid-row: time-1600 / time-1630;"><span title="Ubicación: Hall Central" class="location-badge">Hall Central</span><h3 class="session-title">Café</h3><span class="session-time">16:00 - 16:30</span></div>
 <div class="session session-sesiones-paralelas" style="grid-column: day-1; grid-row: time-1630 / time-1800;"><span title="Ubicación: Aula 1" class="location-badge">Aula 1</span><span title="Ubicación: Aula 2" class="location-badge">Aula 2</span><h3 class="session-title">Sesión paralela 2</h3><span class="session-time">16:30 - 18:00</span></div>
 <span class="day-slot" aria-hidden="true" style="grid-column: day-2; grid-row: days;" id="martes">Martes</span>
