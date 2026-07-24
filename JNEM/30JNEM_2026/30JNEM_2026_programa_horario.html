@@ -689,46 +689,95 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
       [time-1800] auto;
     }
 
-    .session-recepcion { background-color: var(--pri); color: #fff; }
+    .programa-wrap .legend .session-recepcion {
+      background: color-mix(in srgb, var(--pri) 16%, white);
+      color: var(--pri);
+    }
+    .programa-wrap .session.session-recepcion {
+      border-left: 4px solid var(--pri);
+      background: color-mix(in srgb, var(--pri) 8%, var(--card-bg));
+    }
     span.session-recepcion::before {
-      content: ""; display: inline-block; width: 12px; height: 12px;
+      content: ""; display: inline-block; width: 10px; height: 10px;
       background-color: var(--pri); margin-right: 4px; border-radius: 3px; vertical-align: middle;
     }
 
-    .session-ceremonias { background-color: var(--sec); color: #fff; }
-    span.session-ceremonias::before {
-      content: ""; display: inline-block; width: 12px; height: 12px;
+    .programa-wrap .legend .session-sesiones-paralelas {
+      background: color-mix(in srgb, var(--sec) 16%, white);
+      color: var(--sec);
+    }
+    .programa-wrap .session.session-sesiones-paralelas {
+      border-left: 4px solid var(--sec);
+      background: color-mix(in srgb, var(--sec) 8%, var(--card-bg));
+    }
+    span.session-sesiones-paralelas::before {
+      content: ""; display: inline-block; width: 10px; height: 10px;
       background-color: var(--sec); margin-right: 4px; border-radius: 3px; vertical-align: middle;
     }
 
-    .session-conferencias { background-color: color-mix(in srgb, var(--pri) 65%, var(--sec) 35%); color: #fff; }
+    .programa-wrap .legend .session-ceremonias {
+      background: color-mix(in srgb, color-mix(in srgb, var(--pri) 60%, var(--sec) 40%) 16%, white);
+      color: color-mix(in srgb, var(--pri) 60%, var(--sec) 40%);
+    }
+    .programa-wrap .session.session-ceremonias {
+      border-left: 4px solid color-mix(in srgb, var(--pri) 60%, var(--sec) 40%);
+      background: color-mix(in srgb, color-mix(in srgb, var(--pri) 60%, var(--sec) 40%) 8%, var(--card-bg));
+    }
+    span.session-ceremonias::before {
+      content: ""; display: inline-block; width: 10px; height: 10px;
+      background-color: color-mix(in srgb, var(--pri) 60%, var(--sec) 40%); margin-right: 4px; border-radius: 3px; vertical-align: middle;
+    }
+
+    .programa-wrap .legend .session-conferencias {
+      background: color-mix(in srgb, color-mix(in srgb, var(--sec) 60%, var(--pri) 40%) 16%, white);
+      color: color-mix(in srgb, var(--sec) 60%, var(--pri) 40%);
+    }
+    .programa-wrap .session.session-conferencias {
+      border-left: 4px solid color-mix(in srgb, var(--sec) 60%, var(--pri) 40%);
+      background: color-mix(in srgb, color-mix(in srgb, var(--sec) 60%, var(--pri) 40%) 8%, var(--card-bg));
+    }
     span.session-conferencias::before {
-      content: ""; display: inline-block; width: 12px; height: 12px;
-      background-color: color-mix(in srgb, var(--pri) 65%, var(--sec) 35%); margin-right: 4px; border-radius: 3px; vertical-align: middle;
+      content: ""; display: inline-block; width: 10px; height: 10px;
+      background-color: color-mix(in srgb, var(--sec) 60%, var(--pri) 40%); margin-right: 4px; border-radius: 3px; vertical-align: middle;
     }
 
-    .session-pausas { background-color: color-mix(in srgb, var(--sec) 65%, var(--pri) 35%); color: #fff; }
+    .programa-wrap .legend .session-pausas {
+      background: color-mix(in srgb, var(--text-light) 16%, white);
+      color: var(--text-light);
+    }
+    .programa-wrap .session.session-pausas {
+      border-left: 4px solid var(--text-light);
+      background: color-mix(in srgb, var(--text-light) 8%, var(--card-bg));
+    }
     span.session-pausas::before {
-      content: ""; display: inline-block; width: 12px; height: 12px;
-      background-color: color-mix(in srgb, var(--sec) 65%, var(--pri) 35%); margin-right: 4px; border-radius: 3px; vertical-align: middle;
+      content: ""; display: inline-block; width: 10px; height: 10px;
+      background-color: var(--text-light); margin-right: 4px; border-radius: 3px; vertical-align: middle;
     }
 
-    .session-sesiones-paralelas { background-color: color-mix(in srgb, var(--pri) 80%, black 20%); color: #fff; }
-    span.session-sesiones-paralelas::before {
-      content: ""; display: inline-block; width: 12px; height: 12px;
-      background-color: color-mix(in srgb, var(--pri) 80%, black 20%); margin-right: 4px; border-radius: 3px; vertical-align: middle;
+    .programa-wrap .legend .session-poster {
+      background: color-mix(in srgb, color-mix(in srgb, var(--pri) 75%, black 20%) 16%, white);
+      color: color-mix(in srgb, var(--pri) 75%, black 20%);
     }
-
-    .session-talleres { background-color: color-mix(in srgb, var(--sec) 80%, black 20%); color: #fff; }
-    span.session-talleres::before {
-      content: ""; display: inline-block; width: 12px; height: 12px;
-      background-color: color-mix(in srgb, var(--sec) 80%, black 20%); margin-right: 4px; border-radius: 3px; vertical-align: middle;
+    .programa-wrap .session.session-poster {
+      border-left: 4px solid color-mix(in srgb, var(--pri) 75%, black 20%);
+      background: color-mix(in srgb, color-mix(in srgb, var(--pri) 75%, black 20%) 8%, var(--card-bg));
     }
-
-    .session-poster { background-color: var(--pri); color: #fff; }
     span.session-poster::before {
-      content: ""; display: inline-block; width: 12px; height: 12px;
-      background-color: var(--pri); margin-right: 4px; border-radius: 3px; vertical-align: middle;
+      content: ""; display: inline-block; width: 10px; height: 10px;
+      background-color: color-mix(in srgb, var(--pri) 75%, black 20%); margin-right: 4px; border-radius: 3px; vertical-align: middle;
+    }
+
+    .programa-wrap .legend .session-talleres {
+      background: color-mix(in srgb, color-mix(in srgb, var(--sec) 75%, black 20%) 16%, white);
+      color: color-mix(in srgb, var(--sec) 75%, black 20%);
+    }
+    .programa-wrap .session.session-talleres {
+      border-left: 4px solid color-mix(in srgb, var(--sec) 75%, black 20%);
+      background: color-mix(in srgb, color-mix(in srgb, var(--sec) 75%, black 20%) 8%, var(--card-bg));
+    }
+    span.session-talleres::before {
+      content: ""; display: inline-block; width: 10px; height: 10px;
+      background-color: color-mix(in srgb, var(--sec) 75%, black 20%); margin-right: 4px; border-radius: 3px; vertical-align: middle;
     }
 
     
@@ -736,8 +785,9 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
 </head>
 <body>
 <div class="programa-wrap">
-<p class="legend">Leyenda: <span class="session-recepcion">recepción</span> <span class="session-ceremonias">ceremonias</span> <span class="session-conferencias">conferencias</span> <span class="session-pausas">pausas</span> <span class="session-sesiones-paralelas">sesiones paralelas</span> <span class="session-talleres">talleres</span> <span class="session-poster">póster</span></p>
-<p class="jumper">Salta a <a href="#lunes">Lunes</a>, <a href="#martes">Martes</a>, <a href="#miercoles">Miércoles</a>.</p>
+<p class="legend">Leyenda: <span class="session-recepcion">recepción</span> <span class="session-sesiones-paralelas">sesiones paralelas</span> <span class="session-ceremonias">ceremonias</span> <span class="session-conferencias">conferencias</span> <span class="session-pausas">pausas</span> <span class="session-poster">póster</span> <span class="session-talleres">talleres</span></p>
+<p class="jumper">Salta a <a href="#lunes">Lunes</a>, <a href="#miercoles">Miércoles</a>, <a href="#martes">Martes</a>.</p>
+<div class="programa-desktop-view">
 <div class="schedule-scroll"><div class="schedule" aria-labelledby="schedule-heading">
 <h2 class="time-slot" style="grid-row: time-900;">9:00</h2>
 <h2 class="time-slot" style="grid-row: time-930;">9:30</h2>
@@ -764,26 +814,64 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
 <div class="session session-pausas" style="grid-column: day-1; grid-row: time-1100 / time-1130;"><span title="Ubicación: Hall Central" class="location-badge">Hall Central</span><h3 class="session-title">Café</h3><span class="session-time">11:00 - 11:30</span></div>
 <div class="session session-sesiones-paralelas" style="grid-column: day-1; grid-row: time-1130 / time-1300;"><span title="Ubicación: Aula 1" class="location-badge">Aula 1</span><span title="Ubicación: Aula 2" class="location-badge">Aula 2</span><span title="Ubicación: Aula 3" class="location-badge">Aula 3</span><h3 class="session-title">Sesión paralela 1</h3><span class="session-time">11:30 - 13:00</span></div>
 <div class="session session-pausas" style="grid-column: day-1; grid-row: time-1300 / time-1430;"><span title="Ubicación: Comedor" class="location-badge">Comedor</span><h3 class="session-title">Almuerzo</h3><span class="session-time">13:00 - 14:30</span></div>
-<div class="session session-talleres" style="grid-column: day-1; grid-row: time-1430 / time-1600;"><span title="Ubicación: Sala B2" class="location-badge">Sala B2</span><h3 class="session-title">Taller 1</h3><span class="session-time">14:30 - 16:00</span></div>
 <div class="session session-poster" style="grid-column: day-1; grid-row: time-1400 / time-1530;"><span title="Ubicación: Patio casa central" class="location-badge">Patio casa central</span><h3 class="session-title">Sesión de póster</h3><span class="session-time">14:00 - 15:30</span></div>
+<div class="session session-talleres" style="grid-column: day-1; grid-row: time-1430 / time-1600;"><span title="Ubicación: Sala B2" class="location-badge">Sala B2</span><h3 class="session-title">Taller 1</h3><span class="session-time">14:30 - 16:00</span></div>
 <div class="session session-pausas" style="grid-column: day-1; grid-row: time-1600 / time-1630;"><span title="Ubicación: Hall Central" class="location-badge">Hall Central</span><h3 class="session-title">Café</h3><span class="session-time">16:00 - 16:30</span></div>
 <div class="session session-sesiones-paralelas" style="grid-column: day-1; grid-row: time-1630 / time-1800;"><span title="Ubicación: Aula 1" class="location-badge">Aula 1</span><span title="Ubicación: Aula 2" class="location-badge">Aula 2</span><h3 class="session-title">Sesión paralela 2</h3><span class="session-time">16:30 - 18:00</span></div>
-<span class="day-slot" aria-hidden="true" style="grid-column: day-2; grid-row: days;" id="martes">Martes</span>
-<div class="session session-sesiones-paralelas" style="grid-column: day-2; grid-row: time-900 / time-1030;"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><span title="Ubicación: Aula 1" class="location-badge">Aula 1</span><span title="Ubicación: Aula 2" class="location-badge">Aula 2</span><h3 class="session-title">Sesión paralela 3</h3><span class="session-time">8:30 (9:00 para T1 y T2) - 10:30</span></div>
+<span class="day-slot" aria-hidden="true" style="grid-column: day-2; grid-row: days;" id="miercoles">Miércoles</span>
+<div class="session session-sesiones-paralelas" style="grid-column: day-2; grid-row: time-900 / time-1030;"><span title="Ubicación: Aula 1" class="location-badge">Aula 1</span><span title="Ubicación: Aula 2" class="location-badge">Aula 2</span><span title="Ubicación: Aula 3" class="location-badge">Aula 3</span><h3 class="session-title">Sesión paralela 5</h3><span class="session-time">9:00 - 10:30</span></div>
 <div class="session session-pausas" style="grid-column: day-2; grid-row: time-1030 / time-1100;"><span title="Ubicación: Hall Central" class="location-badge">Hall Central</span><h3 class="session-title">Café</h3><span class="session-time">10:30 - 11:00</span></div>
-<div class="session session-conferencias" style="grid-column: day-2; grid-row: time-1100 / time-1200;"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><h3 class="session-title">Plenaria de investigación</h3><span class="session-time">11:00 - 12:00</span></div>
-<div class="session session-conferencias" style="grid-column: day-2; grid-row: time-1200 / time-1315;"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><h3 class="session-title">Plenaria de proyectos</h3><span class="session-time">12:00 - 13:15</span></div>
-<div class="session session-pausas" style="grid-column: day-2; grid-row: time-1315 / time-1430;"><span title="Ubicación: Comedor" class="location-badge">Comedor</span><h3 class="session-title">Almuerzo</h3><span class="session-time">13:15 - 14:30</span></div>
-<div class="session session-sesiones-paralelas" style="grid-column: day-2; grid-row: time-1430 / time-1600;"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><span title="Ubicación: Aula 1" class="location-badge">Aula 1</span><span title="Ubicación: Aula 2" class="location-badge">Aula 2</span><h3 class="session-title">Sesión paralela 4</h3><span class="session-time">14:30 - 16:00</span></div>
-<div class="session session-pausas" style="grid-column: day-2; grid-row: time-1600 / time-1630;"><span title="Ubicación: Hall Central" class="location-badge">Hall Central</span><h3 class="session-title">Café</h3><span class="session-time">16:00 - 16:30</span></div>
-<div class="session session-talleres" style="grid-column: day-2; grid-row: time-1630 / time-1730;"><span title="Ubicación: Sala B2" class="location-badge">Sala B2</span><h3 class="session-title">Taller 2</h3><span class="session-time">16:30 - 17:30</span></div>
-<span class="day-slot" aria-hidden="true" style="grid-column: day-3; grid-row: days;" id="miercoles">Miércoles</span>
-<div class="session session-sesiones-paralelas" style="grid-column: day-3; grid-row: time-900 / time-1030;"><span title="Ubicación: Aula 1" class="location-badge">Aula 1</span><span title="Ubicación: Aula 2" class="location-badge">Aula 2</span><span title="Ubicación: Aula 3" class="location-badge">Aula 3</span><h3 class="session-title">Sesión paralela 5</h3><span class="session-time">9:00 - 10:30</span></div>
+<div class="session session-conferencias" style="grid-column: day-2; grid-row: time-1100 / time-1230;"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><h3 class="session-title">Síntesis plenaria de los temas</h3><span class="session-time">11:00 - 12:30</span></div>
+<div class="session session-ceremonias" style="grid-column: day-2; grid-row: time-1230 / time-1300;"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><h3 class="session-title">Ceremonia de clausura</h3><span class="session-time">12:30 - 13:00</span></div>
+<div class="session session-pausas" style="grid-column: day-2; grid-row: time-1300 / time-1500;"><span title="Ubicación: Comedor" class="location-badge">Comedor</span><h3 class="session-title">Almuerzo de cierre</h3><span class="session-time">13:00 - 15:00</span></div>
+<span class="day-slot" aria-hidden="true" style="grid-column: day-3; grid-row: days;" id="martes">Martes</span>
+<div class="session session-sesiones-paralelas" style="grid-column: day-3; grid-row: time-900 / time-1030;"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><span title="Ubicación: Aula 1" class="location-badge">Aula 1</span><span title="Ubicación: Aula 2" class="location-badge">Aula 2</span><h3 class="session-title">Sesión paralela 3</h3><span class="session-time">8:30 (9:00 para T1 y T2) - 10:30</span></div>
 <div class="session session-pausas" style="grid-column: day-3; grid-row: time-1030 / time-1100;"><span title="Ubicación: Hall Central" class="location-badge">Hall Central</span><h3 class="session-title">Café</h3><span class="session-time">10:30 - 11:00</span></div>
-<div class="session session-conferencias" style="grid-column: day-3; grid-row: time-1100 / time-1230;"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><h3 class="session-title">Síntesis plenaria de los temas</h3><span class="session-time">11:00 - 12:30</span></div>
-<div class="session session-ceremonias" style="grid-column: day-3; grid-row: time-1230 / time-1300;"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><h3 class="session-title">Ceremonia de clausura</h3><span class="session-time">12:30 - 13:00</span></div>
-<div class="session session-pausas" style="grid-column: day-3; grid-row: time-1300 / time-1500;"><span title="Ubicación: Comedor" class="location-badge">Comedor</span><h3 class="session-title">Almuerzo de cierre</h3><span class="session-time">13:00 - 15:00</span></div>
+<div class="session session-conferencias" style="grid-column: day-3; grid-row: time-1100 / time-1200;"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><h3 class="session-title">Plenaria de investigación</h3><span class="session-time">11:00 - 12:00</span></div>
+<div class="session session-conferencias" style="grid-column: day-3; grid-row: time-1200 / time-1315;"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><h3 class="session-title">Plenaria de proyectos</h3><span class="session-time">12:00 - 13:15</span></div>
+<div class="session session-pausas" style="grid-column: day-3; grid-row: time-1315 / time-1430;"><span title="Ubicación: Comedor" class="location-badge">Comedor</span><h3 class="session-title">Almuerzo</h3><span class="session-time">13:15 - 14:30</span></div>
+<div class="session session-sesiones-paralelas" style="grid-column: day-3; grid-row: time-1430 / time-1600;"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><span title="Ubicación: Aula 1" class="location-badge">Aula 1</span><span title="Ubicación: Aula 2" class="location-badge">Aula 2</span><h3 class="session-title">Sesión paralela 4</h3><span class="session-time">14:30 - 16:00</span></div>
+<div class="session session-pausas" style="grid-column: day-3; grid-row: time-1600 / time-1630;"><span title="Ubicación: Hall Central" class="location-badge">Hall Central</span><h3 class="session-title">Café</h3><span class="session-time">16:00 - 16:30</span></div>
+<div class="session session-talleres" style="grid-column: day-3; grid-row: time-1630 / time-1730;"><span title="Ubicación: Sala B2" class="location-badge">Sala B2</span><h3 class="session-title">Taller 2</h3><span class="session-time">16:30 - 17:30</span></div>
 </div></div>
+</div>
+<div class="programa-mobile-view">
+<details class="dia-accordion" open>
+<summary>Lunes</summary>
+<div class="dia-accordion-sesiones">
+<div class="session session-recepcion"><span title="Ubicación: Hall Central" class="location-badge">Hall Central</span><h3 class="session-title">Acreditación</h3><span class="session-time">9:00 - 9:30</span></div>
+<div class="session session-ceremonias"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><h3 class="session-title">Apertura</h3><span class="session-time">9:30 - 10:00</span></div>
+<div class="session session-conferencias"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><h3 class="session-title">Conferencia inaugural</h3><span class="session-time">10:00 - 11:00</span></div>
+<div class="session session-pausas"><span title="Ubicación: Hall Central" class="location-badge">Hall Central</span><h3 class="session-title">Café</h3><span class="session-time">11:00 - 11:30</span></div>
+<div class="session session-sesiones-paralelas"><span title="Ubicación: Aula 1" class="location-badge">Aula 1</span><span title="Ubicación: Aula 2" class="location-badge">Aula 2</span><span title="Ubicación: Aula 3" class="location-badge">Aula 3</span><h3 class="session-title">Sesión paralela 1</h3><span class="session-time">11:30 - 13:00</span></div>
+<div class="session session-pausas"><span title="Ubicación: Comedor" class="location-badge">Comedor</span><h3 class="session-title">Almuerzo</h3><span class="session-time">13:00 - 14:30</span></div>
+<div class="session session-poster"><span title="Ubicación: Patio casa central" class="location-badge">Patio casa central</span><h3 class="session-title">Sesión de póster</h3><span class="session-time">14:00 - 15:30</span></div>
+<div class="session session-talleres"><span title="Ubicación: Sala B2" class="location-badge">Sala B2</span><h3 class="session-title">Taller 1</h3><span class="session-time">14:30 - 16:00</span></div>
+<div class="session session-pausas"><span title="Ubicación: Hall Central" class="location-badge">Hall Central</span><h3 class="session-title">Café</h3><span class="session-time">16:00 - 16:30</span></div>
+<div class="session session-sesiones-paralelas"><span title="Ubicación: Aula 1" class="location-badge">Aula 1</span><span title="Ubicación: Aula 2" class="location-badge">Aula 2</span><h3 class="session-title">Sesión paralela 2</h3><span class="session-time">16:30 - 18:00</span></div>
+</div></details>
+<details class="dia-accordion">
+<summary>Miércoles</summary>
+<div class="dia-accordion-sesiones">
+<div class="session session-sesiones-paralelas"><span title="Ubicación: Aula 1" class="location-badge">Aula 1</span><span title="Ubicación: Aula 2" class="location-badge">Aula 2</span><span title="Ubicación: Aula 3" class="location-badge">Aula 3</span><h3 class="session-title">Sesión paralela 5</h3><span class="session-time">9:00 - 10:30</span></div>
+<div class="session session-pausas"><span title="Ubicación: Hall Central" class="location-badge">Hall Central</span><h3 class="session-title">Café</h3><span class="session-time">10:30 - 11:00</span></div>
+<div class="session session-conferencias"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><h3 class="session-title">Síntesis plenaria de los temas</h3><span class="session-time">11:00 - 12:30</span></div>
+<div class="session session-ceremonias"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><h3 class="session-title">Ceremonia de clausura</h3><span class="session-time">12:30 - 13:00</span></div>
+<div class="session session-pausas"><span title="Ubicación: Comedor" class="location-badge">Comedor</span><h3 class="session-title">Almuerzo de cierre</h3><span class="session-time">13:00 - 15:00</span></div>
+</div></details>
+<details class="dia-accordion">
+<summary>Martes</summary>
+<div class="dia-accordion-sesiones">
+<div class="session session-sesiones-paralelas"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><span title="Ubicación: Aula 1" class="location-badge">Aula 1</span><span title="Ubicación: Aula 2" class="location-badge">Aula 2</span><h3 class="session-title">Sesión paralela 3</h3><span class="session-time">8:30 (9:00 para T1 y T2) - 10:30</span></div>
+<div class="session session-pausas"><span title="Ubicación: Hall Central" class="location-badge">Hall Central</span><h3 class="session-title">Café</h3><span class="session-time">10:30 - 11:00</span></div>
+<div class="session session-conferencias"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><h3 class="session-title">Plenaria de investigación</h3><span class="session-time">11:00 - 12:00</span></div>
+<div class="session session-conferencias"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><h3 class="session-title">Plenaria de proyectos</h3><span class="session-time">12:00 - 13:15</span></div>
+<div class="session session-pausas"><span title="Ubicación: Comedor" class="location-badge">Comedor</span><h3 class="session-title">Almuerzo</h3><span class="session-time">13:15 - 14:30</span></div>
+<div class="session session-sesiones-paralelas"><span title="Ubicación: Salón de Actos" class="location-badge">Salón de Actos</span><span title="Ubicación: Aula 1" class="location-badge">Aula 1</span><span title="Ubicación: Aula 2" class="location-badge">Aula 2</span><h3 class="session-title">Sesión paralela 4</h3><span class="session-time">14:30 - 16:00</span></div>
+<div class="session session-pausas"><span title="Ubicación: Hall Central" class="location-badge">Hall Central</span><h3 class="session-title">Café</h3><span class="session-time">16:00 - 16:30</span></div>
+<div class="session session-talleres"><span title="Ubicación: Sala B2" class="location-badge">Sala B2</span><h3 class="session-title">Taller 2</h3><span class="session-time">16:30 - 17:30</span></div>
+</div></details>
+</div>
 </div>
 <script>
 /* Reveal on scroll */
