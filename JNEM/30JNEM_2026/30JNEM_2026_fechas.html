@@ -593,6 +593,76 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
 .insc-cuenta-label{color:var(--text-light);font-weight:600;flex-shrink:0;}
 .insc-cuenta-valor{color:var(--text);text-align:right;}
 
+/* ── Programa: horario (grid ETM8) ─────────────────────────── */
+.programa-wrap .legend {
+  margin-bottom: 0.5rem;
+}
+.programa-wrap .legend span {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  margin-right: 6px;
+  margin-bottom: 4px;
+}
+.programa-wrap .jumper {
+  margin-bottom: 1.2rem;
+}
+.programa-wrap .schedule-scroll {
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+.programa-wrap .schedule {
+  display: grid;
+  gap: 4px;
+  position: relative;
+  min-width: 700px;
+}
+.programa-wrap .time-slot {
+  grid-column: times;
+  font-size: 0.8rem;
+  color: #666;
+  text-align: right;
+  padding-right: 8px;
+  align-self: start;
+}
+.programa-wrap .day-slot {
+  font-weight: bold;
+  text-align: center;
+  padding: 8px 0;
+  border-bottom: 2px solid var(--pri);
+  position: sticky;
+  top: 0;
+  background: #fff;
+}
+.programa-wrap .session {
+  border-radius: 6px;
+  padding: 6px 8px;
+  overflow: hidden;
+  font-size: 0.85rem;
+}
+.programa-wrap .session-title {
+  font-size: 0.9rem;
+  margin: 2px 0;
+}
+.programa-wrap .session-time {
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+.programa-wrap .location-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.25);
+  border-radius: 4px;
+  padding: 0 4px;
+  font-size: 0.7rem;
+  margin-right: 3px;
+}
+.programa-vacio {
+  text-align: center;
+  color: #666;
+  padding: 2rem 0;
+}
 
 
 .tl-link-btn{
