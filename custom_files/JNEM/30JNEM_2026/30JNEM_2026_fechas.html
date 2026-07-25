@@ -729,15 +729,18 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
   .programa-desktop-view { display: none; }
   .programa-mobile-view { display: block; }
 }
-/* Mobile: agrupa sesiones paralelas en fila */
+/* Mobile: agrupa sesiones paralelas por carril (igual que desktop) */
 .dia-accordion-paralelas {
   display: flex;
-  flex-wrap: wrap;
   gap: 0.5rem;
+  align-items: flex-start;
 }
-.dia-accordion-paralelas .session {
-  flex: 1 1 140px;
-  min-width: 140px;
+.dia-carril {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1 1 0;
+  min-width: 0;
 }
 /* Desktop: truncar título a 2 líneas + expandir al hacer clic */
 .programa-wrap .session-title {
