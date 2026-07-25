@@ -729,6 +729,40 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
   .programa-desktop-view { display: none; }
   .programa-mobile-view { display: block; }
 }
+/* Mobile: agrupa sesiones paralelas en fila */
+.dia-accordion-paralelas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.dia-accordion-paralelas .session {
+  flex: 1 1 140px;
+  min-width: 140px;
+}
+/* Desktop: truncar título a 2 líneas + expandir al hacer clic */
+.programa-wrap .session-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.programa-desktop-view .session {
+  cursor: pointer;
+  transition: box-shadow 0.15s ease;
+}
+.programa-desktop-view .session:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.programa-desktop-view .session.expandida {
+  height: auto !important;
+  min-height: 100%;
+  z-index: 10;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.28);
+}
+.programa-desktop-view .session.expandida .session-title {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
 
 
 </style>
