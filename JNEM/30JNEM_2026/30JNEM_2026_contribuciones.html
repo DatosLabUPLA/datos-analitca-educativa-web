@@ -692,7 +692,22 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
   color: var(--text-light);
   padding: 2rem 0;
 }
-
+.programa-wrap .session.session-compacta {
+  display: flex;
+  align-items: center;
+  padding: 2px 8px;
+}
+.programa-wrap .session.session-compacta .session-linea-compacta {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dia-accordion-sesiones .session.session-compacta {
+  padding: 5px 10px;
+}
 /* Acordeón mobile */
 .dia-accordion {
   background: var(--card-bg);
