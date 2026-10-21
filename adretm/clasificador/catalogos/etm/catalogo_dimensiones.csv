@@ -1,0 +1,16 @@
+DIMENSION,ORDEN,PASADA,CARDINALIDAD,ROLES,REQUISITO,PERMITE_NUEVAS,PATRON,ES,EN,FR,PT,INSTRUCCION,ACTIVO
+ETM_RELACION,1,1,una,,,No,,Relación con el ETM,Relation to MWS,Relation à l'ETM,Relação com o ETM,"Relación del trabajo con la teoría de los Espacios de Trabajo Matemático (ETM). Decide según el uso que el trabajo hace del marco, no según si lo cita.",Sí
+IDIOMA,2,1,una,,,No,,Idioma,Language,Langue,Idioma,"Idioma en que está escrito el trabajo. Si el resumen viene traducido y el texto indica otro idioma de publicación, usa ese.",Sí
+DOMINIO,10,2,varias,,ETM_RELACION=usa_etm,Sí,,Dominio,Domain,Domaine,Domínio,Dominio matemático o disciplinar en que se sitúa el trabajo matemático estudiado.,Sí
+NOCION,11,2,texto,,ETM_RELACION=usa_etm,No,,Noción matemática,Mathematical notion,Notion mathématique,Noção matemática,"Objetos matemáticos concretos que se estudian (p. ej. «límite», «teorema de Thales», «cuadriláteros»). En español, en minúscula y en singular salvo nombres propios. Máximo 5.",Sí
+CONCEPTO_ETM,12,2,varias,ROL_CONCEPTO,ETM_RELACION=usa_etm,Sí,,Concepto ETM,MWS concept,Concept ETM,Conceito ETM,"Conceptos del marco ETM que aparecen en el trabajo, cada uno con el rol que cumple.",Sí
+MARCO_TEORICO,13,2,varias,ROL_MARCO,ETM_RELACION=usa_etm,Sí,,Marco teórico,Theoretical framework,Cadre théorique,Quadro teórico,"Marcos teóricos que el trabajo usa, incluido el ETM. Si el ETM se combina con otro marco, marca ambos.",Sí
+PARTICIPANTES,14,2,varias,,ETM_RELACION=usa_etm,No,,Participantes,Participants,Participants,Participantes,"Sujetos de quienes se recogen datos. Usa `sin_participantes` solo si el trabajo es teórico o documental, y entonces no marques otra clave.",Sí
+NIVEL,15,2,varias,,ETM_RELACION=usa_etm,No,,Nivel educativo,Educational level,Niveau d'enseignement,Nível de ensino,Nivel educativo de los participantes o del currículo estudiado (alineado con CINE/ISCED).,Sí
+FOCO,16,2,varias,,ETM_RELACION=usa_etm,No,,Foco del estudio,Focus of study,Objet d'étude,Foco do estudo,Objeto de estudio principal del trabajo (no lo que se menciona de paso).,Sí
+PROCESO,17,2,varias,,ETM_RELACION=usa_etm,No,,Proceso matemático,Mathematical process,Processus mathématique,Processo matemático,Procesos matemáticos que el trabajo analiza explícitamente.,Sí
+TEMA_TRANSVERSAL,18,2,varias,,ETM_RELACION=usa_etm,Sí,,Tema transversal,Cross-cutting theme,Thème transversal,Tema transversal,Temas transversales presentes de forma explícita en el trabajo.,Sí
+TIPO_ESTUDIO,19,2,varias,,ETM_RELACION=usa_etm,No,,Tipo de estudio,Type of study,Type d'étude,Tipo de estudo,Tipo de estudio o diseño metodológico.,Sí
+PAIS_ESTUDIO,20,2,texto,,ETM_RELACION=usa_etm,No,^[A-Z]{2}$,País del estudio,Country of study,Pays de l'étude,País do estudo,"Países donde se recogieron los datos, como código ISO 3166-1 alfa-2 en mayúsculas (CL, FR, MX…). No uses la afiliación de los autores; lista vacía si el texto no lo indica.",Sí
+ROL_CONCEPTO,90,,vocabulario,,,No,,Rol del concepto,Role of the concept,Rôle du concept,Papel do conceito,,Sí
+ROL_MARCO,91,,vocabulario,,,No,,Rol del marco,Role of the framework,Rôle du cadre,Papel do quadro,,Sí
