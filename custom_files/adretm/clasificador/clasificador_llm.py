@@ -69,7 +69,7 @@ from pathlib import Path
 
 import pandas as pd
 
-__version__ = '0.2'
+__version__ = '0.3'
 
 # ---------------------------------------------------------------------------
 # 1. Constantes
@@ -100,7 +100,7 @@ SISTEMA_BASE = """Eres un asistente que clasifica trabajos de investigación seg
 Reglas:
 1. Usa solo las claves del catálogo, escritas exactamente como aparecen entre comillas invertidas (`así`).
 2. Básate solo en el texto entregado. No completes con lo que sepas de los autores ni del tema.
-3. En `evidencia` copia literalmente un fragmento breve del texto (máximo 25 palabras), en su idioma original, que justifique la etiqueta.
+3. En `evidencia` copia literalmente un fragmento breve del texto (máximo 25 palabras), en su idioma original, que justifique la etiqueta. Si la etiqueta se basa en que algo NO aparece en el texto (por ejemplo `no_etm` o `{sin_info}`), deja `evidencia` vacía.
 4. `confianza`: alta = el texto lo dice explícitamente; media = se deduce con claridad; baja = indicio débil.
 5. Si el texto no informa una dimensión, deja su lista vacía (o usa `{sin_info}` en las de una sola clave). Es mejor no etiquetar que adivinar.
 6. Las claves que propongas y no estén en el catálogo van solo en `claves_nuevas`, nunca dentro de una dimensión.
@@ -372,7 +372,7 @@ class Catalogo:
                     linea += f' [también: {"; ".join(otros)}]'
                 lineas.append(linea)
         if d.permite_nuevas:
-            lineas.append('Si falta un concepto importante, propónlo en `claves_nuevas`.')
+            lineas.append('Si falta un concepto importante, proponlo en `claves_nuevas`.')
         return '\n'.join(lineas)
 
     def esquema(self, dims):
@@ -711,7 +711,8 @@ def escribir_tabla(sh, pestana, df, sobrescribir=False):
 
 
 def agregar_filas(sh, pestana, df, columnas=None):
-    """Agrega filas al final, alineadas con el encabezado real de la hoja."""
+    """Agrega filas debajo de la última fila con datos, alineadas con el encabezado real de la hoja.
+    Escribe en un rango calculado (no usa la función «append» de Sheets, que puede sobrescribir filas)."""
     import gspread
     if df is None or df.empty:
         print(f'"{pestana}": nada que agregar.')
@@ -721,15 +722,25 @@ def agregar_filas(sh, pestana, df, columnas=None):
         ws = sh.worksheet(pestana)
     except gspread.WorksheetNotFound:
         ws = sh.add_worksheet(pestana, rows=max(1000, len(df) + 10), cols=len(columnas))
-        ws.update(values=[columnas], range_name='A1')
-        ws.freeze(rows=1)
-    encabezado = ws.row_values(1)
+    valores = ws.get_all_values()
+    encabezado = valores[0] if valores and any(valores[0]) else []
     if not encabezado:
-        ws.update(values=[columnas], range_name='A1')
-        encabezado = columnas
-    ws.append_rows(df.reindex(columns=encabezado, fill_value='').fillna('').astype(str).values.tolist(),
-                   value_input_option='RAW', table_range='A1')
-    print(f'"{pestana}": {len(df)} filas agregadas.')
+        ws.update(values=[columnas], range_name='A1', value_input_option='RAW')
+        ws.freeze(rows=1)
+        encabezado, n_ocupadas = columnas, 1
+    else:
+        n_ocupadas = max(i for i, fila in enumerate(valores, 1) if any(str(v).strip() for v in fila))
+    datos = df.reindex(columns=encabezado, fill_value='').fillna('').astype(str).values.tolist()
+    inicio, fin = n_ocupadas + 1, n_ocupadas + len(datos)
+    if ws.row_count < fin:
+        ws.add_rows(fin - ws.row_count)
+    if ws.col_count < len(encabezado):
+        ws.add_cols(len(encabezado) - ws.col_count)
+    ws.update(values=datos, range_name=f'A{inicio}', value_input_option='RAW')
+    total = len(ws.get_all_values()) - 1
+    esperado = n_ocupadas - 1 + len(datos)
+    aviso = '' if total == esperado else f' ⚠️ la hoja tiene {total} filas de datos; se esperaban {esperado}'
+    print(f'"{pestana}": {len(datos)} filas agregadas (filas {inicio}–{fin}).{aviso}')
     return ws
 
 
@@ -817,3 +828,27 @@ def guardar_corrida(sh, res, pestana_etiquetas='etiquetas', pestana_control='con
         marcar_estado(sh, pestana_etiquetas, res.reemplazar, 'Reemplazada')
     actualizar_control(sh, res.control, pestana_control)
     agregar_filas(sh, pestana_propuestas, res.propuestas, COLS_PROPUESTAS)
+
+
+def clasificar_por_tandas(clf, sh, registros, col_id, campos, pasada, entidad, ids=None, forzar=False,
+                          si_cambia_texto=False, tanda=50, pestana_etiquetas='etiquetas',
+                          pestana_control='control_clasificacion'):
+    """Clasifica y GUARDA en tandas de `tanda` registros: si la sesión se cae, solo se pierde la tanda en curso
+    (y esa se recupera desde el caché). Relee etiquetas y control antes de cada tanda.
+    Devuelve las etiquetas, propuestas y errores de todas las tandas."""
+    lista = list(registros[col_id]) if ids is None else list(ids)
+    grupos = [lista[i:i + tanda] for i in range(0, len(lista), tanda)]
+    etq, prop, err = [], [], []
+    for n, grupo in enumerate(grupos, 1):
+        print(f'\n── Tanda {n}/{len(grupos)} ──')
+        previas = leer_tabla(sh, pestana_etiquetas)
+        control = leer_tabla(sh, pestana_control)
+        res = clf.clasificar(registros, col_id, campos, pasada, entidad=entidad, previas=previas,
+                             control=control, ids=grupo, forzar=forzar, si_cambia_texto=si_cambia_texto)
+        if len(res.control):
+            guardar_corrida(sh, res, pestana_etiquetas, pestana_control)
+        etq.append(res.etiquetas); prop.append(res.propuestas); err.append(res.errores)
+    juntar = lambda xs, cols: pd.concat(xs, ignore_index=True) if xs else pd.DataFrame(columns=cols)
+    etq, prop, err = juntar(etq, COLS_ETIQUETAS), juntar(prop, COLS_PROPUESTAS), juntar(err, ['id_registro', 'error'])
+    print(f'\nListo: {len(etq)} etiquetas, {len(prop)} propuestas, {len(err)} errores en {len(grupos)} tandas.')
+    return etq, prop, err
