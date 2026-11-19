@@ -852,6 +852,9 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
 #pd .tal .hh{font-size:.76rem;color:var(--text-light);font-variant-numeric:tabular-nums;padding-top:.1rem}
 #pd .tal .tt{font-size:.82rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 #pd .tal .aa{font-size:.74rem;color:var(--text-light);margin-top:.15rem;line-height:1.3}
+#pd .aa.ins,#pd .pa.ins{font-style:italic;opacity:.9}
+#pd .volver{margin-bottom:.4rem}
+#pd .card .sala-h{margin:.8rem 0 .45rem}
 #pd .off{opacity:.35}
 #pd .mas{font-size:.82rem;color:var(--text-light);margin-top:.6rem;font-style:italic}
 #pd mark{background:#ffe58a;color:inherit;border-radius:2px;padding:0 1px}
@@ -905,7 +908,7 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
 #pd .pc{position:relative;background:#fff;border:1px solid var(--line);border-left:4px solid var(--tc);border-radius:10px;padding:.5rem .6rem .55rem 3rem;cursor:pointer;min-height:76px}
 #pd .pc .pn{position:absolute;left:.5rem;top:.5rem;width:2rem;height:2rem;border-radius:8px;background:color-mix(in srgb,var(--tc) 14%,white);color:var(--tc);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.95rem}
 #pd .pc .pt{font-size:.8rem;font-weight:700;line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;padding-right:1.1rem}
-#pd .pc .pa{font-size:.72rem;color:var(--text-light);margin-top:.2rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#pd .pc .pa{font-size:.72rem;color:var(--text-light);margin-top:.2rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 #pd .pc>.star{position:absolute;top:.3rem;right:.25rem;font-size:1rem}
 #pd .pc .tchip{font-size:.62rem;margin-top:.25rem}
 #pd .plegado{background:#fff;border:1px dashed #cfc8b8;border-radius:12px;padding:.6rem 1rem;margin:.5rem 0;color:var(--text-light);font-size:.9rem;display:flex;gap:.8rem;align-items:center;flex-wrap:wrap}
@@ -1000,7 +1003,7 @@ const FILTROS = [
   {k:'tipo', lbl:'Tipo',       get:t=>[t.tipo]},
   {k:'nivel',lbl:'Nivel',      get:t=>t.nivel?[t.nivel]:[]},
 ];
-const st = {vista:'grilla', q:'', abiertas:new Set(), modal:null, irA:null, y:0};
+const st = {vista:'grilla', q:'', abiertas:new Set(), cerradas:new Set(), modal:null, irA:null, y:0};
 FILTROS.forEach(f=>st[f.k]='');
 
 // ── Mi agenda (se guarda en el navegador de cada persona) ──
@@ -1052,7 +1055,7 @@ const calBtns = t => t.u0 ? `<div class="cal"><a href="${gcal(t)}" target="_blan
 function buildFiltros(){
   const box = $('pd-filtros');
   box.innerHTML = FILTROS.map(f=>`<select data-k="${f.k}" aria-label="${f.lbl}"></select>`).join('') + `<button class="limpiar" id="pd-limpiar" hidden>Limpiar filtros</button>`;
-  box.querySelectorAll('select').forEach(s=>s.addEventListener('change',()=>{ st[s.dataset.k]=s.value; render(); }));
+  box.querySelectorAll('select').forEach(s=>s.addEventListener('change',()=>{ st[s.dataset.k]=s.value; st.cerradas.clear(); render(); }));
   $('pd-limpiar').onclick = ()=>{ FILTROS.forEach(f=>st[f.k]=''); st.q=''; $('pd-q').value=''; render(); };
 }
 function syncFiltros(P){
@@ -1069,6 +1072,7 @@ function syncFiltros(P){
   $('pd-limpiar').hidden = !activo();
 }
 const activo = () => !!st.q.trim() || FILTROS.some(f=>st[f.k]);
+const busca = () => !!st.q.trim() || FILTROS.some(f=>f.k!=='dia' && st[f.k]);   // filtros que resaltan/atenúan (el día solo navega)
 function coincide(t,excepto){
   for(const f of FILTROS){ if(f.k!==excepto && st[f.k] && !f.get(t).includes(st[f.k])) return false; }
   const toks = norm(st.q).split(/\s+/).filter(Boolean);
@@ -1119,7 +1123,7 @@ function render(){
 }
 
 function grilla(okSet){
-  const act = activo();
+  const act = busca();
   return DIAS.filter(d=>!st.dia||d===st.dia).map(dia=>{
     const frs = FR.filter(f=>f.dia===dia);
     return `<div class="dia"><h3 class="dia-t">${esc(frs[0].etiqueta)}</h3>${frs.map(f=>franja(f,okSet,act)).join('')}</div>`;
@@ -1134,15 +1138,23 @@ function franja(f,okSet,act){
   const hitT = ses.reduce((a,s)=>a+s.ts.filter(t=>okSet.has(t.id)).length,0);
   const hitO = [...confs,...tall,...pst].filter(t=>okSet.has(t.id)).length;
   const hay = ses.length+confs.length+tall.length+pst.length>0, nHit = hitT+hitO;
-  const dim = act && nHit===0;
+  const dim = act && hay && nHit===0;
   const hitTxt = act ? (nHit ? `<span class="hit">${nHit} coincidencia${nHit>1?'s':''}</span>` : (hay?`<span class="nohit">sin coincidencias</span>`:'')) : '';
+  const abierta = st.abiertas.has(f.id) || (act && nHit>0 && !st.cerradas.has(f.id));
+  const boton = lbl => `<button class="toggle" data-fr="${f.id}" data-abierta="${abierta?1:0}">${abierta?'Ocultar':lbl}</button>`;
+  const chipsTema = arr => { const n={}; arr.forEach(t=>{ if(t.tema) n[t.tema]=(n[t.tema]||0)+1; });
+    return `<div class="chips">${Object.entries(n).sort((x,y)=>y[1]-x[1]||x[0].localeCompare(y[0])).map(([c,k])=>`<button class="tchip" data-tema="${c}" title="${esc(TEMAS[c]||'')}" style="background:${TC[c]}">${c}${k>1?' '+k:''}</button>`).join('')}</div>`; };
+  const masTxt = (n,que) => n>0 ? `<div class="mas">+ ${n} ${que} sin coincidencias</div>` : '';
   let meta='', cuerpo='';
   if(!hay){ if(f.tipo!=='pausas') meta = `<span class="pd">Por definir</span>`; }
   else if(pst.length){
-    const salas = [...new Set(pst.map(p=>p.sala))].sort((a,b)=>salaN(a)-salaN(b));
-    const porTema = {}; pst.forEach(p=>porTema[p.tema]=(porTema[p.tema]||0)+1);
-    meta = `<span>${pst.length} pósteres · ${salas.join(' y ')}</span>` + hitTxt + `<button class="pst-btn" data-verpost="${pst[0].s}">Ver pósteres →</button>`;
-    cuerpo = `<div class="chips">${Object.entries(porTema).sort((a,b)=>b[1]-a[1]).map(([c,n])=>`<button class="tchip" data-tema="${c}" title="${esc(TEMAS[c]||'')}" style="background:${TC[c]}">${c} ${n}</button>`).join('')}</div>`;
+    const salas = [...new Set(pst.map(p=>p.sala))].sort((x,y)=>salaN(x)-salaN(y));
+    meta = `<span>${pst.length} pósteres · ${salas.join(' y ')}</span>` + hitTxt + boton('Ver pósteres');
+    if(!abierta) cuerpo = chipsTema(pst);
+    else {
+      const vis = act ? pst.filter(t=>okSet.has(t.id)) : pst;
+      cuerpo = gridPosteres(vis) + masTxt(pst.length-vis.length,'pósteres');
+    }
   }
   else if(confs.length){
     meta = (confs.length>1?`<span>${confs.length} en paralelo</span>`:'') + hitTxt;
@@ -1150,16 +1162,19 @@ function franja(f,okSet,act){
       : `<div class="sesiones">${confs.map(c=>confCard(c,act&&!okSet.has(c.id))).join('')}</div>`;
   }
   else if(tall.length){
-    meta = `<span>${tall.length} talleres en paralelo · parte ${tall[0].parte} de 2</span>` + hitTxt;
-    cuerpo = `<div class="sesiones">${tall.map(t=>tallerCard(t,act&&!okSet.has(t.id))).join('')}</div>`;
+    meta = `<span>${tall.length} talleres en paralelo · parte ${tall[0].parte} de 2</span>` + hitTxt + boton('Ver talleres');
+    if(!abierta) cuerpo = chipsTema(tall);
+    else {
+      const vis = act ? tall.filter(t=>okSet.has(t.id)) : tall;
+      cuerpo = `<div class="sesiones">${vis.map(t=>tallerCard(t,false)).join('')}</div>` + masTxt(tall.length-vis.length,'talleres');
+    }
   }
   else {
-    const abierta = st.abiertas.has(f.id) || (act && hitT>0);
-    meta = `<span>${ses.length} sesiones · ${nT} trabajos</span>` + hitTxt + `<button class="toggle" data-fr="${f.id}">${abierta?'Ocultar':'Ver sesiones'}</button>`;
+    meta = `<span>${ses.length} sesiones · ${nT} trabajos</span>` + hitTxt + boton('Ver sesiones');
     if(!abierta) cuerpo = `<div class="chips">${ses.map(s=>`<button class="tchip" data-tema="${s.tema}" title="${esc(s.tema_n)} · ${esc(s.sala)}" style="background:${TC[s.tema]}">${s.tema}</button>`).join('')}</div>`;
     else {
       const vis = act ? ses.filter(s=>s.ts.some(t=>okSet.has(t.id))) : ses;
-      cuerpo = `<div class="sesiones">${vis.map(s=>sesion(s,okSet,act)).join('')}</div>` + (act && vis.length<ses.length ? `<div class="mas">+ ${ses.length-vis.length} sesiones paralelas sin coincidencias en este bloque</div>`:'');
+      cuerpo = `<div class="sesiones">${vis.map(s=>sesion(s,okSet,act)).join('')}</div>` + masTxt(ses.length-vis.length,'sesiones paralelas');
     }
   }
   return `<div class="fr ${f.tipo}${dim?' dim':''}" style="--c:var(--c-${f.tipo})">
@@ -1186,27 +1201,31 @@ function tallerCard(t,off){
   return `<div class="cc${off?' off':''}" data-id="${t.id}" style="--cc:var(--c-talleres)">${star(t)}
     <div class="ses-h"><span>${esc(t.sala)}</span><span class="tchip" style="background:${TC[t.tema]||'var(--c-talleres)'}">${esc(t.tema)}</span></div>
     <div class="ct" style="font-weight:700">${titulo(t)}</div>
-    <div class="aa">${resaltar(t.aut.join(', '))}</div></div>`;
+    <div class="aa">${resaltar(t.aut.join(', '))}</div>
+    <div class="aa ins">${resaltar(t.inst.join(' · '))}</div></div>`;
 }
 function sesion(s,okSet,act){
   return `<div class="ses" style="--tc:${TC[s.tema]}">
     <div class="ses-h"><span>${esc(s.sala)}</span><span>${s.s} · ${s.tema}</span></div>
     <div class="ses-t">${esc(s.tema_n)}</div>
-    ${s.ts.map(t=>`<div class="tal${act&&!okSet.has(t.id)?' off':''}" data-id="${t.id}"><div class="hh">${t.ini}</div><div><div class="tt">${resaltar(t.t)}</div><div class="aa">${resaltar(t.aut.join(', '))}</div></div>${star(t)}</div>`).join('')}
+    ${s.ts.map(t=>`<div class="tal${act&&!okSet.has(t.id)?' off':''}" data-id="${t.id}"><div class="hh">${t.ini}</div><div><div class="tt">${resaltar(t.t)}</div><div class="aa">${resaltar(t.aut.join(', '))}</div><div class="aa ins">${resaltar(t.inst.join(' · '))}</div></div>${star(t)}</div>`).join('')}
   </div>`;
 }
 
+function gridPosteres(ps){
+  const bs = {}; ps.forEach(p=>(bs[p.sala] ||= []).push(p));
+  return Object.entries(bs).sort((x,y)=>salaN(x[0])-salaN(y[0])).map(([sala,rs])=>`<div class="sala-h">${esc(sala)} <small>${rs.length} paneles</small></div>
+    <div class="pgrid">${rs.sort((x,y)=>x.panel-y.panel).map(p=>`<div class="pc" data-id="${p.id}" style="--tc:${TC[p.tema]}"><span class="pn">${p.panel}</span>${star(p)}
+      <div class="pt">${resaltar(p.t)}</div><div class="pa">${resaltar(p.aut.join(', '))}</div><div class="pa ins">${resaltar(p.inst.join(' · '))}</div>
+      <span class="tchip" style="background:${TC[p.tema]}">${p.tema}</span></div>`).join('')}</div>`).join('');
+}
 function posteres(ps){
-  if(!ps.length) return `<div class="vacio"><b>Ningún póster coincide</b>Prueba con otra palabra o quita algún filtro.</div>`;
+  const volver = `<button class="btn-sec volver" data-volver>← Volver al programa general</button>`;
+  if(!ps.length) return volver + `<div class="vacio"><b>Ningún póster coincide</b>Prueba con otra palabra o quita algún filtro.</div>`;
   const turnos = {}; ps.forEach(p=>(turnos[p.s] ||= []).push(p));
-  return Object.entries(turnos).sort().map(([s,qs])=>{
+  return volver + Object.entries(turnos).sort().map(([s,qs])=>{
     const f = FR.find(x=>x.id===qs[0].f);
-    const bs = {}; qs.forEach(p=>(bs[p.sala] ||= []).push(p));
-    return `<div class="turno" id="pd-turno-${s}"><h3>${esc(f.etiqueta)}</h3><span>${f.ini}–${f.fin} · ${esc(f.t)} · ${qs.length} pósteres</span></div>` +
-      Object.entries(bs).sort((a,b)=>salaN(a[0])-salaN(b[0])).map(([sala,rs])=>`<div class="sala-h">${esc(sala)} <small>${rs.length} paneles</small></div>
-      <div class="pgrid">${rs.sort((a,b)=>a.panel-b.panel).map(p=>`<div class="pc" data-id="${p.id}" style="--tc:${TC[p.tema]}"><span class="pn">${p.panel}</span>${star(p)}
-        <div class="pt">${resaltar(p.t)}</div><div class="pa">${resaltar(p.aut.join(', '))}</div><div class="pa">${resaltar(p.inst.join(' · '))}</div>
-        <span class="tchip" style="background:${TC[p.tema]}">${p.tema}</span></div>`).join('')}</div>`).join('');
+    return `<div class="turno" id="pd-turno-${s}"><h3>${esc(f.etiqueta)}</h3><span>${f.ini}–${f.fin} · ${esc(f.t)} · ${qs.length} pósteres</span></div>` + gridPosteres(qs);
   }).join('');
 }
 
@@ -1219,8 +1238,8 @@ function lista(ok){
     const f = FR[frIdx[t.f]];
     if(t.dia!==dia){ dia=t.dia; fr=''; html+=`<h3 class="dia-t">${esc(f.etiqueta)}</h3>`; }
     if(t.f!==fr){ fr=t.f; grp=''; html+=`<div class="l-fr" style="border-color:var(--c-${f.tipo})"><b>${esc(f.t)}</b><span>${f.ini} – ${f.fin}</span></div>`;
-      if(!activo()){ const n=ok.filter(o=>o.kind==='poster'&&o.f===t.f).length; if(n) html+=`<div class="plegado">${n} pósteres en este turno <button class="pst-btn" data-verpost="${t.s}">Ver pósteres →</button></div>`; } }
-    if(t.kind==='poster'){ if(!activo()) return; const g='P'+t.sala; if(g!==grp){ grp=g; html+=`<div class="l-ses" style="--tc:var(--pri)">Pósteres · ${esc(t.sala)}</div>`; } html+=item(t); return; }
+      if(!busca()){ const n=ok.filter(o=>o.kind==='poster'&&o.f===t.f).length; if(n) html+=`<div class="plegado">${n} pósteres en este turno <button class="pst-btn" data-verpost="${t.s}">Ver pósteres →</button></div>`; } }
+    if(t.kind==='poster'){ if(!busca()) return; const g='P'+t.sala; if(g!==grp){ grp=g; html+=`<div class="l-ses" style="--tc:var(--pri)">Pósteres · ${esc(t.sala)}</div>`; } html+=item(t); return; }
     if(t.kind==='trab' && t.s!==grp){ grp=t.s; html+=`<div class="l-ses" style="--tc:${TC[t.tema]}"><span class="tchip" style="background:${TC[t.tema]}">${t.tema}</span>${esc(t.tema_n)} · ${esc(t.sala)}</div>`; }
     html+= t.kind==='conf' ? itemConf(t) : item(t);
   });
@@ -1391,16 +1410,19 @@ document.addEventListener('click',e=>{
   const ib = e.target.closest('[data-ics]'); if(ib){ const k=ib.dataset.ics; const its = k==='todas' ? T.filter(t=>FAV.has(t.fav)) : T.filter(t=>t.fav===k); descargar(k==='todas'?'mi_agenda_jnem.ics':`jnem_${k}.ics`, ics(its), 'text/calendar'); return; }
   if(e.target.closest('[data-pdf]')){ imprimir(); return; }
   const vb = e.target.closest('.vista button'); if(vb){ st.vista=vb.dataset.vista; render(); irA($('pd-toolbar')); return; }
-  const tg = e.target.closest('.toggle'); if(tg){ const id=tg.dataset.fr; st.abiertas.has(id)?st.abiertas.delete(id):st.abiertas.add(id); render(); return; }
+  const tg = e.target.closest('.toggle'); if(tg){ const id=tg.dataset.fr;
+    if(tg.dataset.abierta==='1'){ st.abiertas.delete(id); st.cerradas.add(id); } else { st.abiertas.add(id); st.cerradas.delete(id); }
+    render(); const el=document.querySelector(`#pd .toggle[data-fr="${id}"]`); if(el && tg.dataset.abierta==='1') irA(el.closest('.fr')); return; }
   const tc = e.target.closest('.tchip[data-tema]'); if(tc){ st.tema=tc.dataset.tema; render(); return; }
   const vp = e.target.closest('[data-verpost]'); if(vp){ st.vista='posteres'; st.irA='pd-turno-'+vp.dataset.verpost; render(); return; }
+  if(e.target.closest('[data-volver]')){ st.vista='grilla'; render(); irA($('pd-toolbar')); return; }
   if(e.target.closest('[data-vaciar]')){ FAV.clear(); guardarFav(); render(); return; }
   const sv = e.target.closest('[data-set]'); if(sv){ st[sv.dataset.set]=sv.dataset.v; cerrar(); render(); irA($('pd-toolbar')); return; }
   if(e.target.closest('[data-close]') || e.target.id==='pd-ov'){ cerrar(); return; }
   const it = e.target.closest('[data-id]'); if(it){ modal(it.dataset.id); }
 });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') cerrar(); });
-let tq; $('pd-q').addEventListener('input',e=>{ clearTimeout(tq); tq=setTimeout(()=>{ st.q=e.target.value; render(); },150); });
+let tq; $('pd-q').addEventListener('input',e=>{ clearTimeout(tq); tq=setTimeout(()=>{ st.q=e.target.value; st.cerradas.clear(); render(); },150); });
 if(EN_IFRAME && URL_PAGINA){ const a=$('pd-abrir'); if(a){ a.href = URL_PAGINA + '#programa-general'; a.hidden=false; } }
 
 buildFiltros(); render();
