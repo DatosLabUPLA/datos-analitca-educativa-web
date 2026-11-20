@@ -1062,7 +1062,9 @@ function buildFiltros(){
 function syncFiltros(P){
   FILTROS.forEach(f=>{
     const sel = $('pd-filtros').querySelector(`select[data-k="${f.k}"]`);
-    const cnt = {}; P.forEach(t=>{ if(coincide(t,f.k)) new Set(f.get(t)).forEach(v=>{ if(v) cnt[v]=(cnt[v]||0)+1; }); });
+    // se cuentan actividades únicas (un taller con 2 partes cuenta 1)
+    const vistos = {}; P.forEach(t=>{ if(coincide(t,f.k)) new Set(f.get(t)).forEach(v=>{ if(v) (vistos[v] ||= new Set()).add(t.fav); }); });
+    const cnt = {}; Object.entries(vistos).forEach(([v,set])=>cnt[v]=set.size);
     if(st[f.k] && !cnt[st[f.k]]) cnt[st[f.k]] = 0;
     let vals = Object.keys(cnt);
     vals = f.orden ? f.orden.filter(v=>v in cnt) : vals.sort((a,b)=>a.localeCompare(b,'es'));
@@ -1111,7 +1113,7 @@ function render(){
   $('pd-btnPost').hidden = !P.some(t=>t.kind==='poster');
   const ok = P.filter(t=>coincide(t));
   $('pd-count').innerHTML = st.vista==='agenda' ? `<b>${nFav}</b> actividad${nFav===1?'':'es'} guardada${nFav===1?'':'s'}`
-    : activo() ? `<b>${new Set(ok.map(t=>t.fav)).size}</b> resultado${ok.length===1?'':'s'}${ok.length?' — '+partes(ok):''}`
+    : activo() ? `<b>${new Set(ok.map(t=>t.fav)).size}</b> resultado${new Set(ok.map(t=>t.fav)).size===1?'':'s'}${ok.length?' — '+partes(ok):''}`
     : `<b>${partes(P)}</b>`;
   $('pd-leyenda').innerHTML = st.vista==='grilla'
     ? 'Leyenda: ' + Object.entries(TIPO_LBL).filter(([k])=>FR.some(f=>f.tipo===k)).map(([k,v])=>`<span class="l" style="background:color-mix(in srgb,var(--c-${k}) 16%,white);color:var(--c-${k})">${v}</span>`).join('') : '';
