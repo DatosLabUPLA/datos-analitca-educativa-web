@@ -876,12 +876,21 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
 #pd .vacio b{display:block;font-size:1.15rem;color:var(--text);margin-bottom:.3rem}
 #pd .av,#pd-ov .av{position:relative;width:var(--s);height:var(--s);border-radius:50%;background:color-mix(in srgb,var(--pri) 14%,white);color:var(--pri);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--s)*.36);overflow:hidden;flex:none;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.15)}
 #pd .av img,#pd-ov .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-#pd .avs{display:flex} #pd .avs .av+.av{margin-left:-10px}
+#pd .avs{display:flex;flex:none} #pd .avs .av+.av{margin-left:-10px}
 #pd .badge,#pd-ov .badge{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--c-conferencias);background:color-mix(in srgb,var(--c-conferencias) 12%,white);border-radius:999px;padding:.08rem .6rem}
 #pd .badge.tl,#pd-ov .badge.tl{color:var(--c-talleres);background:color-mix(in srgb,var(--c-talleres) 14%,white)}
-#pd .conf1{position:relative;display:flex;gap:1rem;align-items:center;margin-top:.6rem;padding:.7rem 2.2rem .7rem .8rem;background:#fff;border:1px solid var(--line);border-radius:12px;cursor:pointer}
-#pd .conf1 .ct{font-weight:700;line-height:1.3;margin:.2rem 0}
-#pd .conf1 .cp{font-size:.86rem;color:var(--text-light)} #pd .conf1 .cp b{color:var(--text)}
+#pd .conf1{position:relative;display:flex;flex-direction:column;gap:.45rem;margin-top:.6rem;padding:.7rem 2.2rem .75rem .8rem;background:#fff;border:1px solid var(--line);border-radius:12px;cursor:pointer}
+#pd .conf1 .c1-h{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+#pd .conf1 .ct{line-height:1.35}
+#pd .conf1 .row{display:flex;gap:.6rem;align-items:center}
+#pd .conf1 .cp{font-size:.86rem;color:var(--text-light);line-height:1.35} #pd .conf1 .cp b{color:var(--text)}
+#pd .conf1 .cp .ci{display:block;font-size:.8rem}
+#pd .cf-row{display:flex;gap:.55rem;align-items:center;margin-top:.3rem}
+#pd .cf-row .aa{margin-top:0}
+/* Títulos de las contribuciones: en mayúsculas y sin negrita, en todos los tipos */
+#pd .tal .tt,#pd .item .tt,#pd .pc .pt,#pd .cc .ct,#pd .conf1 .ct,#pd-ov h3{text-transform:uppercase;font-weight:400;letter-spacing:.01em}
+#pd-print td b{font-weight:400;text-transform:uppercase}
+#pd-print .p-c i{font-style:normal;text-transform:uppercase}
 #pd .cc{position:relative;background:#fff;border:1px solid var(--line);border-top:4px solid var(--cc,var(--c-conferencias));border-radius:12px;padding:.7rem .8rem;cursor:pointer;display:flex;flex-direction:column;gap:.45rem}
 #pd .cc .ses-h{padding-right:1.6rem}
 #pd .cc .row{display:flex;gap:.6rem;align-items:center}
@@ -965,6 +974,7 @@ details[open] .contrib-abrev-title::before { content:'▾ '; }
   #pd .fr .h{text-align:left;padding-top:0}
   #pd .fr .h span{display:inline;margin-left:.3rem}
   #pd .item{grid-template-columns:1fr;gap:.2rem}
+  #pd .conf1 .row{flex-direction:column;align-items:flex-start;gap:.35rem}
   #pd .toolbar{position:static}
   #pd .filtros{display:grid;grid-template-columns:1fr 1fr}
   #pd .filtros select{max-width:100%;width:100%}
@@ -1201,10 +1211,13 @@ function personasTxt(t){
   return Object.entries(roles).map(([r,ps])=>(r?`${esc(r)}: `:'') + ps.map(p=>`<b>${resaltar(p.n)}</b>`).join(', ')).join(' · ');
 }
 function confUnica(t,off){
-  const inst = [...new Set((t.pers||[]).map(p=>[p.inst,p.pais].filter(Boolean).join(', ')))].join(' · ');
-  return `<div class="conf1${off?' off':''}" data-id="${t.id}">${star(t)}${avs(t,(t.pers||[]).length>2?52:64)}
-    <div><span class="badge">${esc(t.tipo)}</span> <span class="cp">${esc(t.sala)}</span>
-    <div class="ct">${titulo(t)}</div><div class="cp">${personasTxt(t)}</div><div class="cp">${resaltar(inst)}</div></div></div>`;
+  // Igual que las tarjetas de conferencias en paralelo: título arriba; fotos pequeñas + nombres; instituciones
+  const ps = t.pers||[];
+  const inst = [...new Set(ps.map(p=>[p.inst, p.pais && norm(p.pais)!=='chile' ? p.pais : ''].filter(Boolean).join(', ')).filter(Boolean))].join(' · ');
+  return `<div class="conf1${off?' off':''}" data-id="${t.id}">${star(t)}
+    <div class="c1-h"><span class="badge">${esc(t.tipo)}</span>${t.sala?`<span class="cp">${esc(t.sala)}</span>`:''}</div>
+    <div class="ct">${titulo(t)}</div>
+    <div class="row">${avs(t,38)}<div class="cp">${personasTxt(t)}${inst?`<span class="ci">${resaltar(inst)}</span>`:''}</div></div></div>`;
 }
 function confCard(t,off){
   // Compacta, como el panel: título arriba; fotos superpuestas + nombres en una línea; instituciones sin repetir
@@ -1212,13 +1225,13 @@ function confCard(t,off){
   const inst = [...new Set(ps.map(p=>p.inst).filter(Boolean))].join(' · ');
   return `<div class="cc${off?' off':''}" data-id="${t.id}">${star(t)}
     <div class="ses-h"><span>${esc(t.sala)}</span><span class="badge">${esc(t.tipo.replace('Conferencia ',''))}</span></div>
-    <div class="ct" style="font-weight:700">${titulo(t)}</div>
+    <div class="ct">${titulo(t)}</div>
     <div class="row">${avs(t,38)}<div class="nm">${ps.map(p=>resaltar(p.n)).join(', ')}${inst?`<span>${resaltar(inst)}</span>`:''}</div></div></div>`;
 }
 function tallerCard(t,off){
   return `<div class="cc${off?' off':''}" data-id="${t.id}" style="--cc:var(--c-talleres)">${star(t)}
     <div class="ses-h"><span>${esc(t.sala)}</span><span class="tchip" style="background:${TC[t.tema]||'var(--c-talleres)'}">${esc(t.tema)}</span></div>
-    <div class="ct" style="font-weight:700">${npTag(t)}${titulo(t)}</div>
+    <div class="ct">${npTag(t)}${titulo(t)}</div>
     <div class="aa">${resaltar(t.aut.join(', '))}</div>
     <div class="aa ins">${resaltar(t.inst.join(' · '))}</div></div>`;
 }
@@ -1277,11 +1290,10 @@ function item(t,extra=''){
 function itemConf(t,extra=''){
   return `<div class="item" data-id="${t.id}" style="--tc:var(--c-conferencias)">${star(t)}
     <div class="hh">${t.ini}<span>${t.fin}</span></div>
-    <div style="display:flex;gap:.9rem;align-items:center">${avs(t,52)}<div>
-      <span class="badge">${esc(t.tipo)}</span> ${t.sala?`<span class="tag" style="margin:0">${esc(t.sala)}</span>`:''}
+    <div><span class="badge">${esc(t.tipo)}</span> ${t.sala?`<span class="tag" style="margin:0">${esc(t.sala)}</span>`:''}
       <div class="tt" style="margin-top:.25rem">${titulo(t)}</div>
-      <div class="aa">${t.aut.map(a=>btnP(a,true)).join(', ')}</div>
-      <div class="ii">${resaltar(t.inst.join(' · '))}${t.pais.length?' · '+resaltar(t.pais.join(', ')):''}</div>${extra}</div></div></div>`;
+      <div class="cf-row">${avs(t,34)}<div class="aa">${t.aut.map(a=>btnP(a,true)).join(', ')}</div></div>
+      <div class="ii">${resaltar(t.inst.join(' · '))}${t.pais.length?' · '+resaltar(t.pais.join(', ')):''}</div>${extra}</div></div>`;
 }
 function agenda(P){
   const fav = P.filter(t=>FAV.has(t.fav));
